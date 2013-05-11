@@ -1,0 +1,5 @@
+--cpu Cortex-M3 "startup_stm32f10x_md_vl.o" "core_cm3.o" "system_stm32f10x.o" "adc.o" "leds.o" "main.o" "uart.o" "misc.o" "stm32f10x_adc.o" "stm32f10x_dma.o" "stm32f10x_gpio.o" "stm32f10x_rcc.o" "stm32f10x_tim.o" "stm32f10x_usart.o" 
+--strict --scatter "SB3_firmware.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\SB3_firmware.map" -o SB3_firmware.axf

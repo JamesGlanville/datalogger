@@ -1,0 +1,2 @@
+Dependencies for Project 'SB3_firmware', Target 'Target 1': (DO NOT MODIFY !)
+F (.\startup_stm32f10x_md_vl.s)(0x4F58982C)(--cpu Cortex-M3 -g --apcs=interwork -I C:\Keil\ARM\RV31\Inc -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F10x --list "startup_stm32f10x_md_vl.lst" --xref -o "startup_stm32f10x_md_vl.o" --depend "startup_stm32f10x_md_vl.d")
