@@ -1,0 +1,1079 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head>
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word 11">
+<meta name="Originator" content="Microsoft Word 11">
+<link rel="File-List" href="http://correctenergysolutions.com/electronics/cap-humidity-sensor-circuit/index_files/filelist.xml">
+<link rel="Edit-Time-Data" href="http://correctenergysolutions.com/electronics/cap-humidity-sensor-circuit/index_files/editdata.mso"><!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Joe Ellsworth</o:Author>
+  <o:LastAuthor>Joe Ellsworth</o:LastAuthor>
+  <o:Revision>14</o:Revision>
+  <o:TotalTime>18620</o:TotalTime>
+  <o:Created>2009-12-30T08:46:00Z</o:Created>
+  <o:LastSaved>2010-01-30T20:28:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>3054</o:Words>
+  <o:Characters>17413</o:Characters>
+  <o:Company>XDOBS.COM LLC</o:Company>
+  <o:Lines>145</o:Lines>
+  <o:Paragraphs>40</o:Paragraphs>
+  <o:CharactersWithSpaces>20427</o:CharactersWithSpaces>
+  <o:Version>11.8122</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{margin-top:.05in;
+	margin-right:0in;
+	margin-bottom:2.9pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h2
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h3
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:13.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+h4
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:4;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.listbullet11, li.listbullet11, div.listbullet11
+	{mso-style-name:"list bullet 1\.1";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.15in;
+	margin-bottom:.0001pt;
+	text-indent:-.15in;
+	mso-pagination:widow-orphan;
+	mso-list:l1 level1 lfo1;
+	tab-stops:list .15in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:81223792;
+	mso-list-template-ids:-516146706;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:185296341;
+	mso-list-type:hybrid;
+	mso-list-template-ids:450137632 321022064 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:"list bullet 1\.1";
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.15in;
+	mso-level-number-position:left;
+	margin-left:.15in;
+	text-indent:-.15in;
+	font-family:Symbol;
+	color:windowtext;}
+@list l1:level2
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	margin-left:.5in;
+	text-indent:-.25in;
+	color:windowtext;}
+@list l1:level3
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:1.0in;
+	text-indent:-.25in;}
+@list l1:level4
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	margin-left:1.5in;
+	text-indent:-.25in;}
+@list l1:level5
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	margin-left:2.0in;
+	text-indent:-.25in;}
+@list l1:level6
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	margin-left:2.5in;
+	text-indent:-.25in;}
+@list l1:level7
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	margin-left:3.0in;
+	text-indent:-.25in;}
+@list l1:level8
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	margin-left:3.5in;
+	text-indent:-.25in;}
+@list l1:level9
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	margin-left:4.0in;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:1492939777;
+	mso-list-template-ids:376206872;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l2:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style><!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]-->
+
+<meta name="AUTHOR" content="Joseph Ellsworth">
+<meta name="CREATED" content="20091229;22352106">
+<meta name="CHANGEDBY" content="Joseph Ellsworth">
+<meta name="CHANGED" content="20091229;23071803"><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="5122"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]--></head><body style="" lang="EN-US" link="blue" vlink="blue">
+
+<div style="font-family: Arial;" class="Section1">
+
+<h1 style="text-align: center;" align="center">Read capacitive humidity sensors
+with two digital IO lines</h1>
+
+<h2 style="margin: 0.7pt 0in 2.9pt; text-align: center;" align="center">Reduce costs and parts count</h2>
+
+<p style="margin-bottom: 2.9pt; text-align: center;" align="center">© Joe Ellsworth
+2009 - Free use for everyone, no warranty, keep my name in future versions</p>
+
+<h2 style="text-align: center;" align="center">I also offer design and prototype
+services 206-601-2985</h2>
+
+<p style="margin-bottom: 0.0001pt; text-align: center;" align="center"><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t202" coordsize="21600,21600" o:spt="202" path="m,l,21600r21600,l21600,xe">
+ <v:stroke joinstyle="miter"/>
+ <v:path gradientshapeok="t" o:connecttype="rect"/>
+</v:shapetype><v:shape id="_x0000_s1029" type="#_x0000_t202" style='position:absolute;
+ left:0;text-align:left;margin-left:492.5pt;margin-top:0;width:135pt;height:249.75pt;
+ z-index:2;mso-position-horizontal:right;mso-position-vertical:top;
+ mso-position-vertical-relative:line' o:allowoverlap="f">
+ <v:textbox style='mso-next-textbox:#_x0000_s1029'>
+  <![if !mso]>
+  <table cellpadding=0 cellspacing=0 width="100%">
+   <tr>
+    <td><![endif]>
+    <div>
+    <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Remote <span
+    class=GramE>Sensor <span style='mso-spacerun:yes'> </span>with</span> RS485<o:p></o:p></b></p>
+    <p class=listbullet11><![if !supportLists]><span style='font-family:Symbol;
+    mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+    style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+    </span></span></span><![endif]><a href="remote_humid_single_sensor.pdf">PDF
+    Schematic</a></p>
+    <p class=listbullet11><![if !supportLists]><span class=MsoHyperlink><span
+    style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+    Symbol;color:windowtext;text-decoration:none;text-underline:none'><span
+    style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+    </span></span></span></span><![endif]><a
+    href="remote_humid_single_sensor.dch"><span class=SpellE>Diptrace</span>
+    schematic <o:p></o:p></a></p>
+    <p class=listbullet11><![if !supportLists]><span style='font-family:Symbol;
+    mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+    style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+    </span></span></span><![endif]><a href="remote_humid_single_sensor.bas"><span
+    class=SpellE>Bascom</span> source</a> using Analog comparator, interrupts includes
+    calibration.</p>
+    <p class=listbullet11><![if !supportLists]><span style='font-family:Symbol;
+    mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+    style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+    </span></span></span><![endif]><a href="../RS485-to-RS232-Bridge">RS485 to
+    RS232 Bridge</a></p>
+    <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+    <p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Mega 32 polling<o:p></o:p></b></p>
+    <p class=listbullet11><![if !supportLists]><span style='font-family:Symbol;
+    mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+    style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+    </span></span></span><![endif]><a
+    href="M16_humidity_sensor_HCH-1000-002.dch.pdf">PDF Schematic</a></p>
+    <p class=listbullet11><![if !supportLists]><span style='font-family:Symbol;
+    mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol'><span
+    style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+    </span></span></span><![endif]><a
+    href="M16_humidity_sensor_HCH-1000-002.dch"><span class=SpellE>Diptrace</span>
+    schematic</a> </p>
+    <p class=listbullet11><![if !supportLists]><span class=MsoHyperlink><span
+    style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+    Symbol;color:windowtext;text-decoration:none;text-underline:none'><span
+    style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+    </span></span></span></span><![endif]><a
+    href="m168-test-capacitor-rc-timing-direct-v.03.bas">Polling <span
+    class=SpellE>Bascom</span> source<o:p></o:p></a></p>
+    <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+    </div>
+    <![if !mso]></td>
+   </tr>
+  </table>
+  <![endif]></v:textbox>
+ <w:wrap type="square"/>
+</v:shape><![endif]--><!--[if !vml]--><img src="cap-humidity-sensor-circuit_files/image001.gif" alt="Text Box: Remote Sensor  with RS485
+•	PDF Schematic
+•	Diptrace schematic 
+•	Bascom source using Analog comparator, interrupts includes calibration.
+•	RS485 to RS232 Bridge
+
+Mega 32 polling
+•	PDF Schematic
+•	Diptrace schematic 
+•	Polling Bascom source" v:shapes="_x0000_s1029" align="right" height="339" hspace="12" width="186"><!--[endif]--><span style="">&nbsp;</span></p>
+
+<h3 style="text-align: center;" align="center">Read a capacitive humidity sensor
+without a ADC and only two additional components</h3>
+
+<h4>Overview</h4>
+
+<p class="MsoNormal">This document describes how to read a capacitive humidity
+sensor directly from a micro controller using 1 resistor, 1 diode the sensor
+and two IO lines.<span style=""> </span>It does this without
+an ADC by measuring the amount of time it requires to charge the capacitor
+through a resistor until the charge level is sufficient to register as logic
+1.<span style=""> </span>As the humidity changes the
+capacitance changes which changes the time required to charge the circuit.<span style=""> </span>We measure the time in a tight processor
+loop and average the readings to reduce hysteresis.<span style=""> </span>The readings are calibrated to two known
+humidity points using aqueous salt solutions.<span style=""> </span>The calibration allows simple conversion to percentages which can then
+be used internally or shipped out through a digital network such as RS422.<span style=""> </span>Most humidity sensors change
+consistently at a given capacitance change per 1% humidity change so the
+humidity can be calculated as a direct correlation to capacitance changes. </p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">While this circuit was designed specifically to support
+humidity sensors it should work the same with any circuit which uses a variable
+capacitor that predictably changes across <span class="GramE">it’s</span> set of
+input such as stress gauges. It can be extended with lookup tables to support
+devices which do not deliver a linear ramp across <span class="GramE">it’s</span>
+operating range. </p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><a href="http://correctenergysolutions.com/electronics/cap-humidity-sensor-circuit/M16_humidity_sensor_HCH-1000-002.dch.pdf"><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:540pt;
+ height:410.25pt'>
+ <v:imagedata src="index_files/image002.jpg" o:title="M16_humidity_sensor_HCH-1000-002.dch"/>
+</v:shape><![endif]--><!--[if !vml]--><img src="cap-humidity-sensor-circuit_files/image003.jpg" v:shapes="_x0000_i1025" border="0" height="547" width="720"><!--[endif]--></a></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<h4>Motivation</h4>
+
+<p style="margin-bottom: 0.0001pt;">I ran out of ADC pins and
+didn't want to install a multiplexer or external ADC for my 3 humidity sensors.
+I was tired of paying $15 to $35 each for humidity sensors like the <span class="SpellE">vout</span> HM1500 or the digital Sensirion SHT75. In addition I
+found that many of the <span class="SpellE">vout</span> and freq out units had
+drifts exceeding 10% after 1 year in our application.<span style=""> </span>My other issue is that the more
+sophisticated <span class="SpellE">vout</span> sensors keep getting model changes
+which requires design changes for us while the base level cap sensors remained
+the same and reliable. I needed an adequate solution that was cheaper and could
+be easily field re-calibrated.<span style=""> </span>I looked
+at many of the 555 circuits but they seemed complex with lots of components
+which could have thermal drift. I wanted something that would be easy to
+integrate into remote mounted <span class="GramE">circuits</span> dozens to
+hundreds of feet away while keeping costs low. </p>
+
+<p style="margin-bottom: 0.0001pt;">My <span class="GramE">design
+is based on reading the capacitance variance directly from the micro controller
+and have</span> been reasonably satisfied with the results. The cheap sensors
+like the HCH-1000-002 and the HS1101 do not come pre-calibrated and I found
+over a 10% variance from sensor to sensor so calibration must be built into the
+software. Due to high rates of drift I needed <span class="GramE">a</span> easy
+way to re-calibrate in the field. </p>
+
+<h4>Results </h4>
+
+<p style="margin-bottom: 0.0001pt;">After a very primitive
+calibration run, I ran a quick check using a sodium chloride (table salt)
+calibration solution my readings after averaging ran +- 1.5% of the 75.3%
+expected which is within the hysteresis ratings of the HCH-1000-002 sensor.
+Improved algorithms with more sophisticated averaging would make this more
+accurate.</p>
+
+<h4>Basic Circuit Operation</h4>
+
+<p style="margin-bottom: 0.0001pt;">The circuit is descried at <a href="http://correctenergysolutions.com/electronics/cap-humidity-sensor-circuit">http://correctenergysolutions.com/electronics/cap-humidity-sensor-circuit
+</a>and is free to use. It basically uses a two digital IO lines one as a
+charge and the other as a sense. We charge the capacitor circuit through a
+resistor with a diode for fast drain back. We feed the sense line from the cap
+back to the micro controller. The capacitor is fully drained before the feed
+line is activated. We measure the time it requires for sense to convert from a
+logic low to logic high in a tight loop with a counter. Once the transition high
+on sense occurs the feed line is set to low which re-drains the sensor cap. As
+the capacitor value rises or falls with humidity the count value rises and
+falls proportionately. We measure the count in a tight loop because we found
+the variables in interrupt service for the timer caused undesirable variability
+in the readings.</p>
+
+<h4>Algorithm</h4>
+
+<p style="margin: 5pt 0in 0.0001pt 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Sense PD.5 until reads off. Give few extra ms to
+finish drain.</p>
+
+<p style="margin: 5pt 0in 0.0001pt 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Turn on pd.6 and increment counter in tight loop
+until pd.5 reads as on. </p>
+
+<p style="margin: 5pt 0in 0.0001pt 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Average last reading into last 7 (N). Calculate
+the slope of change as far as count increments per percentage of humidity then
+convert then this into actual percentage change and add it to the low
+calibration point or subtract from low calibration point if below.</p>
+
+<p style="margin: 5pt 0in 0.0001pt 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Calibrate by reading counts at 33% and 100% RH.</p>
+
+<p style="margin: 5pt 0in 0.0001pt 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->The circuit acts like an AC wave because PD.6
+only remains on long enough for PD.5 to read as on then PD.6 drops which drains
+the capacitor.</p>
+
+<p style="margin: 5pt 0in 0.0001pt 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Change the value of charge resistor may be
+needed for different sensors.</p>
+
+<p style="margin: 5pt 0in 0.0001pt 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Diode discharges sensor fast when PD.6 drops.
+Use low forward voltage drop diode to minimize residual charge that must drop
+through the resistor.</p>
+
+<h4>Consistent transition detection</h4>
+
+<p style="margin-bottom: 0.0001pt;">We found a good count value
+with reasonable resolution using a 20 Meg feed capacitor on the HCH-1000-002
+and a 40 Meg for the HS1101. One concern was that the transition from logic low
+to logic high is defined as a range so I thought it would be sloppy. I checked
+this with no cap in circuit and by using a fixed capacitor. When the variable
+cap is removed from the circuit it consistently takes 18 cycles to charge the
+circuit whereas when the cap is present it ranges from 1080 to 1300. When we
+place a fixed capacitor in circuit it stays the same within a 6 or so cycles
+and normally stays within 1 cycle from test to test. I interpret this as a
+consistent transition voltage from low to high on sense which is basically
+doing the same thing as <span class="GramE">a</span> analog comparator. </p>
+
+<p style="margin-bottom: 0.0001pt;"><span class="GramE">A</span>
+analog comparator would probably be more accurate but I actually saw comparable
+variability up/down 1.5 to 3% when reading the <span class="SpellE">vout</span>
+HM1500 sensors through the ADC and had to run an averaging algorithm anyway.
+The difference is a sensor which is 4 times cheaper. </p>
+
+<h2>Remote Sensor with RS485 data feed good for 4,000 foot</h2>
+
+<p class="MsoNormal">This design is second generation, Instead of strict logic
+transition it uses a voltage divider to provide a reference voltage and then uses
+on CPU analog comparator sense charge rate.<span style="">&nbsp;&nbsp;&nbsp;
+</span></p>
+
+<p class="listbullet11"><!--[if !supportLists]--><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;
+</span></span><!--[endif]-->It uses the ACI (Analog Comparator) interrupt and
+the AVR 16 bit timer / counter to accumulate the time for the RC constant.<span> </span>The speed of the 20 <span class="SpellE">Mhtz</span>
+CPU combined with the speed of the counter and higher threshold value allowed
+the resistance on the feed resistor R7 to be reduced from 20 Meg to 1 Meg and still
+deliver higher resolution with faster reads</p>
+
+<p class="listbullet11"><!--[if !supportLists]--><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;
+</span></span><!--[endif]-->It uses a high precision thermistor VR1 as the
+ground leg of a voltage divider to sense temperature as measured through the
+ADC. <span style="">&nbsp;</span></p>
+
+<p class="listbullet11"><!--[if !supportLists]--><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;
+</span></span><!--[endif]-->This circuit provides output via RS485 or a TTL
+serial that is compatible with most laptops.<span style=""> </span>When using the RS485 circuit you must disconnect the normal power J1 as
+the power is fed in over the RS485 connector J2.<span style=""> </span>The PC compatible serial output is on J2. It
+does not conform to RS232 specs but it has worked on every laptop I have used.</p>
+
+<p class="listbullet11"><!--[if !supportLists]--><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;
+</span></span><!--[endif]-->The software includes EPROM storage of
+calibration data for the capacitive sensor C2.<span style=""></span> This allows field <a href="#_Calibration">calibration</a> using standard
+salt solutions.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><a href="http://correctenergysolutions.com/electronics/cap-humidity-sensor-circuit/remote_humid_single_sensor.jpg"><!--[if gte vml 1]><v:shape
+ id="_x0000_i1026" type="#_x0000_t75" style='width:532.5pt;height:409.5pt'>
+ <v:imagedata src="index_files/image004.jpg" o:title="remote_humid_single_sensor"/>
+</v:shape><![endif]--><!--[if !vml]--><img src="cap-humidity-sensor-circuit_files/image005.jpg" v:shapes="_x0000_i1026" border="0" height="546" width="710"><!--[endif]--></a></p>
+
+<p style="margin-bottom: 0.0001pt;"><a href="http://correctenergysolutions.com/electronics/cap-humidity-sensor-circuit/remote_humid_single_sensor.dch"><span class="SpellE">Diptrace</span>
+schematic</a><span style="">&nbsp;&nbsp;&nbsp; </span><a href="http://correctenergysolutions.com/electronics/cap-humidity-sensor-circuit/remote_humid_single_sensor.pdf">PDF Schematic</a><span style="">&nbsp;&nbsp; </span><a href="http://correctenergysolutions.com/electronics/cap-humidity-sensor-circuit/remote_humid_single_sensor.bas">Source
+Code</a><span style="">&nbsp; </span><a href="http://correctenergysolutions.com/electronics/RS485-to-RS232-Bridge">RS485 to RS232 Bridge</a></p>
+
+<p class="listbullet11"><!--[if !supportLists]--><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;
+</span></span><!--[endif]-->When using the RS232 connector ensure that you
+connect the ground to the power connectors J2 before applying power in.<span style=""> </span>Otherwise the circuit will operate through
+the ground connection to the serial port.<span style=""> </span>This is not a problem when the circuit draws very little power but is
+very bad practice because a high current short could burn out traces on the laptop
+or PC mother board.&nbsp;<span style=""></span>Where this is a
+risk a 30Ma fuse should be added on the RS232 ground leg to avoid expensive
+damage to your development computer. </p>
+
+<p class="listbullet11"><!--[if !supportLists]--><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;
+</span></span><!--[endif]-->On surprising result from this circuit is that
+the analog comparator result does not seem to be any more stable than the
+polling for change in logic levels from original Mega32 circuit. <span style="">&nbsp;&nbsp;</span>This indicates the transition from logic 0 to
+logic 1 on the AVR CPU is consistently applied at the same transition voltage
+even though the TTL spec provides range. </p>
+
+<p class="listbullet11" style="margin-left: 0in; text-indent: 0in;"><o:p>&nbsp;</o:p></p>
+
+<p style="margin-bottom: 0.0001pt;"><o:p>&nbsp;</o:p></p>
+
+<p style="margin-bottom: 0.0001pt;"><o:p>&nbsp;</o:p></p>
+
+<h4>Basic Sensor Detection Source code</h4>
+
+<p class="listbullet11"><!--[if !supportLists]--><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;
+</span></span><!--[endif]--><a href="http://correctenergysolutions.com/electronics/cap-humidity-sensor-circuit/remote_humid_single_sensor.bas">Full Source
+code Interrupts on Analog comparator</a></p>
+
+<p class="listbullet11"><!--[if !supportLists]--><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;
+</span></span><!--[endif]--><a href="http://correctenergysolutions.com/electronics/cap-humidity-sensor-circuit/m168-test-capacitor-rc-timing-direct-v.03.bas">Full source code polling</a></p>
+
+<p class="listbullet11" style="margin-left: 0in; text-align: right; text-indent: 0in;" align="right"><o:p>&nbsp;</o:p></p>
+
+<h4><o:p>&nbsp;</o:p></h4>
+
+<h4><o:p>&nbsp;</o:p></h4>
+
+<h4><o:p>&nbsp;</o:p></h4>
+
+<h4><!--[if gte vml 1]><v:shape id="_x0000_s1026" type="#_x0000_t75" style='position:absolute;
+ margin-left:502.25pt;margin-top:0;width:225.75pt;height:267pt;z-index:1;
+ mso-position-horizontal:right;mso-position-vertical:top;
+ mso-position-vertical-relative:line' o:allowoverlap="f">
+ <v:imagedata src="index_files/image006.jpg" o:title="cap_humidity_sensor_alternative_analog_compare"/>
+ <w:wrap type="square"/>
+</v:shape><![endif]--><!--[if !vml]--><img src="cap-humidity-sensor-circuit_files/image006.jpg" v:shapes="_x0000_s1026" align="right" height="356" hspace="12" width="301"><!--[endif]-->Alternative
+circuit with Analog compare</h4>
+
+<p class="MsoNormal">The analog compare circuit allows us to have a defined
+transition for transition from off state to on state.<span style="">&nbsp;&nbsp; </span>The voltage divider with R7 and R8 gives us
+a reference voltage of about 3.03 in a 5V circuit.<span style=""> </span>As the variable capacitor charges it
+eventually obtains a voltage higher than reference which causes the output of
+the analog comparator to go low.<span style="">&nbsp; </span><span style="">&nbsp;</span></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="listbullet11"><!--[if !supportLists]--><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;
+</span></span><!--[endif]-->The benefits of this approach are that it may
+allow use in CPU which <span class="GramE">do</span> not provide consistent
+detection otherwise.<span style="">&nbsp; </span></p>
+
+<p class="listbullet11"><!--[if !supportLists]--><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;
+</span></span><!--[endif]-->Most AVR Mega CPU <span class="GramE">include</span>
+a multiplexed analog compare that can provide the same functionality as the
+LM2901. The disadvantage of this approach is that it uses ADC pins and we seem
+to always be short of ADC pins so it was deemed more favorable to use <span class="GramE">a</span> external analog compare chip and preserve the ADC lines. </p>
+
+<p class="listbullet11"><!--[if !supportLists]--><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;
+</span></span><!--[endif]-->This circuit can allow the comparator and R9 to
+be moved to the end of the sensor cable and eliminate the long cable
+capacitance problems. In addition the single channel comparator such as the LM111
+can provide enough current to directly drive a LTV-816 <span class="SpellE">opto</span>
+isolator on the main board which feeds output to the CPU line.<span style=""> </span>This combination allows a very high
+resistance noise and spurious state changes while adding less than $1.00 per
+sensor to the costs. <span style="">&nbsp;</span><span style="">&nbsp;</span>Once the LM111 and LTV-816 are combined at the
+end of the wire with the sensor the length of the sensor wire is limited only
+by the ability to drive the voltage out and back from the sensor.<span style="">&nbsp;&nbsp; </span>Both the LTV-816 and the LM111 can tolerate
++- 30V swings so the circuit can be driven from RS232 levels to increase cable
+length.<span style="">&nbsp;&nbsp; </span>The disadvantage with this
+approach is that it would require 4 wires to the remote sensor.<span style="">&nbsp; </span>+<span class="SpellE">Vcc</span><span class="GramE">,<span style="">&nbsp; </span>GND</span>,<span style="">&nbsp; </span>Drive and Signal. </p>
+
+<p class="listbullet11" style="margin-left: 1in; text-indent: 0in;">If going that far it makes sense to just mount a Tiny85
+remotely with the sensor with a RS485 driver and use the normal circuit.<span style=""> </span>By using the Tiny85 the <span class="SpellE">thermister</span>
+temperature sensor can also be used with both the temperature and humidity data
+transferred back over the RS485 bus. <span style="">&nbsp;&nbsp;</span>The cost would be closer to $5.00 for the CPU
+versus $1.00 for the analog comparator and <span class="SpellE">opto</span>
+coupler but cost difference seems worth while since 2 additional conductors
+will cost more than that for cables of any significant length. </p>
+
+<p class="listbullet11"><!--[if !supportLists]--><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;
+</span></span><!--[endif]-->Because the cap voltage must reach the compare
+voltage to change the IO state on output it should take longer to charge or
+allow smaller charge resistor in R9.<span style="">&nbsp; </span>To
+date have not found that to be true. </p>
+
+<p class="listbullet11"><!--[if !supportLists]--><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;
+</span></span><!--[endif]-->With a 30M resistor in R9 <span class="GramE">it’s</span>
+count values are very similar to those returned from the simple circuit.<span style="">&nbsp; </span></p>
+
+<p class="listbullet11"><!--[if !supportLists]--><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;
+</span></span><!--[endif]-->This circuit uses inverse output from the direct
+drive to PD6 shown in the main circuit. <span style="">&nbsp;&nbsp;</span>As a result we must reverse the detection
+logic in the software. </p>
+
+<p class="listbullet11"><!--[if !supportLists]--><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;
+</span></span><!--[endif]-->The voltage divider R7<span class="GramE">,R8</span>
+can be reused for multiple sensors.</p>
+
+<p class="listbullet11"><!--[if !supportLists]--><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;
+</span></span><!--[endif]-->The analog compare chip and the feed resistor R9
+could be remotely placed which would improve noise resistance. </p>
+
+<p class="listbullet11"><!--[if !supportLists]--><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;
+</span></span><!--[endif]-->The 4 channel LM2901 costs $0.30 in qty 100
+which only adds $0.075 cost per sensor. <span style="">&nbsp;&nbsp;</span></p>
+
+<p class="listbullet11"><!--[if !supportLists]--><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;
+</span></span><!--[endif]-->Single channel devices such as the LM111 should
+work the same way but where not tested.</p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p style="margin-bottom: 0.0001pt;"><o:p>&nbsp;</o:p></p>
+
+<h4>Notes:</h4>
+
+<p class="listbullet11"><!--[if !supportLists]--><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;
+</span></span><!--[endif]-->My second circuit used <span class="GramE">a</span>
+8 Megahertz AVR CPU while my initial test was a 10 Megahertz CPU.<span style="">&nbsp; </span>I had to increase the resistance for the
+HCH-1000 sensors to 30 Meg when using polling to obtain sufficient
+resolution.<span style="">&nbsp;&nbsp; </span>My guess is that a faster
+CPU will allow correspondingly lower resistance while maintaining fidelity of
+measurement. </p>
+
+<p class="listbullet11"><!--[if !supportLists]--><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;
+</span></span><!--[endif]--><o:p>&nbsp;</o:p></p>
+
+<h4><a name="calibration"></a><a name="_Calibration"></a><span style="">Calibration</span></h4>
+
+<span style=""></span>
+
+<p style="margin: 5pt 0in 0.0001pt 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->WARNING:<span style="">&nbsp;
+</span>Constant temperature is critical for calibration.<span style="">&nbsp; </span>Take the time to build our sample heat
+controller to keep solutions at constant temperature.<span style="">&nbsp;&nbsp;&nbsp; </span></p>
+
+<p style="margin: 5pt 0in 0.0001pt 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Obtain at least two salt solutions one for low
+humidity and one for high humidity. </p>
+
+<p style="margin: 5pt 0in 0.0001pt 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Place sensor in sealed container in air above
+solution.</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Precise temperature control is critical.<span style="">&nbsp; </span>Even a 0.5C shift in temperature from
+beginning to end of the calibration run can result in a 3% difference in
+reported readings.<span style="">&nbsp;&nbsp;&nbsp;&nbsp; </span>I have another
+circuit for a precision TEC based temperature controller but a well insulated
+ice chest where you have placed a quart or gallon of water which is exactly at <span class="GramE">20.1C<span style="">&nbsp; </span>will</span> work.<span style="">&nbsp; </span>The extra .1 is used to heat the glass
+jars.<span style="">&nbsp; </span></p>
+
+<p style="margin: 5pt 0in 0.0001pt 1.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">§<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->The sensor calibration numbers in the data
+statement are for 20C. Your calibration must be done at exactly 20C or the
+salts will give incorrect readings.</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">§<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->I have seen a 2C change in temperature take over
+2 hours to stabilize the humidity in the salt chamber so minimizing temperature
+deviation during the test is critical. </p>
+
+<p style="margin: 5pt 0in 0.0001pt 1.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">§<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Calibrate from the lowest humidity solution
+moving to the next higher in succession until the highest level humidity has
+been reached.<span style="">&nbsp; </span>It seems to cause
+overstatement of readings from the sensors when working downward. </p>
+
+<p style="margin: 5pt 0in 0.0001pt 1.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">§<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Allow a minimum of 3 hours stabilization after
+the sensors have been inserted. 8 hours is better.<span style="">&nbsp;&nbsp; </span>Use the same amount of time for each
+calibration even if it does not appear to need it.<span style="">&nbsp;&nbsp; </span>Do not allow a longer soak in some of the
+chambers or it will distort the readings.<span style="">&nbsp;
+</span>The exception to this is if over 10 hours soak is used in each chamber
+then it may not matter. </p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Well insulated glass container well is
+preferred. </p>
+
+<p style="margin: 5pt 0in 0.0001pt 1.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">§<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->We use a glass canning jar with hole drilled in
+lid.<span style="">&nbsp;&nbsp; </span></p>
+
+<p style="margin: 5pt 0in 0.0001pt 2in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">§<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->There is about 2” of damp salt solution in
+bottom of jar.<span style="">&nbsp;&nbsp; </span>Do not add too much
+distilled water or the solution will not present accurately.<span style="">&nbsp;&nbsp;&nbsp; </span>I used <span class="GramE">about<span style="">&nbsp; </span>0.5</span>” salt<span style="">&nbsp; </span>with just enough water added to the salt that
+it is damp but not fully saturated. </p>
+
+<p style="margin: 5pt 0in 0.0001pt 2in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">§<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->We insert the sensors through the hold in lid
+and cover with duct tape to make air tight.<span style="">&nbsp;&nbsp;
+</span></p>
+
+<p style="margin: 5pt 0in 0.0001pt 2in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">§<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Wrap the entire jar with insulation to keep
+temperature constant.<span style="">&nbsp; </span><span style="">&nbsp;</span></p>
+
+<p style="margin: 5pt 0in 0.0001pt 2in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">§<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->When finished with the test replace lids with
+holes with liquid tight lids for storage. </p>
+
+<p style="margin: 5pt 0in 0.0001pt 2in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">§<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Make sure sensor does not touch solution or it
+can be ruined.</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Leave for 3 hours at constant temperature and
+record reading in count level.</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->I have found that calibration is time consuming
+because you end up waiting for the 3 hour stabilization curve for each
+solution.<span style="">&nbsp;&nbsp; </span>What I also found is that
+temperature changes across the 3 hour <span class="GramE">period<span style="">&nbsp; </span>cause</span> accuracy problems in the
+calibration.<span style="">&nbsp;&nbsp; </span>I finally retrofit an old
+Ice chest with a TEC heating module and <span class="GramE">a temperature sensors</span>
+to keep a bottle of water at exactly 20.1C.<span style="">&nbsp;
+</span>This bottle radiates heat into the rest of the ice chest and keeps
+things quite stable.<span style="">&nbsp;&nbsp;&nbsp; </span>See the <span class="SpellE">thermister</span> temperature measurement circuit and low side motor
+switch.<span style="">&nbsp;&nbsp; </span>I used the TEC as a heating
+element rather than a heat pump because ambient was well below my 20C set point
+and it took less time if I didn’t have to install the through the wall unit.</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Record the percentage and readings in the <span class="SpellE">hi_r</span>, <span class="SpellE">hi_p<span class="GramE">,lo</span>_r</span>,
+<span class="SpellE">lo_p</span> constants basic source code.</p>
+
+<p style="margin: 5pt 0in 0.0001pt 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Recommend <span class="GramE">calibration at 33%
+and 76% but any two places in range are</span> probably adequate.</p>
+
+<p style="margin: 5pt 0in 0.0001pt 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Best to build this into the software and store
+calibration in Non volatile memory to allow recalibration in field without
+re-programming.</p>
+
+<p style="margin: 5pt 0in 0.0001pt 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Notes: </p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Found resistance on charge line to meet needs of
+the variable capacitor by experiment. </p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->If clock interrupts are used it will modify the
+calibration and will require re-calibration. </p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Changing length of connection wire also adds capacitance
+and will require re-calibration. It is best to keep connection wire as short as
+possible and twisted pair.</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Human bodies and tanks of water can modify
+capacitance in wires running near them and may require re-calibration. For this
+reason it is best to build the micro controller into the sensor and send the
+data back via a digital network such as RS422 which is more immune to
+electrical interference. </p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Resistors also change in value with temperature.
+To get most accuracy needs to all calibration point which takes temperature
+into consideration.</p>
+
+<p style="margin: 5pt 0in 0.0001pt 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Settings at 20C<span style="">&nbsp;
+</span>- Use these because they are closest to shirtsleeve room temp</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Regenerated Silica Gel<span style="">&nbsp; </span>= 0%</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Lithium Chloride <span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>= 11.31% +- 0.31%</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Potassium Acetate <span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>= 23.4% +- 0.32%</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Magnesium Chloride <span style="">&nbsp;&nbsp;&nbsp; </span>= 33.3% +- 0.21%</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Potassium Carbonate <span style="">&nbsp;&nbsp; </span>= 43.16 +- 0.33</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Magnesium Nitrate <span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>= 54.38 +- 0.23</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Sodium Chloride <span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>=
+75.47 +- 0.14</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Potassium Chloride <span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>= 85.11 +- 0.29</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Potassium Nitrate <span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>= 94.62 +- 0.66</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Potassium Sulfate <span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>= 97.59 +- 0.53</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Distilled Water <span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>=
+100</p>
+
+<p style="margin: 5pt 0in 0.0001pt 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Common salts as measured at 25C. Most sensors
+not reliable above 95% so calibration at 93% would be better than 100%.<span style="">&nbsp;&nbsp; </span></p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Silica Gel – 0%</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Lithium Bromide <span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>=
+06.37%</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Lithium Chloride <span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>= 11.3%</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Potassium Acetate<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>= 22.51%</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Magnesium Chloride<span style="">&nbsp;&nbsp;&nbsp;&nbsp; </span>= 32.78%</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Potassium Carbonate<span style="">&nbsp;&nbsp;&nbsp; </span>= 43.16%</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Magnesium Nitrate <span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>= 52.89%</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Sodium Bromide<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>=
+57.57%</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Potassium Iodide<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>=
+68.86%</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Sodium Chloride<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>=
+75.3%</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Potassium Chloride<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>= 84.34%</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Potassium Nitrate<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>= 93.5%</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Potassium Sulfate<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>= 97.3%</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Distilled water<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>=
+100%</p>
+
+<p style="margin: 5pt 0in 0.0001pt 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Reference Material using salts for calibration</p>
+
+<p style="margin: 5pt 0in 0.0001pt 0.75in;">Some of these are hazardous<span class="GramE">,<span style="">&nbsp; </span>Use</span> care when handling.<span style="">&nbsp;&nbsp; </span>We like magnesium Chloride, Sodium Chloride
+and distilled water because they are relatively safe to handle compared to
+Lithium Chloride which is more hazardous.</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><a href="http://www.smartec.nl/pdf/apphs1002.pdf">http://www.smartec.nl/pdf/apphs1002.pdf</a>
+- easy to understand list</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><a href="http://nvl.nist.gov/pub/nistpubs/jres/081/1/V81.N01.A06.pdf">http://nvl.nist.gov/pub/nistpubs/jres/081/1/V81.N01.A06.pdf</a>
+-<span style="">&nbsp; </span><b style="">The
+Definitive source most other articles reference</b> - comprehensive list
+“humidity fixed points of binary saturated aqueous solutions” Lewis Greenspan,
+'Humidity fixed points of binary saturated aqueous solutions', J. of Research,
+National Bureau of Standards, 81A (1977) pp 89-96</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><a href="http://www.absoluteastronomy.com/topics/Critical_relative_humidity">http://www.absoluteastronomy.com/topics/Critical_relative_humidity</a>
+- Critical humidity explained lists more chemicals but does not <span class="GramE">includes</span> temperature correlation.</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><a href="http://en.wikipedia.org/wiki/Critical_relative_humidity">http://en.wikipedia.org/wiki/Critical_relative_humidity</a>
+- Wikpedia explanation of critical humidity. </p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><a href="http://www.nkhome.com/pdfs/k3_k35_k4_calkit_web.pdf">http://www.nkhome.com/pdfs/k3_k35_k4_calkit_web.pdf</a>
+- calibration chart for a NK meter.<span style="">&nbsp;&nbsp;
+</span>Published at 25C,<span style="">&nbsp;&nbsp;&nbsp; </span>Lithium
+Bromide=6.37C<span style="">&nbsp; </span>Lithium
+Chloride=11.3%,<span style="">&nbsp;&nbsp; </span>Potassium
+Acetate=22.51%,<span style="">&nbsp;&nbsp; </span>Magnesium Chloride
+32.8%,<span style="">&nbsp; </span>Potassium Carbonate=43.16%,<span style="">&nbsp;&nbsp; </span>Magnesium Nitrate=52.8%,<span style="">&nbsp; </span>Sodium Bromide=57.57%,<span style="">&nbsp; </span>Potassium Iodine=68.86%,<span style="">&nbsp; </span>Sodium Chloride=75.3%,<span style="">&nbsp; </span>Potassium Chloride=84.34%,<span style="">&nbsp; </span>Potassium Sulfate=97.3%</p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->http://www.natmus.dk/cons/tp/satslt/satsalt.htm
+the Relative humidity above saturated salt solutions at various
+temperatures<span style="">&nbsp; </span>– good chart with saturations
+at 5,10,15,20,25F<span style="">&nbsp; </span>easy to understand but
+not comprehensive list of chemicals.<span style="">&nbsp;&nbsp;
+</span>Instructions for mixing the chemicals. </p>
+
+<p style="margin-left: 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><a href="http://www.omega.com/temperature/z/pdf/z103.pdf">http://www.omega.com/temperature/z/pdf/z103.pdf</a><span style="">&nbsp; </span><span class="GramE">-<span style="">&nbsp; </span>Equilibrium</span> Relative Humidity
+Saturated Salt Solutions – included comprehensive list of temperatures for
+lithium chloride, potassium Acetate,<span style="">&nbsp;
+</span>Magnesium Chloride.<span style="">&nbsp;&nbsp; </span>- I like
+this chart the best.<span style="">&nbsp; </span></p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><a href="http://cool.conservation-us.org/waac/wn/wn13/wn13-1/wn13-106.html">http://cool.conservation-us.org/waac/wn/wn13/wn13-1/wn13-106.html</a>
+Controlling Relative Humidity with Saturated Calcium Nitrate Solutions</p>
+
+<p style="margin: 5pt 0in 0.0001pt 0.5in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]-->Chemical Sources</p>
+
+<p style="margin: 5pt 0in 0.0001pt 0.75in;">Please make sure you read about and understand the
+hazards of dealing with these chemicals.<span style="">&nbsp;
+</span>Some are relatively safe like Sodium Chloride.<span style="">&nbsp; </span>Others can kill, main or blind you really
+fast.<span style="">&nbsp;&nbsp;&nbsp; </span><span class="GramE">If<span style="">&nbsp; </span>I</span> have a choice, I always choose the
+safest chemicals available.<span style="">&nbsp; </span>Ideally
+those FDA approved as food additives. </p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><a href="http://www.highqualitychems.com/servlet/StoreFront?gclid=CKHh5tvCmJ8CFSgVagodb1L1_g">http://www.highqualitychems.com/servlet/StoreFront?gclid=CKHh5tvCmJ8CFSgVagodb1L1_g</a></p>
+
+<p style="margin: 5pt 0in 0.0001pt 1in; text-indent: -0.25in;"><!--[if !supportLists]--><span style="font-size: 10pt;"><span style="">o<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><o:p>&nbsp;</o:p></p>
+
+<p style="margin-bottom: 0.0001pt;"><o:p>&nbsp;</o:p></p>
+
+<p style="margin-bottom: 0.0001pt;"><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body></html>
