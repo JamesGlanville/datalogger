@@ -4,6 +4,13 @@
 #include "LEDs.h"
 #include "UART.h"
 #include "ADC.h"
+#include "stm32F10x_i2c.h"
+#include "stm32f10x_gpio.h"
+#include "stm32f10x_rcc.h"
+#include "HD44780.h"
+
+#define SLAVE_ADDRESS 0x4C   
+//0xA1 //0xBB //0xA1
 
 //Hardware:
 
@@ -45,6 +52,155 @@ volatile uint8_t new_data;
 //Function prototypes for functions in main.c file
 
 void check_and_process_received_command(void);
+#ifdef goaway
+
+void I2C_LowLevel_Init(I2C_TypeDef* I2Cx)// , int ClockSpeed , intOwnAddress)
+{
+GPIO_InitTypeDef GPIO_InitStructure;
+//I2C_InitTypeDef I2C_InitStructure;
+// Enable GPIOB clocks
+RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB , ENABLE);
+// Configure I2C clock and GPIO
+GPIO_StructInit (& GPIO_InitStructure);
+/* I2C1 clock enable */
+RCC_APB1PeriphClockCmd(RCC_APB1Periph_I2C1 , ENABLE);
+/* I2C1 SDA and SCL configuration */
+GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_7;
+GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_OD;
+GPIO_Init(GPIOB , &GPIO_InitStructure);
+/* I2C1 Reset */
+RCC_APB1PeriphResetCmd(RCC_APB1Periph_I2C1 , ENABLE);
+RCC_APB1PeriphResetCmd(RCC_APB1Periph_I2C1 , DISABLE);
+}
+#endif
+
+
+void init_I2C1(void){
+
+	GPIO_InitTypeDef GPIO_InitStruct;
+	I2C_InitTypeDef I2C_InitStruct;
+
+	// enable APB1 peripheral clock for I2C1
+	 // RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA | RCC_AHBPeriph_GPIOB | RCC_AHBPeriph_GPIOC| 
+         //               RCC_AHBPeriph_GPIOD| RCC_AHBPeriph_GPIOE| RCC_AHBPeriph_GPIOH, ENABLE);     
+
+		RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE); 
+
+   	RCC_APB1PeriphClockCmd(RCC_APB1Periph_I2C1|RCC_APB2Periph_AFIO, ENABLE);
+	
+	//Configure required pins as UART TX/RX
+//	GPIO_Config();
+	// enable clock for SCL and SDA pins
+//	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);
+
+	/* setup SCL and SDA pins
+	 * You can connect I2C1 to two different
+	 * pairs of pins:
+	 * 1. SCL on PB6 and SDA on PB7
+	 * 2. SCL on PB8 and SDA on PB9
+	 */
+	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_7; // we are going to use PB6 and PB7
+	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF_OD;			// set pins to alternate function
+	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;		// set GPIO speed
+//	GPIO_InitStruct.GPIO_OType = GPIO_OType_OD;			// set output to open drain --> the line has to be only pulled low, not driven high
+//	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_UP;			// enable pull up resistors
+	GPIO_Init(GPIOB, &GPIO_InitStruct);					// init GPIOB
+
+	// Connect I2C1 pins to AF
+//	GPIO_PinAFConfig(GPIOB, GPIO_PinSource6, GPIO_AF_I2C1);	// SCL
+//	GPIO_PinAFConfig(GPIOB, GPIO_PinSource7, GPIO_AF_I2C1); // SDA
+//	GPIO_PinRemapConfig(GPIO_Remap_I2C1,ENABLE);
+	// configure I2C1
+	I2C_DeInit(I2C1);
+		I2C_Cmd(I2C1, ENABLE);
+
+	I2C_InitStruct.I2C_ClockSpeed = 100000; 		// 100kHz
+	I2C_InitStruct.I2C_Mode = I2C_Mode_I2C;			// I2C mode
+	I2C_InitStruct.I2C_DutyCycle = I2C_DutyCycle_2;	// 50% duty cycle --> standard
+	I2C_InitStruct.I2C_OwnAddress1 = 0x039;			// own address, not relevant in master mode
+	I2C_InitStruct.I2C_Ack = I2C_Ack_Enable;		// disable acknowledge when reading (can be changed later on)
+	I2C_InitStruct.I2C_AcknowledgedAddress = I2C_AcknowledgedAddress_7bit; // set address length to 7 bit addresses
+	I2C_Init(I2C1, &I2C_InitStruct);				// init I2C1
+
+	// enable I2C1
+
+}
+void I2C_start(I2C_TypeDef* I2Cx, uint8_t address, uint8_t direction){
+	// wait until I2C1 is not busy anymore
+	int t;
+	t=0;
+	while(I2C_GetFlagStatus(I2Cx, I2C_FLAG_BUSY));
+
+	// Send I2C1 START condition
+	I2C_GenerateSTART(I2Cx, ENABLE);
+
+	// wait for I2C1 EV5 --> Slave has acknowledged start condition
+	while(!I2C_CheckEvent(I2Cx, I2C_EVENT_MASTER_MODE_SELECT));
+
+	// Send slave Address for write
+	I2C_Send7bitAddress(I2Cx, address, direction);
+
+	/* wait for I2C1 EV6, check if
+	 * either Slave has acknowledged Master transmitter or
+	 * Master receiver mode, depending on the transmission
+	 * direction
+	 */
+	if(direction == I2C_Direction_Transmitter){
+		while(!I2C_CheckEvent(I2Cx, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED));//{if (t>100){}else{t++;}}
+	}
+	else if(direction == I2C_Direction_Receiver){
+		while(!I2C_CheckEvent(I2Cx, I2C_EVENT_MASTER_RECEIVER_MODE_SELECTED));
+	}
+}
+
+/* This function transmits one byte to the slave device
+ * Parameters:
+ *		I2Cx --> the I2C peripheral e.g. I2C1
+ *		data --> the data byte to be transmitted
+ */
+void I2C_write(I2C_TypeDef* I2Cx, uint8_t data){
+	I2C_SendData(I2Cx, data);
+	// wait for I2C1 EV8_2 --> byte has been transmitted
+	while(!I2C_CheckEvent(I2Cx, I2C_EVENT_MASTER_BYTE_TRANSMITTED));
+}
+
+/* This function reads one byte from the slave device
+ * and acknowledges the byte (requests another byte)
+ */
+uint8_t I2C_read_ack(I2C_TypeDef* I2Cx){
+	uint8_t data;
+	// enable acknowledge of recieved data
+	I2C_AcknowledgeConfig(I2Cx, ENABLE);
+	// wait until one byte has been received
+	while( !I2C_CheckEvent(I2Cx, I2C_EVENT_MASTER_BYTE_RECEIVED) );
+	// read data from I2C data register and return data byte
+	data = I2C_ReceiveData(I2Cx);
+	return data;
+}
+
+/* This function reads one byte from the slave device
+ * and doesn't acknowledge the recieved data
+ */
+uint8_t I2C_read_nack(I2C_TypeDef* I2Cx){
+	uint8_t data;
+	// disabe acknowledge of received data
+	I2C_AcknowledgeConfig(I2Cx, DISABLE);
+	// wait until one byte has been received
+	while( !I2C_CheckEvent(I2Cx, I2C_EVENT_MASTER_BYTE_RECEIVED) );
+	// read data from I2C data register and return data byte
+	data = I2C_ReceiveData(I2Cx);
+	return data;
+}
+
+/* This funtion issues a stop condition and therefore
+ * releases the bus
+ */
+void I2C_stop(I2C_TypeDef* I2Cx){
+	// Send I2C1 STOP Condition
+	I2C_GenerateSTOP(I2Cx, ENABLE);
+}
+
 
 //------------------------------------------------------------------------------
 
@@ -53,29 +209,90 @@ int main(void)
 {
 	int i;
 	
+	
+		uint8_t received_data[2];
+	//I2C_TypeDef* I2Cx;
 	//Initalise LEDs
 	LED_init();
 	
 	//Short delay during which we can communicate with MCU via debugger even if later user code causes error such as sleep state with no wakeup event that prevents debugger interface working
 	//THIS MUST COME BEFORE ALL USER CODE TO ENSURE CHIPS CAN BE REPROGRAMMED EVEN IF THEY GET STUCK IN A SLEEP STATE LATER
-	for (i = 0; i < 4000000; i++)
+	for (i = 0; i < 1000000; i++)
 	{
 		LED_on();
 	}
 	
+	//I2C_Init(I2Cx, I2C_InitStruct);
+	//init_I2C1();
+	
+  /*while(1){
+
+
+    		I2C_start(I2C1, 0x4C, I2C_Direction_Transmitter); // start a transmission in Master transmitter mode
+		I2C_write(I2C1, 0x20); // write one byte to the slave
+		I2C_write(I2C1, 0x03); // write another byte to the slave
+		I2C_stop(I2C1); // stop the transmission
+	
+		I2C_start(I2C1, SLAVE_ADDRESS, I2C_Direction_Receiver); // start a transmission in Master receiver mode
+		received_data[0] = I2C_read_ack(I2C1); // read one byte and request another byte
+		received_data[1] = I2C_read_nack(I2C1); // read one byte and don't request another byte
+		I2C_stop(I2C1); // stop the transmission
+
+	}	*/
+	
+	//I2C_start(I2C1, SLAVE_ADDRESS, I2C_Direction_Transmitter);
 	LED_off();
 	
+	LCD_init();
+	
+/*		LCD_ConfigurePort(GPIOE,
+					GPIO_Pin_6, GPIO_Pin_4, GPIO_Pin_5,
+					NULL, NULL, NULL, NULL,
+					GPIO_Pin_2, GPIO_Pin_3, GPIO_Pin_0, GPIO_Pin_1
+					);*/
+
+	LCD_Initalize(BUS_WIDTH_4, DISPLAY_LINES_2, FONT_5x8);
+
+		LCD_Clear();
+	LCD_DisplayScroll(False);
+
+// First message.
+	LCD_Print("HELLO WORLD");
+	LCD_Print("HELLO WORLD");
+	LCD_Print("HELLO WORLD");
+	LCD_Print("HELLO WORLD");
+	LCD_Print("HELLO WORLD");
+
+	
+	//GPIO_ResetBits(GPIOC, GPIO_Pin_9);
+//	GPIO_SetBits(GPIOC, GPIO_Pin_9);	
+	
+	
+	
+	/*
+	PB0 DB5
+	PB1 E
+	PB2 RS
+	PC5 DB7
+	PC4 DB4
+	PA7 DB6
+	*/
+
 	//Initialise UART for serial comms with PC
 	UART_init();
 	
 	//Initialise ADC
 	ADC_init();
 	
+	
+	
 	//Main loop
 	//------------------------------------------------------------------------------
 	while (1)
 	{
-		check_and_process_received_command();
+			LCD_Print("HELLO WORLD");
+
+	//	check_and_process_received_command();
 	}
 	//------------------------------------------------------------------------------
 }

@@ -1046,7 +1046,7 @@ ErrorStatus I2C_CheckEvent(I2C_TypeDef* I2Cx, uint32_t I2C_EVENT)
   lastevent = (flag1 | flag2) & FLAG_Mask;
 
   /* Check whether the last event contains the I2C_EVENT */
-  if ((lastevent & I2C_EVENT) == I2C_EVENT)
+                          if ((lastevent & I2C_EVENT) == I2C_EVENT)
   {
     /* SUCCESS: last event is equal to I2C_EVENT */
     status = SUCCESS;
