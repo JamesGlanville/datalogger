@@ -123,11 +123,61 @@ features are the accelerometer, EEPROM and LCD display.
 \section{Communications}
 \label{sec:communications}
 
+2 way communication will be implemented between the computer and data
+logging unit. The computer sends commands to the microcontroller and
+the microcontroller sends data back to the computer.
+
+\begin{figure}[!h]
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{comms_diagram.png}
+  \end{center}
+  \caption{Communications block diagram}
+  \label{fig:commsdiag}
+\end{figure}
+
 \section{Firmware Design}
 \label{sec:firmware-design}
 
+At all times the microcontroller will be in one of the following
+states:
+
+\begin{itemize}
+  \item Streaming to pc continuously.
+  \item Standalone mode. Starts logging on button press.
+  \item Transferring logged data to pc
+  \item Command mode (Waiting for instruction such as EEPROM erase)
+\end{itemize}
+
 \section{Software Design}
 \label{sec:software-design}
+
+The software will require functions for communication with the
+microcontroller and its own analysis and display routines. For
+communication with the microcontroller, the following functions
+will be required:
+\begin{itemize}
+  \item Start logging in linked mode.
+  \item Stop logging in linked mode.
+  \item Read data from standalone operation.
+  \item Erase data.
+\end{itemize}
+The data related functions will be:
+\begin{itemize}
+  \item Ask for new data from MCU.
+  \item Read in data when it arrives.
+  \item Get all data from standalone operation.
+  \item Add to data store (initially use an array/vector. If time
+    allows, implement a database, allowing long term, high data storage).
+  \item Find interest points (eg temp over/under given set level,
+    shocks etc).
+\end{itemize}
+For display of data:
+\begin{itemize}
+  \item General GUI functions.
+  \item Graph data (OpenGL?).
+  \item Display interest points.
+  \item Allow different views.
+\end{itemize}
 
 \newpage
 \appendix
