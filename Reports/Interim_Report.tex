@@ -49,7 +49,7 @@ This project requires the development of a data logging embedded
 system. It was decided to target parcel delivery as an application,
 and to develop a system that could monitor the condition of a parcel
 though transit. For this, it requires logging of temperature,
-humidity, shock/impact and orientation. If time, we will also attempt
+humidity, shock/impact and orientation. If time allows, we will also attempt
 to monitor vibration. A prototype will be developed to show
 functionality, but this system would need to be miniaturised for
 real-world usage.
@@ -98,9 +98,9 @@ range, easily including that expected to be experienced by a parcel in
 transit. The resistor values are chosen to give an op-amp output
 voltage of $0\,\mathrm{V}$ at $-20\,\mathrm{\degrees C}$ and
 $3.3\,\mathrm{V}$ at $50\,\mathrm{\degrees C}$. The op-amp used has
-very good rail-rail operation, so may be run from a 3.3V with
-negligible affect on performance (especially as extremes of temp are
-unlikely to be experienced and at limits of reasonable linearity of
+very good rail-rail operation, so may be run from a 3.3V supply with
+negligible effect on performance (especially as extremes of temp are
+unlikely to be experienced and are at limits of good linearity of
 thermistor operation). The gain setting resistors may be knocked up a
 decade if current draw from reference divider proves too high. The
 circuit diagram is shown in appendix \ref{sec:circuit-diagrams},
@@ -110,7 +110,7 @@ figure \ref{fig:tempcond}.
 
 A $5\,\mathrm{V}$ regulator is being used to allow running from
 batteries when in standalone mode. The circuit diagram is shown in
-figure 
+figure \ref{fig:voltreg}.
 
 \section{Parts List}
 \label{sec:parts-list}
@@ -165,11 +165,12 @@ The data related functions will be:
 \begin{itemize}
   \item Ask for new data from MCU.
   \item Read in data when it arrives.
-  \item Get all data from standalone operation.
+  \item Get all saved data from standalone operation.
   \item Add to data store (initially use an array/vector. If time
-    allows, implement a database, allowing long term, high data storage).
-  \item Find interest points (eg temp over/under given set level,
-    shocks etc).
+    allows, implement a database, allowing long term, high data
+    storage).
+  \item Find interest points (eg temperature over/under given set
+    level, shocks etc).
 \end{itemize}
 For display of data:
 \begin{itemize}
