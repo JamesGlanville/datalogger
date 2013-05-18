@@ -128,7 +128,11 @@ GPIO_InitTypeDef GPIO_InitStruct;
 
 uint16_t LCD_Data;
 
+				void TIM2_IRQHandler(void) {
 
+					LCD_ClockTick();
+					TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
+				}
 
 void LCD_Initalize(int BusWidth, int DisplayLines, int FontSize){
 struct TASK Task;
