@@ -66,3 +66,41 @@ void send_command(int n)
 /******** User comms functions ********/
 
 int read_sensor_data(int *value)
+{
+  BYTE buffer[3];
+  int timeout = 100000;
+
+  if (! com_port_open)
+    {
+      wxLogMessage(wxT("Error:\n No open COM port."));
+      return 0;
+    }
+
+  // flush RS232 input buffer
+  FlushInQ(com_port_no);
+
+  // send ADC read command
+  tx_buff[0] = 1;
+  send_command(1);
+
+  // wait for returned ADC value
+  while((GetInQLen(com_port_no) < 3) && (timeout > 0))
+    {
+      timeout--;
+    }
+
+  // if timeout, something's wrong
+  if (timeout == 0)
+    {
+      wxLogMessage(wxT("Error:\n No received Data"));
+      exit(-1);
+    }
+
+  // read 3 bytes from input buffer
+  ComRd(com_port_no, buffer, 3);
+
+  // assign received value
+  *value = buffer[1] * 256 + buffer[2];
+
+  return 0;
+}

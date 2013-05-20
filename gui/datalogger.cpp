@@ -90,3 +90,4 @@ void MyFrame::OnEraseData(wxCommandEvent& event)
 {
   wxLogMessage(wxT("Erasing Data from module."));
 }
+
