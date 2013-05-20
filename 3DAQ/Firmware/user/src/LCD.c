@@ -1,4 +1,14 @@
-#include "LCD.h"
+//Ported from arduino LiquidCrystal library by me (James Glanville) for the STM32.
+
+/*
+PB0 DB5
+PA1 RS
+PA0 E 
+PC5 DB7
+PC4 DB4
+PA7 DB6*/
+
+//^^Pinout
 
 #include <stdio.h>
 #include <string.h>
@@ -6,30 +16,20 @@
 #include "stm32F10x.h"
 #include "stm32f10x_gpio.h"
 #include "LEDs.h"
+#include "LCD.h"
 
-  uint8_t _rs_pin; // LOW: command.  HIGH: character.
-  uint8_t _rw_pin; // LOW: write to LCD.  HIGH: read from LCD.
-  uint8_t _enable_pin; // activated by a HIGH pulse.
-  uint8_t _data_pins[8];
+uint8_t _rs_pin; // LOW: command.  HIGH: character.
+uint8_t _rw_pin; // LOW: write to LCD.  HIGH: read from LCD.
+uint8_t _enable_pin; // activated by a HIGH pulse.
+uint8_t _data_pins[8];
 
-  uint8_t _displayfunction;
-  uint8_t _displaycontrol;
-  uint8_t _displaymode;
+uint8_t _displayfunction;
+uint8_t _displaycontrol;
+uint8_t _displaymode;
+uint8_t _initialized;
+uint8_t _numlines,_currline;
 
-  uint8_t _initialized;
-
-  uint8_t _numlines,_currline;
-
-	/*
-	PB0 DB5
-	PA1 RS
-	PA0 E 
-	PC5 DB7
-	PC4 DB4
-	PA7 DB6
-	*/
-
-void delayMicroseconds(int delay)
+void delayMicroseconds(int delay) //This does not delay for microseconds at all, it is a hacky fudge. I should fix this.
 {
 	int i;
 		for (i = 0; i < delay*100; i++)
@@ -51,29 +51,17 @@ void begin(uint8_t cols, uint8_t lines, uint8_t dotsize) {
   _numlines = lines;
   _currline = 0;
 
-  // for some 1 line displays you can select a 10 pixel high font
-  if ((dotsize != 0) && (lines == 1)) {
-    _displayfunction |= LCD_5x10DOTS;
-  }
-
   // SEE PAGE 45/46 FOR INITIALIZATION SPECIFICATION!
   // according to datasheet, we need at least 40ms after power rises above 2.7V
   // before sending commands. Arduino can turn on way befer 4.5V so we'll wait 50
   delayMicroseconds(50000); 
   // Now we pull both RS and R/W low to begin commands
 	GPIO_ResetBits (GPIOA,GPIO_Pin_1);
-	//digitalWrite(_rs_pin, LOW);
 	GPIO_ResetBits (GPIOA,GPIO_Pin_0);
-  //digitalWrite(_enable_pin, LOW);
-  //if (_rw_pin != 255) { 
-  // digitalWrite(_rw_pin, LOW);
-  //}
-  
 
     // this is according to the hitachi HD44780 datasheet
     // page 45 figure 23
 
-   if (1) {
     // this is according to the hitachi HD44780 datasheet
     // figure 24, pg 46
 
@@ -91,21 +79,6 @@ void begin(uint8_t cols, uint8_t lines, uint8_t dotsize) {
 
     // finally, set to 4-bit interface
     write4bits(0x02); 
-  } else {
-    // this is according to the hitachi HD44780 datasheet
-    // page 45 figure 23
-
-    // Send function set command sequence
-    command(LCD_FUNCTIONSET | _displayfunction);
-    delayMicroseconds(4500);  // wait more than 4.1ms
-
-    // second try
-    command(LCD_FUNCTIONSET | _displayfunction);
-    delayMicroseconds(150);
-
-    // third go
-    command(LCD_FUNCTIONSET | _displayfunction);
-  }
 
   // turn the display on with no cursor or blinking default
   _displaycontrol = LCD_DISPLAYON | LCD_CURSOROFF | LCD_BLINKOFF;  
@@ -223,27 +196,20 @@ int write(uint8_t value) {
 
 // write either command or data, with automatic 4/8-bit selection
 void send(uint8_t value, uint8_t mode) {
-	if (mode==1)
-	{
-			GPIO_SetBits (GPIOA,GPIO_Pin_1);
-
-	}
-	else
-	{
-			GPIO_ResetBits (GPIOA,GPIO_Pin_1);
-	}
-  //digitalWrite(_rs_pin, mode);
+	if (mode==1) {
+		GPIO_SetBits (GPIOA,GPIO_Pin_1);}
+	else {
+		GPIO_ResetBits (GPIOA,GPIO_Pin_1);}
   
     write4bits(value>>4);
     write4bits(value);
-  
 }
 
 void pulseEnable(void) {
-		GPIO_ResetBits (GPIOA,GPIO_Pin_0);
-  delayMicroseconds(10);    
+	GPIO_ResetBits (GPIOA,GPIO_Pin_0);
+	delayMicroseconds(10);    
 	GPIO_SetBits (GPIOA,GPIO_Pin_0);
-  delayMicroseconds(10);    // enable pulse must be >450ns
+	delayMicroseconds(10);    // enable pulse must be >450ns
 	GPIO_ResetBits (GPIOA,GPIO_Pin_0);
 	delayMicroseconds(100);   // commands need > 37us to settle
 }
@@ -258,6 +224,5 @@ void write4bits(uint8_t value) {
 		if ((value >> 3) & 0x01){GPIO_SetBits (GPIOC,GPIO_Pin_5);} //7
 		else{GPIO_ResetBits (GPIOC,GPIO_Pin_5);}
   
-
    pulseEnable();
 }
