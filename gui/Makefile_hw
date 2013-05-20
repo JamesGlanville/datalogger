@@ -2,9 +2,9 @@ OPENGL_LIBS = -lglut -lGL -lGLU
 
 CXX = $(shell wx-config --cxx)
 
-SRC = datalogger.cpp
+SRC = Hello_World.cpp
 
-G_OBJECTS = datalogger.o
+G_OBJECTS = Hello_World.o
 
 # implementation
 
@@ -13,13 +13,13 @@ G_OBJECTS = datalogger.o
 .cpp.o :
 	$(CXX) -c `wx-config --cxxflags` -g -o $@ $<
 
-all:    datalogger
+all:    Hello_World
 
-datalogger: $(G_OBJECTS)
-	 $(CXX) -o datalogger $(G_OBJECTS) `wx-config --libs --gl_libs` $(OPENGL_LIBS)
+Hello_World: $(G_OBJECTS)
+	 $(CXX) -o Hello_World $(G_OBJECTS) `wx-config --libs --gl_libs` $(OPENGL_LIBS)
 
 clean: 
-	rm -f *.o
+	rm -f *.o logsim guitest
 
 depend:
 	makedepend $(SRC)

@@ -29,7 +29,7 @@ public:
 
 enum
 {
-   ID_Hello = 1
+  ID_Hello = 1
 };
 
 
