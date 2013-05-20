@@ -48,6 +48,8 @@ volatile int value_received;
 //ADC variables
 volatile uint8_t new_data;
 
+volatile unsigned int LEDbyte;
+
 //------------------------------------------------------------------------------
 
 //Function prototypes for functions in main.c file
@@ -214,7 +216,9 @@ int main(void)
 		uint8_t received_data[2];
 	//I2C_TypeDef* I2Cx;
 	//Initalise LEDs
-	LED_init();
+	
+	init_GPIO_pins();
+	//LED_init();
 	
 	//Short delay during which we can communicate with MCU via debugger even if later user code causes error such as sleep state with no wakeup event that prevents debugger interface working
 	//THIS MUST COME BEFORE ALL USER CODE TO ENSURE CHIPS CAN BE REPROGRAMMED EVEN IF THEY GET STUCK IN A SLEEP STATE LATER
@@ -245,7 +249,8 @@ int main(void)
 	
 	//I2C_start(I2C1, SLAVE_ADDRESS, I2C_Direction_Transmitter);
 	LED_off();
-		LCD_init();
+	//	LCD_init();
+		LEDbyte =0;
 
 //	write4bits(1);
 //	write4bits(2);
