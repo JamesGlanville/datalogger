@@ -167,6 +167,7 @@ void I2C_stop(I2C_TypeDef* I2Cx){
 int main(void)
 {
 	int i;
+	int yumbyte;
 	uint8_t received_data[2];
 	unsigned char REG_ADDRESS[3];
 
@@ -198,6 +199,7 @@ int main(void)
 	
 	//I2C_start(I2C1, SLAVE_ADDRESS, I2C_Direction_Transmitter);
 	LEDbyte =0;
+	yumbyte=0;
 	
 	LCDINIT();
 	home();
@@ -222,43 +224,66 @@ int main(void)
 	I2C_Init(I2Cx, I2C_InitStruct);
 	init_I2C1();
 
-   	I2C_start(I2C1, SLAVE_ADDRESS, I2C_Direction_Transmitter); // start a transmission in Master transmitter mode
+   	I2C_start(I2C1, ACCEL_ADDR, I2C_Direction_Transmitter); // start a transmission in Master transmitter mode
 	I2C_write(I2C1, MODE); // write one byte to the slave
 	I2C_write(I2C1, 0x00); // write another byte to the slave
 	I2C_stop(I2C1); // stop the transmission
 	
 	delayMicroseconds(2);
 	
-   	I2C_start(I2C1, SLAVE_ADDRESS, I2C_Direction_Transmitter); // start a transmission in Master transmitter mode
+   	I2C_start(I2C1, ACCEL_ADDR, I2C_Direction_Transmitter); // start a transmission in Master transmitter mode
 	I2C_write(I2C1, INTSU); // write one byte to the slave
 	I2C_write(I2C1, 0x10); // write another byte to the slave
 	I2C_stop(I2C1); // stop the transmission
 	
 	delayMicroseconds(2);
 	
-   	I2C_start(I2C1, SLAVE_ADDRESS, I2C_Direction_Transmitter); // start a transmission in Master transmitter mode
+   	I2C_start(I2C1, ACCEL_ADDR, I2C_Direction_Transmitter); // start a transmission in Master transmitter mode
 	I2C_write(I2C1, SR); // write one byte to the slave
 	I2C_write(I2C1, 0x00); // write another byte to the slave
 	I2C_stop(I2C1); // stop the transmission
 	
 	delayMicroseconds(2);
 	
-   	I2C_start(I2C1, SLAVE_ADDRESS, I2C_Direction_Transmitter); // start a transmission in Master transmitter mode
+   	I2C_start(I2C1, ACCEL_ADDR, I2C_Direction_Transmitter); // start a transmission in Master transmitter mode
 	I2C_write(I2C1, MODE); // write one byte to the slave
 	I2C_write(I2C1, 0x01); // write another byte to the slave
 	I2C_stop(I2C1); // stop the transmission
 	
 	delayMicroseconds(2);
 	
-	I2C_start(I2C1, SLAVE_ADDRESS, I2C_Direction_Receiver); // start a transmission in Master receiver mode
+	I2C_start(I2C1, ACCEL_ADDR, I2C_Direction_Transmitter); // start a transmission in Master receiver mode
 
 	IC2_write(I2C1,0x00);
-	I2C_start(I2C1, SLAVE_ADDRESS, I2C_Direction_Receiver); // start a transmission in Master receiver mode
+	I2C_start(I2C1, ACCEL_ADDR, I2C_Direction_Receiver); // start a transmission in Master receiver mode
 
 	REG_ADDRESS[0] = I2C_read_ack(I2C1); // read one byte and request another byte
 	REG_ADDRESS[1] = I2C_read_ack(I2C1); // read one byte and request another byte
 	REG_ADDRESS[2] = I2C_read_nack(I2C1); // read one byte and don't request another byte
 	I2C_stop(I2C1); // stop the transmission
+
+	delayMicroseconds(2);
+	
+	I2C_start(I2C1, EEPROM_ADDR, I2C_Direction_Transmitter); // start a transmission in Master receiver mode
+	I2C_write(I2C1, 0x00); // write one byte to the slave
+	I2C_write(I2C1, 0x00); // write one byte to the slave
+	I2C_write(I2C1, 0xBA); // write one byte to the slave
+	I2C_stop(I2C1); // stop the transmission
+
+	delayMicroseconds(2);
+
+	I2C_start(I2C1, EEPROM_ADDR, I2C_Direction_Transmitter); // start a transmission in Master receiver mode
+	I2C_write(I2C1, 0x00); // write one byte to the slave
+	I2C_write(I2C1, 0x00); // write one byte to the slave
+	I2C_start(I2C1, EEPROM_ADDR, I2C_Direction_Transmitter); // start a transmission in Master receiver mode
+
+//	I2C_stop(I2C1); // stop the transmission
+	yumbyte = I2C_read_nack(I2C1);
+	I2C_stop(I2C1); // stop the transmission
+	delayMicroseconds(2);
+
+
+	
 
 	//Main loop
 	//------------------------------------------------------------------------------
