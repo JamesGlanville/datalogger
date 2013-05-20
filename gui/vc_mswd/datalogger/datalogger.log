@@ -1,0 +1,11 @@
+﻿Build started 20/05/2013 19:37:56.
+     1>Project "C:\Users\james_000\Github\datalogger\gui\datalogger.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"vc_mswd\datalogger.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\wxWidgets-2.8.12\lib\vc_lib" wxmsw28d_core.lib wxbase28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib winmm.lib comctl32.lib rpcrt4.lib wsock32.lib odbc32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:".\vc_mswd\datalogger.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\vc_mswd\datalogger.lib" /MACHINE:X86 /SAFESEH .\vc_mswd\datalogger\sample.res
+         .\vc_mswd\datalogger\datalogger.obj
+         datalogger.vcxproj -> C:\Users\james_000\Github\datalogger\gui\.\vc_mswd\datalogger.exe
+     1>Done Building Project "C:\Users\james_000\Github\datalogger\gui\datalogger.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.84

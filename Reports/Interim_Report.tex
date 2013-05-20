@@ -7,6 +7,11 @@
 \usepackage[english]{babel}            % Set document language
 \usepackage{fullpage}                  % Set up page for small margins etc
 
+\setlength{\hoffset}{-1.5cm}
+\addtolength{\textwidth}{3cm}
+\setlength{\voffset}{-1.8cm}
+\addtolength{\textheight}{3.6cm}
+
 \usepackage{graphicx}                  % For including images in document
 \usepackage{placeins}                  % Allows use of \FloatBarrier
 % to avoid images or tables
@@ -54,9 +59,9 @@ to monitor vibration. A prototype will be developed to show
 functionality, but this system would need to be miniaturised for
 real-world usage.
 
-For the project, the circuit design was shared but overseen
-primarily by James. Firmware is to be developed by James while Andrew
-will develop the computer side software.
+For the project, the circuit design was shared between both team
+members. Firmware is to be developed by James while Andrew will
+develop the computer side software.
 
 \section{Circuit Design}
 
@@ -110,14 +115,14 @@ figure \ref{fig:tempcond}.
 
 A $5\,\mathrm{V}$ regulator is being used to allow running from
 batteries when in standalone mode. The circuit diagram is shown in
-figure \ref{fig:voltreg}.
+appendix \ref{sec:circuit-diagrams}, figure \ref{fig:voltreg}.
 
 \section{Parts List}
 \label{sec:parts-list}
 
 The full parts list is shown in appendix
 \ref{sec:full-parts-list}. The total cost is $\pounds 13.18$, but not
-all of these will be used (bicolour LEDs came in pack of 5). Key
+all of these parts will be used (bicolour LEDs came in pack of 5). Key
 features are the accelerometer, EEPROM and LCD display.
 
 \section{Communications}
@@ -125,15 +130,10 @@ features are the accelerometer, EEPROM and LCD display.
 
 2 way communication will be implemented between the computer and data
 logging unit. The computer sends commands to the microcontroller and
-the microcontroller sends data back to the computer.
+the microcontroller sends data back to the computer. The block diagram
+for the communications is shown in appendix
+\ref{sec:circuit-diagrams}, figure \ref{fig:commsdiag}.
 
-\begin{figure}[!h]
-  \begin{center}
-    \includegraphics[width=0.8\textwidth]{comms_diagram.png}
-  \end{center}
-  \caption{Communications block diagram}
-  \label{fig:commsdiag}
-\end{figure}
 
 \section{Firmware Design}
 \label{sec:firmware-design}
@@ -217,6 +217,16 @@ For display of data:
   \caption{Voltage Regulator}
   \label{fig:voltreg}
 \end{figure}
+
+\begin{figure}[!h]
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{comms_diagram.png}
+  \end{center}
+  \caption{Communications block diagram}
+  \label{fig:commsdiag}
+\end{figure}
+
+\FloatBarrier
 
 \section{Full Parts List}
 \label{sec:full-parts-list}
