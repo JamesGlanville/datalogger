@@ -1,5 +1,3 @@
-
-
 #include "stm32F10x.h"
 #include "LEDs.h"
 #include "UART.h"
@@ -8,7 +6,6 @@
 #include "stm32f10x_gpio.h"
 #include "stm32f10x_rcc.h"
 #include "LCD.h"
-#include "HD44780.h"
 
 #define SLAVE_ADDRESS 0x4C   
 //0xA1 //0xBB //0xA1
@@ -211,14 +208,9 @@ void I2C_stop(I2C_TypeDef* I2Cx){
 int main(void)
 {
 	int i;
-	
-	
-		uint8_t received_data[2];
-	//I2C_TypeDef* I2Cx;
-	//Initalise LEDs
-	
+	uint8_t received_data[2];
+
 	init_GPIO_pins();
-	//LED_init();
 	
 	//Short delay during which we can communicate with MCU via debugger even if later user code causes error such as sleep state with no wakeup event that prevents debugger interface working
 	//THIS MUST COME BEFORE ALL USER CODE TO ENSURE CHIPS CAN BE REPROGRAMMED EVEN IF THEY GET STUCK IN A SLEEP STATE LATER
@@ -226,9 +218,7 @@ int main(void)
 	{
 		LED_on();
 	}
-	
-	//LCDINIT();
-	
+		
 	//I2C_Init(I2Cx, I2C_InitStruct);
 	//init_I2C1();
 	
@@ -249,89 +239,28 @@ int main(void)
 	
 	//I2C_start(I2C1, SLAVE_ADDRESS, I2C_Direction_Transmitter);
 	LED_off();
-	//	LCD_init();
-		LEDbyte =0;
-
-//	write4bits(1);
-//	write4bits(2);
-//	write4bits(4);
-//	write4bits(8);
+	LEDbyte =0;
 	
-	
-	
-LCDINIT();
-home();
-clear();
-display();
-cursor();
-blink();
+	LCDINIT();
+	home();
+	clear();
+	display();
+	cursor();
+	blink();
 	GPIO_SetBits(GPIOC, GPIO_Pin_2);
 
-write('H');
-write('E');
-write('L');
-write('L');
-write('O');
-while(1);
-
-write('A');
-write('A');
-write('A');
-write('A');
-write('A');
-write('A');
-write('A');
-write('A');
-//blink();
-
-
-
-	LCD_Initalize(BUS_WIDTH_4, DISPLAY_LINES_2, FONT_5x8);
-
-	LCD_Clear();
-		
-	LCD_Home();
-//	LCD_DisplayScroll(False);
-
-				LCD_Print("HELLO\0");
-				LCD_Print("HELLO\0");
-				LCD_Print("HELLO\0");
-				LCD_Print("HELLO\0");
-				LCD_Print("HELL\0");
-				LCD_Print("HELLO\0");
-				while(1);
-
-	//			LCD_CursorOn(5);
-
-//while(1);
-// First message.
-//	LCD_Print("HELLO\0");
-/*	LCD_Print("HELLO WORLD");
-	LCD_Print("HELLO WORLD");
-	LCD_Print("HELLO WORLD");
-	LCD_Print("HELLO WORLD");*/
-
-	
-	//GPIO_ResetBits(GPIOC, GPIO_Pin_9);
-//	GPIO_SetBits(GPIOC, GPIO_Pin_9);	
-	
-	
-	
-	/*
-	PB0 DB5
-	PA1 RS
-	PA0 E 
-	PC5 DB7
-	PC4 DB4
-	PA7 DB6
-	*/
+	write('H');
+	write('E');
+	write('L');
+	write('L');
+	write('O');
+	//while(1);
 
 	//Initialise UART for serial comms with PC
-	//UART_init();
+	UART_init();
 	
 	//Initialise ADC
-//	ADC_init();
-	
+	ADC_init();
 	
 	
 	//Main loop
@@ -339,24 +268,6 @@ write('A');
 	while (1)
 	{
 		int i;
-	//	for (i=0;i<255;i++)
-
-		//write(i);
-		//write('A');
-		//	LCD_Print("HELLO WORLD\0");
-		//	LCD_Home();
-	//LCD_Clear();
-	//LCD_MoveCursor(3);
-	//LCD_MoveDisplay(3);
-	//LCD_DisplayOn(False);
-	//LCD_DisplayScroll(False);
-	//LCD_CursorOn(True);
-	//LCD_EntryIncrement(False);
-	//LCD_CursorBlink(True);
-//	LCD_MoveToPosition(0x40);
-
-//	LCD_Print("I mean here\0");
-
 	//	check_and_process_received_command();
 	}
 	//------------------------------------------------------------------------------
@@ -366,7 +277,7 @@ write('A');
 
 //Other functions
 
-//Simple function to check for abd process one of two received commands from PC via global varoable flags
+//Simple function to check for and process one of two received commands from PC via global varoable flags
 void check_and_process_received_command(void)
 {
 	uint16_t ADC_word;
