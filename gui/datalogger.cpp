@@ -5,39 +5,8 @@ Author: Andy Holt
 Date: Mon 20 May 2013 15:30
 */
 
-#include <wx/wx.h>
-
-//class wxApp;
-
-class MyApp: public wxApp
-{
-public:
-  virtual bool OnInit();
-};
-
-class MyFrame: public wxFrame
-{
-public:
-  MyFrame (const wxString& title, const wxPoint& pos, const wxSize& size);
-  
-  //private:
-  void OnStartLog(wxCommandEvent& event);
-  void OnStopLog(wxCommandEvent& event);
-  void OnGetData(wxCommandEvent& event);
-  void OnEraseData(wxCommandEvent& event);
-  void OnExit(wxCommandEvent& event);
-  void OnAbout(wxCommandEvent& event);
-  DECLARE_EVENT_TABLE();
-};
-
-enum
-  {
-    ID_StartLog,
-    ID_StopLog,
-    ID_GetData,
-    ID_EraseData,
-  };
-
+//#include <wx/wx.h>
+#include "datalogger.h"
 
 BEGIN_EVENT_TABLE(MyFrame, wxFrame)
   EVT_MENU(ID_StartLog, MyFrame::OnStartLog)
@@ -70,24 +39,6 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
   wxMenu *menuData = new wxMenu;
 
   menuData->Append(ID_StartLog, wxT("&Start Logging\tCtrl-L"), wxT("Help string: Begin logging with board plugged in."));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   menuData->Append(ID_StopLog, wxT("&Stop Logging\tCtrl-K"), wxT("Help string: Stop logging with board plugged in."));
   menuData->Append(ID_GetData, wxT("&Get Data\tCtrl-D"), wxT("Help string: Get data from board."));
   menuData->Append(ID_EraseData, wxT("&Erase Data\tCtrl-E"), wxT("Help string: Erase chip memory."));
@@ -106,6 +57,8 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
   CreateStatusBar();
   SetStatusText(wxT("Welcome to Parcel Tracker!"));
 }
+
+/********************** Callback Functions ******************************/
 
 void MyFrame::OnExit(wxCommandEvent& event)
 {
