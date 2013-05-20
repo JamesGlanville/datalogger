@@ -7,6 +7,7 @@
 #include "stm32F10x_i2c.h"
 #include "stm32f10x_gpio.h"
 #include "stm32f10x_rcc.h"
+#include "LCD.h"
 #include "HD44780.h"
 
 #define SLAVE_ADDRESS 0x4C   
@@ -222,6 +223,8 @@ int main(void)
 		LED_on();
 	}
 	
+	//LCDINIT();
+	
 	//I2C_Init(I2Cx, I2C_InitStruct);
 	//init_I2C1();
 	
@@ -242,26 +245,66 @@ int main(void)
 	
 	//I2C_start(I2C1, SLAVE_ADDRESS, I2C_Direction_Transmitter);
 	LED_off();
+		LCD_init();
+
+//	write4bits(1);
+//	write4bits(2);
+//	write4bits(4);
+//	write4bits(8);
 	
-	LCD_init();
 	
-/*		LCD_ConfigurePort(GPIOE,
-					GPIO_Pin_6, GPIO_Pin_4, GPIO_Pin_5,
-					NULL, NULL, NULL, NULL,
-					GPIO_Pin_2, GPIO_Pin_3, GPIO_Pin_0, GPIO_Pin_1
-					);*/
+	
+LCDINIT();
+home();
+clear();
+display();
+cursor();
+blink();
+	GPIO_SetBits(GPIOC, GPIO_Pin_2);
+
+write('H');
+write('E');
+write('L');
+write('L');
+write('O');
+while(1);
+
+write('A');
+write('A');
+write('A');
+write('A');
+write('A');
+write('A');
+write('A');
+write('A');
+//blink();
+
+
 
 	LCD_Initalize(BUS_WIDTH_4, DISPLAY_LINES_2, FONT_5x8);
 
-		LCD_Clear();
-	LCD_DisplayScroll(False);
+	LCD_Clear();
+		
+	LCD_Home();
+//	LCD_DisplayScroll(False);
 
+				LCD_Print("HELLO\0");
+				LCD_Print("HELLO\0");
+				LCD_Print("HELLO\0");
+				LCD_Print("HELLO\0");
+				LCD_Print("HELL\0");
+				LCD_Print("HELLO\0");
+				while(1);
+
+	//			LCD_CursorOn(5);
+
+//while(1);
 // First message.
+//	LCD_Print("HELLO\0");
+/*	LCD_Print("HELLO WORLD");
 	LCD_Print("HELLO WORLD");
 	LCD_Print("HELLO WORLD");
-	LCD_Print("HELLO WORLD");
-	LCD_Print("HELLO WORLD");
-	LCD_Print("HELLO WORLD");
+	LCD_Print("HELLO WORLD");*/
 
 	
 	//GPIO_ResetBits(GPIOC, GPIO_Pin_9);
@@ -271,18 +314,18 @@ int main(void)
 	
 	/*
 	PB0 DB5
-	PB1 E
-	PB2 RS
+	PA1 RS
+	PA0 E 
 	PC5 DB7
 	PC4 DB4
 	PA7 DB6
 	*/
 
 	//Initialise UART for serial comms with PC
-	UART_init();
+	//UART_init();
 	
 	//Initialise ADC
-	ADC_init();
+//	ADC_init();
 	
 	
 	
@@ -290,7 +333,24 @@ int main(void)
 	//------------------------------------------------------------------------------
 	while (1)
 	{
-			LCD_Print("HELLO WORLD");
+		int i;
+	//	for (i=0;i<255;i++)
+
+		//write(i);
+		//write('A');
+		//	LCD_Print("HELLO WORLD\0");
+		//	LCD_Home();
+	//LCD_Clear();
+	//LCD_MoveCursor(3);
+	//LCD_MoveDisplay(3);
+	//LCD_DisplayOn(False);
+	//LCD_DisplayScroll(False);
+	//LCD_CursorOn(True);
+	//LCD_EntryIncrement(False);
+	//LCD_CursorBlink(True);
+//	LCD_MoveToPosition(0x40);
+
+//	LCD_Print("I mean here\0");
 
 	//	check_and_process_received_command();
 	}

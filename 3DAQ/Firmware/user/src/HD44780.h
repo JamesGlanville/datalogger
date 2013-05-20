@@ -178,8 +178,7 @@ void LCD_WaitNotBusy(void);
 void LCD_ClockTick(void);
 uint16_t LCD_ConvertDataToPortData(uint16_t Data);
 uint16_t LCD_ConvertPortDataToData(uint16_t PortData);
-void LCD_Port_Set_Input(void);
-void LCD_Port_Set_Output(void);
+
 
 struct TASK* LCD_ExaminTask(void);
 void LCD_DeleteTask(void);

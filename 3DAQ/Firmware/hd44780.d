@@ -30,3 +30,4 @@ hd44780.o: .\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_tim.h
 hd44780.o: .\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_usart.h
 hd44780.o: .\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_wwdg.h
 hd44780.o: .\lib\stm32f10x_stdperiph_driver\inc\misc.h
+hd44780.o: .\user\inc\LEDs.h

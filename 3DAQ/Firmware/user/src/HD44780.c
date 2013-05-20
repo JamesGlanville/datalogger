@@ -1,101 +1,13 @@
-//******************************************************************************
-//  HD44780 LCD Driver			Date: October 24, 2012
-//	by Abe Barker				abebarker@hotmail.com
-//******************************************************************************
-//
-//		User functions:
-//
-//		LCD_ConfigurePort(Port,		[GPIOA, GPIOB, GPIOC, GPIOD, GPIOE, GPIOF, GPIOG, GPIOH or GPIOI]
-//							RS,		[GPIO_Pin_0 to GPIO_Pin_15]
-//							RW,		[GPIO_Pin_0 to GPIO_Pin_15]
-//							E,		[GPIO_Pin_0 to GPIO_Pin_15]
-//							DB0,	[GPIO_Pin_0 to GPIO_Pin_15 or NULL (0)]
-//							DB1,	[GPIO_Pin_0 to GPIO_Pin_15 or NULL (0)]
-//							DB2,	[GPIO_Pin_0 to GPIO_Pin_15 or NULL (0)]
-//							DB3,	[GPIO_Pin_0 to GPIO_Pin_15 or NULL (0)]
-//							DB4,	[GPIO_Pin_0 to GPIO_Pin_15]
-//							DB5, 	[GPIO_Pin_0 to GPIO_Pin_15]
-//							DB6,	[GPIO_Pin_0 to GPIO_Pin_15]
-//							DB7		[GPIO_Pin_0 to GPIO_Pin_15]
-//					);
-//		 LCD_Initalize(BusWidth, 	[BUS_WIDTH_4, BUS_WIDTH_8]
-//					DisplayLines, 	[DISPLAY_LINES_1, DISPLAY_LINES_2]
-//					Font	 		[FONT_5x8, FONT_5x10]
-//					);
-//		LCD_Home()		// Move cursor to home position.
-//		LCD_Clear()		// Clear the entire display
-//		LCD_Print(char* str)	// Print a null terminated string.	i.e. "String\0"
-//		LCD_MoveCursor(int value)	// Move cursor +/- places from its current location
-//		LCD_MoveDisplay(int value)	// Shift the display +/- places (+ = Right) (- = Left)
-//		LCD_DisplayOn(Bool value)	// Turn screen on or off. (Could be used to flash message)
-//		LCD_DisplayScroll(Bool value)	// False = Cursor moves, True = Display moves (Probably better to have cursor at end of screen or have the entry decrement)
-//		LCD_EntryIncrement(Bool value)	// True = Characters entered left to right, False = Characters entered right to left. (Probably better to have cursor at right side of screen when doing entry if False)
-//		LCD_CursorOn(Bool value)		// Underscore at cursor position
-//		LCD_CursorBlink(Bool value)		// Character block blinks black, white
-//		LCD_MoveToPosition(int value)	// Move the cursor to any position (for 2 line display second line starts at 0x40)
-//		LCD_CustChar(uint8_t array[], int charNum)	// Custom characters are passed in an array of bytes (array[8])
-//
-//
-//
-//
-//	   Two things must be done before using this utility:
-//		ConfigurePort
-//		InitalizeLCD
-//
-//	Example:
-//		LCD_ConfigurePort(GPIOE,
-//				GPIO_Pin_6,	GPIO_Pin_4,	GPIO_Pin_5,
-//				NULL, NULL,	NULL, NULL,
-//				GPIO_Pin_2,	GPIO_Pin_3, GPIO_Pin_0,	GPIO_Pin_1
-//				);
-//		LCD_Initalize(BUS_WIDTH_4, DISPLAY_LINES_2, FONT_5x8);
-//
-//
-//
-//
-//
-//		Custom Character array example
-//
-//			uint8_t CustChar1[8] = {x00100,
-//			  						x01110,
-//			  						x10101,
-//			  						x00100,
-//			  						x00100,
-//			  						x00100,
-//			  						x00100,
-//			  						x00100};
-//
-//
-//			LCD_CustChar(CustChar1, 0);
-//			LCD_CustChar(CustChar1, 1);
-//
-//			LCD_Print("Some text. \x08\1\ \0");
-//
-//			* Note: The custom character in first RAM address must be accessed with escape
-//					sequence "\x08" since "\0" is used to mark the end of text.
-//					"\1" to "\7" form of escape sequence is understood by compiler but not "\8"
-//					"\x08" to "\x0F" repeat the RAM addresses 0 through 7
-//
-//
-//
-//
-//
-//			* Additional Note: The Interrupt Handler is located in the
-//				"stm32f4xx_it.c" file. It looks like the following code.
-//
-//				void TIM2_IRQHandler(void) {
-//
-//					LCD_ClockTick();
-//					TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
-//				}
-//
-//
-//
-//******************************************************************************
-
 #include "HD44780.h"
 #include "stm32F10x.h"
+#include "LEDs.h"
 
+				void TIM2_IRQHandler(void) {
+
+					LCD_ClockTick();
+					TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
+				}
+				
 // Create a stack for commands
 struct TASK Task_Queue[QUEUE_SIZE];
 uint16_t TopOfQueue, BottomOfQueue;
@@ -128,12 +40,6 @@ GPIO_InitTypeDef GPIO_InitStruct;
 
 uint16_t LCD_Data;
 
-				void TIM2_IRQHandler(void) {
-
-					LCD_ClockTick();
-					TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
-				}
-
 void LCD_Initalize(int BusWidth, int DisplayLines, int FontSize){
 struct TASK Task;
 	TopOfQueue = 0;
@@ -144,14 +50,16 @@ struct TASK Task;
 	HD44780_Display_Shift = DISPLAY_SHIFT_OFF;
 	HD44780_Display_On_Off = DISPLAY_ON;
 	HD44780_Cursor_On_Off = CURSOR_ON;
-	HD44780_Cursor_Blink = CURSOR_BLINK_ON;
+	HD44780_Cursor_Blink = CURSOR_BLINK_OFF;
 	HD44780_Bus_Width = BusWidth;
 	HD44780_Display_Lines = DisplayLines;
 	HD44780_Font_Size = FontSize;
 
+
 	LCD_InitalizeRCC();
 	LCD_InitalizeNVIC();
 	LCD_TIM_Config();
+
 	LCD_HardInitalize();
 
 
@@ -424,14 +332,20 @@ void LCD_ClockTick(){
 //struct TASK Task;
 struct TASK *Task;
 uint16_t Temp;
+	int i;
 
 // Pull a command off the stack
 
 Task = LCD_ExaminTask();
 
+	//	for (i = 0; i < 100; i++)
+//	{
+//		LED_on();
+//	}
 
 // Do command
 switch (Task->Command){
+
 	case WAIT:
 		if(Task->Data == 0){		// Are we waiting for something?
 			LCD_DeleteTask();
@@ -443,51 +357,38 @@ switch (Task->Command){
 
 	case WriteData:
 		if(Task->Iter == 3){
-			GPIO_ResetBits(GPIOB, GPIO_Pin_1); 	// Toggle the enable bit off
+			GPIO_ResetBits(GPIOA, GPIO_Pin_0); 	// Toggle the enable bit off
 			LCD_DeleteTask();					// We are done with this task.
 			break;
 		}
 		if(Task->Iter == 2){
 			// Output the lower nibble of data
-//JAMES			LCD_Port_Set_Output();
-			
-						
-
-			GPIO_WriteBit(GPIOB, GPIO_Pin_2, (BitAction)((Task->Data & 0x0200)>>8));
-//			GPIO_WriteBit(GPIO, LCD_RW, (BitAction)((Task->Data & 0x0100)>>8));
+//			LCD_Port_Set_Output();
+			GPIO_WriteBit(GPIOA, GPIO_Pin_1, (BitAction)((Task->Data & 0x0200)>>8));
+//			GPIO_WriteBit(LCD_Port, LCD_RW, (BitAction)((Task->Data & 0x0100)>>8));
 			GPIO_WriteBit(GPIOC, GPIO_Pin_5, (BitAction)(Task->Data & 0x0008));
 			GPIO_WriteBit(GPIOA, GPIO_Pin_7, (BitAction)(Task->Data & 0x0004));
 			GPIO_WriteBit(GPIOB, GPIO_Pin_0, (BitAction)(Task->Data & 0x0002));
 			GPIO_WriteBit(GPIOC, GPIO_Pin_4, (BitAction)(Task->Data & 0x0001));
 
-			
-			GPIO_SetBits(GPIOB, GPIO_Pin_1);		// Toggle Enable pin on
+			GPIO_SetBits(GPIOA, GPIO_Pin_0);		// Toggle Enable pin on
 			Task->Iter ++;		// Increase the iteration value so we know we have been though once already
 			break;
 		}
 		if(Task->Iter == 1){
-			GPIO_ResetBits(GPIOB, GPIO_Pin_1); 	// Toggle the enable bit off
-			if(HD44780_Bus_Width == BUS_WIDTH_8){
-				LCD_DeleteTask();
-				break;
-			}
+			GPIO_ResetBits(GPIOA, GPIO_Pin_0); 	// Toggle the enable bit off
 			Task->Iter++;
 			break;
 		}
 		if(Task->Iter == 0){
-		//JAMES	LCD_Port_Set_Output();
-			
-
-			
-			GPIO_WriteBit(GPIOB, GPIO_Pin_2, (BitAction)((Task->Data & 0x0200)>>8));
+			GPIO_WriteBit(GPIOA, GPIO_Pin_1, (BitAction)((Task->Data & 0x0200)>>8));
 	//		GPIO_WriteBit(LCD_Port, LCD_RW, (BitAction)((Task->Data & 0x0100)>>8));
 			GPIO_WriteBit(GPIOC, GPIO_Pin_5, (BitAction)(Task->Data & 0x0080));
-			GPIO_WriteBit(GPIOA, GPIO_Pin_7, (BitAction)(Task->Data & 0x0040));
+ 			GPIO_WriteBit(GPIOA, GPIO_Pin_7, (BitAction)(Task->Data & 0x0040));
 			GPIO_WriteBit(GPIOB, GPIO_Pin_0, (BitAction)(Task->Data & 0x0020));
 			GPIO_WriteBit(GPIOC, GPIO_Pin_4, (BitAction)(Task->Data & 0x0010));
 
-			
-			GPIO_SetBits(GPIOB, GPIO_Pin_1);		// Toggle Enable pin on
+			GPIO_SetBits(GPIOA, GPIO_Pin_0);		// Toggle Enable pin on
 			Task->Iter ++;		// Increase the iteration value so we know we have been though once already
 			break;
 		}
@@ -496,25 +397,30 @@ switch (Task->Command){
 		switch(Task->Iter){
 			case 0:
 				// Output the command to send data
-	//JAMES			LCD_Port_Set_Input();
-			
-									
-			
-				GPIO_ResetBits(GPIOA, GPIO_Pin_7);
-				GPIO_ResetBits(GPIOB, GPIO_Pin_2|GPIO_Pin_0);//    LCD_RS | LCD_DB7 | LCD_DB6 | LCD_DB5 | LCD_DB4);
+//				LCD_Port_Set_Input();
+//				GPIO_ResetBits(LCD_Port, LCD_RS | LCD_DB7 | LCD_DB6 | LCD_DB5 | LCD_DB4);
+				GPIO_ResetBits(GPIOA, GPIO_Pin_7|GPIO_Pin_1);
+				GPIO_ResetBits(GPIOB, GPIO_Pin_0);
 				GPIO_ResetBits(GPIOC, GPIO_Pin_4|GPIO_Pin_5);
-			
-			
-		//		GPIO_ResetBits(LCD_Port, LCD_RS | LCD_DB7 | LCD_DB6 | LCD_DB5 | LCD_DB4);
-			//	GPIO_SetBits(LCD_Port, LCD_RW);
-				GPIO_SetBits(GPIOB, GPIO_Pin_1);		// Toggle Enable pin on
+					/*
+	PB0 DB5
+	PB1 E
+	PB2 RS
+	PC5 DB7
+	PC4 DB4
+	PA7 DB6
+	*/
+
+
+//			GPIO_SetBits(LCD_Port, LCD_RW);
+				GPIO_SetBits(GPIOA, GPIO_Pin_0);		// Toggle Enable pin on
 				Task->Iter ++;	// Increase the iteration value so we know we have been though once already
 				break;
-			/*case 1:
+			case 1:
 				// Read the data, bit by bit and shift it into our data byte.
-				LCD_Data = 0;
+/*				LCD_Data = 0;
 				//Temp = 0;
- 				Temp = GPIO_ReadInputDataBit(LCD_Port, LCD_DB7);
+				Temp = GPIO_ReadInputDataBit(LCD_Port, LCD_DB7);
 				Temp = Temp << 1;
 				Temp = Temp | GPIO_ReadInputDataBit(LCD_Port, LCD_DB6);
 				Temp = Temp << 1;
@@ -532,7 +438,7 @@ switch (Task->Command){
 					Temp = Temp | GPIO_ReadInputDataBit(LCD_Port, LCD_DB0);
 					Temp = Temp << 1;
 					Task->Data = Temp;	// All data collected
-					GPIO_ResetBits(LCD_Port, LCD_E); 	// Toggle the enable bit off
+					GPIO_ResetBits(GPIOA, GPIO_Pin_0); 	// Toggle the enable bit off
 					if(Task->Data & 0xF0){	// Is the busy flag set?
 						Task->Data = 0;
 						Task->Iter = 0;	// Reset the task and try again.
@@ -542,17 +448,18 @@ switch (Task->Command){
 					break;
 				}
 				Task->Data = Temp << 4;	// Move data to more permanent place.
+				*/
 				Task->Iter ++;	// Increase the iteration value so we know we have been though once already
-				GPIO_ResetBits(GPIOB, GPIO_Pin_1); 	// Toggle the enable bit off
-				break;*/
+				GPIO_ResetBits(GPIOA, GPIO_Pin_0); 	// Toggle the enable bit off
+				break;
 			case 2:
 				// Still need other half of data.
 				Task->Iter ++;	// Increase the iteration value so we know we have been though once already
-				GPIO_SetBits(GPIOB, GPIO_Pin_1);		// Toggle Enable pin on
+				GPIO_SetBits(GPIOA, GPIO_Pin_0);		// Toggle Enable pin on
 				break;
 			case 3:
 				// Read lower half of data.
-				Temp = GPIO_ReadInputDataBit(LCD_Port, LCD_DB3);
+			/*	Temp = GPIO_ReadInputDataBit(LCD_Port, LCD_DB3);
 				Temp = Temp << 1;
 				Temp = Temp | GPIO_ReadInputDataBit(LCD_Port, LCD_DB2);
 				Temp = Temp << 1;
@@ -561,16 +468,16 @@ switch (Task->Command){
 				Temp = Temp | GPIO_ReadInputDataBit(LCD_Port, LCD_DB0);
 				Temp = Temp << 1;
 				Task->Data = Task->Data | Temp;	// Combine data collected with upper half of data
-				GPIO_ResetBits(LCD_Port, LCD_E); 	// Toggle the enable bit off
+				*/GPIO_ResetBits(GPIOA, GPIO_Pin_0); 	/*// Toggle the enable bit off 
 				if(Task->Data & 0xF0){	// Is the busy flag set?
 					Task->Data = 0;
 					Task->Iter = 0;	// Reset the task and try again.
 					break;
-				}
+				}*/
 				LCD_DeleteTask();		// We are done with task
 				break;
 			}
-//		break;
+		break;
 	case ReadData:
 		break;
 	case NO_TASK:
@@ -580,39 +487,9 @@ switch (Task->Command){
 	return;
 }
 
-uint16_t LCD_ConvertDataToPortData(uint16_t Data){
-uint16_t iter, PortData = 0;
-uint16_t PortBits[8];
 
-	PortBits[7] = LCD_DB7; PortBits[6] = LCD_DB6;
-	PortBits[5] = LCD_DB5; PortBits[4] = LCD_DB4;
-	PortBits[3] = LCD_DB3; PortBits[2] = LCD_DB2;
-	PortBits[1] = LCD_DB1; PortBits[0] = LCD_DB0;
 
-	for(iter = 0; iter <= 7; iter++){
-		if(Data & 0x01)	// If this bit is set
-			PortData = PortData | PortBits[iter];	// set our portData at the location of that port bit
-		Data = Data >> 1;	// shift the actual data through the testing bit (bit 0).
-	}
-	return PortData;
-}
 
-uint16_t LCD_ConvertPortDataToData(uint16_t PortData){
-uint16_t iter, OutputData = 0;
-uint16_t PortBits[8];
-
-	PortBits[7] = LCD_DB7; PortBits[6] = LCD_DB6;
-	PortBits[5] = LCD_DB5; PortBits[4] = LCD_DB4;
-	PortBits[3] = LCD_DB3; PortBits[2] = LCD_DB2;
-	PortBits[1] = LCD_DB1; PortBits[0] = LCD_DB0;
-
-	for(iter = 0; iter <= 7; iter++){
-		if(PortData & PortBits[iter])	// If this bit is set
-			OutputData ++;				// add one and
-		OutputData = OutputData << 1;	// shift it into our actual data.
-	}
-	return OutputData;
-}
 
 struct TASK* LCD_ExaminTask(){
 	return &Task_Queue[BottomOfQueue];
@@ -642,6 +519,41 @@ void LCD_PushTask(struct TASK Task){
 	Task_Queue[TopOfQueue].Data = Task.Data;
 	Task_Queue[TopOfQueue].Iter = Task.Iter;
 	return;
+}
+
+
+
+void LCD_InitalizeRCC(){
+//////////////// RCC Initialize /////////////////////
+  /* PCLK1 = HCLK */
+  //RCC_PCLK1Config(RCC_HCLK_Div1);
+  /* PCLK2 = HCLK */
+  //RCC_PCLK2Config(RCC_HCLK_Div1);
+  /* TIM2 clock enable */
+  RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
+  /* GPIO clock enable */
+//  RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOx, ENABLE);
+  return;
+}
+
+void LCD_InitalizeNVIC(){
+/////////////// Variables /////////////////
+  NVIC_InitTypeDef NVIC_InitStructure;
+//////////////// NVIC Initialize ////////////////////
+  /* Set vector table */
+#ifdef FLASH_BOOT
+  NVIC_SetVectorTable(NVIC_VectTab_FLASH, 0x00);
+#else
+  NVIC_SetVectorTable(NVIC_VectTab_RAM, 0x00);
+#endif
+  NVIC_PriorityGroupConfig(NVIC_PriorityGroup_4);
+  /* Enable TIM2 global Interrupt */
+  NVIC_InitStructure.NVIC_IRQChannel = TIM2_IRQn;
+  NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+  NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
+  NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+  NVIC_Init(&NVIC_InitStructure);
+  return;
 }
 
 void LCD_TIM_Config()
@@ -764,44 +676,4 @@ LCD_PushTask(Task);
 
 	return;
 }
-
-
-
-
-
-
-
-void LCD_InitalizeRCC(){
-//////////////// RCC Initialize /////////////////////
-  /* PCLK1 = HCLK */
-  //RCC_PCLK1Config(RCC_HCLK_Div1);
-  /* PCLK2 = HCLK */
-  //RCC_PCLK2Config(RCC_HCLK_Div1);
-  /* TIM2 clock enable */
-  RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
-  /* GPIO clock enable */
-//  RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOx, ENABLE);
-  return;
-}
-
-void LCD_InitalizeNVIC(){
-/////////////// Variables /////////////////
-  NVIC_InitTypeDef NVIC_InitStructure;
-//////////////// NVIC Initialize ////////////////////
-  /* Set vector table */
-#ifdef FLASH_BOOT
-  NVIC_SetVectorTable(NVIC_VectTab_FLASH, 0x00);
-#else
-  NVIC_SetVectorTable(NVIC_VectTab_RAM, 0x00);
-#endif
-  NVIC_PriorityGroupConfig(NVIC_PriorityGroup_4);
-  /* Enable TIM2 global Interrupt */
-  NVIC_InitStructure.NVIC_IRQChannel = TIM2_IRQn;
-  NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
-  NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
-  NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
-  NVIC_Init(&NVIC_InitStructure);
-  return;
-}
-
 
