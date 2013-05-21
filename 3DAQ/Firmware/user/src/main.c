@@ -6,6 +6,7 @@
 #include "stm32f10x_gpio.h"
 #include "stm32f10x_rcc.h"
 #include "LCD.h"
+#include "humidity.h"
 
 #define EEPROM_ADDR 0xA1   
 #define ACCEL_ADDR 0x4C   
