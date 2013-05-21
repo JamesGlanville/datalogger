@@ -4,20 +4,22 @@
 #include "LEDs.h"
 
 int LED;
+extern volatile unsigned int LEDbyte;
+
 
 void setLEDS(void)
 {
 	//LSB = green furthest right. LSB->MSB:
-	if (LEDbyte&0x001){GPIO_SetBits(GPIOC,GPIO_Pin_2);}else{GPIO_ResetBits(GPIOC,GPIO_Pin_2);}
-	if (LEDbyte&0x002){GPIO_SetBits(GPIOC,GPIO_Pin_2);}else{GPIO_ResetBits(GPIOC,GPIO_Pin_2);}
-	if (LEDbyte&0x004){GPIO_SetBits(GPIOC,GPIO_Pin_2);}else{GPIO_ResetBits(GPIOC,GPIO_Pin_2);}
-	if (LEDbyte&0x008){GPIO_SetBits(GPIOC,GPIO_Pin_2);}else{GPIO_ResetBits(GPIOC,GPIO_Pin_2);}
-	if (LEDbyte&0x010){GPIO_SetBits(GPIOC,GPIO_Pin_2);}else{GPIO_ResetBits(GPIOC,GPIO_Pin_2);}
-	if (LEDbyte&0x020){GPIO_SetBits(GPIOC,GPIO_Pin_2);}else{GPIO_ResetBits(GPIOC,GPIO_Pin_2);}
-	if (LEDbyte&0x040){GPIO_SetBits(GPIOC,GPIO_Pin_2);}else{GPIO_ResetBits(GPIOC,GPIO_Pin_2);}
-	if (LEDbyte&0x080){GPIO_SetBits(GPIOC,GPIO_Pin_2);}else{GPIO_ResetBits(GPIOC,GPIO_Pin_2);}
-	if (LEDbyte&0x100){GPIO_SetBits(GPIOC,GPIO_Pin_2);}else{GPIO_ResetBits(GPIOC,GPIO_Pin_2);}
-	if (LEDbyte&0x200){GPIO_SetBits(GPIOC,GPIO_Pin_2);}else{GPIO_ResetBits(GPIOC,GPIO_Pin_2);}
+	if (LEDbyte&0x001){GPIO_SetBits(GPIOC,GPIO_Pin_13);}else{GPIO_ResetBits(GPIOC,GPIO_Pin_13);}
+	if (LEDbyte&0x002){GPIO_SetBits(GPIOC,GPIO_Pin_1);}else{GPIO_ResetBits(GPIOC,GPIO_Pin_1);}
+	if (LEDbyte&0x004){GPIO_SetBits(GPIOA,GPIO_Pin_4);}else{GPIO_ResetBits(GPIOA,GPIO_Pin_4);} //DONE
+	if (LEDbyte&0x008){GPIO_SetBits(GPIOA,GPIO_Pin_2);}else{GPIO_ResetBits(GPIOA,GPIO_Pin_2);} //DONE
+	if (LEDbyte&0x010){GPIO_SetBits(GPIOC,GPIO_Pin_3);}else{GPIO_ResetBits(GPIOC,GPIO_Pin_3);} //DONE
+	if (LEDbyte&0x020){GPIO_SetBits(GPIOB,GPIO_Pin_1);}else{GPIO_ResetBits(GPIOB,GPIO_Pin_1);} 
+	if (LEDbyte&0x040){GPIO_SetBits(GPIOC,GPIO_Pin_2);}else{GPIO_ResetBits(GPIOC,GPIO_Pin_2);} //DONE
+	if (LEDbyte&0x080){GPIO_SetBits(GPIOA,GPIO_Pin_3);}else{GPIO_ResetBits(GPIOA,GPIO_Pin_3);} //DONE
+	if (LEDbyte&0x100){GPIO_SetBits(GPIOA,GPIO_Pin_6);}else{GPIO_ResetBits(GPIOA,GPIO_Pin_6);}//DONE
+	if (LEDbyte&0x200){GPIO_SetBits(GPIOA,GPIO_Pin_5);}else{GPIO_ResetBits(GPIOA,GPIO_Pin_5);} //DONE
 }
 
 void init_GPIO_pins()
@@ -31,17 +33,17 @@ void init_GPIO_pins()
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);
 
-	GPIO_InitStructureA.GPIO_Pin = GPIO_Pin_7|GPIO_Pin_0|GPIO_Pin_1; //DB6|ENABLE|RS
+	GPIO_InitStructureA.GPIO_Pin = GPIO_Pin_7|GPIO_Pin_0|GPIO_Pin_1|GPIO_Pin_4|GPIO_Pin_2|GPIO_Pin_3|GPIO_Pin_6|GPIO_Pin_5; //DB6|ENABLE|RS
 	GPIO_InitStructureA.GPIO_Mode = GPIO_Mode_Out_PP;
 	GPIO_InitStructureA.GPIO_Speed = GPIO_Speed_10MHz;
 	GPIO_Init(GPIOA, &GPIO_InitStructureA);
 
-	GPIO_InitStructureB.GPIO_Pin = GPIO_Pin_0; //DB5
+	GPIO_InitStructureB.GPIO_Pin = GPIO_Pin_0|GPIO_Pin_1; //DB5
 	GPIO_InitStructureB.GPIO_Mode = GPIO_Mode_Out_PP;
 	GPIO_InitStructureB.GPIO_Speed = GPIO_Speed_10MHz;
 	GPIO_Init(GPIOB, &GPIO_InitStructureB);
 
-	GPIO_InitStructureC.GPIO_Pin = GPIO_Pin_4|GPIO_Pin_5|GPIO_Pin_2|GPIO_Pin_9; //DB4|DB7|LEDx?|BOARDLED
+	GPIO_InitStructureC.GPIO_Pin = GPIO_Pin_4|GPIO_Pin_5|GPIO_Pin_2|GPIO_Pin_9|GPIO_Pin_3|GPIO_Pin_13|GPIO_Pin_1; //DB4|DB7|LEDx?|BOARDLED
 	GPIO_InitStructureC.GPIO_Mode = GPIO_Mode_Out_PP;	//Choose mode (output, push-pull)
 	GPIO_InitStructureC.GPIO_Speed = GPIO_Speed_10MHz;	//Choose max speed (slow is fine here)
 	GPIO_Init(GPIOC, &GPIO_InitStructureC);	//Call the GPIO init function from the std periph lib to initialise GPIOC with these parameters

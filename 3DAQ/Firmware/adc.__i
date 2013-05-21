@@ -2,4 +2,4 @@
 -I C:\Keil\ARM\RV31\INC 
 -I C:\3DAQ\Firmware\lib\CMSIS\Include 
 -I C:\Keil\ARM\Inc\ST\STM32F10x 
--DUSE_STDPERIPH_DRIVER -o "lcd.o" --omf_browse "lcd.crf" --depend "lcd.d" "user\src\LCD.c"
+-DUSE_STDPERIPH_DRIVER -o "adc.o" --omf_browse "adc.crf" --depend "adc.d" "user\src\ADC.c"

@@ -91,7 +91,7 @@ void ADC_GPIO_Config(void)
 	GPIO_InitTypeDef GPIO_InitStructure;
 	
 	//Set PC0 and PC1 as analogue inputs
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1;
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AIN;
   GPIO_Init(GPIOC, &GPIO_InitStructure);
 }

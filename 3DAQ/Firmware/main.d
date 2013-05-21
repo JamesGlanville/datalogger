@@ -33,5 +33,4 @@ main.o: .\user\inc\UART.h
 main.o: .\user\inc\ADC.h
 main.o: user\src\LCD.h
 main.o: C:\Keil\ARM\ARMCC\bin\..\include\inttypes.h
-main.o: user\src\HD44780.h
-main.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+main.o: .\user\inc\humidity.h

@@ -32,7 +32,7 @@ uint8_t _numlines,_currline;
 void delayMicroseconds(int delay) //This does not delay for microseconds at all, it is a hacky fudge. I should fix this.
 {
 	int i;
-		for (i = 0; i < delay*100; i++)
+		for (i = 0; i < delay*10; i++)
 	{
 		LED_on();
 	}

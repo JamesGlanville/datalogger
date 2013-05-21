@@ -426,6 +426,16 @@
               <FileType>1</FileType>
               <FilePath>.\user\src\UART.c</FilePath>
             </File>
+            <File>
+              <FileName>HD44780.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\user\src\HD44780.c</FilePath>
+            </File>
+            <File>
+              <FileName>HD44780.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\user\src\HD44780.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

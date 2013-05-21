@@ -4,9 +4,227 @@
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
 C:\Users\datalogger\Documents\GitHub\datalogger\3DAQ\Firmware\SB3_firmware.uvproj
-Project File Date:  05/17/2013
+Project File Date:  05/21/2013
 
 <h2>Output:</h2>
+Build target 'SB3'
+compiling ADC.c...
+compiling LEDs.c...
+user\src\LEDs.c(11): error:  #20: identifier "LEDbyte" is undefined
+compiling main.c...
+user\src\main.c(91): warning:  #550-D: variable "t" was set but never used
+user\src\main.c(226): error:  #20: identifier "I2Cx" is undefined
+user\src\main.c(226): error:  #20: identifier "I2C_InitStruct" is undefined
+user\src\main.c(259): warning:  #223-D: function "IC2_write" declared implicitly
+user\src\main.c(300): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(172): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(173): warning:  #177-D: variable "received_data" was declared but never referenced
+compiling UART.c...
+compiling HD44780.c...
+user\src\HD44780.c(334): warning:  #177-D: variable "Temp" was declared but never referenced
+user\src\HD44780.c(335): warning:  #177-D: variable "i" was declared but never referenced
+Target not created
+Build target 'SB3'
+compiling LEDs.c...
+user\src\LEDs.c(11): error:  #20: identifier "LEDbyte" is undefined
+compiling main.c...
+user\src\main.c(91): warning:  #550-D: variable "t" was set but never used
+user\src\main.c(226): error:  #20: identifier "I2Cx" is undefined
+user\src\main.c(226): error:  #20: identifier "I2C_InitStruct" is undefined
+user\src\main.c(259): warning:  #223-D: function "IC2_write" declared implicitly
+user\src\main.c(300): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(172): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(173): warning:  #177-D: variable "received_data" was declared but never referenced
+compiling humidity.c...
+user\src\humidity.c(4): warning:  #260-D: explicit type is missing ("int" assumed)
+user\src\humidity.c(4): error:  #65: expected a ";"
+user\src\humidity.c(28): warning: At end of source:  #12-D: parsing restarts here after previous syntax error
+user\src\humidity.c(4): warning:  #177-D: variable "__INLINE" was declared but never referenced
+Target not created
+Build target 'SB3'
+compiling LEDs.c...
+user\src\LEDs.c(11): error:  #20: identifier "LEDbyte" is undefined
+compiling main.c...
+user\src\main.c(91): warning:  #550-D: variable "t" was set but never used
+user\src\main.c(226): error:  #20: identifier "I2Cx" is undefined
+user\src\main.c(226): error:  #20: identifier "I2C_InitStruct" is undefined
+user\src\main.c(259): warning:  #223-D: function "IC2_write" declared implicitly
+user\src\main.c(300): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(172): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(173): warning:  #177-D: variable "received_data" was declared but never referenced
+compiling humidity.c...
+user\src\humidity.c(4): warning:  #260-D: explicit type is missing ("int" assumed)
+user\src\humidity.c(4): error:  #65: expected a ";"
+user\src\humidity.c(5): warning:  #260-D: explicit type is missing ("int" assumed)
+user\src\humidity.c(5): error:  #65: expected a ";"
+user\src\humidity.c(12): warning:  #223-D: function "GPIO_ResetBits" declared implicitly
+user\src\humidity.c(12): error:  #20: identifier "GPIOC" is undefined
+user\src\humidity.c(12): error:  #20: identifier "GPIO_Pin_9" is undefined
+user\src\humidity.c(16): warning:  #223-D: function "GPIO_SetBits" declared implicitly
+user\src\humidity.c(18): warning:  #223-D: function "DIGITALREADWHATEVER" declared implicitly
+user\src\humidity.c(4): warning:  #177-D: variable "__INLINE" was declared but never referenced
+Target not created
+Build target 'SB3'
+compiling ADC.c...
+compiling LEDs.c...
+compiling main.c...
+user\src\main.c(90): warning:  #550-D: variable "t" was set but never used
+user\src\main.c(225): error:  #20: identifier "I2Cx" is undefined
+user\src\main.c(225): error:  #20: identifier "I2C_InitStruct" is undefined
+user\src\main.c(258): warning:  #223-D: function "IC2_write" declared implicitly
+user\src\main.c(299): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(171): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(172): warning:  #177-D: variable "received_data" was declared but never referenced
+compiling UART.c...
+compiling HD44780.c...
+user\src\HD44780.c(334): warning:  #177-D: variable "Temp" was declared but never referenced
+user\src\HD44780.c(335): warning:  #177-D: variable "i" was declared but never referenced
+compiling humidity.c...
+user\src\humidity.c(4): warning:  #260-D: explicit type is missing ("int" assumed)
+user\src\humidity.c(4): error:  #65: expected a ";"
+user\src\humidity.c(5): warning:  #260-D: explicit type is missing ("int" assumed)
+user\src\humidity.c(5): error:  #65: expected a ";"
+user\src\humidity.c(12): warning:  #223-D: function "GPIO_ResetBits" declared implicitly
+user\src\humidity.c(12): error:  #20: identifier "GPIOC" is undefined
+user\src\humidity.c(12): error:  #20: identifier "GPIO_Pin_9" is undefined
+user\src\humidity.c(16): warning:  #223-D: function "GPIO_SetBits" declared implicitly
+user\src\humidity.c(18): warning:  #223-D: function "DIGITALREADWHATEVER" declared implicitly
+user\src\humidity.c(4): warning:  #177-D: variable "__INLINE" was declared but never referenced
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(90): warning:  #550-D: variable "t" was set but never used
+user\src\main.c(258): warning:  #223-D: function "IC2_write" declared implicitly
+user\src\main.c(299): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(171): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(172): warning:  #177-D: variable "received_data" was declared but never referenced
+compiling humidity.c...
+user\src\humidity.c(4): warning:  #260-D: explicit type is missing ("int" assumed)
+user\src\humidity.c(4): error:  #65: expected a ";"
+user\src\humidity.c(5): warning:  #260-D: explicit type is missing ("int" assumed)
+user\src\humidity.c(5): error:  #65: expected a ";"
+user\src\humidity.c(12): warning:  #223-D: function "GPIO_ResetBits" declared implicitly
+user\src\humidity.c(12): error:  #20: identifier "GPIOC" is undefined
+user\src\humidity.c(12): error:  #20: identifier "GPIO_Pin_9" is undefined
+user\src\humidity.c(16): warning:  #223-D: function "GPIO_SetBits" declared implicitly
+user\src\humidity.c(18): warning:  #223-D: function "DIGITALREADWHATEVER" declared implicitly
+user\src\humidity.c(4): warning:  #177-D: variable "__INLINE" was declared but never referenced
+Target not created
+Build target 'SB3'
+compiling humidity.c...
+user\src\humidity.c(12): warning:  #223-D: function "GPIO_ResetBits" declared implicitly
+user\src\humidity.c(12): error:  #20: identifier "GPIOC" is undefined
+user\src\humidity.c(12): error:  #20: identifier "GPIO_Pin_9" is undefined
+user\src\humidity.c(16): warning:  #223-D: function "GPIO_SetBits" declared implicitly
+user\src\humidity.c(18): warning:  #223-D: function "DIGITALREADWHATEVER" declared implicitly
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(90): warning:  #550-D: variable "t" was set but never used
+user\src\main.c(258): warning:  #223-D: function "IC2_write" declared implicitly
+user\src\main.c(299): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(171): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(172): warning:  #177-D: variable "received_data" was declared but never referenced
+compiling humidity.c...
+user\src\humidity.c(18): warning:  #223-D: function "DIGITALREADWHATEVER" declared implicitly
+linking...
+SB3_firmware.axf: Error: L6200E: Symbol LEDbyte multiply defined (by leds.o and adc.o).
+SB3_firmware.axf: Error: L6200E: Symbol LEDbyte multiply defined (by main.o and adc.o).
+SB3_firmware.axf: Error: L6200E: Symbol LEDbyte multiply defined (by uart.o and adc.o).
+SB3_firmware.axf: Error: L6200E: Symbol LEDbyte multiply defined (by hd44780.o and adc.o).
+Target not created
+Build target 'SB3'
+compiling humidity.c...
+linking...
+SB3_firmware.axf: Error: L6200E: Symbol LEDbyte multiply defined (by leds.o and adc.o).
+SB3_firmware.axf: Error: L6200E: Symbol LEDbyte multiply defined (by main.o and adc.o).
+SB3_firmware.axf: Error: L6200E: Symbol LEDbyte multiply defined (by uart.o and adc.o).
+SB3_firmware.axf: Error: L6200E: Symbol LEDbyte multiply defined (by hd44780.o and adc.o).
+Target not created
+Build target 'SB3'
+compiling ADC.c...
+.\user\inc\LEDs.h(11): warning:  #1-D: last line of file ends without a newline
+compiling LEDs.c...
+.\user\inc\LEDs.h(11): warning:  #1-D: last line of file ends without a newline
+compiling main.c...
+.\user\inc\LEDs.h(11): warning:  #1-D: last line of file ends without a newline
+user\src\main.c(90): warning:  #550-D: variable "t" was set but never used
+user\src\main.c(258): warning:  #223-D: function "IC2_write" declared implicitly
+user\src\main.c(299): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(171): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(172): warning:  #177-D: variable "received_data" was declared but never referenced
+compiling UART.c...
+.\user\inc\LEDs.h(11): warning:  #1-D: last line of file ends without a newline
+compiling HD44780.c...
+.\user\inc\LEDs.h(11): warning:  #1-D: last line of file ends without a newline
+user\src\HD44780.c(334): warning:  #177-D: variable "Temp" was declared but never referenced
+user\src\HD44780.c(335): warning:  #177-D: variable "i" was declared but never referenced
+linking...
+SB3_firmware.axf: Error: L6200E: Symbol LEDbyte multiply defined (by leds.o and adc.o).
+SB3_firmware.axf: Error: L6200E: Symbol LEDbyte multiply defined (by main.o and adc.o).
+SB3_firmware.axf: Error: L6200E: Symbol LEDbyte multiply defined (by uart.o and adc.o).
+SB3_firmware.axf: Error: L6200E: Symbol LEDbyte multiply defined (by hd44780.o and adc.o).
+Target not created
+Build target 'SB3'
+compiling ADC.c...
+compiling LEDs.c...
+compiling main.c...
+user\src\main.c(90): warning:  #550-D: variable "t" was set but never used
+user\src\main.c(258): warning:  #223-D: function "IC2_write" declared implicitly
+user\src\main.c(299): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(171): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(172): warning:  #177-D: variable "received_data" was declared but never referenced
+compiling UART.c...
+compiling HD44780.c...
+user\src\HD44780.c(334): warning:  #177-D: variable "Temp" was declared but never referenced
+user\src\HD44780.c(335): warning:  #177-D: variable "i" was declared but never referenced
+linking...
+SB3_firmware.axf: Error: L6200E: Symbol LEDbyte multiply defined (by leds.o and adc.o).
+SB3_firmware.axf: Error: L6200E: Symbol LEDbyte multiply defined (by main.o and adc.o).
+SB3_firmware.axf: Error: L6200E: Symbol LEDbyte multiply defined (by uart.o and adc.o).
+SB3_firmware.axf: Error: L6200E: Symbol LEDbyte multiply defined (by hd44780.o and adc.o).
+Target not created
+Build target 'SB3'
+compiling ADC.c...
+compiling LEDs.c...
+user\src\LEDs.c(11): error:  #20: identifier "LEDbyte" is undefined
+compiling main.c...
+user\src\main.c(90): warning:  #550-D: variable "t" was set but never used
+user\src\main.c(202): error:  #20: identifier "LEDbyte" is undefined
+user\src\main.c(258): warning:  #223-D: function "IC2_write" declared implicitly
+user\src\main.c(299): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(171): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(172): warning:  #177-D: variable "received_data" was declared but never referenced
+compiling UART.c...
+compiling HD44780.c...
+user\src\HD44780.c(334): warning:  #177-D: variable "Temp" was declared but never referenced
+user\src\HD44780.c(335): warning:  #177-D: variable "i" was declared but never referenced
+Target not created
+Build target 'SB3'
+compiling LEDs.c...
+user\src\LEDs.c(11): error:  #20: identifier "LEDbyte" is undefined
+compiling main.c...
+user\src\main.c(92): warning:  #550-D: variable "t" was set but never used
+user\src\main.c(260): warning:  #223-D: function "IC2_write" declared implicitly
+user\src\main.c(301): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(173): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(174): warning:  #177-D: variable "received_data" was declared but never referenced
+Target not created
+Build target 'SB3'
+compiling LEDs.c...
+linking...
+SB3_firmware.axf: Error: L6218E: Undefined symbol IC2_write (referred from main.o).
+SB3_firmware.axf: Error: L6218E: Undefined symbol LCDINIT (referred from main.o).
+SB3_firmware.axf: Error: L6218E: Undefined symbol blink (referred from main.o).
+SB3_firmware.axf: Error: L6218E: Undefined symbol clear (referred from main.o).
+SB3_firmware.axf: Error: L6218E: Undefined symbol cursor (referred from main.o).
+SB3_firmware.axf: Error: L6218E: Undefined symbol delayMicroseconds (referred from main.o).
+SB3_firmware.axf: Error: L6218E: Undefined symbol display (referred from main.o).
+SB3_firmware.axf: Error: L6218E: Undefined symbol home (referred from main.o).
+SB3_firmware.axf: Error: L6218E: Undefined symbol write (referred from main.o).
+Target not created
+Clean started: Project: 'SB3_firmware'
+   deleting intermediate output files for target 'SB3'
 Build target 'SB3'
 assembling startup_stm32f10x_md_vl.s...
 compiling core_cm3.c...
@@ -14,10 +232,16 @@ compiling system_stm32f10x.c...
 compiling ADC.c...
 compiling LEDs.c...
 compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(92): warning:  #550-D: variable "t" was set but never used
+user\src\main.c(260): warning:  #223-D: function "IC2_write" declared implicitly
+user\src\main.c(301): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(173): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(174): warning:  #177-D: variable "received_data" was declared but never referenced
 compiling UART.c...
 compiling HD44780.c...
+user\src\HD44780.c(334): warning:  #177-D: variable "Temp" was declared but never referenced
+user\src\HD44780.c(335): warning:  #177-D: variable "i" was declared but never referenced
+compiling humidity.c...
 compiling misc.c...
 compiling stm32f10x_adc.c...
 compiling stm32f10x_dma.c...
@@ -42,2078 +266,360 @@ compiling stm32f10x_sdio.c...
 compiling stm32f10x_spi.c...
 compiling stm32f10x_wwdg.c...
 linking...
-Program Size: Code=4988 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+SB3_firmware.axf: Error: L6218E: Undefined symbol IC2_write (referred from main.o).
+SB3_firmware.axf: Error: L6218E: Undefined symbol LCDINIT (referred from main.o).
+SB3_firmware.axf: Error: L6218E: Undefined symbol blink (referred from main.o).
+SB3_firmware.axf: Error: L6218E: Undefined symbol clear (referred from main.o).
+SB3_firmware.axf: Error: L6218E: Undefined symbol cursor (referred from main.o).
+SB3_firmware.axf: Error: L6218E: Undefined symbol delayMicroseconds (referred from main.o).
+SB3_firmware.axf: Error: L6218E: Undefined symbol display (referred from main.o).
+SB3_firmware.axf: Error: L6218E: Undefined symbol home (referred from main.o).
+SB3_firmware.axf: Error: L6218E: Undefined symbol write (referred from main.o).
+Target not created
 Build target 'SB3'
-compiling HD44780.c...
+compiling LCD.c...
 linking...
-Program Size: Code=4988 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Build target 'SB3'
-linking...
-Program Size: Code=4988 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=5092 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=4960 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=4924 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=4880 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=4876 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(262): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=2248 RO-data=320 RW-data=100 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(269): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=2296 RO-data=320 RW-data=100 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\HD44780.h(6): error:  #5: cannot open source input file "stm32f4xx.h": No such file or directory
-compiling HD44780.c...
-user\src\HD44780.h(6): error:  #5: cannot open source input file "stm32f4xx.h": No such file or directory
+SB3_firmware.axf: Error: L6218E: Undefined symbol IC2_write (referred from main.o).
 Target not created
 Build target 'SB3'
 compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-compiling HD44780.c...
-user\src\HD44780.c(667): error:  #20: identifier "GPIO_Mode_IN" is undefined
-user\src\HD44780.c(668): error:  #136: struct "<unnamed>" has no field "GPIO_OType"
-user\src\HD44780.c(668): error:  #20: identifier "GPIO_OType_PP" is undefined
-user\src\HD44780.c(669): error:  #136: struct "<unnamed>" has no field "GPIO_PuPd"
-user\src\HD44780.c(669): error:  #20: identifier "GPIO_PuPd_NOPULL" is undefined
-user\src\HD44780.c(683): error:  #20: identifier "GPIO_Mode_OUT" is undefined
-user\src\HD44780.c(684): error:  #136: struct "<unnamed>" has no field "GPIO_OType"
-user\src\HD44780.c(684): error:  #20: identifier "GPIO_OType_PP" is undefined
-user\src\HD44780.c(685): error:  #136: struct "<unnamed>" has no field "GPIO_PuPd"
-user\src\HD44780.c(685): error:  #20: identifier "GPIO_PuPd_NOPULL" is undefined
-user\src\HD44780.c(746): warning:  #223-D: function "RCC_AHB1PeriphClockCmd" declared implicitly
-Target not created
-Build target 'SB3'
-compiling HD44780.c...
-user\src\HD44780.c(683): error:  #20: identifier "GPIO_Mode_OUT" is undefined
-user\src\HD44780.c(684): error:  #136: struct "<unnamed>" has no field "GPIO_OType"
-user\src\HD44780.c(684): error:  #20: identifier "GPIO_OType_PP" is undefined
-user\src\HD44780.c(685): error:  #136: struct "<unnamed>" has no field "GPIO_PuPd"
-user\src\HD44780.c(685): error:  #20: identifier "GPIO_PuPd_NOPULL" is undefined
-user\src\HD44780.c(746): warning:  #223-D: function "RCC_AHB1PeriphClockCmd" declared implicitly
-Target not created
-Build target 'SB3'
-compiling HD44780.c...
-user\src\HD44780.c(746): warning:  #223-D: function "RCC_AHB1PeriphClockCmd" declared implicitly
+user\src\main.c(92): warning:  #550-D: variable "t" was set but never used
+user\src\main.c(301): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(173): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(174): warning:  #177-D: variable "received_data" was declared but never referenced
 linking...
-SB3_firmware.axf: Error: L6218E: Undefined symbol LCD_Port_Set_Input (referred from hd44780.o).
-SB3_firmware.axf: Error: L6218E: Undefined symbol LCD_Port_Set_Output (referred from hd44780.o).
-SB3_firmware.axf: Error: L6218E: Undefined symbol RCC_AHB1PeriphClockCmd (referred from hd44780.o).
-Target not created
-Build target 'SB3'
-compiling HD44780.c...
-linking...
-SB3_firmware.axf: Error: L6218E: Undefined symbol LCD_Port_Set_Input (referred from hd44780.o).
-SB3_firmware.axf: Error: L6218E: Undefined symbol LCD_Port_Set_Output (referred from hd44780.o).
-Target not created
-Build target 'SB3'
-compiling HD44780.c...
-linking...
-SB3_firmware.axf: Error: L6218E: Undefined symbol LCD_Port_Set_Output (referred from hd44780.o).
-Target not created
-Build target 'SB3'
-compiling HD44780.c...
-linking...
-Program Size: Code=4084 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Build target 'SB3'
-compiling HD44780.c...
-linking...
-Program Size: Code=5428 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling HD44780.c...
-linking...
-Program Size: Code=5428 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Build target 'SB3'
-compiling HD44780.c...
-linking...
-Program Size: Code=5244 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling HD44780.c...
-linking...
-Program Size: Code=5196 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling HD44780.c...
-linking...
-Program Size: Code=5160 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=5292 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(275): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=3916 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(277): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=3900 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(277): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=3900 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(277): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=3900 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(275): warning:  #188-D: enumerated type mixed with another type
-user\src\main.c(279): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=4064 RO-data=320 RW-data=120 ZI-data=2832  
+Program Size: Code=5408 RO-data=320 RW-data=140 ZI-data=2836  
 "SB3_firmware.axf" - 0 Error(s), 4 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
 Build target 'SB3'
 compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(275): warning:  #188-D: enumerated type mixed with another type
-user\src\main.c(279): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(92): warning:  #550-D: variable "t" was set but never used
+user\src\main.c(301): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(173): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(174): warning:  #177-D: variable "received_data" was declared but never referenced
 linking...
-Program Size: Code=4100 RO-data=320 RW-data=120 ZI-data=2832  
+Program Size: Code=5408 RO-data=320 RW-data=140 ZI-data=2836  
 "SB3_firmware.axf" - 0 Error(s), 4 Warning(s).
 Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
 Build target 'SB3'
 compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(275): warning:  #188-D: enumerated type mixed with another type
-user\src\main.c(279): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(92): warning:  #550-D: variable "t" was set but never used
+user\src\main.c(301): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(173): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(174): warning:  #177-D: variable "received_data" was declared but never referenced
 linking...
-Program Size: Code=4104 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 4 Warning(s).
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(279): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=4020 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(279): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=4020 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(279): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=4020 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=5312 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(272): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=3804 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
-Build target 'SB3'
-linking...
-Program Size: Code=3804 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(270): warning:  #111-D: statement is unreachable
-user\src\main.c(273): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=2472 RO-data=320 RW-data=100 ZI-data=2836  
+Program Size: Code=5408 RO-data=320 RW-data=140 ZI-data=2836  
 "SB3_firmware.axf" - 0 Error(s), 4 Warning(s).
 Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
 Build target 'SB3'
 compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(281): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=4052 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+user\src\main.c(72): warning:  #223-D: function "RCC_AHB1PeriphClockCmd" declared implicitly
+user\src\main.c(72): error:  #20: identifier "RCC_AHB1Periph_GPIOB" is undefined
+user\src\main.c(81): error:  #20: identifier "GPIO_Mode_AF" is undefined
+user\src\main.c(83): error:  #136: struct "<unnamed>" has no field "GPIO_OType"
+user\src\main.c(83): error:  #20: identifier "GPIO_OType_OD" is undefined
+user\src\main.c(84): error:  #136: struct "<unnamed>" has no field "GPIO_PuPd"
+user\src\main.c(84): error:  #20: identifier "GPIO_PuPd_UP" is undefined
+user\src\main.c(88): warning:  #223-D: function "GPIO_PinAFConfig" declared implicitly
+user\src\main.c(88): error:  #20: identifier "GPIO_AF_I2C1" is undefined
+user\src\main.c(377): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(249): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(250): warning:  #177-D: variable "received_data" was declared but never referenced
+Target not created
 Build target 'SB3'
 compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(281): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=4028 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
-Build target 'SB3'
-linking...
-Program Size: Code=4028 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+user\src\main.c(82): error:  #20: identifier "GPIO_Mode_AF" is undefined
+user\src\main.c(84): error:  #136: struct "<unnamed>" has no field "GPIO_OType"
+user\src\main.c(84): error:  #20: identifier "GPIO_OType_OD" is undefined
+user\src\main.c(85): error:  #136: struct "<unnamed>" has no field "GPIO_PuPd"
+user\src\main.c(85): error:  #20: identifier "GPIO_PuPd_UP" is undefined
+user\src\main.c(89): warning:  #223-D: function "GPIO_PinAFConfig" declared implicitly
+user\src\main.c(89): error:  #20: identifier "GPIO_AF_I2C1" is undefined
+user\src\main.c(378): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(250): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(251): warning:  #177-D: variable "received_data" was declared but never referenced
+Target not created
 Build target 'SB3'
 compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(89): warning:  #223-D: function "GPIO_PinAFConfig" declared implicitly
+user\src\main.c(89): error:  #20: identifier "GPIO_AF_I2C1" is undefined
+user\src\main.c(378): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(250): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(251): warning:  #177-D: variable "received_data" was declared but never referenced
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(378): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(250): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(251): warning:  #177-D: variable "received_data" was declared but never referenced
 linking...
 Program Size: Code=5308 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
+"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
 Build target 'SB3'
+compiling LCD.c...
 linking...
-Program Size: Code=5308 RO-data=320 RW-data=140 ZI-data=2836  
+Program Size: Code=5304 RO-data=320 RW-data=140 ZI-data=2836  
 "SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
 Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(304): warning:  #223-D: function "setCursor" declared implicitly
+user\src\main.c(305): error:  #20: identifier "ADC_word" is undefined
+user\src\main.c(384): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(249): warning:  #177-D: variable "acctemp" was declared but never referenced
+user\src\main.c(250): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(251): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(252): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(305): warning:  #223-D: function "setCursor" declared implicitly
+user\src\main.c(385): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(249): warning:  #177-D: variable "acctemp" was declared but never referenced
+user\src\main.c(250): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(251): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(252): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
+user\src\main.c(253): warning:  #550-D: variable "lcdadc" was set but never used
+linking...
+Program Size: Code=4224 RO-data=336 RW-data=140 ZI-data=2836  
+"SB3_firmware.axf" - 0 Error(s), 7 Warning(s).
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(306): warning:  #223-D: function "setCursor" declared implicitly
+user\src\main.c(314): error:  #18: expected a ")"
+user\src\main.c(398): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(249): warning:  #177-D: variable "j" was declared but never referenced
+user\src\main.c(250): warning:  #177-D: variable "acctemp" was declared but never referenced
+user\src\main.c(251): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(252): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(253): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(306): warning:  #223-D: function "setCursor" declared implicitly
+user\src\main.c(398): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(249): warning:  #177-D: variable "j" was declared but never referenced
+user\src\main.c(250): warning:  #177-D: variable "acctemp" was declared but never referenced
+user\src\main.c(251): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(252): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(253): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
+linking...
+Program Size: Code=4316 RO-data=336 RW-data=140 ZI-data=2836  
+"SB3_firmware.axf" - 0 Error(s), 7 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(306): warning:  #223-D: function "setCursor" declared implicitly
+user\src\main.c(399): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(397): warning:  #128-D: loop is not reachable
+user\src\main.c(249): warning:  #177-D: variable "j" was declared but never referenced
+user\src\main.c(250): warning:  #177-D: variable "acctemp" was declared but never referenced
+user\src\main.c(251): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(252): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(253): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
+linking...
+Program Size: Code=4324 RO-data=336 RW-data=140 ZI-data=2836  
+"SB3_firmware.axf" - 0 Error(s), 8 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(306): warning:  #223-D: function "setCursor" declared implicitly
+user\src\main.c(399): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(397): warning:  #128-D: loop is not reachable
+user\src\main.c(249): warning:  #177-D: variable "j" was declared but never referenced
+user\src\main.c(250): warning:  #177-D: variable "acctemp" was declared but never referenced
+user\src\main.c(251): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(252): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(253): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
+linking...
+Program Size: Code=4324 RO-data=336 RW-data=140 ZI-data=2836  
+"SB3_firmware.axf" - 0 Error(s), 8 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling LEDs.c...
+compiling main.c...
+user\src\main.c(309): warning:  #223-D: function "setCursor" declared implicitly
+user\src\main.c(402): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(400): warning:  #128-D: loop is not reachable
+user\src\main.c(249): warning:  #177-D: variable "j" was declared but never referenced
+user\src\main.c(250): warning:  #177-D: variable "acctemp" was declared but never referenced
+user\src\main.c(251): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(252): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(253): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
+linking...
+Program Size: Code=4636 RO-data=336 RW-data=140 ZI-data=2836  
+"SB3_firmware.axf" - 0 Error(s), 8 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(309): warning:  #223-D: function "setCursor" declared implicitly
+user\src\main.c(402): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(400): warning:  #128-D: loop is not reachable
+user\src\main.c(249): warning:  #177-D: variable "j" was declared but never referenced
+user\src\main.c(250): warning:  #177-D: variable "acctemp" was declared but never referenced
+user\src\main.c(251): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(252): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(253): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
+linking...
+Program Size: Code=4636 RO-data=336 RW-data=140 ZI-data=2836  
+"SB3_firmware.axf" - 0 Error(s), 8 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(311): warning:  #223-D: function "setCursor" declared implicitly
+user\src\main.c(404): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(402): warning:  #128-D: loop is not reachable
+user\src\main.c(249): warning:  #177-D: variable "j" was declared but never referenced
+user\src\main.c(250): warning:  #177-D: variable "acctemp" was declared but never referenced
+user\src\main.c(251): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(252): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(253): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
+linking...
+Program Size: Code=4660 RO-data=336 RW-data=140 ZI-data=2836  
+"SB3_firmware.axf" - 0 Error(s), 8 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(311): warning:  #223-D: function "setCursor" declared implicitly
+user\src\main.c(404): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(402): warning:  #128-D: loop is not reachable
+user\src\main.c(249): warning:  #177-D: variable "j" was declared but never referenced
+user\src\main.c(250): warning:  #177-D: variable "acctemp" was declared but never referenced
+user\src\main.c(251): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(252): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(253): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
+linking...
+Program Size: Code=4660 RO-data=336 RW-data=140 ZI-data=2836  
+"SB3_firmware.axf" - 0 Error(s), 8 Warning(s).
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(311): warning:  #223-D: function "setCursor" declared implicitly
+user\src\main.c(404): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(402): warning:  #128-D: loop is not reachable
+user\src\main.c(249): warning:  #177-D: variable "j" was declared but never referenced
+user\src\main.c(250): warning:  #177-D: variable "acctemp" was declared but never referenced
+user\src\main.c(251): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(252): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(253): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
+linking...
+Program Size: Code=4660 RO-data=336 RW-data=140 ZI-data=2836  
+"SB3_firmware.axf" - 0 Error(s), 8 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(327): warning:  #223-D: function "setCursor" declared implicitly
+user\src\main.c(404): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(402): warning:  #128-D: loop is not reachable
+user\src\main.c(249): warning:  #177-D: variable "j" was declared but never referenced
+user\src\main.c(250): warning:  #177-D: variable "acctemp" was declared but never referenced
+user\src\main.c(251): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(252): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(253): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
+linking...
+Program Size: Code=5152 RO-data=336 RW-data=140 ZI-data=2836  
+"SB3_firmware.axf" - 0 Error(s), 8 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(311): warning:  #223-D: function "setCursor" declared implicitly
+user\src\main.c(404): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(402): warning:  #128-D: loop is not reachable
+user\src\main.c(249): warning:  #177-D: variable "j" was declared but never referenced
+user\src\main.c(250): warning:  #177-D: variable "acctemp" was declared but never referenced
+user\src\main.c(251): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(252): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(253): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
+linking...
+Program Size: Code=4660 RO-data=336 RW-data=140 ZI-data=2836  
+"SB3_firmware.axf" - 0 Error(s), 8 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling LEDs.c...
+linking...
+Program Size: Code=4708 RO-data=336 RW-data=140 ZI-data=2836  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling LEDs.c...
+linking...
+Program Size: Code=4708 RO-data=336 RW-data=140 ZI-data=2836  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Build target 'SB3'
+linking...
+Program Size: Code=4708 RO-data=336 RW-data=140 ZI-data=2836  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Build target 'SB3'
+linking...
+Program Size: Code=4708 RO-data=336 RW-data=140 ZI-data=2836  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling LEDs.c...
+linking...
+Program Size: Code=4708 RO-data=336 RW-data=140 ZI-data=2836  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Clean started: Project: 'SB3_firmware'
+   deleting intermediate output files for target 'SB3'
 Build target 'SB3'
 assembling startup_stm32f10x_md_vl.s...
-startup_stm32f10x_md_vl.s(107): error: A1516E: Bad symbol 'DOLCD', not defined or external
-compiling HD44780.c...
-Target not created
-Build target 'SB3'
-assembling startup_stm32f10x_md_vl.s...
-compiling HD44780.c...
-linking...
-Program Size: Code=5308 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling HD44780.c...
-user\src\HD44780.c(66): warning:  #111-D: statement is unreachable
-linking...
-Program Size: Code=5228 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling HD44780.c...
-linking...
-Program Size: Code=5308 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling HD44780.c...
-linking...
-Program Size: Code=5308 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling HD44780.c...
-linking...
-Program Size: Code=5308 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Build target 'SB3'
-compiling HD44780.c...
-linking...
-Program Size: Code=5308 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Build target 'SB3'
-compiling HD44780.c...
-linking...
-Program Size: Code=5308 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Build target 'SB3'
-compiling HD44780.c...
-user\src\HD44780.c(343): error:  #20: identifier "i" is undefined
-user\src\HD44780.c(345): warning:  #223-D: function "LED_on" declared implicitly
-user\src\HD44780.c(343): warning:  #128-D: loop is not reachable
-Target not created
-Build target 'SB3'
-compiling HD44780.c...
-user\src\HD44780.c(345): warning:  #128-D: loop is not reachable
-linking...
-Program Size: Code=5308 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
-Build target 'SB3'
-compiling HD44780.c...
-linking...
-Program Size: Code=5328 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling HD44780.c...
-linking...
-Program Size: Code=5320 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling HD44780.c...
-user\src\HD44780.c(335): warning:  #177-D: variable "i" was declared but never referenced
-linking...
-Program Size: Code=5308 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
-Build target 'SB3'
-linking...
-Program Size: Code=5308 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling HD44780.c...
-user\src\HD44780.c(367): error:  #20: identifier "Data" is undefined
-user\src\HD44780.c(335): warning:  #177-D: variable "i" was declared but never referenced
-Target not created
-Build target 'SB3'
-compiling HD44780.c...
-user\src\HD44780.c(335): warning:  #177-D: variable "i" was declared but never referenced
-linking...
-Program Size: Code=5312 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling HD44780.c...
-user\src\HD44780.c(335): warning:  #177-D: variable "i" was declared but never referenced
-linking...
-Program Size: Code=5312 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
-Build target 'SB3'
-linking...
-Program Size: Code=5312 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling HD44780.c...
-user\src\HD44780.c(335): warning:  #177-D: variable "i" was declared but never referenced
-linking...
-Program Size: Code=5308 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(273): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=3840 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(272): warning:  #111-D: statement is unreachable
-user\src\main.c(274): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=3804 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 4 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(274): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=3840 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
-Build target 'SB3'
-linking...
-Program Size: Code=3840 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=5124 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
+compiling core_cm3.c...
+compiling system_stm32f10x.c...
+compiling ADC.c...
 compiling LEDs.c...
-compiling HD44780.c...
-user\src\HD44780.c(335): warning:  #177-D: variable "i" was declared but never referenced
-linking...
-Program Size: Code=5124 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
 compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(305): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=3936 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(271): warning:  #188-D: enumerated type mixed with another type
-user\src\main.c(306): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=4024 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 4 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling HD44780.c...
-user\src\HD44780.c(335): warning:  #177-D: variable "i" was declared but never referenced
-linking...
-Program Size: Code=4024 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(271): warning:  #188-D: enumerated type mixed with another type
-user\src\main.c(311): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=4052 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 4 Warning(s).
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(311): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=3968 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(305): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=3900 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling HD44780.c...
-user\src\HD44780.c(335): warning:  #177-D: variable "i" was declared but never referenced
-linking...
-Program Size: Code=3900 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-compiling HD44780.c...
-user\src\HD44780.c(335): warning:  #177-D: variable "i" was declared but never referenced
-linking...
-Program Size: Code=5144 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(305): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=3864 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling HD44780.c...
-linking...
-Program Size: Code=3876 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-linking...
-Program Size: Code=3876 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-linking...
-Program Size: Code=3876 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(311): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=4004 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling HD44780.c...
-linking...
-Program Size: Code=4004 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(311): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=4044 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-linking...
-Program Size: Code=4044 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(320): warning:  #128-D: loop is not reachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=4044 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(311): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=3904 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(286): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=3904 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling HD44780.c...
-user\src\HD44780.c(335): warning:  #177-D: variable "i" was declared but never referenced
-linking...
-Program Size: Code=3892 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=5376 RO-data=320 RW-data=140 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=4048 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
-Build target 'SB3'
-linking...
-Program Size: Code=4048 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=3936 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling HD44780.c...
-user\src\HD44780.c(335): warning:  #177-D: variable "i" was declared but never referenced
-linking...
-Program Size: Code=3936 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
-Build target 'SB3'
-compiling HD44780.c...
-user\src\HD44780.c(335): warning:  #177-D: variable "i" was declared but never referenced
-linking...
-Program Size: Code=3936 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-linking...
-Program Size: Code=3936 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(262): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=3980 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(262): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=3980 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(262): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=3900 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(262): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-compiling HD44780.c...
-user\src\HD44780.c(335): warning:  #177-D: variable "i" was declared but never referenced
-linking...
-Program Size: Code=3900 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 4 Warning(s).
-Build target 'SB3'
+user\src\main.c(311): warning:  #223-D: function "setCursor" declared implicitly
+user\src\main.c(404): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(402): warning:  #128-D: loop is not reachable
+user\src\main.c(249): warning:  #177-D: variable "j" was declared but never referenced
+user\src\main.c(250): warning:  #177-D: variable "acctemp" was declared but never referenced
+user\src\main.c(251): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(252): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(253): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
+compiling UART.c...
 compiling HD44780.c...
 user\src\HD44780.c(334): warning:  #177-D: variable "Temp" was declared but never referenced
 user\src\HD44780.c(335): warning:  #177-D: variable "i" was declared but never referenced
+compiling humidity.c...
+compiling LCD.c...
+compiling misc.c...
+compiling stm32f10x_adc.c...
+compiling stm32f10x_dma.c...
+compiling stm32f10x_gpio.c...
+compiling stm32f10x_rcc.c...
+compiling stm32f10x_tim.c...
+compiling stm32f10x_usart.c...
+compiling stm32f10x_bkp.c...
+compiling stm32f10x_can.c...
+compiling stm32f10x_cec.c...
+compiling stm32f10x_crc.c...
+compiling stm32f10x_dac.c...
+compiling stm32f10x_dbgmcu.c...
+compiling stm32f10x_exti.c...
+compiling stm32f10x_flash.c...
+compiling stm32f10x_fsmc.c...
+compiling stm32f10x_i2c.c...
+compiling stm32f10x_iwdg.c...
+compiling stm32f10x_pwr.c...
+compiling stm32f10x_rtc.c...
+compiling stm32f10x_sdio.c...
+compiling stm32f10x_spi.c...
+compiling stm32f10x_wwdg.c...
 linking...
-Program Size: Code=3448 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling LEDs.c...
-linking...
-Program Size: Code=3448 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-linking...
-Program Size: Code=3448 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Build target 'SB3'
-linking...
-Program Size: Code=3448 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(262): warning:  #111-D: statement is unreachable
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=3448 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=3472 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling HD44780.c...
-user\src\HD44780.c(334): warning:  #177-D: variable "Temp" was declared but never referenced
-user\src\HD44780.c(335): warning:  #177-D: variable "i" was declared but never referenced
-linking...
-Program Size: Code=3472 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
+Program Size: Code=4708 RO-data=336 RW-data=140 ZI-data=2836  
+"SB3_firmware.axf" - 0 Error(s), 10 Warning(s).
 Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
 Build target 'SB3'
 linking...
-Program Size: Code=3472 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Build target 'SB3'
-compiling HD44780.c...
-user\src\HD44780.c(476): error:  #29: expected an expression
-user\src\HD44780.c(334): warning:  #177-D: variable "Temp" was declared but never referenced
-user\src\HD44780.c(335): warning:  #177-D: variable "i" was declared but never referenced
-Target not created
-Build target 'SB3'
-compiling HD44780.c...
-user\src\HD44780.c(334): warning:  #177-D: variable "Temp" was declared but never referenced
-user\src\HD44780.c(335): warning:  #177-D: variable "i" was declared but never referenced
-linking...
-Program Size: Code=3480 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(131): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(213): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=2028 RO-data=320 RW-data=100 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-linking...
-Program Size: Code=2028 RO-data=320 RW-data=100 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Build target 'SB3'
-compiling LCD.c...
-user\src\LCD.c(1): error:  #5: cannot open source input file "LiquidCrystal.h": No such file or directory
-Target not created
-Build target 'SB3'
-compiling LCD.c...
-user\src\LCD.h(5): error:  #5: cannot open source input file "Print.h": No such file or directory
-Target not created
-Build target 'SB3'
-compiling LCD.c...
-user\src\LCD.h(45): error:  #20: identifier "class" is undefined
-user\src\LCD.h(45): error:  #65: expected a ";"
-user\src\LCD.h(67): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.h(68): warning:  #1295-D: Deprecated declaration display - give arg types
-user\src\LCD.h(69): warning:  #1295-D: Deprecated declaration noBlink - give arg types
-user\src\LCD.h(70): warning:  #1295-D: Deprecated declaration blink - give arg types
-user\src\LCD.h(71): warning:  #1295-D: Deprecated declaration noCursor - give arg types
-user\src\LCD.h(72): warning:  #1295-D: Deprecated declaration cursor - give arg types
-user\src\LCD.h(73): warning:  #1295-D: Deprecated declaration scrollDisplayLeft - give arg types
-user\src\LCD.h(74): warning:  #1295-D: Deprecated declaration scrollDisplayRight - give arg types
-user\src\LCD.h(75): warning:  #1295-D: Deprecated declaration leftToRight - give arg types
-user\src\LCD.h(76): warning:  #1295-D: Deprecated declaration rightToLeft - give arg types
-user\src\LCD.h(77): warning:  #1295-D: Deprecated declaration autoscroll - give arg types
-user\src\LCD.h(78): warning:  #1295-D: Deprecated declaration noAutoscroll - give arg types
-user\src\LCD.h(82): error:  #20: identifier "virtual" is undefined
-user\src\LCD.h(82): error:  #65: expected a ";"
-user\src\LCD.h(85): error:  #20: identifier "using" is undefined
-user\src\LCD.h(85): error:  #65: expected a ";"
-user\src\LCD.h(86): error:  #77-D: this declaration has no storage class or type specifier
-user\src\LCD.h(86): error:  #65: expected a ";"
-user\src\LCD.h(90): warning:  #1295-D: Deprecated declaration pulseEnable - give arg types
-user\src\LCD.h(104): error:  #169: expected a declaration
-C:\Keil\ARM\ARMCC\bin\..\include\stdio.h(41): error:  #101: "size_t" has already been declared in the current scope
-user\src\LCD.c(6): error:  #5: cannot open source input file "Arduino.h": No such file or directory
-Target not created
-Build target 'SB3'
-compiling LCD.c...
-user\src\LCD.c(6): error:  #5: cannot open source input file "Arduino.h": No such file or directory
-Target not created
-Build target 'SB3'
-compiling LCD.c...
-user\src\LCD.c(27): error:  #77-D: this declaration has no storage class or type specifier
-user\src\LCD.c(27): error:  #65: expected a ";"
-user\src\LCD.c(78): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(79): error:  #169: expected a declaration
-user\src\LCD.c(82): error:  #79: expected a type specifier
-user\src\LCD.c(82): error:  #79: expected a type specifier
-user\src\LCD.c(82): warning:  #77-D: this declaration has no storage class or type specifier
-user\src\LCD.c(83): error:  #169: expected a declaration
-user\src\LCD.c(144): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(147): error:  #77-D: this declaration has no storage class or type specifier
-user\src\LCD.c(148): warning:  #1295-D: Deprecated declaration display - give arg types
-user\src\LCD.c(148): warning:  #77-D: this declaration has no storage class or type specifier
-user\src\LCD.c(151): warning:  #1295-D: Deprecated declaration clear - give arg types
-user\src\LCD.c(151): warning:  #77-D: this declaration has no storage class or type specifier
-user\src\LCD.c(154): error:  #77-D: this declaration has no storage class or type specifier
-user\src\LCD.c(156): error:  #79: expected a type specifier
-user\src\LCD.c(156): warning:  #77-D: this declaration has no storage class or type specifier
-user\src\LCD.c(158): error:  #169: expected a declaration
-user\src\LCD.c(310): warning: At end of source:  #12-D: parsing restarts here after previous syntax error
-Target not created
-Build target 'SB3'
-compiling LCD.c...
-user\src\LCD.c(27): error:  #77-D: this declaration has no storage class or type specifier
-user\src\LCD.c(27): error:  #65: expected a ";"
-user\src\LCD.c(78): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(79): error:  #169: expected a declaration
-user\src\LCD.c(82): error:  #79: expected a type specifier
-user\src\LCD.c(82): error:  #79: expected a type specifier
-user\src\LCD.c(82): warning:  #77-D: this declaration has no storage class or type specifier
-user\src\LCD.c(83): error:  #169: expected a declaration
-user\src\LCD.c(144): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(147): error:  #77-D: this declaration has no storage class or type specifier
-user\src\LCD.c(148): warning:  #1295-D: Deprecated declaration display - give arg types
-user\src\LCD.c(148): warning:  #77-D: this declaration has no storage class or type specifier
-user\src\LCD.c(151): warning:  #1295-D: Deprecated declaration clear - give arg types
-user\src\LCD.c(151): warning:  #77-D: this declaration has no storage class or type specifier
-user\src\LCD.c(154): error:  #77-D: this declaration has no storage class or type specifier
-user\src\LCD.c(156): error:  #79: expected a type specifier
-user\src\LCD.c(156): warning:  #77-D: this declaration has no storage class or type specifier
-user\src\LCD.c(158): error:  #169: expected a declaration
-user\src\LCD.c(310): warning: At end of source:  #12-D: parsing restarts here after previous syntax error
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-compiling LCD.c...
-user\src\LCD.c(32): error:  #70: incomplete type is not allowed
-user\src\LCD.c(32): error:  #65: expected a ";"
-user\src\LCD.c(57): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(58): error:  #169: expected a declaration
-user\src\LCD.c(61): error:  #79: expected a type specifier
-user\src\LCD.c(61): error:  #79: expected a type specifier
-user\src\LCD.c(61): warning:  #77-D: this declaration has no storage class or type specifier
-user\src\LCD.c(62): error:  #169: expected a declaration
-user\src\LCD.c(123): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(126): error:  #77-D: this declaration has no storage class or type specifier
-user\src\LCD.c(127): warning:  #1295-D: Deprecated declaration display - give arg types
-user\src\LCD.c(127): warning:  #77-D: this declaration has no storage class or type specifier
-user\src\LCD.c(130): warning:  #1295-D: Deprecated declaration clear - give arg types
-user\src\LCD.c(130): warning:  #77-D: this declaration has no storage class or type specifier
-user\src\LCD.c(133): error:  #77-D: this declaration has no storage class or type specifier
-user\src\LCD.c(135): error:  #79: expected a type specifier
-user\src\LCD.c(135): warning:  #77-D: this declaration has no storage class or type specifier
-user\src\LCD.c(137): error:  #169: expected a declaration
-user\src\LCD.c(289): warning: At end of source:  #12-D: parsing restarts here after previous syntax error
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(226): warning:  #223-D: function "LCDINIT" declared implicitly
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-compiling LCD.c...
-user\src\LCD.c(47): error:  #20: identifier "displayfunction" is undefined
-user\src\LCD.c(48): warning:  #223-D: function "begin" declared implicitly
-user\src\LCD.c(51): error:  #159: declaration is incompatible with previous "begin" (declared at line 48)
-user\src\LCD.c(66): warning:  #223-D: function "delayMicroseconds" declared implicitly
-user\src\LCD.c(68): warning:  #223-D: function "digitalWrite" declared implicitly
-user\src\LCD.c(68): error:  #20: identifier "LOW" is undefined
-user\src\LCD.c(80): warning:  #223-D: function "write4bits" declared implicitly
-user\src\LCD.c(98): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(110): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(114): warning:  #223-D: function "display" declared implicitly
-user\src\LCD.c(117): warning:  #223-D: function "clear" declared implicitly
-user\src\LCD.c(234): error:  #70: incomplete type is not allowed
-user\src\LCD.c(234): error:  #65: expected a ";"
-user\src\LCD.c(383): warning: At end of source:  #12-D: parsing restarts here after previous syntax error
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\LCD.h(45): warning:  #1295-D: Deprecated declaration LCDINIT - give arg types
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-compiling LCD.c...
-user\src\LCD.h(45): warning:  #1295-D: Deprecated declaration LCDINIT - give arg types
-user\src\LCD.c(48): warning:  #223-D: function "begin" declared implicitly
-user\src\LCD.c(51): error:  #159: declaration is incompatible with previous "begin" (declared at line 48)
-user\src\LCD.c(66): warning:  #223-D: function "delayMicroseconds" declared implicitly
-user\src\LCD.c(68): warning:  #223-D: function "digitalWrite" declared implicitly
-user\src\LCD.c(68): error:  #20: identifier "LOW" is undefined
-user\src\LCD.c(80): warning:  #223-D: function "write4bits" declared implicitly
-user\src\LCD.c(98): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(110): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(114): warning:  #223-D: function "display" declared implicitly
-user\src\LCD.c(117): warning:  #223-D: function "clear" declared implicitly
-user\src\LCD.c(234): error:  #70: incomplete type is not allowed
-user\src\LCD.c(234): error:  #65: expected a ";"
-user\src\LCD.c(383): warning: At end of source:  #12-D: parsing restarts here after previous syntax error
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-compiling LCD.c...
-user\src\LCD.c(48): warning:  #223-D: function "begin" declared implicitly
-user\src\LCD.c(51): error:  #159: declaration is incompatible with previous "begin" (declared at line 48)
-user\src\LCD.c(66): warning:  #223-D: function "delayMicroseconds" declared implicitly
-user\src\LCD.c(68): warning:  #223-D: function "digitalWrite" declared implicitly
-user\src\LCD.c(68): error:  #20: identifier "LOW" is undefined
-user\src\LCD.c(80): warning:  #223-D: function "write4bits" declared implicitly
-user\src\LCD.c(98): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(110): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(114): warning:  #223-D: function "display" declared implicitly
-user\src\LCD.c(117): warning:  #223-D: function "clear" declared implicitly
-user\src\LCD.c(234): error:  #70: incomplete type is not allowed
-user\src\LCD.c(234): error:  #65: expected a ";"
-user\src\LCD.c(383): warning: At end of source:  #12-D: parsing restarts here after previous syntax error
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-compiling LCD.c...
-user\src\LCD.c(66): warning:  #223-D: function "delayMicroseconds" declared implicitly
-user\src\LCD.c(68): warning:  #223-D: function "digitalWrite" declared implicitly
-user\src\LCD.c(68): error:  #20: identifier "LOW" is undefined
-user\src\LCD.c(80): warning:  #223-D: function "write4bits" declared implicitly
-user\src\LCD.c(98): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(110): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(114): warning:  #223-D: function "display" declared implicitly
-user\src\LCD.c(117): warning:  #223-D: function "clear" declared implicitly
-user\src\LCD.c(234): error:  #70: incomplete type is not allowed
-user\src\LCD.c(234): error:  #65: expected a ";"
-user\src\LCD.c(383): warning: At end of source:  #12-D: parsing restarts here after previous syntax error
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-compiling LCD.c...
-user\src\LCD.c(50): warning:  #223-D: function "LED_on" declared implicitly
-user\src\LCD.c(77): warning:  #223-D: function "digitalWrite" declared implicitly
-user\src\LCD.c(77): error:  #20: identifier "LOW" is undefined
-user\src\LCD.c(89): warning:  #223-D: function "write4bits" declared implicitly
-user\src\LCD.c(107): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(119): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(123): warning:  #223-D: function "display" declared implicitly
-user\src\LCD.c(126): warning:  #223-D: function "clear" declared implicitly
-user\src\LCD.c(243): error:  #70: incomplete type is not allowed
-user\src\LCD.c(243): error:  #65: expected a ";"
-user\src\LCD.c(392): warning: At end of source:  #12-D: parsing restarts here after previous syntax error
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-compiling LCD.c...
-user\src\LCD.c(59): warning:  #223-D: function "LED_on" declared implicitly
-user\src\LCD.c(86): warning:  #223-D: function "GPIO_ResetBits" declared implicitly
-user\src\LCD.c(86): error:  #20: identifier "GPIOA" is undefined
-user\src\LCD.c(86): error:  #20: identifier "GPIO_Pin_1" is undefined
-user\src\LCD.c(88): error:  #65: expected a ";"
-user\src\LCD.c(91): warning:  #223-D: function "digitalWrite" declared implicitly
-user\src\LCD.c(91): error:  #20: identifier "LOW" is undefined
-user\src\LCD.c(99): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(115): warning:  #223-D: function "display" declared implicitly
-user\src\LCD.c(118): warning:  #223-D: function "clear" declared implicitly
-user\src\LCD.c(128): error:  #70: incomplete type is not allowed
-user\src\LCD.c(128): error:  #65: expected a ";"
-user\src\LCD.c(277): warning: At end of source:  #12-D: parsing restarts here after previous syntax error
-Target not created
-Build target 'SB3'
-compiling LCD.c...
-user\src\LCD.c(61): warning:  #223-D: function "LED_on" declared implicitly
-user\src\LCD.c(90): error:  #65: expected a ";"
-user\src\LCD.c(93): warning:  #223-D: function "digitalWrite" declared implicitly
-user\src\LCD.c(93): error:  #20: identifier "LOW" is undefined
-user\src\LCD.c(101): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(117): warning:  #223-D: function "display" declared implicitly
-user\src\LCD.c(120): warning:  #223-D: function "clear" declared implicitly
-user\src\LCD.c(130): error:  #70: incomplete type is not allowed
-user\src\LCD.c(130): error:  #65: expected a ";"
-user\src\LCD.c(279): warning: At end of source:  #12-D: parsing restarts here after previous syntax error
-Target not created
-Build target 'SB3'
-compiling LCD.c...
-user\src\LCD.c(91): error:  #65: expected a ";"
-user\src\LCD.c(94): warning:  #223-D: function "digitalWrite" declared implicitly
-user\src\LCD.c(94): error:  #20: identifier "LOW" is undefined
-user\src\LCD.c(102): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(118): warning:  #223-D: function "display" declared implicitly
-user\src\LCD.c(121): warning:  #223-D: function "clear" declared implicitly
-user\src\LCD.c(131): error:  #70: incomplete type is not allowed
-user\src\LCD.c(131): error:  #65: expected a ";"
-user\src\LCD.c(280): warning: At end of source:  #12-D: parsing restarts here after previous syntax error
-Target not created
-Build target 'SB3'
-compiling LCD.c...
-user\src\LCD.c(91): error:  #65: expected a ";"
-user\src\LCD.c(102): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(106): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(118): warning:  #223-D: function "display" declared implicitly
-user\src\LCD.c(121): warning:  #223-D: function "clear" declared implicitly
-user\src\LCD.c(131): error:  #70: incomplete type is not allowed
-user\src\LCD.c(131): error:  #65: expected a ";"
-user\src\LCD.c(280): warning: At end of source:  #12-D: parsing restarts here after previous syntax error
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-compiling LCD.c...
-user\src\LCD.c(102): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(118): warning:  #223-D: function "display" declared implicitly
-user\src\LCD.c(121): warning:  #223-D: function "clear" declared implicitly
-user\src\LCD.c(131): error:  #70: incomplete type is not allowed
-user\src\LCD.c(131): error:  #65: expected a ";"
-user\src\LCD.c(279): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(280): error:  #169: expected a declaration
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-compiling LCD.c...
-user\src\LCD.c(102): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(118): warning:  #223-D: function "display" declared implicitly
-user\src\LCD.c(121): warning:  #223-D: function "clear" declared implicitly
-user\src\LCD.c(131): error:  #159: declaration is incompatible with previous "clear" (declared at line 121)
-user\src\LCD.c(133): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(139): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(150): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(154): error:  #70: incomplete type is not allowed
-user\src\LCD.c(154): error:  #65: expected a ";"
-user\src\LCD.c(279): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(280): error:  #169: expected a declaration
-Target not created
-Build target 'SB3'
-compiling LCD.c...
-user\src\LCD.c(102): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(118): warning:  #223-D: function "display" declared implicitly
-user\src\LCD.c(121): warning:  #223-D: function "clear" declared implicitly
-user\src\LCD.c(131): error:  #159: declaration is incompatible with previous "clear" (declared at line 121)
-user\src\LCD.c(133): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(139): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(150): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(156): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(158): error:  #159: declaration is incompatible with previous "display" (declared at line 118)
-user\src\LCD.c(160): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(166): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(170): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(176): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(180): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(185): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(188): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(194): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(200): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(206): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(212): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(219): error:  #77-D: this declaration has no storage class or type specifier
-user\src\LCD.c(219): error:  #65: expected a ";"
-user\src\LCD.c(271): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(272): error:  #169: expected a declaration
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\LCD.h(50): warning:  #1295-D: Deprecated declaration clear - give arg types
-user\src\LCD.h(51): warning:  #1295-D: Deprecated declaration home - give arg types
-user\src\LCD.h(53): warning:  #1295-D: Deprecated declaration noDisplay - give arg types
-user\src\LCD.h(54): warning:  #1295-D: Deprecated declaration display - give arg types
-user\src\LCD.h(55): warning:  #1295-D: Deprecated declaration noBlink - give arg types
-user\src\LCD.h(56): warning:  #1295-D: Deprecated declaration blink - give arg types
-user\src\LCD.h(57): warning:  #1295-D: Deprecated declaration noCursor - give arg types
-user\src\LCD.h(58): warning:  #1295-D: Deprecated declaration cursor - give arg types
-user\src\LCD.h(59): warning:  #1295-D: Deprecated declaration scrollDisplayLeft - give arg types
-user\src\LCD.h(60): warning:  #1295-D: Deprecated declaration scrollDisplayRight - give arg types
-user\src\LCD.h(61): warning:  #1295-D: Deprecated declaration leftToRight - give arg types
-user\src\LCD.h(62): warning:  #1295-D: Deprecated declaration rightToLeft - give arg types
-user\src\LCD.h(63): warning:  #1295-D: Deprecated declaration autoscroll - give arg types
-user\src\LCD.h(64): warning:  #1295-D: Deprecated declaration noAutoscroll - give arg types
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-compiling LCD.c...
-user\src\LCD.h(50): warning:  #1295-D: Deprecated declaration clear - give arg types
-user\src\LCD.h(51): warning:  #1295-D: Deprecated declaration home - give arg types
-user\src\LCD.h(53): warning:  #1295-D: Deprecated declaration noDisplay - give arg types
-user\src\LCD.h(54): warning:  #1295-D: Deprecated declaration display - give arg types
-user\src\LCD.h(55): warning:  #1295-D: Deprecated declaration noBlink - give arg types
-user\src\LCD.h(56): warning:  #1295-D: Deprecated declaration blink - give arg types
-user\src\LCD.h(57): warning:  #1295-D: Deprecated declaration noCursor - give arg types
-user\src\LCD.h(58): warning:  #1295-D: Deprecated declaration cursor - give arg types
-user\src\LCD.h(59): warning:  #1295-D: Deprecated declaration scrollDisplayLeft - give arg types
-user\src\LCD.h(60): warning:  #1295-D: Deprecated declaration scrollDisplayRight - give arg types
-user\src\LCD.h(61): warning:  #1295-D: Deprecated declaration leftToRight - give arg types
-user\src\LCD.h(62): warning:  #1295-D: Deprecated declaration rightToLeft - give arg types
-user\src\LCD.h(63): warning:  #1295-D: Deprecated declaration autoscroll - give arg types
-user\src\LCD.h(64): warning:  #1295-D: Deprecated declaration noAutoscroll - give arg types
-user\src\LCD.c(102): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(133): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(139): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(150): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(156): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(160): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(166): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(170): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(176): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(180): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(185): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(188): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(194): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(200): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(206): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(212): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(219): error:  #77-D: this declaration has no storage class or type specifier
-user\src\LCD.c(219): error:  #65: expected a ";"
-user\src\LCD.c(271): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(272): error:  #169: expected a declaration
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\LCD.h(50): warning:  #1295-D: Deprecated declaration clear - give arg types
-user\src\LCD.h(51): warning:  #1295-D: Deprecated declaration home - give arg types
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-compiling LCD.c...
-user\src\LCD.h(50): warning:  #1295-D: Deprecated declaration clear - give arg types
-user\src\LCD.h(51): warning:  #1295-D: Deprecated declaration home - give arg types
-user\src\LCD.c(102): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(133): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(139): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(150): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(156): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(160): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(166): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(170): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(176): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(180): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(185): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(188): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(194): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(200): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(206): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(212): warning:  #223-D: function "command" declared implicitly
-user\src\LCD.c(219): error:  #77-D: this declaration has no storage class or type specifier
-user\src\LCD.c(219): error:  #65: expected a ";"
-user\src\LCD.c(271): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(272): error:  #169: expected a declaration
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\LCD.h(50): warning:  #1295-D: Deprecated declaration clear - give arg types
-user\src\LCD.h(51): warning:  #1295-D: Deprecated declaration home - give arg types
-user\src\main.c(45): error:  #101: "value" has already been declared in the current scope
-user\src\main.c(80): error:  #65: expected a ";"
-user\src\main.c(104): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\main.c(105): error:  #20: identifier "GPIO_InitStruct" is undefined
-user\src\main.c(119): error:  #20: identifier "I2C_InitStruct" is undefined
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-user\src\main.c(328): error:  #20: identifier "command_flag" is undefined
-user\src\main.c(352): error:  #20: identifier "value_received" is undefined
-user\src\main.c(358): error:  #20: identifier "value" is undefined
-compiling LCD.c...
-user\src\LCD.h(50): warning:  #1295-D: Deprecated declaration clear - give arg types
-user\src\LCD.h(51): warning:  #1295-D: Deprecated declaration home - give arg types
-.\lib\cmsis\cm3\coresupport\core_cm3.h(948): error:  #326: "inline" is not allowed
-.\lib\cmsis\cm3\coresupport\core_cm3.h(949): error:  #65: expected a ";"
-.\lib\cmsis\cm3\coresupport\core_cm3.h(1742): warning:  #12-D: parsing restarts here after previous syntax error
-.\lib\cmsis\cm3\coresupport\core_cm3.h(1756): error:  #326: "inline" is not allowed
-.\lib\cmsis\cm3\coresupport\core_cm3.h(1757): error:  #65: expected a ";"
-.\lib\cmsis\cm3\devicesupport\st\stm32f10x\system_stm32f10x.h(53): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(58): error:  #65: expected a ";"
-user\src\LCD.c(102): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(10): warning:  #177-D: variable "_rs_pin" was declared but never referenced
-user\src\LCD.c(11): warning:  #177-D: variable "_rw_pin" was declared but never referenced
-user\src\LCD.c(12): warning:  #177-D: variable "_enable_pin" was declared but never referenced
-user\src\LCD.c(13): warning:  #177-D: variable "_data_pins" was declared but never referenced
-user\src\LCD.c(16): warning:  #550-D: variable "_displaycontrol" was set but never used
-user\src\LCD.c(19): warning:  #177-D: variable "_initialized" was declared but never referenced
-user\src\LCD.c(21): warning:  #177-D: variable "_numlines" was declared but never referenced
-user\src\LCD.c(21): warning:  #177-D: variable "_currline" was declared but never referenced
-user\src\LCD.c(146): error:  #20: identifier "_numlines" is undefined
-user\src\LCD.c(155): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(159): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(165): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(169): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(175): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(179): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(193): error:  #20: identifier "_displaymode" is undefined
-user\src\LCD.c(199): error:  #20: identifier "_displaymode" is undefined
-user\src\LCD.c(205): error:  #20: identifier "_displaymode" is undefined
-user\src\LCD.c(211): error:  #20: identifier "_displaymode" is undefined
-user\src\LCD.c(219): error:  #247: function "command" has already been defined
-user\src\LCD.c(220): warning:  #223-D: function "send" declared implicitly
-user\src\LCD.c(220): error:  #20: identifier "LOW" is undefined
-user\src\LCD.c(223): error:  #20: identifier "inline" is undefined
-user\src\LCD.c(223): error:  #65: expected a ";"
-user\src\LCD.c(271): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(272): error:  #169: expected a declaration
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\LCD.h(50): warning:  #1295-D: Deprecated declaration clear - give arg types
-user\src\LCD.h(51): warning:  #1295-D: Deprecated declaration home - give arg types
-user\src\LCD.h(66): error:  #20: identifier "size_t" is undefined
-user\src\LCD.h(66): error:  #65: expected a ";"
-user\src\main.c(45): error:  #101: "value" has already been declared in the current scope
-user\src\main.c(80): error:  #65: expected a ";"
-user\src\main.c(104): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\main.c(105): error:  #20: identifier "GPIO_InitStruct" is undefined
-user\src\main.c(119): error:  #20: identifier "I2C_InitStruct" is undefined
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-user\src\main.c(328): error:  #20: identifier "command_flag" is undefined
-user\src\main.c(352): error:  #20: identifier "value_received" is undefined
-user\src\main.c(358): error:  #20: identifier "value" is undefined
-compiling LCD.c...
-user\src\LCD.h(50): warning:  #1295-D: Deprecated declaration clear - give arg types
-user\src\LCD.h(51): warning:  #1295-D: Deprecated declaration home - give arg types
-user\src\LCD.h(66): error:  #20: identifier "size_t" is undefined
-user\src\LCD.h(66): error:  #65: expected a ";"
-.\lib\cmsis\cm3\coresupport\core_cm3.h(948): error:  #326: "inline" is not allowed
-.\lib\cmsis\cm3\coresupport\core_cm3.h(949): error:  #65: expected a ";"
-.\lib\cmsis\cm3\coresupport\core_cm3.h(1742): warning:  #12-D: parsing restarts here after previous syntax error
-.\lib\cmsis\cm3\coresupport\core_cm3.h(1756): error:  #326: "inline" is not allowed
-.\lib\cmsis\cm3\coresupport\core_cm3.h(1757): error:  #65: expected a ";"
-.\lib\cmsis\cm3\devicesupport\st\stm32f10x\system_stm32f10x.h(53): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(58): error:  #65: expected a ";"
-user\src\LCD.c(102): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(10): warning:  #177-D: variable "_rs_pin" was declared but never referenced
-user\src\LCD.c(11): warning:  #177-D: variable "_rw_pin" was declared but never referenced
-user\src\LCD.c(12): warning:  #177-D: variable "_enable_pin" was declared but never referenced
-user\src\LCD.c(13): warning:  #177-D: variable "_data_pins" was declared but never referenced
-user\src\LCD.c(16): warning:  #550-D: variable "_displaycontrol" was set but never used
-user\src\LCD.c(19): warning:  #177-D: variable "_initialized" was declared but never referenced
-user\src\LCD.c(21): warning:  #177-D: variable "_numlines" was declared but never referenced
-user\src\LCD.c(21): warning:  #177-D: variable "_currline" was declared but never referenced
-user\src\LCD.c(146): error:  #20: identifier "_numlines" is undefined
-user\src\LCD.c(155): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(159): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(165): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(169): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(175): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(179): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(193): error:  #20: identifier "_displaymode" is undefined
-user\src\LCD.c(199): error:  #20: identifier "_displaymode" is undefined
-user\src\LCD.c(205): error:  #20: identifier "_displaymode" is undefined
-user\src\LCD.c(211): error:  #20: identifier "_displaymode" is undefined
-user\src\LCD.c(219): error:  #247: function "command" has already been defined
-user\src\LCD.c(220): warning:  #223-D: function "send" declared implicitly
-user\src\LCD.c(220): error:  #20: identifier "LOW" is undefined
-user\src\LCD.c(223): error:  #20: identifier "size_t" is undefined
-user\src\LCD.c(223): error:  #65: expected a ";"
-user\src\LCD.c(271): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(272): error:  #169: expected a declaration
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\LCD.h(50): warning:  #1295-D: Deprecated declaration clear - give arg types
-user\src\LCD.h(51): warning:  #1295-D: Deprecated declaration home - give arg types
-user\src\LCD.h(66): error:  #20: identifier "size_t" is undefined
-user\src\LCD.h(66): error:  #65: expected a ";"
-user\src\main.c(45): error:  #101: "value" has already been declared in the current scope
-user\src\main.c(80): error:  #65: expected a ";"
-user\src\main.c(104): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\main.c(105): error:  #20: identifier "GPIO_InitStruct" is undefined
-user\src\main.c(119): error:  #20: identifier "I2C_InitStruct" is undefined
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-user\src\main.c(328): error:  #20: identifier "command_flag" is undefined
-user\src\main.c(352): error:  #20: identifier "value_received" is undefined
-user\src\main.c(358): error:  #20: identifier "value" is undefined
-compiling LCD.c...
-user\src\LCD.h(50): warning:  #1295-D: Deprecated declaration clear - give arg types
-user\src\LCD.h(51): warning:  #1295-D: Deprecated declaration home - give arg types
-user\src\LCD.h(66): error:  #20: identifier "size_t" is undefined
-user\src\LCD.h(66): error:  #65: expected a ";"
-.\lib\cmsis\cm3\coresupport\core_cm3.h(948): error:  #326: "inline" is not allowed
-.\lib\cmsis\cm3\coresupport\core_cm3.h(949): error:  #65: expected a ";"
-.\lib\cmsis\cm3\coresupport\core_cm3.h(1742): warning:  #12-D: parsing restarts here after previous syntax error
-.\lib\cmsis\cm3\coresupport\core_cm3.h(1756): error:  #326: "inline" is not allowed
-.\lib\cmsis\cm3\coresupport\core_cm3.h(1757): error:  #65: expected a ";"
-.\lib\cmsis\cm3\devicesupport\st\stm32f10x\system_stm32f10x.h(53): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(58): error:  #65: expected a ";"
-user\src\LCD.c(102): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(10): warning:  #177-D: variable "_rs_pin" was declared but never referenced
-user\src\LCD.c(11): warning:  #177-D: variable "_rw_pin" was declared but never referenced
-user\src\LCD.c(12): warning:  #177-D: variable "_enable_pin" was declared but never referenced
-user\src\LCD.c(13): warning:  #177-D: variable "_data_pins" was declared but never referenced
-user\src\LCD.c(16): warning:  #550-D: variable "_displaycontrol" was set but never used
-user\src\LCD.c(19): warning:  #177-D: variable "_initialized" was declared but never referenced
-user\src\LCD.c(21): warning:  #177-D: variable "_numlines" was declared but never referenced
-user\src\LCD.c(21): warning:  #177-D: variable "_currline" was declared but never referenced
-user\src\LCD.c(146): error:  #20: identifier "_numlines" is undefined
-user\src\LCD.c(155): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(159): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(165): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(169): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(175): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(179): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(193): error:  #20: identifier "_displaymode" is undefined
-user\src\LCD.c(199): error:  #20: identifier "_displaymode" is undefined
-user\src\LCD.c(205): error:  #20: identifier "_displaymode" is undefined
-user\src\LCD.c(211): error:  #20: identifier "_displaymode" is undefined
-user\src\LCD.c(219): error:  #247: function "command" has already been defined
-user\src\LCD.c(220): warning:  #223-D: function "send" declared implicitly
-user\src\LCD.c(220): error:  #20: identifier "LOW" is undefined
-user\src\LCD.c(223): error:  #20: identifier "size_t" is undefined
-user\src\LCD.c(223): error:  #65: expected a ";"
-user\src\LCD.c(271): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(272): error:  #169: expected a declaration
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\LCD.h(50): warning:  #1295-D: Deprecated declaration clear - give arg types
-user\src\LCD.h(51): warning:  #1295-D: Deprecated declaration home - give arg types
-user\src\LCD.h(66): error:  #20: identifier "size_t" is undefined
-user\src\LCD.h(66): error:  #65: expected a ";"
-user\src\main.c(45): error:  #101: "value" has already been declared in the current scope
-user\src\main.c(80): error:  #65: expected a ";"
-user\src\main.c(104): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\main.c(105): error:  #20: identifier "GPIO_InitStruct" is undefined
-user\src\main.c(119): error:  #20: identifier "I2C_InitStruct" is undefined
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-user\src\main.c(328): error:  #20: identifier "command_flag" is undefined
-user\src\main.c(352): error:  #20: identifier "value_received" is undefined
-user\src\main.c(358): error:  #20: identifier "value" is undefined
-compiling LCD.c...
-user\src\LCD.h(50): warning:  #1295-D: Deprecated declaration clear - give arg types
-user\src\LCD.h(51): warning:  #1295-D: Deprecated declaration home - give arg types
-user\src\LCD.h(66): error:  #20: identifier "size_t" is undefined
-user\src\LCD.h(66): error:  #65: expected a ";"
-.\lib\cmsis\cm3\coresupport\core_cm3.h(948): error:  #326: "inline" is not allowed
-.\lib\cmsis\cm3\coresupport\core_cm3.h(949): error:  #65: expected a ";"
-.\lib\cmsis\cm3\coresupport\core_cm3.h(1742): warning:  #12-D: parsing restarts here after previous syntax error
-.\lib\cmsis\cm3\coresupport\core_cm3.h(1756): error:  #326: "inline" is not allowed
-.\lib\cmsis\cm3\coresupport\core_cm3.h(1757): error:  #65: expected a ";"
-.\lib\cmsis\cm3\devicesupport\st\stm32f10x\system_stm32f10x.h(53): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(33): error:  #65: expected a ";"
-user\src\LCD.c(77): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(10): warning:  #177-D: variable "_rs_pin" was declared but never referenced
-user\src\LCD.c(11): warning:  #177-D: variable "_rw_pin" was declared but never referenced
-user\src\LCD.c(12): warning:  #177-D: variable "_enable_pin" was declared but never referenced
-user\src\LCD.c(13): warning:  #177-D: variable "_data_pins" was declared but never referenced
-user\src\LCD.c(16): warning:  #550-D: variable "_displaycontrol" was set but never used
-user\src\LCD.c(19): warning:  #177-D: variable "_initialized" was declared but never referenced
-user\src\LCD.c(21): warning:  #177-D: variable "_numlines" was declared but never referenced
-user\src\LCD.c(21): warning:  #177-D: variable "_currline" was declared but never referenced
-user\src\LCD.c(121): error:  #20: identifier "_numlines" is undefined
-user\src\LCD.c(130): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(134): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(140): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(144): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(150): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(154): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(168): error:  #20: identifier "_displaymode" is undefined
-user\src\LCD.c(174): error:  #20: identifier "_displaymode" is undefined
-user\src\LCD.c(180): error:  #20: identifier "_displaymode" is undefined
-user\src\LCD.c(186): error:  #20: identifier "_displaymode" is undefined
-user\src\LCD.c(194): error:  #247: function "command" has already been defined
-user\src\LCD.c(195): warning:  #223-D: function "send" declared implicitly
-user\src\LCD.c(195): error:  #20: identifier "LOW" is undefined
-user\src\LCD.c(198): error:  #20: identifier "size_t" is undefined
-user\src\LCD.c(198): error:  #65: expected a ";"
-user\src\LCD.c(243): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(244): error:  #169: expected a declaration
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\LCD.h(50): warning:  #1295-D: Deprecated declaration clear - give arg types
-user\src\LCD.h(51): warning:  #1295-D: Deprecated declaration home - give arg types
-user\src\LCD.h(66): error:  #20: identifier "size_t" is undefined
-user\src\LCD.h(66): error:  #65: expected a ";"
-user\src\main.c(45): error:  #101: "value" has already been declared in the current scope
-user\src\main.c(80): error:  #65: expected a ";"
-user\src\main.c(104): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\main.c(105): error:  #20: identifier "GPIO_InitStruct" is undefined
-user\src\main.c(119): error:  #20: identifier "I2C_InitStruct" is undefined
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-user\src\main.c(328): error:  #20: identifier "command_flag" is undefined
-user\src\main.c(352): error:  #20: identifier "value_received" is undefined
-user\src\main.c(358): error:  #20: identifier "value" is undefined
-compiling LCD.c...
-user\src\LCD.h(50): warning:  #1295-D: Deprecated declaration clear - give arg types
-user\src\LCD.h(51): warning:  #1295-D: Deprecated declaration home - give arg types
-user\src\LCD.h(66): error:  #20: identifier "size_t" is undefined
-user\src\LCD.h(66): error:  #65: expected a ";"
-.\lib\cmsis\cm3\coresupport\core_cm3.h(948): error:  #326: "inline" is not allowed
-.\lib\cmsis\cm3\coresupport\core_cm3.h(949): error:  #65: expected a ";"
-.\lib\cmsis\cm3\coresupport\core_cm3.h(1742): warning:  #12-D: parsing restarts here after previous syntax error
-.\lib\cmsis\cm3\coresupport\core_cm3.h(1756): error:  #326: "inline" is not allowed
-.\lib\cmsis\cm3\coresupport\core_cm3.h(1757): error:  #65: expected a ";"
-.\lib\cmsis\cm3\devicesupport\st\stm32f10x\system_stm32f10x.h(53): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(33): error:  #65: expected a ";"
-user\src\LCD.c(77): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(10): warning:  #177-D: variable "_rs_pin" was declared but never referenced
-user\src\LCD.c(11): warning:  #177-D: variable "_rw_pin" was declared but never referenced
-user\src\LCD.c(12): warning:  #177-D: variable "_enable_pin" was declared but never referenced
-user\src\LCD.c(13): warning:  #177-D: variable "_data_pins" was declared but never referenced
-user\src\LCD.c(16): warning:  #550-D: variable "_displaycontrol" was set but never used
-user\src\LCD.c(19): warning:  #177-D: variable "_initialized" was declared but never referenced
-user\src\LCD.c(21): warning:  #177-D: variable "_numlines" was declared but never referenced
-user\src\LCD.c(21): warning:  #177-D: variable "_currline" was declared but never referenced
-user\src\LCD.c(121): error:  #20: identifier "_numlines" is undefined
-user\src\LCD.c(130): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(134): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(140): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(144): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(150): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(154): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(168): error:  #20: identifier "_displaymode" is undefined
-user\src\LCD.c(174): error:  #20: identifier "_displaymode" is undefined
-user\src\LCD.c(180): error:  #20: identifier "_displaymode" is undefined
-user\src\LCD.c(186): error:  #20: identifier "_displaymode" is undefined
-user\src\LCD.c(194): error:  #247: function "command" has already been defined
-user\src\LCD.c(195): warning:  #223-D: function "send" declared implicitly
-user\src\LCD.c(195): error:  #20: identifier "LOW" is undefined
-user\src\LCD.c(198): error:  #20: identifier "size_t" is undefined
-user\src\LCD.c(198): error:  #65: expected a ";"
-user\src\LCD.c(243): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(244): error:  #169: expected a declaration
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\LCD.h(66): error:  #20: identifier "size_t" is undefined
-user\src\LCD.h(66): error:  #65: expected a ";"
-user\src\main.c(45): error:  #101: "value" has already been declared in the current scope
-user\src\main.c(80): error:  #65: expected a ";"
-user\src\main.c(104): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\main.c(105): error:  #20: identifier "GPIO_InitStruct" is undefined
-user\src\main.c(119): error:  #20: identifier "I2C_InitStruct" is undefined
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-user\src\main.c(328): error:  #20: identifier "command_flag" is undefined
-user\src\main.c(352): error:  #20: identifier "value_received" is undefined
-user\src\main.c(358): error:  #20: identifier "value" is undefined
-compiling LCD.c...
-user\src\LCD.h(66): error:  #20: identifier "size_t" is undefined
-user\src\LCD.h(66): error:  #65: expected a ";"
-.\lib\cmsis\cm3\coresupport\core_cm3.h(948): error:  #326: "inline" is not allowed
-.\lib\cmsis\cm3\coresupport\core_cm3.h(949): error:  #65: expected a ";"
-.\lib\cmsis\cm3\coresupport\core_cm3.h(1742): warning:  #12-D: parsing restarts here after previous syntax error
-.\lib\cmsis\cm3\coresupport\core_cm3.h(1756): error:  #326: "inline" is not allowed
-.\lib\cmsis\cm3\coresupport\core_cm3.h(1757): error:  #65: expected a ";"
-.\lib\cmsis\cm3\devicesupport\st\stm32f10x\system_stm32f10x.h(53): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(33): error:  #65: expected a ";"
-user\src\LCD.c(77): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(10): warning:  #177-D: variable "_rs_pin" was declared but never referenced
-user\src\LCD.c(11): warning:  #177-D: variable "_rw_pin" was declared but never referenced
-user\src\LCD.c(12): warning:  #177-D: variable "_enable_pin" was declared but never referenced
-user\src\LCD.c(13): warning:  #177-D: variable "_data_pins" was declared but never referenced
-user\src\LCD.c(16): warning:  #550-D: variable "_displaycontrol" was set but never used
-user\src\LCD.c(19): warning:  #177-D: variable "_initialized" was declared but never referenced
-user\src\LCD.c(21): warning:  #177-D: variable "_numlines" was declared but never referenced
-user\src\LCD.c(21): warning:  #177-D: variable "_currline" was declared but never referenced
-user\src\LCD.c(121): error:  #20: identifier "_numlines" is undefined
-user\src\LCD.c(130): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(134): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(140): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(144): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(150): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(154): error:  #20: identifier "_displaycontrol" is undefined
-user\src\LCD.c(168): error:  #20: identifier "_displaymode" is undefined
-user\src\LCD.c(174): error:  #20: identifier "_displaymode" is undefined
-user\src\LCD.c(180): error:  #20: identifier "_displaymode" is undefined
-user\src\LCD.c(186): error:  #20: identifier "_displaymode" is undefined
-user\src\LCD.c(194): error:  #247: function "command" has already been defined
-user\src\LCD.c(195): warning:  #223-D: function "send" declared implicitly
-user\src\LCD.c(195): error:  #20: identifier "LOW" is undefined
-user\src\LCD.c(198): error:  #20: identifier "size_t" is undefined
-user\src\LCD.c(198): error:  #65: expected a ";"
-user\src\LCD.c(243): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(244): error:  #169: expected a declaration
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\LCD.h(66): error:  #20: identifier "size_t" is undefined
-user\src\LCD.h(66): error:  #65: expected a ";"
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-compiling LCD.c...
-user\src\LCD.h(66): error:  #20: identifier "size_t" is undefined
-user\src\LCD.h(66): error:  #65: expected a ";"
-user\src\LCD.c(195): warning:  #223-D: function "send" declared implicitly
-user\src\LCD.c(195): error:  #20: identifier "LOW" is undefined
-user\src\LCD.c(198): error:  #65: expected a ";"
-user\src\LCD.c(243): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(244): error:  #169: expected a declaration
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\LCD.h(66): error:  #65: expected a ";"
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-compiling LCD.c...
-user\src\LCD.h(66): error:  #65: expected a ";"
-user\src\LCD.c(195): warning:  #223-D: function "send" declared implicitly
-user\src\LCD.c(195): error:  #20: identifier "LOW" is undefined
-user\src\LCD.c(198): error:  #65: expected a ";"
-user\src\LCD.c(243): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(244): error:  #169: expected a declaration
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-compiling LCD.c...
-user\src\LCD.c(195): warning:  #223-D: function "send" declared implicitly
-user\src\LCD.c(195): error:  #20: identifier "LOW" is undefined
-user\src\LCD.c(198): error:  #65: expected a ";"
-user\src\LCD.c(243): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(244): error:  #169: expected a declaration
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-compiling LCD.c...
-user\src\LCD.c(195): error:  #20: identifier "LOW" is undefined
-user\src\LCD.c(198): error:  #65: expected a ";"
-user\src\LCD.c(243): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(244): error:  #169: expected a declaration
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-compiling LCD.c...
-user\src\LCD.c(198): error:  #65: expected a ";"
-user\src\LCD.c(243): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\LCD.c(244): error:  #169: expected a declaration
-Target not created
-Build target 'SB3'
-compiling LCD.c...
-user\src\LCD.c(243): warning:  #1295-D: Deprecated declaration pulseEnable - give arg types
-user\src\LCD.c(243): warning:  #77-D: this declaration has no storage class or type specifier
-user\src\LCD.c(243): error:  #147: declaration is incompatible with "void pulseEnable(void)" (declared at line 223)
-user\src\LCD.c(244): error:  #169: expected a declaration
-Target not created
-Build target 'SB3'
-compiling LCD.c...
-user\src\LCD.c(243): warning:  #77-D: this declaration has no storage class or type specifier
-user\src\LCD.c(243): error:  #147: declaration is incompatible with "void pulseEnable(void)" (declared at line 223)
-user\src\LCD.c(244): error:  #169: expected a declaration
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-compiling LCD.c...
-user\src\LCD.c(243): warning:  #77-D: this declaration has no storage class or type specifier
-user\src\LCD.c(243): error:  #147: declaration is incompatible with "void pulseEnable(void)" (declared at line 223)
-user\src\LCD.c(244): error:  #169: expected a declaration
-Target not created
-Build target 'SB3'
-compiling LCD.c...
-user\src\LCD.c(243): warning:  #1295-D: Deprecated declaration pulseEnable - give arg types
-user\src\LCD.c(243): warning:  #77-D: this declaration has no storage class or type specifier
-user\src\LCD.c(243): error:  #147: declaration is incompatible with "void pulseEnable(void)" (declared at line 223)
-user\src\LCD.c(244): error:  #169: expected a declaration
-Target not created
-Build target 'SB3'
-compiling LCD.c...
-user\src\LCD.c(243): warning:  #77-D: this declaration has no storage class or type specifier
-user\src\LCD.c(243): error:  #147: declaration is incompatible with "void pulseEnable(void)" (declared at line 223)
-user\src\LCD.c(244): error:  #169: expected a declaration
-Target not created
-Build target 'SB3'
-compiling LCD.c...
-user\src\LCD.c(243): warning:  #77-D: this declaration has no storage class or type specifier
-user\src\LCD.c(243): error:  #147: declaration is incompatible with "void pulseEnable(void)" (declared at line 223)
-Target not created
-Build target 'SB3'
-compiling LCD.c...
-user\src\LCD.c(243): error:  #29: expected an expression
-user\src\LCD.c(243): error:  #140: too many arguments in function call
-user\src\LCD.c(244): warning:  #1-D: last line of file ends without a newline
-Target not created
-Build target 'SB3'
-compiling LCD.c...
-user\src\LCD.c(244): warning:  #1-D: last line of file ends without a newline
-linking...
-Program Size: Code=2552 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
-Build target 'SB3'
-compiling LCD.c...
-linking...
-Program Size: Code=2552 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(251): warning:  #223-D: function "print" declared implicitly
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-SB3_firmware.axf: Error: L6218E: Undefined symbol print (referred from main.o).
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(251): error:  #140: too many arguments in function call
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=2588 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling LCD.c...
-linking...
-Program Size: Code=2588 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling LCD.c...
-linking...
-Program Size: Code=2600 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling LCD.c...
-linking...
-Program Size: Code=2596 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling LCD.c...
-linking...
-Program Size: Code=2600 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-compiling LCD.c...
-linking...
-Program Size: Code=2628 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=2628 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=2596 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
-Build target 'SB3'
-linking...
-Program Size: Code=2596 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=2596 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling LCD.c...
-linking...
-Program Size: Code=2592 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling LCD.c...
-linking...
-Program Size: Code=2584 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-compiling LCD.c...
-linking...
-Program Size: Code=2608 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
-Build target 'SB3'
-linking...
-Program Size: Code=2608 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling LEDs.c...
-linking...
-Program Size: Code=2568 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling LCD.c...
-linking...
-Program Size: Code=2556 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-linking...
-Program Size: Code=2556 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling LCD.c...
-linking...
-Program Size: Code=2556 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=2628 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=2592 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling LCD.c...
-linking...
-Program Size: Code=2592 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=2628 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling LCD.c...
-linking...
-Program Size: Code=2632 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(318): warning:  #128-D: loop is not reachable
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=2692 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling LCD.c...
-linking...
-Program Size: Code=2704 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling LCD.c...
-linking...
-Program Size: Code=2704 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(325): warning:  #128-D: loop is not reachable
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=2728 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(325): warning:  #128-D: loop is not reachable
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=2728 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling LCD.c...
-linking...
-Program Size: Code=2728 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(327): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(325): warning:  #128-D: loop is not reachable
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=3380 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 4 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(332): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(330): warning:  #128-D: loop is not reachable
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=3484 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 4 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(257): warning:  #223-D: function "LCDINIT" declared implicitly
-user\src\main.c(258): warning:  #223-D: function "clear" declared implicitly
-user\src\main.c(259): warning:  #223-D: function "display" declared implicitly
-user\src\main.c(260): warning:  #223-D: function "cursor" declared implicitly
-user\src\main.c(261): warning:  #223-D: function "blink" declared implicitly
-user\src\main.c(262): warning:  #223-D: function "write" declared implicitly
-user\src\main.c(280): warning:  #111-D: statement is unreachable
-user\src\main.c(332): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(330): warning:  #128-D: loop is not reachable
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=2704 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 11 Warning(s).
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(280): warning:  #111-D: statement is unreachable
-user\src\main.c(332): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(330): warning:  #128-D: loop is not reachable
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=2704 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 5 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(280): warning:  #111-D: statement is unreachable
-user\src\main.c(332): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(330): warning:  #128-D: loop is not reachable
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=2704 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 5 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(280): warning:  #111-D: statement is unreachable
-user\src\main.c(280): warning:  #223-D: function "LCD_Initalize" declared implicitly
-user\src\main.c(280): error:  #20: identifier "BUS_WIDTH_4" is undefined
-user\src\main.c(280): error:  #20: identifier "DISPLAY_LINES_2" is undefined
-user\src\main.c(280): error:  #20: identifier "FONT_5x8" is undefined
-user\src\main.c(282): warning:  #223-D: function "LCD_Clear" declared implicitly
-user\src\main.c(284): warning:  #223-D: function "LCD_Home" declared implicitly
-user\src\main.c(287): warning:  #223-D: function "LCD_Print" declared implicitly
-user\src\main.c(332): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(330): warning:  #128-D: loop is not reachable
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-Target not created
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-_____^
-*** error 56: cannot open file
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(280): warning:  #111-D: statement is unreachable
-user\src\main.c(280): warning:  #223-D: function "LCD_Initalize" declared implicitly
-user\src\main.c(280): error:  #20: identifier "BUS_WIDTH_4" is undefined
-user\src\main.c(280): error:  #20: identifier "DISPLAY_LINES_2" is undefined
-user\src\main.c(280): error:  #20: identifier "FONT_5x8" is undefined
-user\src\main.c(282): warning:  #223-D: function "LCD_Clear" declared implicitly
-user\src\main.c(284): warning:  #223-D: function "LCD_Home" declared implicitly
-user\src\main.c(287): warning:  #223-D: function "LCD_Print" declared implicitly
-user\src\main.c(332): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(330): warning:  #128-D: loop is not reachable
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(332): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(330): warning:  #128-D: loop is not reachable
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=2704 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 4 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(332): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(330): warning:  #128-D: loop is not reachable
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=2704 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 4 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-linking...
-Program Size: Code=2704 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(280): warning:  #111-D: statement is unreachable
-user\src\main.c(332): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(330): warning:  #128-D: loop is not reachable
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=2704 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 5 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(280): warning:  #111-D: statement is unreachable
-user\src\main.c(332): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(330): warning:  #128-D: loop is not reachable
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=2704 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 5 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(280): warning:  #111-D: statement is unreachable
-user\src\main.c(332): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(330): warning:  #128-D: loop is not reachable
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=2624 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 5 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-linking...
-Program Size: Code=2624 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(280): warning:  #111-D: statement is unreachable
-user\src\main.c(332): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(330): warning:  #128-D: loop is not reachable
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=2704 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 5 Warning(s).
-Build target 'SB3'
-linking...
-Program Size: Code=2704 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling LCD.c...
-linking...
-Program Size: Code=2672 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling LCD.c...
-linking...
-Program Size: Code=2672 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling LCD.c...
-linking...
-Program Size: Code=2700 RO-data=320 RW-data=116 ZI-data=2836  
+Program Size: Code=4708 RO-data=336 RW-data=140 ZI-data=2836  
 "SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
 Build target 'SB3'
 linking...
-Program Size: Code=2700 RO-data=320 RW-data=116 ZI-data=2836  
+Program Size: Code=4708 RO-data=336 RW-data=140 ZI-data=2836  
 "SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
 Build target 'SB3'
-compiling LCD.c...
 linking...
-Program Size: Code=2700 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(280): warning:  #111-D: statement is unreachable
-user\src\main.c(332): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(330): warning:  #128-D: loop is not reachable
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-compiling LCD.c...
-linking...
-Program Size: Code=2704 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 5 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling LEDs.c...
-linking...
-Program Size: Code=2704 RO-data=320 RW-data=116 ZI-data=2836  
+Program Size: Code=4708 RO-data=336 RW-data=140 ZI-data=2836  
 "SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
 Clean started: Project: 'SB3_firmware'
    deleting intermediate output files for target 'SB3'
@@ -2124,15 +630,19 @@ compiling system_stm32f10x.c...
 compiling ADC.c...
 compiling LEDs.c...
 compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(280): warning:  #111-D: statement is unreachable
-user\src\main.c(332): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(330): warning:  #128-D: loop is not reachable
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(311): warning:  #223-D: function "setCursor" declared implicitly
+user\src\main.c(404): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(402): warning:  #128-D: loop is not reachable
+user\src\main.c(249): warning:  #177-D: variable "j" was declared but never referenced
+user\src\main.c(250): warning:  #177-D: variable "acctemp" was declared but never referenced
+user\src\main.c(251): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(252): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(253): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
 compiling UART.c...
 compiling HD44780.c...
 user\src\HD44780.c(334): warning:  #177-D: variable "Temp" was declared but never referenced
 user\src\HD44780.c(335): warning:  #177-D: variable "i" was declared but never referenced
+compiling humidity.c...
 compiling LCD.c...
 compiling misc.c...
 compiling stm32f10x_adc.c...
@@ -2158,240 +668,85 @@ compiling stm32f10x_sdio.c...
 compiling stm32f10x_spi.c...
 compiling stm32f10x_wwdg.c...
 linking...
-Program Size: Code=2704 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 7 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling LCD.c...
-linking...
-Program Size: Code=2660 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(280): warning:  #111-D: statement is unreachable
-user\src\main.c(332): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(330): warning:  #128-D: loop is not reachable
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=2580 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 5 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(280): warning:  #111-D: statement is unreachable
-user\src\main.c(332): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(330): warning:  #128-D: loop is not reachable
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=2580 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 5 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling LCD.c...
-linking...
-Program Size: Code=2568 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(280): warning:  #111-D: statement is unreachable
-user\src\main.c(332): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(330): warning:  #128-D: loop is not reachable
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=2648 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 5 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(281): warning:  #111-D: statement is unreachable
-user\src\main.c(333): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(331): warning:  #128-D: loop is not reachable
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-compiling LCD.c...
-linking...
-Program Size: Code=2680 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 5 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(333): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(331): warning:  #128-D: loop is not reachable
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=3484 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 4 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(333): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(331): warning:  #128-D: loop is not reachable
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=3484 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 4 Warning(s).
-Build target 'SB3'
-linking...
-Program Size: Code=3484 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Build target 'SB3'
-linking...
-Program Size: Code=3484 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(333): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(331): warning:  #128-D: loop is not reachable
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=3492 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 4 Warning(s).
-Build target 'SB3'
-linking...
-Program Size: Code=3492 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(333): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(331): warning:  #128-D: loop is not reachable
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=3492 RO-data=320 RW-data=120 ZI-data=2832  
-"SB3_firmware.axf" - 0 Error(s), 4 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(281): warning:  #111-D: statement is unreachable
-user\src\main.c(333): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(331): warning:  #128-D: loop is not reachable
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-compiling LCD.c...
-linking...
-Program Size: Code=2684 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 5 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling LCD.c...
-linking...
-Program Size: Code=2688 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling LCD.c...
-linking...
-Program Size: Code=2684 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-linking...
-Program Size: Code=2684 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling LCD.c...
-linking...
-Program Size: Code=2728 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling LCD.c...
-linking...
-Program Size: Code=2728 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(270): warning:  #111-D: statement is unreachable
-user\src\main.c(334): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(332): warning:  #128-D: loop is not reachable
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=2680 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 5 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling LCD.c...
-linking...
-Program Size: Code=2680 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling LCD.c...
-linking...
-Program Size: Code=2664 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(155): warning:  #174-D: expression has no effect
-user\src\main.c(156): error:  #65: expected a ";"
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(270): warning:  #111-D: statement is unreachable
-user\src\main.c(334): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(332): warning:  #128-D: loop is not reachable
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-Target not created
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-_____^
-*** error 56: cannot open file
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-_____^
-*** error 56: cannot open file
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-_____^
-*** error 56: cannot open file
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(155): warning:  #174-D: expression has no effect
-user\src\main.c(156): error:  #65: expected a ";"
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(270): warning:  #111-D: statement is unreachable
-user\src\main.c(334): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(332): warning:  #128-D: loop is not reachable
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(270): warning:  #111-D: statement is unreachable
-user\src\main.c(334): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(332): warning:  #128-D: loop is not reachable
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-linking...
-Program Size: Code=2664 RO-data=320 RW-data=116 ZI-data=2836  
-"SB3_firmware.axf" - 0 Error(s), 5 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling LEDs.c...
-user\src\LEDs.c(41): error:  #20: identifier "GPIO_Pin_C" is undefined
-compiling main.c...
-user\src\main.c(132): warning:  #550-D: variable "t" was set but never used
-user\src\main.c(272): warning:  #111-D: statement is unreachable
-user\src\main.c(336): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(334): warning:  #128-D: loop is not reachable
-user\src\main.c(214): warning:  #177-D: variable "received_data" was declared but never referenced
-Target not created
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-_____^
-*** error 56: cannot open file
+Program Size: Code=4708 RO-data=336 RW-data=140 ZI-data=2836  
+"SB3_firmware.axf" - 0 Error(s), 10 Warning(s).
 Build target 'SB3'
 compiling LEDs.c...
 linking...
-Program Size: Code=2676 RO-data=320 RW-data=116 ZI-data=2836  
+Program Size: Code=4664 RO-data=336 RW-data=140 ZI-data=2836  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling LEDs.c...
+compiling main.c...
+user\src\main.c(311): warning:  #223-D: function "setCursor" declared implicitly
+user\src\main.c(404): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(402): warning:  #128-D: loop is not reachable
+user\src\main.c(249): warning:  #177-D: variable "j" was declared but never referenced
+user\src\main.c(250): warning:  #177-D: variable "acctemp" was declared but never referenced
+user\src\main.c(251): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(252): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(253): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
+linking...
+Program Size: Code=4664 RO-data=336 RW-data=140 ZI-data=2836  
+"SB3_firmware.axf" - 0 Error(s), 8 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling LEDs.c...
+linking...
+Program Size: Code=4664 RO-data=336 RW-data=140 ZI-data=2836  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling LEDs.c...
+linking...
+Program Size: Code=4668 RO-data=336 RW-data=140 ZI-data=2836  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling LEDs.c...
+linking...
+Program Size: Code=4636 RO-data=336 RW-data=140 ZI-data=2836  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(311): warning:  #223-D: function "setCursor" declared implicitly
+user\src\main.c(404): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(402): warning:  #128-D: loop is not reachable
+user\src\main.c(249): warning:  #177-D: variable "j" was declared but never referenced
+user\src\main.c(250): warning:  #177-D: variable "acctemp" was declared but never referenced
+user\src\main.c(251): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(252): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(253): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
+linking...
+Program Size: Code=4636 RO-data=336 RW-data=140 ZI-data=2836  
+"SB3_firmware.axf" - 0 Error(s), 8 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling LEDs.c...
+linking...
+Program Size: Code=4636 RO-data=336 RW-data=140 ZI-data=2836  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+linking...
+Program Size: Code=4636 RO-data=336 RW-data=140 ZI-data=2836  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Build target 'SB3'
+linking...
+Program Size: Code=4636 RO-data=336 RW-data=140 ZI-data=2836  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling ADC.c...
+linking...
+Program Size: Code=4636 RO-data=336 RW-data=140 ZI-data=2836  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling LEDs.c...
+linking...
+Program Size: Code=4668 RO-data=336 RW-data=140 ZI-data=2836  
 "SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
 Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
