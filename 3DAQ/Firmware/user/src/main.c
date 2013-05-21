@@ -168,6 +168,7 @@ void I2C_stop(I2C_TypeDef* I2Cx){
 int main(void)
 {
 	int i;
+	int acctemp;
 	int yumbyte;
 	uint8_t received_data[2];
 	unsigned char REG_ADDRESS[3];
@@ -264,6 +265,12 @@ int main(void)
 	I2C_stop(I2C1); // stop the transmission
 
 	delayMicroseconds(2);
+	acctemp=REG_ADDRESS[0]/100;
+	write(acctemp+'0');
+	acctemp=(REG_ADDRESS[0]%100)/10;
+	write(acctemp+'0');
+	acctemp=(REG_ADDRESS[0]%10);
+	write(acctemp+'0');
 	
 	I2C_start(I2C1, EEPROM_ADDR, I2C_Direction_Transmitter); // start a transmission in Master receiver mode
 	I2C_write(I2C1, 0x00); // write one byte to the slave
