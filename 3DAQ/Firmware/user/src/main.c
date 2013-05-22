@@ -249,6 +249,7 @@ int main(void)
 	int j;
 	int acctemp;
 	int yumbyte;
+	int temporary;
 	uint8_t received_data[2];
 	unsigned char REG_ADDRESS[3];
 	int lcdadc;
@@ -287,8 +288,8 @@ int main(void)
 	home();
 	clear();
 	display();
-	cursor();
-	blink();
+	noCursor();
+	noBlink();
 	GPIO_SetBits(GPIOC, GPIO_Pin_2);
 
 	write('H');
@@ -300,6 +301,7 @@ int main(void)
 	//Initialise UART for serial comms with PC
 	UART_init();
 	
+	humidity_init();
 	//Initialise ADC
 	ADC_init();
 		LEDbyte=1;
@@ -308,6 +310,8 @@ int main(void)
 		if(LEDbyte==512){LEDbyte=1;}
 		else {LEDbyte=LEDbyte<<1;}
 		setLEDS();
+		
+		
 	setCursor(0,1);
 		lcdadc = ADC_perform_single_conversion();
 		write('0'+(lcdadc/1000));
@@ -318,6 +322,25 @@ int main(void)
 		lcdadc = lcdadc %10;
 		write ('0'+(lcdadc));
 	delayMicroseconds(10000);
+			setCursor(0,0);
+		temporary=readcapacitance();	
+		write('0'+(temporary/10));
+		temporary=temporary%10;
+		write('0'+(temporary));
+
+		/*setCursor(0,0);
+		temporary = readcapacitance();
+		write('0'+(temporary/1000000));
+		temporary = temporary %1000000;
+		write ('0'+(temporary/100000));
+		temporary = temporary %100000;
+		write ('0'+(temporary/10000));
+		temporary = temporary %10000;
+		write ('0'+(temporary/1000));
+		temporary=0;*/
+		
+		
+		
 	}
 	//	for (j=0;j<5;j++)
 		//{
