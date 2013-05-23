@@ -17,6 +17,12 @@ BEGIN_EVENT_TABLE(MyFrame, wxFrame)
   EVT_MENU(wxID_ABOUT, MyFrame::OnAbout)
   EVT_SPINCTRL(PORT_SELECT, MyFrame::OnPortSelect)
   EVT_BUTTON(PORT_CONNECT, MyFrame::OnPortConnect)
+  EVT_BUTTON(STREAM_START, MyFrame::OnStreamStart)
+  EVT_BUTTON(STREAM_STOP, MyFrame::OnStreamStop)
+  EVT_BUTTON(DATA_GET, MyFrame::OnDataGet)
+  EVT_BUTTON(DATA_ERASE, MyFrame::OnDataErase)
+  EVT_BUTTON(FIND_EVENTS, MyFrame::OnFind_Events)
+  EVT_BUTTON(GRAPH_DATA, MyFrame::OnGraph_Data)
 END_EVENT_TABLE()
 
 
@@ -60,20 +66,44 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
   wxBoxSizer *ctrlsizer = new wxBoxSizer(wxHORIZONTAL);
 
   wxBoxSizer *connectsizer = new wxBoxSizer(wxVERTICAL);
-  connectsizer->Add(new wxStaticText(this, wxID_ANY, wxT("Data Port:")),
-		    0,
-		    wxALL | wxALIGN_CENTER_VERTICAL,
-		    5);
+  connectsizer->Add(new wxStaticText(this, wxID_ANY, wxT("Data Port")),
+		    0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
   spin_port = new wxSpinCtrl(this, PORT_SELECT, wxString(wxT("0")));
-  connectsizer->Add(spin_port, 0, wxALL | wxALIGN_CENTER_VERTICAL, 5);
+  connectsizer->Add(spin_port, 0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
   connectsizer->Add(new wxButton(this, PORT_CONNECT, wxT("Connect")),
-		 0,
-		 wxALL | wxALIGN_CENTER_VERTICAL,
-		 5);
-  ctrlsizer->Add(connectsizer, 0, wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
-  
-  topsizer->Add(ctrlsizer, 1, wxALL | wxALIGN_CENTER_VERTICAL, 5);
+		 0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  ctrlsizer->Add(connectsizer, 1, wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
 
+  wxBoxSizer *datalink_sizer = new wxBoxSizer(wxVERTICAL);
+  datalink_sizer->Add(new wxStaticText(this, wxID_ANY, wxT("Linked Mode")),
+		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  datalink_sizer->Add(new wxButton(this, STREAM_START, wxT("Start Streaming")),
+		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  datalink_sizer->Add(new wxButton(this, STREAM_STOP, wxT("Stop Streaming")),
+		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  ctrlsizer->Add(datalink_sizer, 1, wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
+
+  wxBoxSizer *upload_sizer = new wxBoxSizer(wxVERTICAL);
+  upload_sizer->Add(new wxStaticText(this, wxID_ANY, wxT("Standalone Mode")),
+		    0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  upload_sizer->Add(new wxButton(this, DATA_GET, wxT("Download Data")),
+		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  upload_sizer->Add(new wxButton(this, DATA_ERASE, wxT("Erase Data")),
+		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  ctrlsizer->Add(upload_sizer, 1, wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
+  
+  wxBoxSizer *analysis_sizer = new wxBoxSizer(wxVERTICAL);
+  analysis_sizer->Add(new wxStaticText(this, wxID_ANY, wxT("Analyse")),
+		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  analysis_sizer->Add(new wxButton(this, FIND_EVENTS, wxT("Find Events")),
+		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  analysis_sizer->Add(new wxButton(this, GRAPH_DATA, wxT("View All")),
+		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  ctrlsizer->Add(analysis_sizer, 1, wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
+
+  topsizer->Add(ctrlsizer, 1, wxALL | wxEXPAND, 5);
+
+  SetSizeHints(400,400);
   SetSizer(topsizer);
   
   CreateStatusBar();
@@ -124,4 +154,34 @@ void MyFrame::OnPortSelect(wxSpinEvent& event)
 void MyFrame::OnPortConnect(wxCommandEvent& event)
 {
   wxLogMessage(wxT("Attempting to connect to module"));
+}
+
+void MyFrame::OnStreamStart(wxCommandEvent& event)
+{
+  wxLogMessage(wxT("Starting data streaming."));
+}
+
+void MyFrame::OnStreamStop(wxCommandEvent& event)
+{
+  wxLogMessage(wxT("Stopping data streaming."));
+}
+
+void MyFrame::OnDataGet(wxCommandEvent& event)
+{
+  wxLogMessage(wxT("Uploading data from standalone mode."));
+}
+
+void MyFrame::OnDataErase(wxCommandEvent& event)
+{
+  wxLogMessage(wxT("Erasing board memory"));
+}
+
+void  MyFrame::OnFind_Events(wxCommandEvent& event)
+{
+  wxLogMessage(wxT("Finding interest points"));
+}
+
+void  MyFrame::OnGraph_Data(wxCommandEvent& event)
+{
+    wxLogMessage(wxT("Graphing all data"));
 }

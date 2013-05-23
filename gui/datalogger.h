@@ -20,6 +20,12 @@ enum
     ID_EraseData,
     PORT_SELECT,
     PORT_CONNECT,
+    STREAM_START,
+    STREAM_STOP,
+    DATA_GET,
+    DATA_ERASE,
+    FIND_EVENTS,
+    GRAPH_DATA,
   };
 
 //class definition from wxApp;
@@ -47,6 +53,12 @@ public:
   void OnAbout(wxCommandEvent& event);
   void OnPortSelect(wxSpinEvent& event);
   void OnPortConnect(wxCommandEvent& event);
+  void OnStreamStart(wxCommandEvent& event);
+  void OnStreamStop(wxCommandEvent& event);
+  void OnDataGet(wxCommandEvent& event);
+  void OnDataErase(wxCommandEvent& event);
+  void  OnFind_Events(wxCommandEvent& event);
+  void  OnGraph_Data(wxCommandEvent& event);
   DECLARE_EVENT_TABLE();
 };
 
