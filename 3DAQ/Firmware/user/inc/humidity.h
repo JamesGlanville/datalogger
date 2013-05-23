@@ -4,6 +4,7 @@
 
 void GPIO_Init_Mode(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIOMode_TypeDef mode);
 int readcapacitance(void);
+int readhumidity(int temperature);
 void humidity_init(void);
 
 #endif

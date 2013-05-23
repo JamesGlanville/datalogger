@@ -114,7 +114,7 @@ I2C_EE_BufferRead(buffer, 0, 100);
 	setCursor(0,1);
 	writenumber( ADC_perform_single_conversion());
 	setCursor(0,0);
-	writenumber(readcapacitance());
+	writenumber(readhumidity(24)); //Needs real temperature
 		delay_ms(50);
 		
 		check_and_process_received_command();
