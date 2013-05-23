@@ -5,18 +5,24 @@ Author: Andy Holt
 Date: Mon 20 May 2013 15:30
 */
 
-//#include <wx/wx.h>
 #include "datalogger.h"
+#include "comms.h"
 
-BEGIN_EVENT_TABLE(MyFrame, wxFrame)
-  EVT_MENU(ID_StartLog, MyFrame::OnStartLog)
-  EVT_MENU(ID_StopLog, MyFrame::OnStopLog)
-  EVT_MENU(ID_GetData, MyFrame::OnGetData)
-  EVT_MENU(ID_EraseData, MyFrame::OnEraseData)
+ BEGIN_EVENT_TABLE(MyFrame, wxFrame)
   EVT_MENU(wxID_EXIT, MyFrame::OnExit)
   EVT_MENU(wxID_ABOUT, MyFrame::OnAbout)
+  EVT_MENU(LOG_START, MyFrame::OnLogStart)
+  EVT_MENU(LOG_STOP, MyFrame::OnLogStop)
+  EVT_MENU(DATA_GET, MyFrame::OnDataGet)
+  EVT_MENU(DATA_ERASE, MyFrame::OnDataErase)
   EVT_SPINCTRL(PORT_SELECT, MyFrame::OnPortSelect)
   EVT_BUTTON(PORT_CONNECT, MyFrame::OnPortConnect)
+  EVT_BUTTON(LOG_START, MyFrame::OnLogStart)
+  EVT_BUTTON(LOG_STOP, MyFrame::OnLogStop)
+  EVT_BUTTON(DATA_GET, MyFrame::OnDataGet)
+  EVT_BUTTON(DATA_ERASE, MyFrame::OnDataErase)
+  EVT_BUTTON(FIND_EVENTS, MyFrame::OnFind_Events)
+  EVT_BUTTON(GRAPH_DATA, MyFrame::OnGraph_Data)
 END_EVENT_TABLE()
 
 
@@ -37,13 +43,13 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
   wxMenu *menuFile = new wxMenu;
   menuFile->Append(wxID_EXIT);
   wxMenu *menuData = new wxMenu;
-  menuData->Append(ID_StartLog, wxT("&Start Logging\tCtrl-L"),
+  menuData->Append(LOG_START, wxT("&Start Logging\tCtrl-L"),
 		   wxT("Help string: Begin logging with board plugged in."));
-  menuData->Append(ID_StopLog, wxT("&Stop Logging\tCtrl-K"),
+  menuData->Append(LOG_STOP, wxT("&Stop Logging\tCtrl-K"),
 		   wxT("Help string: Stop logging with board plugged in."));
-  menuData->Append(ID_GetData, wxT("&Get Data\tCtrl-D"),
+  menuData->Append(DATA_GET, wxT("&Get Data\tCtrl-D"),
 		   wxT("Help string: Get data from board."));
-  menuData->Append(ID_EraseData, wxT("&Erase Data\tCtrl-E"),
+  menuData->Append(DATA_ERASE, wxT("&Erase Data\tCtrl-E"),
 		   wxT("Help string: Erase chip memory."));
   wxMenu *menuHelp = new wxMenu;
   menuHelp->Append(wxID_ABOUT);
@@ -60,20 +66,44 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
   wxBoxSizer *ctrlsizer = new wxBoxSizer(wxHORIZONTAL);
 
   wxBoxSizer *connectsizer = new wxBoxSizer(wxVERTICAL);
-  connectsizer->Add(new wxStaticText(this, wxID_ANY, wxT("Data Port:")),
-		    0,
-		    wxALL | wxALIGN_CENTER_VERTICAL,
-		    5);
+  connectsizer->Add(new wxStaticText(this, wxID_ANY, wxT("Data Port")),
+		    0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
   spin_port = new wxSpinCtrl(this, PORT_SELECT, wxString(wxT("0")));
-  connectsizer->Add(spin_port, 0, wxALL | wxALIGN_CENTER_VERTICAL, 5);
+  connectsizer->Add(spin_port, 0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
   connectsizer->Add(new wxButton(this, PORT_CONNECT, wxT("Connect")),
-		 0,
-		 wxALL | wxALIGN_CENTER_VERTICAL,
-		 5);
-  ctrlsizer->Add(connectsizer, 0, wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
-  
-  topsizer->Add(ctrlsizer, 1, wxALL | wxALIGN_CENTER_VERTICAL, 5);
+		 0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  ctrlsizer->Add(connectsizer, 1, wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
 
+  wxBoxSizer *datalink_sizer = new wxBoxSizer(wxVERTICAL);
+  datalink_sizer->Add(new wxStaticText(this, wxID_ANY, wxT("Linked Mode")),
+		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  datalink_sizer->Add(new wxButton(this, LOG_START, wxT("Start Logging")),
+		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  datalink_sizer->Add(new wxButton(this, LOG_STOP, wxT("Stop Logging")),
+		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  ctrlsizer->Add(datalink_sizer, 1, wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
+
+  wxBoxSizer *upload_sizer = new wxBoxSizer(wxVERTICAL);
+  upload_sizer->Add(new wxStaticText(this, wxID_ANY, wxT("Standalone Mode")),
+		    0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  upload_sizer->Add(new wxButton(this, DATA_GET, wxT("Get Data")),
+		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  upload_sizer->Add(new wxButton(this, DATA_ERASE, wxT("Erase Data")),
+		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  ctrlsizer->Add(upload_sizer, 1, wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
+  
+  wxBoxSizer *analysis_sizer = new wxBoxSizer(wxVERTICAL);
+  analysis_sizer->Add(new wxStaticText(this, wxID_ANY, wxT("Analyse")),
+		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  analysis_sizer->Add(new wxButton(this, FIND_EVENTS, wxT("Find Events")),
+		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  analysis_sizer->Add(new wxButton(this, GRAPH_DATA, wxT("View All")),
+		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  ctrlsizer->Add(analysis_sizer, 1, wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
+
+  topsizer->Add(ctrlsizer, 1, wxALL | wxEXPAND, 5);
+
+  SetSizeHints(400,400);
   SetSizer(topsizer);
   
   CreateStatusBar();
@@ -95,33 +125,44 @@ void MyFrame::OnAbout(wxCommandEvent& event)
 	       wxT("About Parcel Tracker"), wxOK | wxICON_INFORMATION);
 }
 
-void MyFrame::OnStartLog(wxCommandEvent& event)
-{
-  wxLogMessage(wxT("Logging!"));
-}
-
-void MyFrame::OnStopLog(wxCommandEvent& event)
-{
-  wxLogMessage(wxT("Finished logging!"));
-}
-
-void MyFrame::OnGetData(wxCommandEvent& event)
-{
-  wxLogMessage(wxT("Getting data from module."));
-}
-
-void MyFrame::OnEraseData(wxCommandEvent& event)
-{
-  wxLogMessage(wxT("Erasing Data from module."));
-}
-
 void MyFrame::OnPortSelect(wxSpinEvent& event)
 {
-  wxString text;
-  text.Printf(wxT("New spinctrl value %d"), event.GetPosition());
+  com_port_no = event.GetPosition();
 }
 
 void MyFrame::OnPortConnect(wxCommandEvent& event)
 {
-  wxLogMessage(wxT("Attempting to connect to module"));
+  wxString message = wxT("Attempting to connect to module thorugh comm port");
+  message = message << com_port_no;
+  wxLogMessage(message);
+}
+
+void MyFrame::OnLogStart(wxCommandEvent& event)
+{
+  wxLogMessage(wxT("Logging!"));
+}
+
+void MyFrame::OnLogStop(wxCommandEvent& event)
+{
+  wxLogMessage(wxT("Finished logging!"));
+}
+
+void MyFrame::OnDataGet(wxCommandEvent& event)
+{
+  wxLogMessage(wxT("Uploading data from standalone mode."));
+}
+
+void MyFrame::OnDataErase(wxCommandEvent& event)
+{
+  wxLogMessage(wxT("Erasing board memory"));
+}
+
+void  MyFrame::OnFind_Events(wxCommandEvent& event)
+{
+  wxLogMessage(wxT("Finding interest points"));
+}
+
+void  MyFrame::OnGraph_Data(wxCommandEvent& event)
+{
+    wxLogMessage(wxT("Graphing all data"));
 }

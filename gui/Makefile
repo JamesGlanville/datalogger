@@ -2,9 +2,9 @@ OPENGL_LIBS = -lglut -lGL -lGLU
 
 CXX = $(shell wx-config --cxx)
 
-SRC = datalogger.cpp
+SRC = datalogger.cpp comms.cpp
 
-G_OBJECTS = datalogger.o
+OBJECTS = datalogger.o comms.o
 
 # implementation
 
@@ -15,15 +15,17 @@ G_OBJECTS = datalogger.o
 
 all:    datalogger
 
-datalogger: $(G_OBJECTS)
-	 $(CXX) -o datalogger $(G_OBJECTS) `wx-config --libs --gl_libs` $(OPENGL_LIBS)
+datalogger: $(OBJECTS)
+	    $(CXX) -o datalogger $(OBJECTS) `wx-config --libs --gl_libs` $(OPENGL_LIBS)
 
 clean: 
-	rm -f *.o
+	rm -f *.o datalogger
 
 depend:
 	makedepend $(SRC)
 
 # DO NOT DELETE
 
+datalogger.o: datalogger.h comms.h
+comms.o: comms.h
 

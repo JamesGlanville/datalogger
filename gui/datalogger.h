@@ -14,12 +14,14 @@ Date: Mon 20 May 2013 16:52
 
 enum
   {
-    ID_StartLog = wxID_HIGHEST + 1,
-    ID_StopLog,
-    ID_GetData,
-    ID_EraseData,
-    PORT_SELECT,
+    PORT_SELECT = wxID_HIGHEST + 1,
     PORT_CONNECT,
+    LOG_START,
+    LOG_STOP,
+    DATA_GET,
+    DATA_ERASE,
+    FIND_EVENTS,
+    GRAPH_DATA,
   };
 
 //class definition from wxApp;
@@ -39,15 +41,18 @@ public:
   wxSpinCtrl *spin_port;
 
   //private:
-  void OnStartLog(wxCommandEvent& event);
-  void OnStopLog(wxCommandEvent& event);
-  void OnGetData(wxCommandEvent& event);
-  void OnEraseData(wxCommandEvent& event);
   void OnExit(wxCommandEvent& event);
   void OnAbout(wxCommandEvent& event);
   void OnPortSelect(wxSpinEvent& event);
   void OnPortConnect(wxCommandEvent& event);
+  void OnLogStart(wxCommandEvent& event);
+  void OnLogStop(wxCommandEvent& event);
+  void OnDataGet(wxCommandEvent& event);
+  void OnDataErase(wxCommandEvent& event);
+  void  OnFind_Events(wxCommandEvent& event);
+  void  OnGraph_Data(wxCommandEvent& event);
   DECLARE_EVENT_TABLE();
+
 };
 
 #endif	// datalogger_h
