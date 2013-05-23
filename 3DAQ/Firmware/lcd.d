@@ -1,9 +1,8 @@
 lcd.o: user\src\LCD.c
-lcd.o: user\src\LCD.h
-lcd.o: C:\Keil\ARM\ARMCC\bin\..\include\inttypes.h
-lcd.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
 lcd.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
 lcd.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h
+lcd.o: C:\Keil\ARM\ARMCC\bin\..\include\inttypes.h
+lcd.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
 lcd.o: .\lib\cmsis\cm3\devicesupport\st\stm32f10x\stm32F10x.h
 lcd.o: .\lib\cmsis\cm3\coresupport\core_cm3.h
 lcd.o: .\lib\cmsis\cm3\devicesupport\st\stm32f10x\system_stm32f10x.h
@@ -33,3 +32,4 @@ lcd.o: .\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_usart.h
 lcd.o: .\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_wwdg.h
 lcd.o: .\lib\stm32f10x_stdperiph_driver\inc\misc.h
 lcd.o: .\user\inc\LEDs.h
+lcd.o: .\user\inc\LCD.h

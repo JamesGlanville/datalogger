@@ -165,6 +165,7 @@
             <Capability>1</Capability>
             <DriverSelection>4100</DriverSelection>
           </Flash1>
+          <bUseTDR>0</bUseTDR>
           <Flash2>STLink\ST-LINKIII-KEIL.dll</Flash2>
           <Flash3>"" ()</Flash3>
           <Flash4></Flash4>
@@ -427,14 +428,19 @@
               <FilePath>.\user\src\UART.c</FilePath>
             </File>
             <File>
-              <FileName>HD44780.c</FileName>
+              <FileName>humidity.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\user\src\HD44780.c</FilePath>
+              <FilePath>.\user\src\humidity.c</FilePath>
             </File>
             <File>
-              <FileName>HD44780.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\user\src\HD44780.h</FilePath>
+              <FileName>LCD.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\user\src\LCD.c</FilePath>
+            </File>
+            <File>
+              <FileName>SoftI2CMaster.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\user\src\SoftI2CMaster.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -455,6 +461,21 @@
               <FileName>UART.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\user\inc\UART.h</FilePath>
+            </File>
+            <File>
+              <FileName>humidity.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\user\inc\humidity.h</FilePath>
+            </File>
+            <File>
+              <FileName>SoftI2CMaster.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\user\inc\SoftI2CMaster.h</FilePath>
+            </File>
+            <File>
+              <FileName>LCD.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\user\inc\LCD.h</FilePath>
             </File>
           </Files>
         </Group>

@@ -1,5 +1,3 @@
-
-
 #include "stm32F10x.h"
 #include "LEDs.h"
 #include "UART.h"
@@ -8,10 +6,18 @@
 #include "stm32f10x_gpio.h"
 #include "stm32f10x_rcc.h"
 #include "LCD.h"
-#include "HD44780.h"
+#include "humidity.h"
+#include "SoftI2CMaster.h"
 
-#define SLAVE_ADDRESS 0x4C   
-//0xA1 //0xBB //0xA1
+#define EEPROM_ADDR 0xA1   
+#define ACCEL_ADDR 0x4C   
+
+#define   X_OUT       0x00
+#define   Y_OUT       0x01
+#define   Z_OUT       0x02
+#define   INTSU       0x06
+#define   MODE        0x07
+#define   SR          0x08
 
 //Hardware:
 
@@ -41,6 +47,8 @@
 //Global variables
 
 //Command from UART
+volatile unsigned int LEDbyte;
+
 volatile int command_flag;
 volatile int value;
 volatile int value_received;
@@ -48,52 +56,22 @@ volatile int value_received;
 //ADC variables
 volatile uint8_t new_data;
 
+
 //------------------------------------------------------------------------------
 
 //Function prototypes for functions in main.c file
 
 void check_and_process_received_command(void);
-#ifdef goaway
-
-void I2C_LowLevel_Init(I2C_TypeDef* I2Cx)// , int ClockSpeed , intOwnAddress)
-{
-GPIO_InitTypeDef GPIO_InitStructure;
-//I2C_InitTypeDef I2C_InitStructure;
-// Enable GPIOB clocks
-RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB , ENABLE);
-// Configure I2C clock and GPIO
-GPIO_StructInit (& GPIO_InitStructure);
-/* I2C1 clock enable */
-RCC_APB1PeriphClockCmd(RCC_APB1Periph_I2C1 , ENABLE);
-/* I2C1 SDA and SCL configuration */
-GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_7;
-GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_OD;
-GPIO_Init(GPIOB , &GPIO_InitStructure);
-/* I2C1 Reset */
-RCC_APB1PeriphResetCmd(RCC_APB1Periph_I2C1 , ENABLE);
-RCC_APB1PeriphResetCmd(RCC_APB1Periph_I2C1 , DISABLE);
-}
-#endif
-
-
 void init_I2C1(void){
 
 	GPIO_InitTypeDef GPIO_InitStruct;
 	I2C_InitTypeDef I2C_InitStruct;
 
 	// enable APB1 peripheral clock for I2C1
-	 // RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA | RCC_AHBPeriph_GPIOB | RCC_AHBPeriph_GPIOC| 
-         //               RCC_AHBPeriph_GPIOD| RCC_AHBPeriph_GPIOE| RCC_AHBPeriph_GPIOH, ENABLE);     
-
-		RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE); 
-
-   	RCC_APB1PeriphClockCmd(RCC_APB1Periph_I2C1|RCC_APB2Periph_AFIO, ENABLE);
-	
-	//Configure required pins as UART TX/RX
-//	GPIO_Config();
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_I2C1, ENABLE);
 	// enable clock for SCL and SDA pins
 //	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE); 
 
 	/* setup SCL and SDA pins
 	 * You can connect I2C1 to two different
@@ -104,17 +82,78 @@ void init_I2C1(void){
 	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_7; // we are going to use PB6 and PB7
 	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF_OD;			// set pins to alternate function
 	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;		// set GPIO speed
-//	GPIO_InitStruct.GPIO_OType = GPIO_OType_OD;			// set output to open drain --> the line has to be only pulled low, not driven high
-//	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_UP;			// enable pull up resistors
+	GPIO_Init(GPIOB, &GPIO_InitStruct);					// init GPIOB
+	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;		// set GPIO speed
 	GPIO_Init(GPIOB, &GPIO_InitStruct);					// init GPIOB
 
 	// Connect I2C1 pins to AF
 //	GPIO_PinAFConfig(GPIOB, GPIO_PinSource6, GPIO_AF_I2C1);	// SCL
 //	GPIO_PinAFConfig(GPIOB, GPIO_PinSource7, GPIO_AF_I2C1); // SDA
-//	GPIO_PinRemapConfig(GPIO_Remap_I2C1,ENABLE);
+
 	// configure I2C1
+	I2C_InitStruct.I2C_ClockSpeed = 100000; 		// 100kHz
+	I2C_InitStruct.I2C_Mode = I2C_Mode_I2C;			// I2C mode
+	I2C_InitStruct.I2C_DutyCycle = I2C_DutyCycle_2;	// 50% duty cycle --> standard
+	I2C_InitStruct.I2C_OwnAddress1 = 0x00;			// own address, not relevant in master mode
+	I2C_InitStruct.I2C_Ack = I2C_Ack_Disable;		// disable acknowledge when reading (can be changed later on)
+	I2C_InitStruct.I2C_AcknowledgedAddress = I2C_AcknowledgedAddress_7bit; // set address length to 7 bit addresses
+	I2C_Init(I2C1, &I2C_InitStruct);				// init I2C1
+
+	// enable I2C1
+	I2C_Cmd(I2C1, ENABLE);
+}
+
+/* This function issues a start condition and
+ * transmits the slave address + R/W bit
+ *
+ * Parameters:
+ * 		I2Cx --> the I2C peripheral e.g. I2C1
+ * 		address --> the 7 bit slave address
+ * 		direction --> the tranmission direction can be:
+ * 						I2C_Direction_Tranmitter for Master transmitter mode
+ * 						I2C_Direction_Receiver for Master receiver
+ */
+void I2C_start(I2C_TypeDef* I2Cx, uint8_t address, uint8_t direction){
+	// wait until I2C1 is not busy anymore
+	while(I2C_GetFlagStatus(I2Cx, I2C_FLAG_BUSY));
+
+	// Send I2C1 START condition
+	I2C_GenerateSTART(I2Cx, ENABLE);
+
+	// wait for I2C1 EV5 --> Slave has acknowledged start condition
+	while(!I2C_CheckEvent(I2Cx, I2C_EVENT_MASTER_MODE_SELECT));
+
+	// Send slave Address for write
+	I2C_Send7bitAddress(I2Cx, address, direction);
+
+	/* wait for I2C1 EV6, check if
+	 * either Slave has acknowledged Master transmitter or
+	 * Master receiver mode, depending on the transmission
+	 * direction
+	 */
+	if(direction == I2C_Direction_Transmitter){
+		while(!I2C_CheckEvent(I2Cx, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED));
+	}
+	else if(direction == I2C_Direction_Receiver){
+		while(!I2C_CheckEvent(I2Cx, I2C_EVENT_MASTER_RECEIVER_MODE_SELECTED));
+	}
+}
+#ifdef cheese
+void init_I2C1(void){
+
+	GPIO_InitTypeDef GPIO_InitStruct;
+	I2C_InitTypeDef I2C_InitStruct;
+
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE); 
+   	RCC_APB1PeriphClockCmd(RCC_APB1Periph_I2C1|RCC_APB2Periph_AFIO, ENABLE);
+
+	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_7; // we are going to use PB6 and PB7
+	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF_OD;			// set pins to alternate function
+	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;		// set GPIO speed
+	GPIO_Init(GPIOB, &GPIO_InitStruct);					// init GPIOB
+
 	I2C_DeInit(I2C1);
-		I2C_Cmd(I2C1, ENABLE);
+	I2C_Cmd(I2C1, ENABLE);
 
 	I2C_InitStruct.I2C_ClockSpeed = 100000; 		// 100kHz
 	I2C_InitStruct.I2C_Mode = I2C_Mode_I2C;			// I2C mode
@@ -123,9 +162,7 @@ void init_I2C1(void){
 	I2C_InitStruct.I2C_Ack = I2C_Ack_Enable;		// disable acknowledge when reading (can be changed later on)
 	I2C_InitStruct.I2C_AcknowledgedAddress = I2C_AcknowledgedAddress_7bit; // set address length to 7 bit addresses
 	I2C_Init(I2C1, &I2C_InitStruct);				// init I2C1
-
 	// enable I2C1
-
 }
 void I2C_start(I2C_TypeDef* I2Cx, uint8_t address, uint8_t direction){
 	// wait until I2C1 is not busy anymore
@@ -160,6 +197,7 @@ void I2C_start(I2C_TypeDef* I2Cx, uint8_t address, uint8_t direction){
  *		I2Cx --> the I2C peripheral e.g. I2C1
  *		data --> the data byte to be transmitted
  */
+#endif
 void I2C_write(I2C_TypeDef* I2Cx, uint8_t data){
 	I2C_SendData(I2Cx, data);
 	// wait for I2C1 EV8_2 --> byte has been transmitted
@@ -209,12 +247,17 @@ void I2C_stop(I2C_TypeDef* I2Cx){
 int main(void)
 {
 	int i;
-	
-	
-		uint8_t received_data[2];
-	//I2C_TypeDef* I2Cx;
-	//Initalise LEDs
-	LED_init();
+	int j;
+	int acctemp;
+	int yumbyte;
+	int temporary;
+	uint8_t received_data[2];
+	unsigned char REG_ADDRESS[3];
+	int lcdadc;
+	int arse;
+
+
+	init_GPIO_pins();
 	
 	//Short delay during which we can communicate with MCU via debugger even if later user code causes error such as sleep state with no wakeup event that prevents debugger interface working
 	//THIS MUST COME BEFORE ALL USER CODE TO ENSURE CHIPS CAN BE REPROGRAMMED EVEN IF THEY GET STUCK IN A SLEEP STATE LATER
@@ -222,11 +265,8 @@ int main(void)
 	{
 		LED_on();
 	}
-	
-	//LCDINIT();
-	
-	//I2C_Init(I2Cx, I2C_InitStruct);
-	//init_I2C1();
+		
+	LED_off();
 	
   /*while(1){
 
@@ -244,114 +284,170 @@ int main(void)
 	}	*/
 	
 	//I2C_start(I2C1, SLAVE_ADDRESS, I2C_Direction_Transmitter);
-	LED_off();
-		LCD_init();
-
-//	write4bits(1);
-//	write4bits(2);
-//	write4bits(4);
-//	write4bits(8);
+	LEDbyte =0;
+	yumbyte=0;
 	
-	
-	
-LCDINIT();
-home();
-clear();
-display();
-cursor();
-blink();
-	GPIO_SetBits(GPIOC, GPIO_Pin_2);
+	LCDINIT();
+	home();
+	clear();
+	display();
+	noCursor();
+	noBlink();
+	//GPIO_SetBits(GPIOC, GPIO_Pin_2);
 
-write('H');
-write('E');
-write('L');
-write('L');
-write('O');
-while(1);
-
-write('A');
-write('A');
-write('A');
-write('A');
-write('A');
-write('A');
-write('A');
-write('A');
-//blink();
-
-
-
-	LCD_Initalize(BUS_WIDTH_4, DISPLAY_LINES_2, FONT_5x8);
-
-	LCD_Clear();
-		
-	LCD_Home();
-//	LCD_DisplayScroll(False);
-
-				LCD_Print("HELLO\0");
-				LCD_Print("HELLO\0");
-				LCD_Print("HELLO\0");
-				LCD_Print("HELLO\0");
-				LCD_Print("HELL\0");
-				LCD_Print("HELLO\0");
-				while(1);
-
-	//			LCD_CursorOn(5);
-
-//while(1);
-// First message.
-//	LCD_Print("HELLO\0");
-/*	LCD_Print("HELLO WORLD");
-	LCD_Print("HELLO WORLD");
-	LCD_Print("HELLO WORLD");
-	LCD_Print("HELLO WORLD");*/
-
-	
-	//GPIO_ResetBits(GPIOC, GPIO_Pin_9);
-//	GPIO_SetBits(GPIOC, GPIO_Pin_9);	
-	
-	
-	
-	/*
-	PB0 DB5
-	PA1 RS
-	PA0 E 
-	PC5 DB7
-	PC4 DB4
-	PA7 DB6
-	*/
+	write('H');
+	write('E');
+	write('L');
+	write('L');
+	write('O');
 
 	//Initialise UART for serial comms with PC
-	//UART_init();
+	UART_init();
 	
+	humidity_init();
 	//Initialise ADC
-//	ADC_init();
+	ADC_init();
+		LEDbyte=1;
+
+	i2c_init();
+	beginTransmission(0x50);
+	sendi2c(0);
+	sendi2c(0);
+	sendi2c(123);
+	endTransmission();
+	delayMicroseconds(10000);
 	
+	beginTransmission(0x50);
+	sendi2c(0);
+	sendi2c(0);
+	endTransmission();
+	requestFrom(0x50);
+	//if (available())
+	delayMicroseconds(10000);	
+		arse=receive();
 	
+	arse=arse;
+
+
+	while(1){
+		if(LEDbyte==512){LEDbyte=1;}
+		else {LEDbyte=LEDbyte<<1;}
+		setLEDS();
+		
+		
+	setCursor(0,1);
+		lcdadc = ADC_perform_single_conversion();
+		write('0'+(lcdadc/1000));
+		lcdadc = lcdadc %1000;
+		write ('0'+(lcdadc/100));
+		lcdadc = lcdadc %100;
+		write ('0'+(lcdadc/10));
+		lcdadc = lcdadc %10;
+		write ('0'+(lcdadc));
+	delayMicroseconds(10000);
+			setCursor(0,0);
+		temporary=readcapacitance();	
+		write('0'+(temporary/10));
+		temporary=temporary%10;
+		write('0'+(temporary));
+
+		/*setCursor(0,0);
+		temporary = readcapacitance();
+		write('0'+(temporary/1000000));
+		temporary = temporary %1000000;
+		write ('0'+(temporary/100000));
+		temporary = temporary %100000;
+		write ('0'+(temporary/10000));
+		temporary = temporary %10000;
+		write ('0'+(temporary/1000));
+		temporary=0;*/
+		
+		
+		
+	}
+	//	for (j=0;j<5;j++)
+		//{
+	//		write('0'+lcd
+			
+	//	}
+			//Put the 12-bit result into 2 bytes
+			//byte1 = (uint8_t)((ADC_word >>8) & 0xFF);
+			//byte2 = (uint8_t)((ADC_word >>0) & 0xFF);
+//	I2C_Init(I2Cx, I2C_InitStruct);
+/*	init_I2C1();
+
+   	I2C_start(I2C1, ACCEL_ADDR, I2C_Direction_Transmitter); // start a transmission in Master transmitter mode
+	I2C_write(I2C1, MODE); // write one byte to the slave
+	I2C_write(I2C1, 0x00); // write another byte to the slave
+	I2C_stop(I2C1); // stop the transmission
 	
+	delayMicroseconds(2);
+	
+   	I2C_start(I2C1, ACCEL_ADDR, I2C_Direction_Transmitter); // start a transmission in Master transmitter mode
+	I2C_write(I2C1, INTSU); // write one byte to the slave
+	I2C_write(I2C1, 0x10); // write another byte to the slave
+	I2C_stop(I2C1); // stop the transmission
+	
+	delayMicroseconds(2);
+	
+   	I2C_start(I2C1, ACCEL_ADDR, I2C_Direction_Transmitter); // start a transmission in Master transmitter mode
+	I2C_write(I2C1, SR); // write one byte to the slave
+	I2C_write(I2C1, 0x00); // write another byte to the slave
+	I2C_stop(I2C1); // stop the transmission
+	
+	delayMicroseconds(2);
+	
+   	I2C_start(I2C1, ACCEL_ADDR, I2C_Direction_Transmitter); // start a transmission in Master transmitter mode
+	I2C_write(I2C1, MODE); // write one byte to the slave
+	I2C_write(I2C1, 0x01); // write another byte to the slave
+	I2C_stop(I2C1); // stop the transmission
+	
+	delayMicroseconds(2);
+	
+	I2C_start(I2C1, ACCEL_ADDR, I2C_Direction_Transmitter); // start a transmission in Master receiver mode
+
+	I2C_write(I2C1,0x00);
+	I2C_start(I2C1, ACCEL_ADDR, I2C_Direction_Receiver); // start a transmission in Master receiver mode
+
+	REG_ADDRESS[0] = I2C_read_ack(I2C1); // read one byte and request another byte
+	REG_ADDRESS[1] = I2C_read_ack(I2C1); // read one byte and request another byte
+	REG_ADDRESS[2] = I2C_read_nack(I2C1); // read one byte and don't request another byte
+	I2C_stop(I2C1); // stop the transmission
+
+	delayMicroseconds(2);
+	acctemp=REG_ADDRESS[0]/100;
+	write(acctemp+'0');
+	acctemp=(REG_ADDRESS[0]%100)/10;
+	write(acctemp+'0');
+	acctemp=(REG_ADDRESS[0]%10);
+	write(acctemp+'0');
+	
+	I2C_start(I2C1, EEPROM_ADDR, I2C_Direction_Transmitter); // start a transmission in Master receiver mode
+	I2C_write(I2C1, 0x00); // write one byte to the slave
+	I2C_write(I2C1, 0x00); // write one byte to the slave
+	I2C_write(I2C1, 0xBA); // write one byte to the slave
+	I2C_stop(I2C1); // stop the transmission
+
+	delayMicroseconds(2);
+
+	I2C_start(I2C1, EEPROM_ADDR, I2C_Direction_Transmitter); // start a transmission in Master receiver mode
+	I2C_write(I2C1, 0x00); // write one byte to the slave
+	I2C_write(I2C1, 0x00); // write one byte to the slave
+	I2C_start(I2C1, EEPROM_ADDR, I2C_Direction_Transmitter); // start a transmission in Master receiver mode
+
+//	I2C_stop(I2C1); // stop the transmission
+	yumbyte = I2C_read_nack(I2C1);
+	I2C_stop(I2C1); // stop the transmission
+	delayMicroseconds(2);
+
+*/
+	
+
 	//Main loop
 	//------------------------------------------------------------------------------
 	while (1)
 	{
 		int i;
-	//	for (i=0;i<255;i++)
-
-		//write(i);
-		//write('A');
-		//	LCD_Print("HELLO WORLD\0");
-		//	LCD_Home();
-	//LCD_Clear();
-	//LCD_MoveCursor(3);
-	//LCD_MoveDisplay(3);
-	//LCD_DisplayOn(False);
-	//LCD_DisplayScroll(False);
-	//LCD_CursorOn(True);
-	//LCD_EntryIncrement(False);
-	//LCD_CursorBlink(True);
-//	LCD_MoveToPosition(0x40);
-
-//	LCD_Print("I mean here\0");
-
 	//	check_and_process_received_command();
 	}
 	//------------------------------------------------------------------------------
@@ -361,7 +457,7 @@ write('A');
 
 //Other functions
 
-//Simple function to check for abd process one of two received commands from PC via global varoable flags
+//Simple function to check for and process one of two received commands from PC via global varoable flags
 void check_and_process_received_command(void)
 {
 	uint16_t ADC_word;

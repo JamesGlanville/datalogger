@@ -29,4 +29,3 @@ leds.o: .\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_usart.h
 leds.o: .\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_wwdg.h
 leds.o: .\lib\stm32f10x_stdperiph_driver\inc\misc.h
 leds.o: .\user\inc\LEDs.h
-leds.o: .\user\inc\LEDs.h
