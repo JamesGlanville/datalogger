@@ -3,7 +3,7 @@
 <title>Static Call Graph - [C:\Users\datalogger\Documents\GitHub\datalogger\3DAQ\Firmware\SB3_firmware.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image C:\Users\datalogger\Documents\GitHub\datalogger\3DAQ\Firmware\SB3_firmware.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.02 [Build 28]: Last Updated: Wed May 22 14:32:28 2013
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.02 [Build 28]: Last Updated: Wed May 22 15:40:34 2013
 <BR><P>
 <H3>Maximum Stack Usage =         96 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -802,7 +802,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[42]"></a>main</STRONG> (Thumb, 312 bytes, Stack size 0 bytes, main.o(i.main))
+<P><STRONG><a name="[42]"></a>main</STRONG> (Thumb, 378 bytes, Stack size 0 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = main &rArr; setCursor &rArr; command &rArr; send &rArr; write4bits &rArr; pulseEnable &rArr; delayMicroseconds &rArr; LED_on
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write
@@ -854,7 +854,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;write4bits
 </UL>
 
-<P><STRONG><a name="[7f]"></a>readcapacitance</STRONG> (Thumb, 46 bytes, Stack size 16 bytes, humidity.o(i.readcapacitance))
+<P><STRONG><a name="[7f]"></a>readcapacitance</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, humidity.o(i.readcapacitance))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = readcapacitance
 </UL>
 <BR>[Calls]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ReadInputDataBit

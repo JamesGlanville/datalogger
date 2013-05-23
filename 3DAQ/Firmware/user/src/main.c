@@ -297,8 +297,10 @@ int main(void)
 	write('L');
 	write('L');
 	write('O');
+delayMicroseconds(200000);
+	clear();
 
-	//Initialise UART for serial comms with PC
+//Initialise UART for serial comms with PC
 	UART_init();
 	
 	humidity_init();
@@ -324,6 +326,10 @@ int main(void)
 	delayMicroseconds(10000);
 			setCursor(0,0);
 		temporary=readcapacitance();	
+		write('0'+(temporary/1000));
+		temporary=temporary%1000;
+		write('0'+(temporary)/100);
+		temporary=temporary%100;
 		write('0'+(temporary/10));
 		temporary=temporary%10;
 		write('0'+(temporary));

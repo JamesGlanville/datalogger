@@ -94,7 +94,7 @@ I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_usart.h)(0x519102EE)
 I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_wwdg.h)(0x519102EE)
 I (.\lib\stm32f10x_stdperiph_driver\inc\misc.h)(0x519102EE)
 I (.\user\inc\LEDs.h)(0x519B4A42)
-F (.\user\src\main.c)(0x519CC8E6)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I.\lib\cmsis\cm3\coresupport -I.\lib\cmsis\cm3\devicesupport\st\stm32f10x -I.\lib\stm32f10x_stdperiph_driver\inc -I.\user\inc -I C:\Keil\ARM\RV31\INC -I C:\3DAQ\Firmware\lib\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F10x -DUSE_STDPERIPH_DRIVER -o "main.o" --omf_browse "main.crf" --depend "main.d")
+F (.\user\src\main.c)(0x519CD8E1)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I.\lib\cmsis\cm3\coresupport -I.\lib\cmsis\cm3\devicesupport\st\stm32f10x -I.\lib\stm32f10x_stdperiph_driver\inc -I.\user\inc -I C:\Keil\ARM\RV31\INC -I C:\3DAQ\Firmware\lib\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F10x -DUSE_STDPERIPH_DRIVER -o "main.o" --omf_browse "main.crf" --depend "main.d")
 I (.\lib\cmsis\cm3\devicesupport\st\stm32f10x\stm32F10x.h)(0x519102EE)
 I (.\lib\cmsis\cm3\coresupport\core_cm3.h)(0x519102EE)
 I (C:\Keil\ARM\ARMCC\bin\..\include\stdint.h)(0x4EB14304)
@@ -160,7 +160,7 @@ I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_wwdg.h)(0x519102EE)
 I (.\lib\stm32f10x_stdperiph_driver\inc\misc.h)(0x519102EE)
 I (.\user\inc\UART.h)(0x519102EE)
 I (.\user\inc\LEDs.h)(0x519B4A42)
-F (.\user\src\humidity.c)(0x519CC8AE)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I.\lib\cmsis\cm3\coresupport -I.\lib\cmsis\cm3\devicesupport\st\stm32f10x -I.\lib\stm32f10x_stdperiph_driver\inc -I.\user\inc -I C:\Keil\ARM\RV31\INC -I C:\3DAQ\Firmware\lib\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F10x -DUSE_STDPERIPH_DRIVER -o "humidity.o" --omf_browse "humidity.crf" --depend "humidity.d")
+F (.\user\src\humidity.c)(0x519CD62D)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I.\lib\cmsis\cm3\coresupport -I.\lib\cmsis\cm3\devicesupport\st\stm32f10x -I.\lib\stm32f10x_stdperiph_driver\inc -I.\user\inc -I C:\Keil\ARM\RV31\INC -I C:\3DAQ\Firmware\lib\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F10x -DUSE_STDPERIPH_DRIVER -o "humidity.o" --omf_browse "humidity.crf" --depend "humidity.d")
 I (.\user\inc\humidity.h)(0x519C8E5D)
 I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_gpio.h)(0x519102EE)
 I (.\lib\cmsis\cm3\devicesupport\st\stm32f10x\stm32f10x.h)(0x519102EE)

@@ -75,13 +75,13 @@ Section Cross References
     main.o(i.main) refers to lcd.o(i.noBlink) for noBlink
     main.o(i.main) refers to stm32f10x_gpio.o(i.GPIO_SetBits) for GPIO_SetBits
     main.o(i.main) refers to lcd.o(i.write) for write
+    main.o(i.main) refers to lcd.o(i.delayMicroseconds) for delayMicroseconds
     main.o(i.main) refers to uart.o(i.UART_init) for UART_init
     main.o(i.main) refers to humidity.o(i.humidity_init) for humidity_init
     main.o(i.main) refers to adc.o(i.ADC_init) for ADC_init
     main.o(i.main) refers to leds.o(i.setLEDS) for setLEDS
     main.o(i.main) refers to lcd.o(i.setCursor) for setCursor
     main.o(i.main) refers to adc.o(i.ADC_perform_single_conversion) for ADC_perform_single_conversion
-    main.o(i.main) refers to lcd.o(i.delayMicroseconds) for delayMicroseconds
     main.o(i.main) refers to humidity.o(i.readcapacitance) for readcapacitance
     main.o(i.main) refers to main.o(.data) for LEDbyte
     uart.o(i.GPIO_Config) refers to stm32f10x_rcc.o(i.RCC_APB2PeriphClockCmd) for RCC_APB2PeriphClockCmd
@@ -990,16 +990,16 @@ Image Symbol Table
     i.humidity_init                          0x08000cf8   Section        0  humidity.o(i.humidity_init)
     i.init_GPIO_pins                         0x08000d0c   Section        0  leds.o(i.init_GPIO_pins)
     i.main                                   0x08000d84   Section        0  main.o(i.main)
-    i.noBlink                                0x08000ec8   Section        0  lcd.o(i.noBlink)
-    i.noCursor                               0x08000ee8   Section        0  lcd.o(i.noCursor)
-    i.pulseEnable                            0x08000f08   Section        0  lcd.o(i.pulseEnable)
-    i.readcapacitance                        0x08000f3c   Section        0  humidity.o(i.readcapacitance)
-    i.send                                   0x08000f70   Section        0  lcd.o(i.send)
-    i.setCursor                              0x08000fa0   Section        0  lcd.o(i.setCursor)
-    i.setLEDS                                0x08000fd8   Section        0  leds.o(i.setLEDS)
-    i.write                                  0x08001108   Section        0  lcd.o(i.write)
-    i.write4bits                             0x08001118   Section        0  lcd.o(i.write4bits)
-    .constdata                               0x08001190   Section       16  lcd.o(.constdata)
+    i.noBlink                                0x08000f10   Section        0  lcd.o(i.noBlink)
+    i.noCursor                               0x08000f30   Section        0  lcd.o(i.noCursor)
+    i.pulseEnable                            0x08000f50   Section        0  lcd.o(i.pulseEnable)
+    i.readcapacitance                        0x08000f84   Section        0  humidity.o(i.readcapacitance)
+    i.send                                   0x08000fbc   Section        0  lcd.o(i.send)
+    i.setCursor                              0x08000fec   Section        0  lcd.o(i.setCursor)
+    i.setLEDS                                0x08001024   Section        0  leds.o(i.setLEDS)
+    i.write                                  0x08001154   Section        0  lcd.o(i.write)
+    i.write4bits                             0x08001164   Section        0  lcd.o(i.write4bits)
+    .constdata                               0x080011dc   Section       16  lcd.o(.constdata)
     .data                                    0x20000000   Section        4  leds.o(.data)
     .data                                    0x20000004   Section       17  main.o(.data)
     .data                                    0x20000015   Section       17  lcd.o(.data)
@@ -1204,18 +1204,18 @@ Image Symbol Table
     home                                     0x08000ce5   Thumb Code    18  lcd.o(i.home)
     humidity_init                            0x08000cf9   Thumb Code    14  humidity.o(i.humidity_init)
     init_GPIO_pins                           0x08000d0d   Thumb Code   108  leds.o(i.init_GPIO_pins)
-    main                                     0x08000d85   Thumb Code   312  main.o(i.main)
-    noBlink                                  0x08000ec9   Thumb Code    26  lcd.o(i.noBlink)
-    noCursor                                 0x08000ee9   Thumb Code    26  lcd.o(i.noCursor)
-    pulseEnable                              0x08000f09   Thumb Code    46  lcd.o(i.pulseEnable)
-    readcapacitance                          0x08000f3d   Thumb Code    46  humidity.o(i.readcapacitance)
-    send                                     0x08000f71   Thumb Code    42  lcd.o(i.send)
-    setCursor                                0x08000fa1   Thumb Code    48  lcd.o(i.setCursor)
-    setLEDS                                  0x08000fd9   Thumb Code   288  leds.o(i.setLEDS)
-    write                                    0x08001109   Thumb Code    16  lcd.o(i.write)
-    write4bits                               0x08001119   Thumb Code   106  lcd.o(i.write4bits)
-    Region$$Table$$Base                      0x080011a0   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x080011c0   Number         0  anon$$obj.o(Region$$Table)
+    main                                     0x08000d85   Thumb Code   378  main.o(i.main)
+    noBlink                                  0x08000f11   Thumb Code    26  lcd.o(i.noBlink)
+    noCursor                                 0x08000f31   Thumb Code    26  lcd.o(i.noCursor)
+    pulseEnable                              0x08000f51   Thumb Code    46  lcd.o(i.pulseEnable)
+    readcapacitance                          0x08000f85   Thumb Code    50  humidity.o(i.readcapacitance)
+    send                                     0x08000fbd   Thumb Code    42  lcd.o(i.send)
+    setCursor                                0x08000fed   Thumb Code    48  lcd.o(i.setCursor)
+    setLEDS                                  0x08001025   Thumb Code   288  leds.o(i.setLEDS)
+    write                                    0x08001155   Thumb Code    16  lcd.o(i.write)
+    write4bits                               0x08001165   Thumb Code   106  lcd.o(i.write4bits)
+    Region$$Table$$Base                      0x080011ec   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x0800120c   Number         0  anon$$obj.o(Region$$Table)
     LED                                      0x20000000   Data           4  leds.o(.data)
     LEDbyte                                  0x20000004   Data           4  main.o(.data)
     command_flag                             0x20000008   Data           4  main.o(.data)
@@ -1243,9 +1243,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000121
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000011fc, Max: 0x00020000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00001248, Max: 0x00020000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x000011c0, Max: 0x00020000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x0000120c, Max: 0x00020000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -1359,18 +1359,18 @@ Memory Map of the image
     0x08000cf6   0x00000002   PAD
     0x08000cf8   0x00000014   Code   RO          344    i.humidity_init     humidity.o
     0x08000d0c   0x00000078   Code   RO          202    i.init_GPIO_pins    leds.o
-    0x08000d84   0x00000144   Code   RO          241    i.main              main.o
-    0x08000ec8   0x00000020   Code   RO          398    i.noBlink           lcd.o
-    0x08000ee8   0x00000020   Code   RO          399    i.noCursor          lcd.o
-    0x08000f08   0x00000034   Code   RO          401    i.pulseEnable       lcd.o
-    0x08000f3c   0x00000034   Code   RO          345    i.readcapacitance   humidity.o
-    0x08000f70   0x00000030   Code   RO          405    i.send              lcd.o
-    0x08000fa0   0x00000038   Code   RO          406    i.setCursor         lcd.o
-    0x08000fd8   0x00000130   Code   RO          203    i.setLEDS           leds.o
-    0x08001108   0x00000010   Code   RO          407    i.write             lcd.o
-    0x08001118   0x00000078   Code   RO          408    i.write4bits        lcd.o
-    0x08001190   0x00000010   Data   RO          409    .constdata          lcd.o
-    0x080011a0   0x00000020   Data   RO         3700    Region$$Table       anon$$obj.o
+    0x08000d84   0x0000018c   Code   RO          241    i.main              main.o
+    0x08000f10   0x00000020   Code   RO          398    i.noBlink           lcd.o
+    0x08000f30   0x00000020   Code   RO          399    i.noCursor          lcd.o
+    0x08000f50   0x00000034   Code   RO          401    i.pulseEnable       lcd.o
+    0x08000f84   0x00000038   Code   RO          345    i.readcapacitance   humidity.o
+    0x08000fbc   0x00000030   Code   RO          405    i.send              lcd.o
+    0x08000fec   0x00000038   Code   RO          406    i.setCursor         lcd.o
+    0x08001024   0x00000130   Code   RO          203    i.setLEDS           leds.o
+    0x08001154   0x00000010   Code   RO          407    i.write             lcd.o
+    0x08001164   0x00000078   Code   RO          408    i.write4bits        lcd.o
+    0x080011dc   0x00000010   Data   RO          409    .constdata          lcd.o
+    0x080011ec   0x00000020   Data   RO         3700    Region$$Table       anon$$obj.o
 
 
     Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x000006a0, Max: 0x00002000, ABSOLUTE)
@@ -1397,10 +1397,10 @@ Image component sizes
 
        204         14          0          0          0     216411   adc.o
          0          0          0          0          0       4212   core_cm3.o
-       104         12          0          0          0     215935   humidity.o
+       108         12          0          0          0     215935   humidity.o
        648         82         16         17          0       7208   lcd.o
        480         44          0          4          0       2064   leds.o
-       324         12          0         17          0       1752   main.o
+       396         18          0         17          0       1780   main.o
        136         24          0          0          0       1503   misc.o
         64         26        288          0       1536        780   startup_stm32f10x_md_vl.o
        340         10          0          0          0       6200   stm32f10x_adc.o
@@ -1411,7 +1411,7 @@ Image component sizes
        298         28          0          0          0       1816   uart.o
 
     ----------------------------------------------------------------------
-      3938        320        336         60       1536     499044   Object Totals
+      4014        326        336         60       1536     499072   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         16          0          0          2          0          0   (incl. Padding)
 
@@ -1460,15 +1460,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      4208        336        336         60       1636     496396   Grand Totals
-      4208        336        336         60       1636     496396   ELF Image Totals
-      4208        336        336         60          0          0   ROM Totals
+      4284        342        336         60       1636     496424   Grand Totals
+      4284        342        336         60       1636     496424   ELF Image Totals
+      4284        342        336         60          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 4544 (   4.44kB)
+    Total RO  Size (Code + RO Data)                 4620 (   4.51kB)
     Total RW  Size (RW Data + ZI Data)              1696 (   1.66kB)
-    Total ROM Size (Code + RO Data + RW Data)       4604 (   4.50kB)
+    Total ROM Size (Code + RO Data + RW Data)       4680 (   4.57kB)
 
 ==============================================================================
 

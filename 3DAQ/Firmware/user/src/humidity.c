@@ -28,7 +28,7 @@ int readcapacitance(void)
 	int lastmeasurement;
 		i=0;
 	j=0;
-	for (i=0;i<100;i++)
+	for (i=0;i<10000;i++)
 {	
 	if(GPIO_ReadInputDataBit(GPIOC,GPIO_Pin_10)!=lastmeasurement)
 	{
