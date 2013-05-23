@@ -140,12 +140,12 @@ void MyFrame::OnPortConnect(wxCommandEvent& event)
   if (com_port_open)
     {
       wxLogMessage(wxT("Already connected!"));
-      return 0;
+      return;
     }
   
   RS232_Init(com_port_no);
 
-  return 0;
+  return;
 }
 
 void MyFrame::OnLogStart(wxCommandEvent& event)
