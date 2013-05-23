@@ -8,6 +8,8 @@ Date: Mon 20 May 2013 17:15
 #ifndef comms_h
 #define coms_h
 
+#define RX_BUFF_LEN 64
+
 static int com_port_no = 0;
 static bool com_port_open = false;
 
