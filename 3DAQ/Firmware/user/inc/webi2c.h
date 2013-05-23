@@ -1,5 +1,8 @@
 typedef enum {FAILED = 0, PASSED = !FAILED} TestStatus;
 
+void I2C_EE_Erase(void);
+void I2C_EE_WriteConfig(void);
+void I2C_EE_LoadConfig(void);
 void RCC_Configuration(void);
 void GPIO_Configuration(void);
 void USART_Configuration(void);
@@ -14,3 +17,10 @@ TestStatus Buffercmp(uint8_t* pBuffer1, uint8_t* pBuffer2, uint16_t BufferLength
 void I2C_EEPROM(void);
 void I2C_ACCEL_INIT(void);
 void I2C_ACCEL_READ(void);
+
+void I2C_EE_StartLog(void);
+void I2C_EE_FinishLog(void);
+void I2C_EE_Log(uint8_t* LogData);
+void I2C_EE_Erase(void);
+void I2C_EE_LoadConfig(void);
+void I2C_EE_WriteConfig(void);

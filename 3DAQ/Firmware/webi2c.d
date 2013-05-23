@@ -30,3 +30,5 @@ webi2c.o: .\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_usart.h
 webi2c.o: .\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_wwdg.h
 webi2c.o: .\lib\stm32f10x_stdperiph_driver\inc\misc.h
 webi2c.o: .\user\inc\webi2c.h
+webi2c.o: .\user\inc\UART.h
+webi2c.o: .\user\inc\LEDs.h

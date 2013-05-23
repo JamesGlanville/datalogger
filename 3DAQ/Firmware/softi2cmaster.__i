@@ -1,5 +1,0 @@
--c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I.\lib\cmsis\cm3\coresupport -I.\lib\cmsis\cm3\devicesupport\st\stm32f10x -I.\lib\stm32f10x_stdperiph_driver\inc -I.\user\inc 
--I C:\Keil\ARM\RV31\INC 
--I C:\3DAQ\Firmware\lib\CMSIS\Include 
--I C:\Keil\ARM\Inc\ST\STM32F10x 
--DUSE_STDPERIPH_DRIVER -o "softi2cmaster.o" --omf_browse "softi2cmaster.crf" --depend "softi2cmaster.d" "user\src\SoftI2CMaster.c"

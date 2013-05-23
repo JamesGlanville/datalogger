@@ -3,6 +3,8 @@
 #include "stm32f10x_i2c.h"
 #include "stm32f10x_rcc.h"
 #include "webi2c.h"
+#include "UART.h"
+#include "LEDs.h"
 
 /***************************************************************************//**
  * Global variables, private define, macro and typedef
@@ -29,8 +31,8 @@ USART_InitTypeDef USART_InitStructure;
 #define I2C_SLAVE_ADDRESS7     0xA0
 #define I2C_FLASH_PAGESIZE     32
 #define EEPROM_HW_ADDRESS      0xA0   /* E0 = E1 = E2 = 0 */
-
 #define ACCEL_HW_ADDRESS			 0x98
+
 #define   X_OUT       0x00
 #define   Y_OUT       0x01
 #define   Z_OUT       0x02
@@ -38,8 +40,23 @@ USART_InitTypeDef USART_InitStructure;
 #define   MODE        0x07
 #define   SR          0x08
 
+#define EEPROM_BYTES	0x7D00 //32000
+#define CONFIGLENGTH	0x0010 //16
+#define ZERO					0x00
+#define ENTRYBYTES		0x08
+
 /* Private macro -------------------------------------------------------------*/
 #define countof(a) (sizeof(a) / sizeof(*(a)))
+
+int currentByte;
+uint8_t Config[CONFIGLENGTH];
+
+/*
+Config data:
+first two bits are log length, msb first
+
+
+*/
 
 /* Private variables ---------------------------------------------------------*/
 uint16_t EEPROM_ADDRESS;
@@ -47,47 +64,76 @@ uint8_t Tx1_Buffer[] = "/* STM32F10x I2C Firmware ";
 uint8_t Test_Buffer[] = "This is written EEPROM data :)";
 uint8_t Rx1_Buffer[150];
 volatile TestStatus TransferStatus1 = FAILED;
+extern volatile unsigned int LEDbyte;
+unsigned int LEDripple[] = {0x001,0x004,0x010,0x040,0x100,0x100,0x040,0x010,0x004,0x001};
 
-/*void SLAVE_I2C_READ() //READ MMA7660 data
+void I2C_EE_SendData(void)
 {
-  unsigned char REG_ADDRESS[3];
-  int i=0;
-  Wire.beginTransmission(I2C_ADDRESS);
-  Wire.write(0x00);  // register to read
-  Wire.endTransmission();
-  Wire.requestFrom(I2C_ADDRESS, 3); // read a byte
+	uint8_t byte;
+	unsigned int LEDbackup;
+	int i;
+	
+	LEDbackup=LEDbyte;
+	
+	for (i=CONFIGLENGTH;i<EEPROM_BYTES;i++)
+	{
+		LEDbyte = (i%100)/10;
+		setLEDS();
+		I2C_EE_BufferRead(&byte, i, 1);
+		UART_send_byte(byte);
+	}
+	LEDbyte=LEDbackup;
+	setLEDS();
+}
 
-  for(i=0; i<3; i++)
-  {
-   if(Wire.available())REG_ADDRESS[i]=Wire.read();
-  }
-  for(i=0; i<3; i++){
-    switch (i) 
-     {
-      case 0: { Serial.print("     X-as = ");  
-       char x = REG_ADDRESS[i];
-       Serial.print((int)x);
-          break;
-      }
-      case 1: { Serial.print("     Y-as = ");  
-       char y = REG_ADDRESS[i];
-       Serial.print((int)y);
-          break;
-      }
-      case 2:   { Serial.print("     Z-as = ");  
-       char x = REG_ADDRESS[i];
-       Serial.print((int)x);
-             Serial.println("");
-      delay(200);
-      break;
-      }
-    }
-  }
-}*/
+void I2C_EE_StartLog(void)
+{
+	currentByte=CONFIGLENGTH;
+}
+
+void I2C_EE_FinishLog(void)
+{
+//	int loglength = ((int)Config[0])<<8 + Config[1];
+	int loglength;
+	loglength = (currentByte-CONFIGLENGTH)/ENTRYBYTES;
+	Config[0] = loglength>>8;
+	Config[1] = loglength % 0x100;
+	I2C_EE_WriteConfig();
+}
+
+void I2C_EE_Log(uint8_t* LogData)
+{
+	if (currentByte >=EEPROM_BYTES) {I2C_EE_FinishLog();}
+	else
+	{
+	I2C_EE_BufferWrite(LogData, currentByte, CONFIGLENGTH);
+	
+	currentByte+=ENTRYBYTES;
+	}
+}
+
+void I2C_EE_Erase(void)
+{
+	int i;
+	for (i=CONFIGLENGTH;i<EEPROM_BYTES;i++)
+	{
+		I2C_EE_ByteWrite(ZERO, i);
+	}
+}
+void I2C_EE_LoadConfig(void)
+{
+I2C_EE_BufferRead(Config, 0, CONFIGLENGTH);
+}
+
+void I2C_EE_WriteConfig(void)
+{
+I2C_EE_BufferWrite(Config, 0, CONFIGLENGTH);
+}
+
 void I2C_ACCEL_READ(void)
 {
 	int NumByteToRead=3;
-  unsigned char REG_ADDRESS[3];
+  unsigned char XYZ[3];
 
     while(I2C_GetFlagStatus(I2C_EE, I2C_FLAG_BUSY));
 
@@ -126,7 +172,7 @@ void I2C_ACCEL_READ(void)
         if(I2C_CheckEvent(I2C_EE, I2C_EVENT_MASTER_BYTE_RECEIVED))
         {
             /* Read a byte from the EEPROM */
-            REG_ADDRESS[NumByteToRead-1] = I2C_ReceiveData(I2C_EE);
+            XYZ[3-NumByteToRead] = I2C_ReceiveData(I2C_EE);
 
             /* Point to the next location where the byte read will be saved */
             //pBuffer++;
@@ -142,21 +188,6 @@ void I2C_ACCEL_READ(void)
 
 void I2C_ACCEL_INIT(void)
 {
-/*	int i;
-	int timeout;
-	for (i=0;i<256;i++)
-	{
-		timeout=100;
-    I2C_GenerateSTART(I2C_EE, ENABLE);
-    while(!I2C_CheckEvent(I2C_EE, I2C_EVENT_MASTER_MODE_SELECT));
-    I2C_Send7bitAddress(I2C_EE, i, I2C_Direction_Transmitter);
-    //while(!I2C_CheckEvent(I2C_EE, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED));
-    while((!I2C_CheckEvent(I2C_EE, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED))&&timeout){
-			timeout--;
-			
-		}
-		timeout=timeout;
-	}*/
    I2C_GenerateSTART(I2C_EE, ENABLE);
     while(!I2C_CheckEvent(I2C_EE, I2C_EVENT_MASTER_MODE_SELECT));
     I2C_Send7bitAddress(I2C_EE, ACCEL_HW_ADDRESS, I2C_Direction_Transmitter);
@@ -196,6 +227,8 @@ void I2C_ACCEL_INIT(void)
     I2C_SendData(I2C_EE, 0x01);
     while(!I2C_CheckEvent(I2C_EE, I2C_EVENT_MASTER_BYTE_TRANSMITTED));
     I2C_GenerateSTOP(I2C_EE, ENABLE);
+
+		I2C_ACCEL_READ(); //Dummy read, first one is always zeros.
 }
 
 /***************************************************************************//**

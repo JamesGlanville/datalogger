@@ -60,7 +60,6 @@ void check_and_process_received_command(void);
 int main(void)
 {
 	int i;
-	uint8_t yumbyte;
 	uint8_t buffer[100];
 
 	init_GPIO_pins();
@@ -71,12 +70,12 @@ int main(void)
 	{
 		LED_on();
 	}
-		delay_init();
+	
+//GPIO_Init_Mode(GPIOA,GPIO_Pin_0,GPIO_Mode_IN_FLOATING); //BUTTON
+
+	delay_init();
 	LED_off();
-	
-	LEDbyte =0;
-	yumbyte=0;
-	
+		
 	LCDINIT();
 	home();
 	clear();
@@ -89,8 +88,8 @@ int main(void)
 	write('L');
 	write('L');
 	write('O');
+	
 	delay_ms(2000);
-//delayMicroseconds(200000);
 	clear();
 
 //Initialise UART for serial comms with PC
@@ -103,48 +102,25 @@ int main(void)
 	I2C_EEPROM();
 	
 I2C_ACCEL_INIT();
-I2C_ACCEL_READ();
-I2C_ACCEL_READ();	
-I2C_ACCEL_READ();	
-I2C_ACCEL_READ();	
-I2C_ACCEL_READ();	
-I2C_ACCEL_READ();	
-I2C_ACCEL_READ();	
-I2C_ACCEL_READ();	
-I2C_ACCEL_READ();	
-I2C_ACCEL_READ();	
-
-
-//delay_ms(10000);
 
 //	I2C_EE_BufferWrite(Test_Buffer, EEPROM_WriteAddress1, 100);
 I2C_EE_BufferRead(buffer, 0, 100);
-
-
-//	I2C_EE_BufferRead(&yumbyte, 0, 1);
-
-yumbyte=yumbyte;
 
 	while(1){
 		if(LEDbyte==512){LEDbyte=1;}
 		else {LEDbyte=LEDbyte<<1;}
 		setLEDS();
 		
-		
 	setCursor(0,1);
 	writenumber( ADC_perform_single_conversion());
 	setCursor(0,0);
 	writenumber(readcapacitance());
 		delay_ms(50);
-	}
-
-	//Main loop
-	//------------------------------------------------------------------------------
-	while (1)
-	{
+		
 		check_and_process_received_command();
+		
 	}
-	//------------------------------------------------------------------------------
+	
 }
 
 //------------------------------------------------------------------------------
