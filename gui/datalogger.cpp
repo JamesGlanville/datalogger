@@ -5,10 +5,8 @@ Author: Andy Holt
 Date: Mon 20 May 2013 15:30
 */
 
-//#include <wx/wx.h>
 #include "datalogger.h"
-//#include "comms.h"
-
+#include "comms.h"
 
  BEGIN_EVENT_TABLE(MyFrame, wxFrame)
   EVT_MENU(wxID_EXIT, MyFrame::OnExit)
@@ -129,12 +127,14 @@ void MyFrame::OnAbout(wxCommandEvent& event)
 
 void MyFrame::OnPortSelect(wxSpinEvent& event)
 {
-  com_port_number.Printf(wxT("%d"), event.GetPosition());
+  com_port_no = event.GetPosition();
 }
 
 void MyFrame::OnPortConnect(wxCommandEvent& event)
 {
-  wxLogMessage(wxT("Attempting to connect to module through comm port ") + com_port_number);
+  wxString message = wxT("Attempting to connect to module thorugh comm port");
+  message = message << com_port_no;
+  wxLogMessage(message);
 }
 
 void MyFrame::OnLogStart(wxCommandEvent& event)
