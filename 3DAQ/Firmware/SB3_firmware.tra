@@ -11,6 +11,7 @@
 ### List of Objects: adding '"humidity.o"'
 ### List of Objects: adding '"lcd.o"'
 ### List of Objects: adding '"softi2cmaster.o"'
+### List of Objects: adding '"webi2c.o"'
 ### List of Objects: adding '"misc.o"'
 ### List of Objects: adding '"stm32f10x_adc.o"'
 ### List of Objects: adding '"stm32f10x_dma.o"'
@@ -35,7 +36,7 @@
 ### List of Objects: adding '"stm32f10x_spi.o"'
 ### List of Objects: adding '"stm32f10x_wwdg.o"'
 ### ADS-LD Command completed:
---cpu Cortex-M3 "startup_stm32f10x_md_vl.o" "core_cm3.o" "system_stm32f10x.o" "adc.o" "leds.o" "main.o" "uart.o" "humidity.o" "lcd.o" "softi2cmaster.o" "misc.o" "stm32f10x_adc.o" "stm32f10x_dma.o" "stm32f10x_gpio.o" "stm32f10x_rcc.o" "stm32f10x_tim.o" "stm32f10x_usart.o" "stm32f10x_bkp.o" "stm32f10x_can.o" "stm32f10x_cec.o" "stm32f10x_crc.o" "stm32f10x_dac.o" "stm32f10x_dbgmcu.o" "stm32f10x_exti.o" "stm32f10x_flash.o" "stm32f10x_fsmc.o" "stm32f10x_i2c.o" "stm32f10x_iwdg.o" "stm32f10x_pwr.o" "stm32f10x_rtc.o" "stm32f10x_sdio.o" "stm32f10x_spi.o" "stm32f10x_wwdg.o" 
+--cpu Cortex-M3 "startup_stm32f10x_md_vl.o" "core_cm3.o" "system_stm32f10x.o" "adc.o" "leds.o" "main.o" "uart.o" "humidity.o" "lcd.o" "softi2cmaster.o" "webi2c.o" "misc.o" "stm32f10x_adc.o" "stm32f10x_dma.o" "stm32f10x_gpio.o" "stm32f10x_rcc.o" "stm32f10x_tim.o" "stm32f10x_usart.o" "stm32f10x_bkp.o" "stm32f10x_can.o" "stm32f10x_cec.o" "stm32f10x_crc.o" "stm32f10x_dac.o" "stm32f10x_dbgmcu.o" "stm32f10x_exti.o" "stm32f10x_flash.o" "stm32f10x_fsmc.o" "stm32f10x_i2c.o" "stm32f10x_iwdg.o" "stm32f10x_pwr.o" "stm32f10x_rtc.o" "stm32f10x_sdio.o" "stm32f10x_spi.o" "stm32f10x_wwdg.o" 
 --strict --scatter "SB3_firmware.sct" 
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
 --info sizes --info totals --info unused --info veneers 
@@ -43,11 +44,7 @@
 ### ADS-LD Output File: 'SB3_firmware.axf'
 ### ADS-LD Command File: 'SB3_firmware.lnp'
 ### Checking for dirty Components...
-<<<<<<< HEAD
-### Creating CmdFile 'SB3_firmware.lnp', Handle=0x000004B8
-=======
-### Creating CmdFile 'SB3_firmware.lnp', Handle=0x0000068C
->>>>>>> c17d3388665c3f900e8fc0554862ad1efa8e2e39
+### Creating CmdFile 'SB3_firmware.lnp', Handle=0x000012F8
 ### Writing '.lnp' file
 ### ADS-LD Command file 'SB3_firmware.lnp' is ready.
 ### ADS-LD: About to start ADS-LD Thread.

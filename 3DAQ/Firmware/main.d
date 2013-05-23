@@ -34,4 +34,4 @@ main.o: .\user\inc\ADC.h
 main.o: .\user\inc\LCD.h
 main.o: C:\Keil\ARM\ARMCC\bin\..\include\inttypes.h
 main.o: .\user\inc\humidity.h
-main.o: .\user\inc\SoftI2CMaster.h
+main.o: .\user\inc\webi2c.h
