@@ -7,18 +7,20 @@ Date: Mon 20 May 2013 15:30
 
 //#include <wx/wx.h>
 #include "datalogger.h"
+//#include "comms.h"
 
-BEGIN_EVENT_TABLE(MyFrame, wxFrame)
-  EVT_MENU(ID_StartLog, MyFrame::OnStartLog)
-  EVT_MENU(ID_StopLog, MyFrame::OnStopLog)
-  EVT_MENU(ID_GetData, MyFrame::OnGetData)
-  EVT_MENU(ID_EraseData, MyFrame::OnEraseData)
+
+ BEGIN_EVENT_TABLE(MyFrame, wxFrame)
   EVT_MENU(wxID_EXIT, MyFrame::OnExit)
   EVT_MENU(wxID_ABOUT, MyFrame::OnAbout)
+  EVT_MENU(LOG_START, MyFrame::OnLogStart)
+  EVT_MENU(LOG_STOP, MyFrame::OnLogStop)
+  EVT_MENU(DATA_GET, MyFrame::OnDataGet)
+  EVT_MENU(DATA_ERASE, MyFrame::OnDataErase)
   EVT_SPINCTRL(PORT_SELECT, MyFrame::OnPortSelect)
   EVT_BUTTON(PORT_CONNECT, MyFrame::OnPortConnect)
-  EVT_BUTTON(STREAM_START, MyFrame::OnStreamStart)
-  EVT_BUTTON(STREAM_STOP, MyFrame::OnStreamStop)
+  EVT_BUTTON(LOG_START, MyFrame::OnLogStart)
+  EVT_BUTTON(LOG_STOP, MyFrame::OnLogStop)
   EVT_BUTTON(DATA_GET, MyFrame::OnDataGet)
   EVT_BUTTON(DATA_ERASE, MyFrame::OnDataErase)
   EVT_BUTTON(FIND_EVENTS, MyFrame::OnFind_Events)
@@ -43,13 +45,13 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
   wxMenu *menuFile = new wxMenu;
   menuFile->Append(wxID_EXIT);
   wxMenu *menuData = new wxMenu;
-  menuData->Append(ID_StartLog, wxT("&Start Logging\tCtrl-L"),
+  menuData->Append(LOG_START, wxT("&Start Logging\tCtrl-L"),
 		   wxT("Help string: Begin logging with board plugged in."));
-  menuData->Append(ID_StopLog, wxT("&Stop Logging\tCtrl-K"),
+  menuData->Append(LOG_STOP, wxT("&Stop Logging\tCtrl-K"),
 		   wxT("Help string: Stop logging with board plugged in."));
-  menuData->Append(ID_GetData, wxT("&Get Data\tCtrl-D"),
+  menuData->Append(DATA_GET, wxT("&Get Data\tCtrl-D"),
 		   wxT("Help string: Get data from board."));
-  menuData->Append(ID_EraseData, wxT("&Erase Data\tCtrl-E"),
+  menuData->Append(DATA_ERASE, wxT("&Erase Data\tCtrl-E"),
 		   wxT("Help string: Erase chip memory."));
   wxMenu *menuHelp = new wxMenu;
   menuHelp->Append(wxID_ABOUT);
@@ -77,16 +79,16 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
   wxBoxSizer *datalink_sizer = new wxBoxSizer(wxVERTICAL);
   datalink_sizer->Add(new wxStaticText(this, wxID_ANY, wxT("Linked Mode")),
 		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
-  datalink_sizer->Add(new wxButton(this, STREAM_START, wxT("Start Streaming")),
+  datalink_sizer->Add(new wxButton(this, LOG_START, wxT("Start Logging")),
 		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
-  datalink_sizer->Add(new wxButton(this, STREAM_STOP, wxT("Stop Streaming")),
+  datalink_sizer->Add(new wxButton(this, LOG_STOP, wxT("Stop Logging")),
 		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
   ctrlsizer->Add(datalink_sizer, 1, wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
 
   wxBoxSizer *upload_sizer = new wxBoxSizer(wxVERTICAL);
   upload_sizer->Add(new wxStaticText(this, wxID_ANY, wxT("Standalone Mode")),
 		    0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
-  upload_sizer->Add(new wxButton(this, DATA_GET, wxT("Download Data")),
+  upload_sizer->Add(new wxButton(this, DATA_GET, wxT("Get Data")),
 		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
   upload_sizer->Add(new wxButton(this, DATA_ERASE, wxT("Erase Data")),
 		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
@@ -125,45 +127,24 @@ void MyFrame::OnAbout(wxCommandEvent& event)
 	       wxT("About Parcel Tracker"), wxOK | wxICON_INFORMATION);
 }
 
-void MyFrame::OnStartLog(wxCommandEvent& event)
-{
-  wxLogMessage(wxT("Logging!"));
-}
-
-void MyFrame::OnStopLog(wxCommandEvent& event)
-{
-  wxLogMessage(wxT("Finished logging!"));
-}
-
-void MyFrame::OnGetData(wxCommandEvent& event)
-{
-  wxLogMessage(wxT("Getting data from module."));
-}
-
-void MyFrame::OnEraseData(wxCommandEvent& event)
-{
-  wxLogMessage(wxT("Erasing Data from module."));
-}
-
 void MyFrame::OnPortSelect(wxSpinEvent& event)
 {
-  wxString text;
-  text.Printf(wxT("New spinctrl value %d"), event.GetPosition());
+  com_port_number.Printf(wxT("%d"), event.GetPosition());
 }
 
 void MyFrame::OnPortConnect(wxCommandEvent& event)
 {
-  wxLogMessage(wxT("Attempting to connect to module"));
+  wxLogMessage(wxT("Attempting to connect to module through comm port ") + com_port_number);
 }
 
-void MyFrame::OnStreamStart(wxCommandEvent& event)
+void MyFrame::OnLogStart(wxCommandEvent& event)
 {
-  wxLogMessage(wxT("Starting data streaming."));
+  wxLogMessage(wxT("Logging!"));
 }
 
-void MyFrame::OnStreamStop(wxCommandEvent& event)
+void MyFrame::OnLogStop(wxCommandEvent& event)
 {
-  wxLogMessage(wxT("Stopping data streaming."));
+  wxLogMessage(wxT("Finished logging!"));
 }
 
 void MyFrame::OnDataGet(wxCommandEvent& event)

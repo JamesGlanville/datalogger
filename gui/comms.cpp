@@ -11,7 +11,7 @@ Date: Mon 20 May 2013 17:21
 BYTE rx_buff[RX_BUFF_LEN];
 BYTE tx_buff[2];
 
-static int com_port_no;
+static int com_port_no = 0;
 static bool com_port_open = false;
 
 // RS232 functions
