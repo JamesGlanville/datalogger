@@ -132,9 +132,20 @@ void MyFrame::OnPortSelect(wxSpinEvent& event)
 
 void MyFrame::OnPortConnect(wxCommandEvent& event)
 {
+  /*
   wxString message = wxT("Attempting to connect to module thorugh comm port");
   message = message << com_port_no;
   wxLogMessage(message);
+  */
+  if (com_port_open)
+    {
+      wxLogMessage(wxT("Already connected!"));
+      return 0;
+    }
+  
+  RS232_Init(com_port_no);
+
+  return 0;
 }
 
 void MyFrame::OnLogStart(wxCommandEvent& event)
