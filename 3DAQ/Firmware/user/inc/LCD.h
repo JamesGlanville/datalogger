@@ -44,6 +44,7 @@
 #define LCD_5x10DOTS 0x04
 #define LCD_5x8DOTS 0x00
 
+void writenumber(int number);
 void LCDINIT(void);
 void begin(uint8_t cols, uint8_t lines, uint8_t dotsize);
 void delayMicroseconds(int delay);

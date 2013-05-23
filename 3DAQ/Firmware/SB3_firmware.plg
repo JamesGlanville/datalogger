@@ -7,631 +7,600 @@ C:\Users\datalogger\Documents\GitHub\datalogger\3DAQ\Firmware\SB3_firmware.uvpro
 Project File Date:  05/23/2013
 
 <h2>Output:</h2>
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
 Build target 'SB3'
 compiling main.c...
-user\src\main.c(456): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(454): warning:  #128-D: loop is not reachable
-user\src\main.c(250): warning:  #177-D: variable "j" was declared but never referenced
-user\src\main.c(251): warning:  #177-D: variable "acctemp" was declared but never referenced
-user\src\main.c(252): warning:  #550-D: variable "yumbyte" was set but never used
-user\src\main.c(254): warning:  #177-D: variable "received_data" was declared but never referenced
-user\src\main.c(255): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
-linking...
-Program Size: Code=4916 RO-data=336 RW-data=60 ZI-data=1636  
-"SB3_firmware.axf" - 0 Error(s), 7 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-linking...
-Program Size: Code=4916 RO-data=336 RW-data=60 ZI-data=1636  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Build target 'SB3'
-compiling webi2c.c...
-user\src\webi2c.c(1): error:  #13: expected a file name
-Target not created
-Build target 'SB3'
-compiling webi2c.c...
-user\src\webi2c.c(518): warning:  #1-D: last line of file ends without a newline
-linking...
-Program Size: Code=4916 RO-data=336 RW-data=60 ZI-data=1636  
-"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
-Build target 'SB3'
-compiling webi2c.c...
-linking...
-Program Size: Code=4916 RO-data=336 RW-data=60 ZI-data=1636  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(456): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(454): warning:  #128-D: loop is not reachable
-user\src\main.c(250): warning:  #177-D: variable "j" was declared but never referenced
-user\src\main.c(251): warning:  #177-D: variable "acctemp" was declared but never referenced
-user\src\main.c(252): warning:  #550-D: variable "yumbyte" was set but never used
-user\src\main.c(254): warning:  #177-D: variable "received_data" was declared but never referenced
-user\src\main.c(255): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
-user\src\main.c(257): warning:  #177-D: variable "eeprombyte" was declared but never referenced
-linking...
-Program Size: Code=4292 RO-data=336 RW-data=60 ZI-data=1636  
-"SB3_firmware.axf" - 0 Error(s), 8 Warning(s).
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(313): warning:  #223-D: function "I2C_EE_Init" declared implicitly
-user\src\main.c(456): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(454): warning:  #128-D: loop is not reachable
-user\src\main.c(250): warning:  #177-D: variable "j" was declared but never referenced
-user\src\main.c(251): warning:  #177-D: variable "acctemp" was declared but never referenced
-user\src\main.c(252): warning:  #550-D: variable "yumbyte" was set but never used
-user\src\main.c(254): warning:  #177-D: variable "received_data" was declared but never referenced
-user\src\main.c(255): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
-user\src\main.c(257): warning:  #177-D: variable "eeprombyte" was declared but never referenced
-compiling webi2c.c...
-linking...
-Program Size: Code=4888 RO-data=336 RW-data=92 ZI-data=1636  
-"SB3_firmware.axf" - 0 Error(s), 9 Warning(s).
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(313): warning:  #223-D: function "I2C_EE_Init" declared implicitly
-user\src\main.c(456): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(454): warning:  #128-D: loop is not reachable
-user\src\main.c(250): warning:  #177-D: variable "j" was declared but never referenced
-user\src\main.c(251): warning:  #177-D: variable "acctemp" was declared but never referenced
-user\src\main.c(252): warning:  #550-D: variable "yumbyte" was set but never used
-user\src\main.c(254): warning:  #177-D: variable "received_data" was declared but never referenced
-user\src\main.c(255): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
-user\src\main.c(257): warning:  #177-D: variable "eeprombyte" was declared but never referenced
-compiling webi2c.c...
-user\src\webi2c.c(59): warning:  #223-D: function "RCC_Configuration" declared implicitly
-user\src\webi2c.c(61): warning:  #223-D: function "USART_Configuration" declared implicitly
-user\src\webi2c.c(63): warning:  #223-D: function "I2C_EE_Init" declared implicitly
-user\src\webi2c.c(67): warning:  #223-D: function "I2C_EE_BufferWrite" declared implicitly
-user\src\webi2c.c(70): warning:  #223-D: function "I2C_EE_BufferRead" declared implicitly
-user\src\webi2c.c(73): warning:  #223-D: function "Buffercmp" declared implicitly
-user\src\webi2c.c(73): warning:  #188-D: enumerated type mixed with another type
-user\src\webi2c.c(79): error:  #159: declaration is incompatible with previous "RCC_Configuration" (declared at line 59)
-user\src\webi2c.c(102): error:  #159: declaration is incompatible with previous "USART_Configuration" (declared at line 61)
-user\src\webi2c.c(166): error:  #159: declaration is incompatible with previous "I2C_EE_Init" (declared at line 63)
-user\src\webi2c.c(235): error:  #159: declaration is incompatible with previous "I2C_EE_BufferRead" (declared at line 70)
-user\src\webi2c.c(314): error:  #159: declaration is incompatible with previous "I2C_EE_BufferWrite" (declared at line 67)
-user\src\webi2c.c(330): warning:  #223-D: function "I2C_EE_PageWrite" declared implicitly
-user\src\webi2c.c(331): warning:  #223-D: function "I2C_EE_WaitEepromStandbyState" declared implicitly
-user\src\webi2c.c(338): warning:  #223-D: function "I2C_EE_PageWrite" declared implicitly
-user\src\webi2c.c(339): warning:  #223-D: function "I2C_EE_WaitEepromStandbyState" declared implicitly
-user\src\webi2c.c(346): warning:  #223-D: function "I2C_EE_PageWrite" declared implicitly
-user\src\webi2c.c(347): warning:  #223-D: function "I2C_EE_WaitEepromStandbyState" declared implicitly
-user\src\webi2c.c(362): warning:  #223-D: function "I2C_EE_PageWrite" declared implicitly
-user\src\webi2c.c(363): warning:  #223-D: function "I2C_EE_WaitEepromStandbyState" declared implicitly
-user\src\webi2c.c(371): warning:  #223-D: function "I2C_EE_PageWrite" declared implicitly
-user\src\webi2c.c(372): warning:  #223-D: function "I2C_EE_WaitEepromStandbyState" declared implicitly
-user\src\webi2c.c(384): warning:  #223-D: function "I2C_EE_PageWrite" declared implicitly
-user\src\webi2c.c(385): warning:  #223-D: function "I2C_EE_WaitEepromStandbyState" declared implicitly
-user\src\webi2c.c(392): warning:  #223-D: function "I2C_EE_PageWrite" declared implicitly
-user\src\webi2c.c(393): warning:  #223-D: function "I2C_EE_WaitEepromStandbyState" declared implicitly
-user\src\webi2c.c(399): warning:  #223-D: function "I2C_EE_PageWrite" declared implicitly
-user\src\webi2c.c(400): warning:  #223-D: function "I2C_EE_WaitEepromStandbyState" declared implicitly
-user\src\webi2c.c(415): error:  #159: declaration is incompatible with previous "I2C_EE_PageWrite" (declared at line 330)
-user\src\webi2c.c(464): error:  #159: declaration is incompatible with previous "I2C_EE_WaitEepromStandbyState" (declared at line 331)
-user\src\webi2c.c(496): error:  #159: declaration is incompatible with previous "Buffercmp" (declared at line 73)
-Target not created
-Build target 'SB3'
-compiling main.c...
-.\user\inc\webi2c.h(11): warning:  #1-D: last line of file ends without a newline
-.\user\inc\webi2c.h(11): error:  #20: identifier "TestStatus" is undefined
-user\src\main.c(458): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(456): warning:  #128-D: loop is not reachable
-user\src\main.c(252): warning:  #177-D: variable "j" was declared but never referenced
-user\src\main.c(253): warning:  #177-D: variable "acctemp" was declared but never referenced
-user\src\main.c(254): warning:  #550-D: variable "yumbyte" was set but never used
-user\src\main.c(256): warning:  #177-D: variable "received_data" was declared but never referenced
-user\src\main.c(257): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
-user\src\main.c(259): warning:  #177-D: variable "eeprombyte" was declared but never referenced
-compiling webi2c.c...
-.\user\inc\webi2c.h(11): warning:  #1-D: last line of file ends without a newline
-.\user\inc\webi2c.h(11): error:  #20: identifier "TestStatus" is undefined
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(458): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(456): warning:  #128-D: loop is not reachable
-user\src\main.c(252): warning:  #177-D: variable "j" was declared but never referenced
-user\src\main.c(253): warning:  #177-D: variable "acctemp" was declared but never referenced
-user\src\main.c(254): warning:  #550-D: variable "yumbyte" was set but never used
-user\src\main.c(256): warning:  #177-D: variable "received_data" was declared but never referenced
-user\src\main.c(257): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
-user\src\main.c(259): warning:  #177-D: variable "eeprombyte" was declared but never referenced
-compiling webi2c.c...
-linking...
-Program Size: Code=4888 RO-data=336 RW-data=92 ZI-data=1636  
-"SB3_firmware.axf" - 0 Error(s), 8 Warning(s).
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(316): error:  #268: declaration may not appear after executable statement in block
-user\src\main.c(316): error:  #79: expected a type specifier
-user\src\main.c(316): error:  #79: expected a type specifier
-user\src\main.c(316): error:  #79: expected a type specifier
-user\src\main.c(318): error:  #65: expected a ";"
-user\src\main.c(461): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(459): warning:  #128-D: loop is not reachable
-user\src\main.c(252): warning:  #177-D: variable "j" was declared but never referenced
-user\src\main.c(253): warning:  #177-D: variable "acctemp" was declared but never referenced
-user\src\main.c(254): warning:  #550-D: variable "yumbyte" was set but never used
-user\src\main.c(256): warning:  #177-D: variable "received_data" was declared but never referenced
-user\src\main.c(257): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
-user\src\main.c(259): warning:  #177-D: variable "eeprombyte" was declared but never referenced
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(316): error:  #167: argument of type "int *" is incompatible with parameter of type "uint8_t *"
-user\src\main.c(318): error:  #65: expected a ";"
-user\src\main.c(461): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(459): warning:  #128-D: loop is not reachable
-user\src\main.c(252): warning:  #177-D: variable "j" was declared but never referenced
-user\src\main.c(253): warning:  #177-D: variable "acctemp" was declared but never referenced
-user\src\main.c(256): warning:  #177-D: variable "received_data" was declared but never referenced
-user\src\main.c(257): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
-user\src\main.c(259): warning:  #177-D: variable "eeprombyte" was declared but never referenced
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(318): error:  #65: expected a ";"
-user\src\main.c(461): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(459): warning:  #128-D: loop is not reachable
-user\src\main.c(252): warning:  #177-D: variable "j" was declared but never referenced
-user\src\main.c(253): warning:  #177-D: variable "acctemp" was declared but never referenced
-user\src\main.c(256): warning:  #177-D: variable "received_data" was declared but never referenced
-user\src\main.c(257): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
-user\src\main.c(259): warning:  #177-D: variable "eeprombyte" was declared but never referenced
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(461): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(459): warning:  #128-D: loop is not reachable
-user\src\main.c(252): warning:  #177-D: variable "j" was declared but never referenced
-user\src\main.c(253): warning:  #177-D: variable "acctemp" was declared but never referenced
-user\src\main.c(256): warning:  #177-D: variable "received_data" was declared but never referenced
-user\src\main.c(257): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
-user\src\main.c(259): warning:  #177-D: variable "eeprombyte" was declared but never referenced
-linking...
-Program Size: Code=5340 RO-data=336 RW-data=92 ZI-data=1636  
-"SB3_firmware.axf" - 0 Error(s), 7 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling webi2c.c...
-linking...
-Program Size: Code=5340 RO-data=336 RW-data=92 ZI-data=1636  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling webi2c.c...
-linking...
-SB3_firmware.axf: Error: L6218E: Undefined symbol USART_Configuration (referred from webi2c.o).
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(315): warning:  #223-D: function "I2C_EEPROM" declared implicitly
-user\src\main.c(461): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(459): warning:  #128-D: loop is not reachable
-user\src\main.c(252): warning:  #177-D: variable "j" was declared but never referenced
-user\src\main.c(253): warning:  #177-D: variable "acctemp" was declared but never referenced
-user\src\main.c(256): warning:  #177-D: variable "received_data" was declared but never referenced
-user\src\main.c(257): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
-user\src\main.c(259): warning:  #177-D: variable "eeprombyte" was declared but never referenced
-compiling webi2c.c...
-linking...
-Program Size: Code=6068 RO-data=336 RW-data=92 ZI-data=1676  
-"SB3_firmware.axf" - 0 Error(s), 8 Warning(s).
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(315): warning:  #223-D: function "I2C_EEPROM" declared implicitly
-user\src\main.c(461): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(459): warning:  #128-D: loop is not reachable
-user\src\main.c(252): warning:  #177-D: variable "j" was declared but never referenced
-user\src\main.c(253): warning:  #177-D: variable "acctemp" was declared but never referenced
-user\src\main.c(256): warning:  #177-D: variable "received_data" was declared but never referenced
-user\src\main.c(257): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
-user\src\main.c(259): warning:  #177-D: variable "eeprombyte" was declared but never referenced
-linking...
-Program Size: Code=6068 RO-data=336 RW-data=92 ZI-data=1676  
-"SB3_firmware.axf" - 0 Error(s), 8 Warning(s).
-Build target 'SB3'
-compiling main.c...
-.\user\inc\webi2c.h(14): warning:  #1-D: last line of file ends without a newline
-user\src\main.c(461): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(459): warning:  #128-D: loop is not reachable
-user\src\main.c(252): warning:  #177-D: variable "j" was declared but never referenced
-user\src\main.c(253): warning:  #177-D: variable "acctemp" was declared but never referenced
-user\src\main.c(256): warning:  #177-D: variable "received_data" was declared but never referenced
-user\src\main.c(257): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
-user\src\main.c(259): warning:  #177-D: variable "eeprombyte" was declared but never referenced
-compiling webi2c.c...
-.\user\inc\webi2c.h(14): warning:  #1-D: last line of file ends without a newline
-linking...
-Program Size: Code=6068 RO-data=336 RW-data=92 ZI-data=1676  
-"SB3_firmware.axf" - 0 Error(s), 9 Warning(s).
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(461): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(459): warning:  #128-D: loop is not reachable
-user\src\main.c(252): warning:  #177-D: variable "j" was declared but never referenced
-user\src\main.c(253): warning:  #177-D: variable "acctemp" was declared but never referenced
-user\src\main.c(256): warning:  #177-D: variable "received_data" was declared but never referenced
-user\src\main.c(257): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
-user\src\main.c(259): warning:  #177-D: variable "eeprombyte" was declared but never referenced
-compiling webi2c.c...
-linking...
-Program Size: Code=6068 RO-data=336 RW-data=92 ZI-data=1676  
-"SB3_firmware.axf" - 0 Error(s), 7 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling webi2c.c...
-linking...
-Program Size: Code=6068 RO-data=336 RW-data=92 ZI-data=1676  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Build target 'SB3'
-compiling webi2c.c...
-linking...
-Program Size: Code=6068 RO-data=336 RW-data=92 ZI-data=1676  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling webi2c.c...
-linking...
-Program Size: Code=5916 RO-data=336 RW-data=92 ZI-data=1676  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(461): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(459): warning:  #128-D: loop is not reachable
-user\src\main.c(252): warning:  #177-D: variable "j" was declared but never referenced
-user\src\main.c(253): warning:  #177-D: variable "acctemp" was declared but never referenced
-user\src\main.c(256): warning:  #177-D: variable "received_data" was declared but never referenced
-user\src\main.c(257): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
-user\src\main.c(259): warning:  #177-D: variable "eeprombyte" was declared but never referenced
-compiling webi2c.c...
-linking...
-Program Size: Code=5916 RO-data=336 RW-data=92 ZI-data=1676  
-"SB3_firmware.axf" - 0 Error(s), 7 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling webi2c.c...
-linking...
-Program Size: Code=5912 RO-data=336 RW-data=92 ZI-data=1676  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling webi2c.c...
-user\src\webi2c.c(71): warning:  #111-D: statement is unreachable
-linking...
-Program Size: Code=5844 RO-data=336 RW-data=124 ZI-data=1636  
-"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling webi2c.c...
-linking...
-Program Size: Code=5276 RO-data=336 RW-data=124 ZI-data=1804  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(245): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(243): warning:  #128-D: loop is not reachable
-user\src\main.c(72): warning:  #177-D: variable "j" was declared but never referenced
-user\src\main.c(73): warning:  #177-D: variable "acctemp" was declared but never referenced
-user\src\main.c(76): warning:  #177-D: variable "received_data" was declared but never referenced
-user\src\main.c(77): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
-user\src\main.c(79): warning:  #177-D: variable "eeprombyte" was declared but never referenced
-linking...
-Program Size: Code=5276 RO-data=336 RW-data=124 ZI-data=1804  
-"SB3_firmware.axf" - 0 Error(s), 7 Warning(s).
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(245): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(243): warning:  #128-D: loop is not reachable
-user\src\main.c(72): warning:  #177-D: variable "j" was declared but never referenced
-user\src\main.c(73): warning:  #177-D: variable "acctemp" was declared but never referenced
-user\src\main.c(76): warning:  #177-D: variable "received_data" was declared but never referenced
-user\src\main.c(79): warning:  #177-D: variable "eeprombyte" was declared but never referenced
-linking...
-Program Size: Code=5276 RO-data=336 RW-data=124 ZI-data=1804  
-"SB3_firmware.axf" - 0 Error(s), 6 Warning(s).
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(245): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(243): warning:  #128-D: loop is not reachable
-user\src\main.c(72): warning:  #177-D: variable "j" was declared but never referenced
-user\src\main.c(79): warning:  #177-D: variable "eeprombyte" was declared but never referenced
-linking...
-Program Size: Code=5276 RO-data=336 RW-data=124 ZI-data=1804  
-"SB3_firmware.axf" - 0 Error(s), 4 Warning(s).
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(86): error:  #20: identifier "i" is undefined
-user\src\main.c(245): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(243): warning:  #128-D: loop is not reachable
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(245): warning:  #177-D: variable "i" was declared but never referenced
-user\src\main.c(243): warning:  #128-D: loop is not reachable
-linking...
-Program Size: Code=5276 RO-data=336 RW-data=124 ZI-data=1804  
-"SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(243): warning:  #128-D: loop is not reachable
-linking...
-Program Size: Code=5276 RO-data=336 RW-data=124 ZI-data=1804  
-"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
-Build target 'SB3'
-compiling webi2c.c...
-linking...
-Program Size: Code=5204 RO-data=336 RW-data=124 ZI-data=1636  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Build target 'SB3'
-linking...
-Program Size: Code=5204 RO-data=336 RW-data=124 ZI-data=1636  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(119): error:  #268: declaration may not appear after executable statement in block
-user\src\main.c(74): warning:  #550-D: variable "yumbyte" was set but never used
-user\src\main.c(75): warning:  #177-D: variable "temporary" was declared but never referenced
-user\src\main.c(78): warning:  #177-D: variable "lcdadc" was declared but never referenced
-user\src\main.c(80): warning:  #177-D: variable "buffer" was declared but never referenced
-user\src\main.c(119): error:  #67: expected a "}"
-user\src\main.c(123): error:  #130: expected a "{"
-user\src\main.c(132): error:  #20: identifier "lcdadc" is undefined
-user\src\main.c(142): error:  #20: identifier "temporary" is undefined
-user\src\main.c(245): error:  #169: expected a declaration
-user\src\main.c(280): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\main.c(281): error:  #169: expected a declaration
-user\src\main.c(321): warning: At end of source:  #12-D: parsing restarts here after previous syntax error
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(80): error:  #40: expected an identifier
-user\src\main.c(80): error:  #65: expected a ";"
-user\src\main.c(119): error:  #268: declaration may not appear after executable statement in block
-user\src\main.c(74): warning:  #550-D: variable "yumbyte" was set but never used
-user\src\main.c(75): warning:  #177-D: variable "temporary" was declared but never referenced
-user\src\main.c(78): warning:  #177-D: variable "lcdadc" was declared but never referenced
-user\src\main.c(119): error:  #67: expected a "}"
-user\src\main.c(123): error:  #130: expected a "{"
-user\src\main.c(132): error:  #20: identifier "lcdadc" is undefined
-user\src\main.c(142): error:  #20: identifier "temporary" is undefined
-user\src\main.c(245): error:  #169: expected a declaration
-user\src\main.c(280): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\main.c(281): error:  #169: expected a declaration
-user\src\main.c(321): warning: At end of source:  #12-D: parsing restarts here after previous syntax error
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(119): error:  #268: declaration may not appear after executable statement in block
-user\src\main.c(74): warning:  #550-D: variable "yumbyte" was set but never used
-user\src\main.c(75): warning:  #177-D: variable "temporary" was declared but never referenced
-user\src\main.c(78): warning:  #177-D: variable "lcdadc" was declared but never referenced
-user\src\main.c(80): warning:  #177-D: variable "buffer" was declared but never referenced
-user\src\main.c(119): error:  #67: expected a "}"
-user\src\main.c(123): error:  #130: expected a "{"
-user\src\main.c(132): error:  #20: identifier "lcdadc" is undefined
-user\src\main.c(142): error:  #20: identifier "temporary" is undefined
-user\src\main.c(245): error:  #169: expected a declaration
-user\src\main.c(280): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\main.c(281): error:  #169: expected a declaration
-user\src\main.c(321): warning: At end of source:  #12-D: parsing restarts here after previous syntax error
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(119): error:  #167: argument of type "uint8_t (*)[100]" is incompatible with parameter of type "uint8_t *"
-user\src\main.c(246): warning:  #128-D: loop is not reachable
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(246): warning:  #128-D: loop is not reachable
-linking...
-Program Size: Code=5200 RO-data=336 RW-data=124 ZI-data=1636  
-"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(119): error:  #20: identifier "Test_Buffer" is undefined
-user\src\main.c(119): error:  #20: identifier "EEPROM_WriteAddress1" is undefined
-user\src\main.c(247): warning:  #128-D: loop is not reachable
-Target not created
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(247): warning:  #128-D: loop is not reachable
-linking...
-Program Size: Code=5200 RO-data=336 RW-data=124 ZI-data=1636  
-"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-linking...
-Program Size: Code=5200 RO-data=336 RW-data=124 ZI-data=1636  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling webi2c.c...
-linking...
-Program Size: Code=5840 RO-data=336 RW-data=124 ZI-data=1636  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling webi2c.c...
-linking...
-Program Size: Code=5912 RO-data=336 RW-data=124 ZI-data=1804  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Build target 'SB3'
-compiling webi2c.c...
-linking...
-Program Size: Code=5912 RO-data=336 RW-data=124 ZI-data=1804  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling webi2c.c...
-linking...
-Program Size: Code=5912 RO-data=336 RW-data=124 ZI-data=1804  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(247): warning:  #128-D: loop is not reachable
-linking...
-Program Size: Code=5912 RO-data=336 RW-data=124 ZI-data=1804  
-"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-.\user\inc\webi2c.h(15): warning:  #1-D: last line of file ends without a newline
-user\src\main.c(208): warning:  #128-D: loop is not reachable
-compiling webi2c.c...
-.\user\inc\webi2c.h(15): warning:  #1-D: last line of file ends without a newline
-user\src\webi2c.c(51): error:  #79: expected a type specifier
-user\src\webi2c.c(51): error:  #79: expected a type specifier
-user\src\webi2c.c(51): warning:  #77-D: this declaration has no storage class or type specifier
-user\src\webi2c.c(52): error:  #79: expected a type specifier
-user\src\webi2c.c(52): warning:  #77-D: this declaration has no storage class or type specifier
-user\src\webi2c.c(54): error:  #79: expected a type specifier
-user\src\webi2c.c(54): error:  #79: expected a type specifier
-user\src\webi2c.c(54): warning:  #77-D: this declaration has no storage class or type specifier
-user\src\webi2c.c(55): error:  #79: expected a type specifier
-user\src\webi2c.c(55): warning:  #77-D: this declaration has no storage class or type specifier
-user\src\webi2c.c(57): error:  #79: expected a type specifier
-user\src\webi2c.c(57): error:  #79: expected a type specifier
-user\src\webi2c.c(57): warning:  #77-D: this declaration has no storage class or type specifier
-user\src\webi2c.c(58): error:  #79: expected a type specifier
-user\src\webi2c.c(58): warning:  #77-D: this declaration has no storage class or type specifier
-user\src\webi2c.c(60): error:  #79: expected a type specifier
-user\src\webi2c.c(60): error:  #79: expected a type specifier
-user\src\webi2c.c(60): warning:  #77-D: this declaration has no storage class or type specifier
-user\src\webi2c.c(61): error:  #169: expected a declaration
-user\src\webi2c.c(89): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\webi2c.c(92): error:  #79: expected a type specifier
-user\src\webi2c.c(92): error:  #757: constant "ENABLE" is not a type name
-user\src\webi2c.c(92): warning:  #77-D: this declaration has no storage class or type specifier
-user\src\webi2c.c(92): error:  #147: declaration is incompatible with "void I2C_GenerateSTOP(I2C_TypeDef *, FunctionalState)" (declared at line 541 of ".\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_i2c.h")
-user\src\webi2c.c(93): error:  #169: expected a declaration
-user\src\webi2c.c(225): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\webi2c.c(228): error:  #79: expected a type specifier
-user\src\webi2c.c(228): error:  #79: expected a type specifier
-user\src\webi2c.c(228): warning:  #77-D: this declaration has no storage class or type specifier
-user\src\webi2c.c(228): error:  #147: declaration is incompatible with "void I2C_SendData(I2C_TypeDef *, uint8_t)" (declared at line 547 of ".\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_i2c.h")
-user\src\webi2c.c(231): error:  #169: expected a declaration
-user\src\webi2c.c(234): error:  #79: expected a type specifier
-user\src\webi2c.c(234): error:  #757: constant "ENABLE" is not a type name
-user\src\webi2c.c(234): warning:  #77-D: this declaration has no storage class or type specifier
-user\src\webi2c.c(235): error:  #169: expected a declaration
-user\src\webi2c.c(269): warning:  #12-D: parsing restarts here after previous syntax error
-user\src\webi2c.c(272): error:  #169: expected a declaration
-user\src\webi2c.c(275): error:  #79: expected a type specifier
-user\src\webi2c.c(275): error:  #757: constant "ENABLE" is not a type name
-user\src\webi2c.c(275): warning:  #77-D: this declaration has no storage class or type specifier
-user\src\webi2c.c(275): error:  #147: declaration is incompatible with "void I2C_GenerateSTART(I2C_TypeDef *, FunctionalState)" (declared at line 540 of ".\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_i2c.h")
-user\src\webi2c.c(278): error:  #169: expected a declaration
-user\src\webi2c.c(281): error:  #79: expected a type specifier
-user\src\webi2c.c(281): error:  #757: variable "EEPROM_ADDRESS" is not a type name
-Target not created
-Build target 'SB3'
-compiling webi2c.c...
-.\user\inc\webi2c.h(15): warning:  #1-D: last line of file ends without a newline
-linking...
-Program Size: Code=5200 RO-data=336 RW-data=124 ZI-data=1636  
-"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(208): warning:  #128-D: loop is not reachable
-compiling webi2c.c...
-linking...
-Program Size: Code=5200 RO-data=336 RW-data=124 ZI-data=1636  
-"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(212): warning:  #128-D: loop is not reachable
-compiling webi2c.c...
-user\src\webi2c.c(55): error:  #20: identifier "Wire" is undefined
-user\src\webi2c.c(55): error:  #20: identifier "I2C_ADDRESS" is undefined
-user\src\webi2c.c(67): error:  #20: identifier "Serial" is undefined
-user\src\webi2c.c(68): error:  #268: declaration may not appear after executable statement in block
-user\src\webi2c.c(72): error:  #20: identifier "Serial" is undefined
-user\src\webi2c.c(73): error:  #268: declaration may not appear after executable statement in block
-user\src\webi2c.c(77): error:  #20: identifier "Serial" is undefined
-user\src\webi2c.c(78): error:  #268: declaration may not appear after executable statement in block
-user\src\webi2c.c(81): warning:  #223-D: function "delay" declared implicitly
-user\src\webi2c.c(105): error:  #20: identifier "ReadAddr" is undefined
-user\src\webi2c.c(129): error:  #20: identifier "NumByteToRead" is undefined
-user\src\webi2c.c(144): error:  #20: identifier "pBuffer" is undefined
-Target not created
-Build target 'SB3'
-compiling webi2c.c...
-user\src\webi2c.c(90): warning:  #550-D: variable "REG_ADDRESS" was set but never used
-linking...
-Program Size: Code=5848 RO-data=336 RW-data=124 ZI-data=1636  
-"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
-Build target 'SB3'
-linking...
-Program Size: Code=5848 RO-data=336 RW-data=124 ZI-data=1636  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(212): warning:  #128-D: loop is not reachable
-linking...
-Program Size: Code=5200 RO-data=336 RW-data=124 ZI-data=1636  
-"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(212): warning:  #128-D: loop is not reachable
-linking...
-Program Size: Code=5848 RO-data=336 RW-data=124 ZI-data=1636  
-"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling webi2c.c...
-user\src\webi2c.c(90): warning:  #550-D: variable "REG_ADDRESS" was set but never used
-user\src\webi2c.c(147): warning:  #177-D: variable "timeout" was declared but never referenced
-linking...
-Program Size: Code=5860 RO-data=336 RW-data=124 ZI-data=1636  
-"SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
-Build target 'SB3'
-compiling webi2c.c...
-user\src\webi2c.c(90): warning:  #550-D: variable "REG_ADDRESS" was set but never used
-linking...
-Program Size: Code=5868 RO-data=336 RW-data=124 ZI-data=1636  
-"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling webi2c.c...
-user\src\webi2c.c(90): warning:  #550-D: variable "REG_ADDRESS" was set but never used
-linking...
-Program Size: Code=5868 RO-data=336 RW-data=124 ZI-data=1636  
-"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling webi2c.c...
-user\src\webi2c.c(90): warning:  #550-D: variable "REG_ADDRESS" was set but never used
-linking...
-Program Size: Code=5848 RO-data=336 RW-data=124 ZI-data=1636  
-"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling webi2c.c...
-user\src\webi2c.c(90): warning:  #550-D: variable "REG_ADDRESS" was set but never used
-linking...
-Program Size: Code=5848 RO-data=336 RW-data=124 ZI-data=1636  
-"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-linking...
-Program Size: Code=5848 RO-data=336 RW-data=124 ZI-data=1636  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
-Build target 'SB3'
-compiling main.c...
-user\src\main.c(220): warning:  #128-D: loop is not reachable
-compiling webi2c.c...
-user\src\webi2c.c(90): warning:  #550-D: variable "REG_ADDRESS" was set but never used
+user\src\main.c(160): warning:  #128-D: loop is not reachable
 linking...
 Program Size: Code=5880 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Build target 'SB3'
+compiling humidity.c...
+linking...
+Program Size: Code=5876 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Build target 'SB3'
+compiling humidity.c...
+linking...
+Program Size: Code=5876 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(49): warning:  #260-D: explicit type is missing ("int" assumed)
+user\src\main.c(166): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=5876 RO-data=336 RW-data=132 ZI-data=1636  
 "SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(166): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=5876 RO-data=336 RW-data=132 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(173): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=5916 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(173): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=5920 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(57): error:  #268: declaration may not appear after executable statement in block
+user\src\main.c(59): error:  #20: identifier "SYS_CLK" is undefined
+user\src\main.c(59): error:  #20: identifier "DELAY_TIM_FREQUENCY" is undefined
+user\src\main.c(192): warning:  #128-D: loop is not reachable
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(60): error:  #268: declaration may not appear after executable statement in block
+user\src\main.c(195): warning:  #128-D: loop is not reachable
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(196): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=5920 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(201): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=6192 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(202): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=6224 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(198): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=6224 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Build target 'SB3'
+linking...
+Program Size: Code=6224 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+linking...
+Program Size: Code=6224 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(199): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=6224 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(199): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=6224 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(62): error:  #20: identifier "RCC_APB2Periph_TIM5" is undefined
+user\src\main.c(199): warning:  #128-D: loop is not reachable
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(199): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=6224 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(199): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=6232 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(201): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=6252 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(201): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=6248 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(57): error:  #20: identifier "TIM_TimeBaseStructure" is undefined
+user\src\main.c(175): warning:  #223-D: function "GPIO_ToggleBits" declared implicitly
+user\src\main.c(178): warning:  #111-D: statement is unreachable
+user\src\main.c(224): warning:  #128-D: loop is not reachable
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(201): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=6252 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(201): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=6252 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(201): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=6252 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(205): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=5148 RO-data=320 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(207): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=5156 RO-data=320 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(208): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=5156 RO-data=320 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(208): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=5152 RO-data=320 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(203): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=6244 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(203): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=6244 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(203): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=6244 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(203): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=6244 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+.\user\inc\timer.h(5): warning:  #1-D: last line of file ends without a newline
+user\src\main.c(125): warning:  #223-D: function "delay" declared implicitly
+user\src\main.c(169): warning:  #128-D: loop is not reachable
+compiling timer.c...
+user\src\timer.c(3): error:  #20: identifier "TIM_TimeBaseInitTypeDef" is undefined
+user\src\timer.c(4): warning:  #223-D: function "TIM_TimeBaseStructInit" declared implicitly
+user\src\timer.c(5): error:  #20: identifier "SYS_CLK" is undefined
+user\src\timer.c(5): error:  #20: identifier "DELAY_TIM_FREQUENCY" is undefined
+user\src\timer.c(6): error:  #20: identifier "UINT16_MAX" is undefined
+user\src\timer.c(8): error:  #20: identifier "TIM_CounterMode_Up" is undefined
+user\src\timer.c(9): warning:  #223-D: function "RCC_APB1PeriphClockCmd" declared implicitly
+user\src\timer.c(9): error:  #20: identifier "RCC_APB1Periph_TIM4" is undefined
+user\src\timer.c(9): error:  #20: identifier "ENABLE" is undefined
+user\src\timer.c(10): warning:  #223-D: function "TIM_PrescalerConfig" declared implicitly
+user\src\timer.c(10): error:  #20: identifier "TIM4" is undefined
+user\src\timer.c(10): error:  #20: identifier "TIM_PSCReloadMode_Immediate" is undefined
+user\src\timer.c(12): warning:  #223-D: function "TIM_TimeBaseInit" declared implicitly
+user\src\timer.c(13): warning:  #223-D: function "TIM_Cmd" declared implicitly
+user\src\timer.c(16): error:  #20: identifier "uint16_t" is undefined
+user\src\timer.c(18): error:  #20: identifier "TIM4" is undefined
+user\src\timer.c(20): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'SB3'
+compiling main.c...
+.\user\inc\timer.h(9): warning:  #1-D: last line of file ends without a newline
+user\src\main.c(125): warning:  #223-D: function "delay" declared implicitly
+user\src\main.c(169): warning:  #128-D: loop is not reachable
+compiling timer.c...
+user\src\timer.c(3): error:  #20: identifier "TIM_TimeBaseInitTypeDef" is undefined
+user\src\timer.c(4): warning:  #223-D: function "TIM_TimeBaseStructInit" declared implicitly
+user\src\timer.c(5): error:  #20: identifier "SYS_CLK" is undefined
+user\src\timer.c(5): error:  #20: identifier "DELAY_TIM_FREQUENCY" is undefined
+user\src\timer.c(6): error:  #20: identifier "UINT16_MAX" is undefined
+user\src\timer.c(8): error:  #20: identifier "TIM_CounterMode_Up" is undefined
+user\src\timer.c(9): warning:  #223-D: function "RCC_APB1PeriphClockCmd" declared implicitly
+user\src\timer.c(9): error:  #20: identifier "RCC_APB1Periph_TIM4" is undefined
+user\src\timer.c(9): error:  #20: identifier "ENABLE" is undefined
+user\src\timer.c(10): warning:  #223-D: function "TIM_PrescalerConfig" declared implicitly
+user\src\timer.c(10): error:  #20: identifier "TIM4" is undefined
+user\src\timer.c(10): error:  #20: identifier "TIM_PSCReloadMode_Immediate" is undefined
+user\src\timer.c(12): warning:  #223-D: function "TIM_TimeBaseInit" declared implicitly
+user\src\timer.c(13): warning:  #223-D: function "TIM_Cmd" declared implicitly
+user\src\timer.c(16): error:  #20: identifier "uint16_t" is undefined
+user\src\timer.c(18): error:  #20: identifier "TIM4" is undefined
+user\src\timer.c(20): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(125): warning:  #223-D: function "delay" declared implicitly
+user\src\main.c(169): warning:  #128-D: loop is not reachable
+compiling timer.c...
+user\src\timer.c(3): error:  #20: identifier "TIM_TimeBaseInitTypeDef" is undefined
+user\src\timer.c(4): warning:  #223-D: function "TIM_TimeBaseStructInit" declared implicitly
+user\src\timer.c(5): error:  #20: identifier "SYS_CLK" is undefined
+user\src\timer.c(5): error:  #20: identifier "DELAY_TIM_FREQUENCY" is undefined
+user\src\timer.c(6): error:  #20: identifier "UINT16_MAX" is undefined
+user\src\timer.c(8): error:  #20: identifier "TIM_CounterMode_Up" is undefined
+user\src\timer.c(9): warning:  #223-D: function "RCC_APB1PeriphClockCmd" declared implicitly
+user\src\timer.c(9): error:  #20: identifier "RCC_APB1Periph_TIM4" is undefined
+user\src\timer.c(9): error:  #20: identifier "ENABLE" is undefined
+user\src\timer.c(10): warning:  #223-D: function "TIM_PrescalerConfig" declared implicitly
+user\src\timer.c(10): error:  #20: identifier "TIM4" is undefined
+user\src\timer.c(10): error:  #20: identifier "TIM_PSCReloadMode_Immediate" is undefined
+user\src\timer.c(12): warning:  #223-D: function "TIM_TimeBaseInit" declared implicitly
+user\src\timer.c(13): warning:  #223-D: function "TIM_Cmd" declared implicitly
+user\src\timer.c(16): error:  #20: identifier "uint16_t" is undefined
+user\src\timer.c(18): error:  #20: identifier "TIM4" is undefined
+user\src\timer.c(20): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(125): warning:  #223-D: function "delay" declared implicitly
+user\src\main.c(169): warning:  #128-D: loop is not reachable
+compiling timer.c...
+user\src\timer.c(3): error:  #20: identifier "TIM_TimeBaseInitTypeDef" is undefined
+user\src\timer.c(4): warning:  #223-D: function "TIM_TimeBaseStructInit" declared implicitly
+user\src\timer.c(5): error:  #20: identifier "SYS_CLK" is undefined
+user\src\timer.c(5): error:  #20: identifier "DELAY_TIM_FREQUENCY" is undefined
+user\src\timer.c(6): error:  #20: identifier "UINT16_MAX" is undefined
+user\src\timer.c(8): error:  #20: identifier "TIM_CounterMode_Up" is undefined
+user\src\timer.c(9): warning:  #223-D: function "RCC_APB1PeriphClockCmd" declared implicitly
+user\src\timer.c(9): error:  #20: identifier "RCC_APB1Periph_TIM4" is undefined
+user\src\timer.c(9): error:  #20: identifier "ENABLE" is undefined
+user\src\timer.c(10): warning:  #223-D: function "TIM_PrescalerConfig" declared implicitly
+user\src\timer.c(10): error:  #20: identifier "TIM4" is undefined
+user\src\timer.c(10): error:  #20: identifier "TIM_PSCReloadMode_Immediate" is undefined
+user\src\timer.c(12): warning:  #223-D: function "TIM_TimeBaseInit" declared implicitly
+user\src\timer.c(13): warning:  #223-D: function "TIM_Cmd" declared implicitly
+user\src\timer.c(16): error:  #20: identifier "uint16_t" is undefined
+user\src\timer.c(18): error:  #20: identifier "TIM4" is undefined
+user\src\timer.c(20): warning:  #1-D: last line of file ends without a newline
+Target not created
+Build target 'SB3'
+compiling timer.c...
+user\src\timer.c(3): error:  #20: identifier "TIM_TimeBaseInitTypeDef" is undefined
+user\src\timer.c(4): warning:  #223-D: function "TIM_TimeBaseStructInit" declared implicitly
+user\src\timer.c(5): error:  #20: identifier "SYS_CLK" is undefined
+user\src\timer.c(5): error:  #20: identifier "DELAY_TIM_FREQUENCY" is undefined
+user\src\timer.c(6): error:  #20: identifier "UINT16_MAX" is undefined
+user\src\timer.c(8): error:  #20: identifier "TIM_CounterMode_Up" is undefined
+user\src\timer.c(9): warning:  #223-D: function "RCC_APB1PeriphClockCmd" declared implicitly
+user\src\timer.c(9): error:  #20: identifier "RCC_APB1Periph_TIM4" is undefined
+user\src\timer.c(9): error:  #20: identifier "ENABLE" is undefined
+user\src\timer.c(10): warning:  #223-D: function "TIM_PrescalerConfig" declared implicitly
+user\src\timer.c(10): error:  #20: identifier "TIM4" is undefined
+user\src\timer.c(10): error:  #20: identifier "TIM_PSCReloadMode_Immediate" is undefined
+user\src\timer.c(12): warning:  #223-D: function "TIM_TimeBaseInit" declared implicitly
+user\src\timer.c(13): warning:  #223-D: function "TIM_Cmd" declared implicitly
+user\src\timer.c(16): error:  #20: identifier "uint16_t" is undefined
+user\src\timer.c(18): error:  #20: identifier "TIM4" is undefined
+Target not created
+Build target 'SB3'
+compiling main.c...
+.\user\inc\webi2c.h(1): error:  #101: "FAILED" has already been declared in the current scope
+.\user\inc\webi2c.h(1): error:  #101: "PASSED" has already been declared in the current scope
+.\user\inc\webi2c.h(1): error:  #256: invalid redeclaration of type name "TestStatus" (declared at line 1)
+.\user\inc\webi2c.h(13): error:  #147-D: declaration is incompatible with "TestStatus Buffercmp(uint8_t *, uint8_t *, uint16_t)" (declared at line 13)
+.\user\inc\webi2c.h(1): error:  #101: "FAILED" has already been declared in the current scope
+.\user\inc\webi2c.h(1): error:  #101: "PASSED" has already been declared in the current scope
+.\user\inc\webi2c.h(1): error:  #256: invalid redeclaration of type name "TestStatus" (declared at line 1)
+.\user\inc\webi2c.h(13): error:  #147-D: declaration is incompatible with "TestStatus Buffercmp(uint8_t *, uint8_t *, uint16_t)" (declared at line 13)
+.\user\inc\webi2c.h(1): error:  #101: "FAILED" has already been declared in the current scope
+.\user\inc\webi2c.h(1): error:  #101: "PASSED" has already been declared in the current scope
+.\user\inc\webi2c.h(1): error:  #256: invalid redeclaration of type name "TestStatus" (declared at line 1)
+.\user\inc\webi2c.h(13): error:  #147-D: declaration is incompatible with "TestStatus Buffercmp(uint8_t *, uint8_t *, uint16_t)" (declared at line 13)
+.\user\inc\webi2c.h(1): error:  #101: "FAILED" has already been declared in the current scope
+.\user\inc\webi2c.h(1): error:  #101: "PASSED" has already been declared in the current scope
+.\user\inc\webi2c.h(1): error:  #256: invalid redeclaration of type name "TestStatus" (declared at line 1)
+.\user\inc\webi2c.h(13): error:  #147-D: declaration is incompatible with "TestStatus Buffercmp(uint8_t *, uint8_t *, uint16_t)" (declared at line 13)
+.\user\inc\webi2c.h(1): error:  #101: "FAILED" has already been declared in the current scope
+.\user\inc\webi2c.h(1): error:  #101: "PASSED" has already been declared in the current scope
+.\user\inc\webi2c.h(1): error:  #256: invalid redeclaration of type name "TestStatus" (declared at line 1)
+.\user\inc\webi2c.h(13): error:  #147-D: declaration is incompatible with "TestStatus Buffercmp(uint8_t *, uint8_t *, uint16_t)" (declared at line 13)
+.\user\inc\webi2c.h(1): error:  #101: "FAILED" has already been declared in the current scope
+.\user\inc\webi2c.h(1): error:  #101: "PASSED" has already been declared in the current scope
+.\user\inc\webi2c.h(1): error:  #256: invalid redeclaration of type name "TestStatus" (declared at line 1)
+.\user\inc\webi2c.h(13): error:  #147-D: declaration is incompatible with "TestStatus Buffercmp(uint8_t *, uint8_t *, uint16_t)" (declared at line 13)
+.\user\inc\webi2c.h(1): error:  #101: "FAILED" has already been declared in the current scope
+.\user\inc\webi2c.h(1): error:  #101: "PASSED" has already been declared in the current scope
+.\user\inc\webi2c.h(1): error:  #256: invalid redeclaration of type name "TestStatus" (declared at line 1)
+.\user\inc\webi2c.h(13): error:  #147-D: declaration is incompatible with "TestStatus Buffercmp(uint8_t *, uint8_t *, uint16_t)" (declared at line 13)
+.\user\inc\webi2c.h(1): error:  #101: "FAILED" has already been declared in the current scope
+.\user\inc\webi2c.h(1): error:  #101: "PASSED" has already been declared in the current scope
+compiling timer.c...
+user\src\timer.c(3): error:  #20: identifier "TIM_TimeBaseInitTypeDef" is undefined
+user\src\timer.c(4): warning:  #223-D: function "TIM_TimeBaseStructInit" declared implicitly
+user\src\timer.c(5): error:  #20: identifier "SYS_CLK" is undefined
+user\src\timer.c(5): error:  #20: identifier "DELAY_TIM_FREQUENCY" is undefined
+user\src\timer.c(6): error:  #20: identifier "UINT16_MAX" is undefined
+user\src\timer.c(8): error:  #20: identifier "TIM_CounterMode_Up" is undefined
+user\src\timer.c(9): warning:  #223-D: function "RCC_APB1PeriphClockCmd" declared implicitly
+user\src\timer.c(9): error:  #20: identifier "RCC_APB1Periph_TIM4" is undefined
+user\src\timer.c(9): error:  #20: identifier "ENABLE" is undefined
+user\src\timer.c(10): warning:  #223-D: function "TIM_PrescalerConfig" declared implicitly
+user\src\timer.c(10): error:  #20: identifier "TIM4" is undefined
+user\src\timer.c(10): error:  #20: identifier "TIM_PSCReloadMode_Immediate" is undefined
+user\src\timer.c(12): warning:  #223-D: function "TIM_TimeBaseInit" declared implicitly
+user\src\timer.c(13): warning:  #223-D: function "TIM_Cmd" declared implicitly
+user\src\timer.c(16): error:  #20: identifier "uint16_t" is undefined
+user\src\timer.c(18): error:  #20: identifier "TIM4" is undefined
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(125): warning:  #223-D: function "delay" declared implicitly
+user\src\main.c(169): warning:  #128-D: loop is not reachable
+compiling timer.c...
+linking...
+SB3_firmware.axf: Error: L6218E: Undefined symbol delay (referred from main.o).
+Target not created
+Build target 'SB3'
+compiling main.c...
+.\user\inc\LCD.h(48): error:  #130: expected a "{"
+.\user\inc\webi2c.h(1): warning:  #12-D: parsing restarts here after previous syntax error
+.\user\inc\webi2c.h(1): error:  #20: identifier "FAILED" is undefined
+.\user\inc\webi2c.h(1): error:  #20: identifier "PASSED" is undefined
+.\user\inc\webi2c.h(1): error:  #65: expected a ";"
+.\user\inc\webi2c.h(1): error:  #77-D: this declaration has no storage class or type specifier
+.\user\inc\webi2c.h(13): error:  #757: variable "TestStatus" is not a type name
+user\src\main.c(82): warning:  #223-D: function "LCDINIT" declared implicitly
+user\src\main.c(83): warning:  #223-D: function "home" declared implicitly
+user\src\main.c(84): warning:  #223-D: function "clear" declared implicitly
+user\src\main.c(85): warning:  #223-D: function "display" declared implicitly
+user\src\main.c(86): warning:  #223-D: function "noCursor" declared implicitly
+user\src\main.c(87): warning:  #223-D: function "noBlink" declared implicitly
+user\src\main.c(89): warning:  #223-D: function "write" declared implicitly
+user\src\main.c(94): warning:  #223-D: function "delayMicroseconds" declared implicitly
+user\src\main.c(100): warning:  #223-D: function "humidity_init" declared implicitly
+user\src\main.c(135): warning:  #223-D: function "setCursor" declared implicitly
+user\src\main.c(146): warning:  #223-D: function "readcapacitance" declared implicitly
+user\src\main.c(160): warning:  #128-D: loop is not reachable
+compiling humidity.c...
+.\user\inc\LCD.h(48): error:  #130: expected a "{"
+user\src\humidity.c(4): warning:  #12-D: parsing restarts here after previous syntax error
+user\src\humidity.c(6): error:  #20: identifier "GPIO_Pin" is undefined
+user\src\humidity.c(7): error:  #20: identifier "mode" is undefined
+user\src\humidity.c(9): error:  #20: identifier "GPIOx" is undefined
+compiling LCD.c...
+.\user\inc\LCD.h(48): error:  #130: expected a "{"
+user\src\LCD.c(33): warning:  #12-D: parsing restarts here after previous syntax error
+user\src\LCD.c(49): error:  #20: identifier "_displayfunction" is undefined
+user\src\LCD.c(50): warning:  #223-D: function "begin" declared implicitly
+user\src\LCD.c(53): error:  #159: declaration is incompatible with previous "begin" (declared at line 50)
+user\src\LCD.c(55): error:  #20: identifier "_displayfunction" is undefined
+user\src\LCD.c(57): error:  #20: identifier "_numlines" is undefined
+user\src\LCD.c(58): error:  #20: identifier "_currline" is undefined
+user\src\LCD.c(75): warning:  #223-D: function "write4bits" declared implicitly
+user\src\LCD.c(90): error:  #20: identifier "_displaycontrol" is undefined
+user\src\LCD.c(91): warning:  #223-D: function "display" declared implicitly
+user\src\LCD.c(94): warning:  #223-D: function "clear" declared implicitly
+user\src\LCD.c(97): error:  #20: identifier "_displaymode" is undefined
+user\src\LCD.c(99): warning:  #223-D: function "command" declared implicitly
+user\src\LCD.c(104): error:  #159: declaration is incompatible with previous "clear" (declared at line 94)
+user\src\LCD.c(106): warning:  #223-D: function "command" declared implicitly
+user\src\LCD.c(112): warning:  #223-D: function "command" declared implicitly
+user\src\LCD.c(119): error:  #20: identifier "_numlines" is undefined
+user\src\LCD.c(123): warning:  #223-D: function "command" declared implicitly
+user\src\LCD.c(128): error:  #20: identifier "_displaycontrol" is undefined
+user\src\LCD.c(129): warning:  #223-D: function "command" declared implicitly
+user\src\LCD.c(131): error:  #159: declaration is incompatible with previous "display" (declared at line 91)
+user\src\LCD.c(132): error:  #20: identifier "_displaycontrol" is undefined
+user\src\LCD.c(133): warning:  #223-D: function "command" declared implicitly
+user\src\LCD.c(138): error:  #20: identifier "_displaycontrol" is undefined
+user\src\LCD.c(139): warning:  #223-D: function "command" declared implicitly
+user\src\LCD.c(142): error:  #20: identifier "_displaycontrol" is undefined
+user\src\LCD.c(143): warning:  #223-D: function "command" declared implicitly
+user\src\LCD.c(148): error:  #20: identifier "_displaycontrol" is undefined
+user\src\LCD.c(149): warning:  #223-D: function "command" declared implicitly
+user\src\LCD.c(152): error:  #20: identifier "_displaycontrol" is undefined
+user\src\LCD.c(153): warning:  #223-D: function "command" declared implicitly
+user\src\LCD.c(158): warning:  #223-D: function "command" declared implicitly
+user\src\LCD.c(161): warning:  #223-D: function "command" declared implicitly
+user\src\LCD.c(166): error:  #20: identifier "_displaymode" is undefined
+user\src\LCD.c(167): warning:  #223-D: function "command" declared implicitly
+user\src\LCD.c(172): error:  #20: identifier "_displaymode" is undefined
+user\src\LCD.c(173): warning:  #223-D: function "command" declared implicitly
+user\src\LCD.c(178): error:  #20: identifier "_displaymode" is undefined
+user\src\LCD.c(179): warning:  #223-D: function "command" declared implicitly
+user\src\LCD.c(184): error:  #20: identifier "_displaymode" is undefined
+user\src\LCD.c(185): warning:  #223-D: function "command" declared implicitly
+user\src\LCD.c(192): error:  #159: declaration is incompatible with previous "command" (declared at line 99)
+user\src\LCD.c(193): warning:  #223-D: function "send" declared implicitly
+user\src\LCD.c(197): warning:  #223-D: function "send" declared implicitly
+user\src\LCD.c(204): error:  #159: declaration is incompatible with previous "send" (declared at line 193)
+user\src\LCD.c(210): warning:  #223-D: function "write4bits" declared implicitly
+user\src\LCD.c(223): error:  #159: declaration is incompatible with previous "write4bits" (declared at line 75)
+compiling SoftI2CMaster.c...
+.\user\inc\LCD.h(48): error:  #130: expected a "{"
+user\src\SoftI2CMaster.c(42): warning:  #12-D: parsing restarts here after previous syntax error
+user\src\SoftI2CMaster.c(43): warning:  #223-D: function "delayMicroseconds" declared implicitly
+user\src\SoftI2CMaster.c(43): error:  #20: identifier "delay" is undefined
+user\src\SoftI2CMaster.c(49): warning:  #223-D: function "i2c_start" declared implicitly
+user\src\SoftI2CMaster.c(50): warning:  #223-D: function "i2c_write" declared implicitly
+user\src\SoftI2CMaster.c(57): warning:  #223-D: function "i2c_start" declared implicitly
+user\src\SoftI2CMaster.c(58): warning:  #223-D: function "i2c_write" declared implicitly
+user\src\SoftI2CMaster.c(73): warning:  #223-D: function "i2c_stop" declared implicitly
+user\src\SoftI2CMaster.c(83): warning:  #223-D: function "i2c_write" declared implicitly
+user\src\SoftI2CMaster.c(118): warning:  #223-D: function "GPIO_Init_Mode" declared implicitly
+user\src\SoftI2CMaster.c(120): warning:  #223-D: function "GPIO_Init_Mode" declared implicitly
+user\src\SoftI2CMaster.c(123): warning:  #223-D: function "GPIO_Init_Mode" declared implicitly
+user\src\SoftI2CMaster.c(124): warning:  #223-D: function "_delay_us" declared implicitly
+user\src\SoftI2CMaster.c(138): warning:  #223-D: function "GPIO_Init_Mode" declared implicitly
+user\src\SoftI2CMaster.c(140): warning:  #223-D: function "_delay_us" declared implicitly
+user\src\SoftI2CMaster.c(154): warning:  #223-D: function "GPIO_Init_Mode" declared implicitly
+user\src\SoftI2CMaster.c(157): warning:  #223-D: function "_delay_us" declared implicitly
+user\src\SoftI2CMaster.c(162): error:  #159: declaration is incompatible with previous "i2c_start" (declared at line 49)
+user\src\SoftI2CMaster.c(167): warning:  #223-D: function "GPIO_Init_Mode" declared implicitly
+user\src\SoftI2CMaster.c(170): warning:  #223-D: function "_delay_us" declared implicitly
+user\src\SoftI2CMaster.c(184): warning:  #223-D: function "GPIO_Init_Mode" declared implicitly
+user\src\SoftI2CMaster.c(188): warning:  #223-D: function "_delay_us" declared implicitly
+user\src\SoftI2CMaster.c(202): error:  #159: declaration is incompatible with previous "i2c_stop" (declared at line 73)
+user\src\SoftI2CMaster.c(204): warning:  #223-D: function "GPIO_Init_Mode" declared implicitly
+user\src\SoftI2CMaster.c(205): warning:  #223-D: function "_delay_us" declared implicitly
+user\src\SoftI2CMaster.c(213): error:  #159: declaration is incompatible with previous "i2c_write" (declared at line 50)
+user\src\SoftI2CMaster.c(240): warning:  #223-D: function "_delay_us" declared implicitly
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(160): warning:  #128-D: loop is not reachable
+compiling humidity.c...
+compiling LCD.c...
+compiling SoftI2CMaster.c...
+linking...
+Program Size: Code=6204 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Build target 'SB3'
+compiling LCD.c...
+user\src\LCD.c(36): error:  #65: expected a ";"
+user\src\LCD.c(39): error:  #65: expected a ";"
+user\src\LCD.c(42): error:  #65: expected a ";"
+user\src\LCD.c(45): error:  #65: expected a ";"
+Target not created
+Build target 'SB3'
+compiling LCD.c...
+linking...
+Program Size: Code=6204 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(162): warning:  #128-D: loop is not reachable
+user\src\main.c(64): warning:  #177-D: variable "temporary" was declared but never referenced
+linking...
+Program Size: Code=6280 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(141): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=6184 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(141): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=6176 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(92): warning:  #223-D: function "delayms" declared implicitly
+user\src\main.c(143): warning:  #128-D: loop is not reachable
+linking...
+SB3_firmware.axf: Error: L6218E: Undefined symbol delayms (referred from main.o).
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(143): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=6184 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(143): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=6184 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(143): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=6176 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(143): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=6176 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(143): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=6180 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(143): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=6184 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(143): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=6180 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Build target 'SB3'
+linking...
+Program Size: Code=6180 RO-data=336 RW-data=124 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
 Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 

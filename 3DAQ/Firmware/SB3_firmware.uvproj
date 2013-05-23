@@ -446,6 +446,11 @@
               <FileType>1</FileType>
               <FilePath>.\user\src\webi2c.c</FilePath>
             </File>
+            <File>
+              <FileName>timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\user\src\timer.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -485,6 +490,11 @@
               <FileName>webi2c.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\user\inc\webi2c.h</FilePath>
+            </File>
+            <File>
+              <FileName>timer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\user\inc\timer.h</FilePath>
             </File>
           </Files>
         </Group>

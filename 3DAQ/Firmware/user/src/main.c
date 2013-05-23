@@ -5,9 +5,11 @@
 #include "stm32F10x_i2c.h"
 #include "stm32f10x_gpio.h"
 #include "stm32f10x_rcc.h"
+#include "stm32f10x_tim.h"
 #include "LCD.h"
 #include "humidity.h"
 #include "webi2c.h"
+#include "timer.h"
 
 //Hardware:
 
@@ -46,7 +48,6 @@ volatile int value_received;
 //ADC variables
 volatile uint8_t new_data;
 
-
 //------------------------------------------------------------------------------
 
 //Function prototypes for functions in main.c file
@@ -59,14 +60,7 @@ void check_and_process_received_command(void);
 int main(void)
 {
 	int i;
-//	int j;
-//	int acctemp;
 	uint8_t yumbyte;
-	int temporary;
-//	uint8_t received_data[2];
-//	unsigned char REG_ADDRESS[3];
-	int lcdadc;
-//	int eeprombyte;
 	uint8_t buffer[100];
 
 	init_GPIO_pins();
@@ -77,7 +71,7 @@ int main(void)
 	{
 		LED_on();
 	}
-		
+		delay_init();
 	LED_off();
 	
 	LEDbyte =0;
@@ -95,7 +89,8 @@ int main(void)
 	write('L');
 	write('L');
 	write('O');
-delayMicroseconds(200000);
+	delay_ms(2000);
+//delayMicroseconds(200000);
 	clear();
 
 //Initialise UART for serial comms with PC
@@ -118,6 +113,10 @@ I2C_ACCEL_READ();
 I2C_ACCEL_READ();	
 I2C_ACCEL_READ();	
 I2C_ACCEL_READ();	
+
+
+//delay_ms(10000);
+
 //	I2C_EE_BufferWrite(Test_Buffer, EEPROM_WriteAddress1, 100);
 I2C_EE_BufferRead(buffer, 0, 100);
 
@@ -133,26 +132,10 @@ yumbyte=yumbyte;
 		
 		
 	setCursor(0,1);
-		lcdadc = ADC_perform_single_conversion();
-		write('0'+(lcdadc/1000));
-		lcdadc = lcdadc %1000;
-		write ('0'+(lcdadc/100));
-		lcdadc = lcdadc %100;
-		write ('0'+(lcdadc/10));
-		lcdadc = lcdadc %10;
-		write ('0'+(lcdadc));
-	delayMicroseconds(10000);
-			setCursor(0,0);
-		temporary=readcapacitance();	
-		write('0'+(temporary/1000));
-		temporary=temporary%1000;
-		write('0'+(temporary)/100);
-		temporary=temporary%100;
-		write('0'+(temporary/10));
-		temporary=temporary%10;
-		write('0'+(temporary));
-
-
+	writenumber( ADC_perform_single_conversion());
+	setCursor(0,0);
+	writenumber(readcapacitance());
+		delay_ms(50);
 	}
 
 	//Main loop

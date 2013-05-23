@@ -94,7 +94,7 @@ I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_usart.h)(0x519102EE)
 I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_wwdg.h)(0x519102EE)
 I (.\lib\stm32f10x_stdperiph_driver\inc\misc.h)(0x519102EE)
 I (.\user\inc\LEDs.h)(0x519B4A42)
-F (.\user\src\main.c)(0x519E09AA)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I.\lib\cmsis\cm3\coresupport -I.\lib\cmsis\cm3\devicesupport\st\stm32f10x -I.\lib\stm32f10x_stdperiph_driver\inc -I.\user\inc -I C:\Keil\ARM\RV31\INC -I C:\3DAQ\Firmware\lib\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F10x -DUSE_STDPERIPH_DRIVER -o "main.o" --omf_browse "main.crf" --depend "main.d")
+F (.\user\src\main.c)(0x519E273A)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I.\lib\cmsis\cm3\coresupport -I.\lib\cmsis\cm3\devicesupport\st\stm32f10x -I.\lib\stm32f10x_stdperiph_driver\inc -I.\user\inc -I C:\Keil\ARM\RV31\INC -I C:\3DAQ\Firmware\lib\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F10x -DUSE_STDPERIPH_DRIVER -o "main.o" --omf_browse "main.crf" --depend "main.d")
 I (.\lib\cmsis\cm3\devicesupport\st\stm32f10x\stm32F10x.h)(0x519102EE)
 I (.\lib\cmsis\cm3\coresupport\core_cm3.h)(0x519102EE)
 I (C:\Keil\ARM\ARMCC\bin\..\include\stdint.h)(0x4EB14304)
@@ -126,10 +126,11 @@ I (.\lib\stm32f10x_stdperiph_driver\inc\misc.h)(0x519102EE)
 I (.\user\inc\LEDs.h)(0x519B4A42)
 I (.\user\inc\UART.h)(0x519102EE)
 I (.\user\inc\ADC.h)(0x519102EE)
-I (.\user\inc\LCD.h)(0x519DE70E)
+I (.\user\inc\LCD.h)(0x519E23ED)
 I (C:\Keil\ARM\ARMCC\bin\..\include\inttypes.h)(0x4EB14304)
 I (.\user\inc\humidity.h)(0x519C8E5D)
 I (.\user\inc\webi2c.h)(0x519DFC04)
+I (.\user\inc\timer.h)(0x519E235A)
 F (.\user\src\UART.c)(0x519102EE)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I.\lib\cmsis\cm3\coresupport -I.\lib\cmsis\cm3\devicesupport\st\stm32f10x -I.\lib\stm32f10x_stdperiph_driver\inc -I.\user\inc -I C:\Keil\ARM\RV31\INC -I C:\3DAQ\Firmware\lib\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F10x -DUSE_STDPERIPH_DRIVER -o "uart.o" --omf_browse "uart.crf" --depend "uart.d")
 I (.\lib\cmsis\cm3\devicesupport\st\stm32f10x\stm32F10x.h)(0x519102EE)
 I (.\lib\cmsis\cm3\coresupport\core_cm3.h)(0x519102EE)
@@ -161,7 +162,7 @@ I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_wwdg.h)(0x519102EE)
 I (.\lib\stm32f10x_stdperiph_driver\inc\misc.h)(0x519102EE)
 I (.\user\inc\UART.h)(0x519102EE)
 I (.\user\inc\LEDs.h)(0x519B4A42)
-F (.\user\src\humidity.c)(0x519CD62D)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I.\lib\cmsis\cm3\coresupport -I.\lib\cmsis\cm3\devicesupport\st\stm32f10x -I.\lib\stm32f10x_stdperiph_driver\inc -I.\user\inc -I C:\Keil\ARM\RV31\INC -I C:\3DAQ\Firmware\lib\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F10x -DUSE_STDPERIPH_DRIVER -o "humidity.o" --omf_browse "humidity.crf" --depend "humidity.d")
+F (.\user\src\humidity.c)(0x519E1741)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I.\lib\cmsis\cm3\coresupport -I.\lib\cmsis\cm3\devicesupport\st\stm32f10x -I.\lib\stm32f10x_stdperiph_driver\inc -I.\user\inc -I C:\Keil\ARM\RV31\INC -I C:\3DAQ\Firmware\lib\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F10x -DUSE_STDPERIPH_DRIVER -o "humidity.o" --omf_browse "humidity.crf" --depend "humidity.d")
 I (.\user\inc\humidity.h)(0x519C8E5D)
 I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_gpio.h)(0x519102EE)
 I (.\lib\cmsis\cm3\devicesupport\st\stm32f10x\stm32f10x.h)(0x519102EE)
@@ -191,9 +192,9 @@ I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_tim.h)(0x519102EE)
 I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_usart.h)(0x519102EE)
 I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_wwdg.h)(0x519102EE)
 I (.\lib\stm32f10x_stdperiph_driver\inc\misc.h)(0x519102EE)
-I (.\user\inc\LCD.h)(0x519DE70E)
+I (.\user\inc\LCD.h)(0x519E23ED)
 I (C:\Keil\ARM\ARMCC\bin\..\include\inttypes.h)(0x4EB14304)
-F (.\user\src\LCD.c)(0x519B5300)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I.\lib\cmsis\cm3\coresupport -I.\lib\cmsis\cm3\devicesupport\st\stm32f10x -I.\lib\stm32f10x_stdperiph_driver\inc -I.\user\inc -I C:\Keil\ARM\RV31\INC -I C:\3DAQ\Firmware\lib\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F10x -DUSE_STDPERIPH_DRIVER -o "lcd.o" --omf_browse "lcd.crf" --depend "lcd.d")
+F (.\user\src\LCD.c)(0x519E24C9)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I.\lib\cmsis\cm3\coresupport -I.\lib\cmsis\cm3\devicesupport\st\stm32f10x -I.\lib\stm32f10x_stdperiph_driver\inc -I.\user\inc -I C:\Keil\ARM\RV31\INC -I C:\3DAQ\Firmware\lib\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F10x -DUSE_STDPERIPH_DRIVER -o "lcd.o" --omf_browse "lcd.crf" --depend "lcd.d")
 I (C:\Keil\ARM\ARMCC\bin\..\include\stdio.h)(0x4EB14306)
 I (C:\Keil\ARM\ARMCC\bin\..\include\string.h)(0x4EB14306)
 I (C:\Keil\ARM\ARMCC\bin\..\include\inttypes.h)(0x4EB14304)
@@ -226,7 +227,7 @@ I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_usart.h)(0x519102EE)
 I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_wwdg.h)(0x519102EE)
 I (.\lib\stm32f10x_stdperiph_driver\inc\misc.h)(0x519102EE)
 I (.\user\inc\LEDs.h)(0x519B4A42)
-I (.\user\inc\LCD.h)(0x519DE70E)
+I (.\user\inc\LCD.h)(0x519E23ED)
 F (.\user\src\SoftI2CMaster.c)(0x519DE70E)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I.\lib\cmsis\cm3\coresupport -I.\lib\cmsis\cm3\devicesupport\st\stm32f10x -I.\lib\stm32f10x_stdperiph_driver\inc -I.\user\inc -I C:\Keil\ARM\RV31\INC -I C:\3DAQ\Firmware\lib\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F10x -DUSE_STDPERIPH_DRIVER -o "softi2cmaster.o" --omf_browse "softi2cmaster.crf" --depend "softi2cmaster.d")
 I (.\user\inc\SoftI2CMaster.h)(0x519DE7A6)
 I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_gpio.h)(0x519102EE)
@@ -258,7 +259,7 @@ I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_usart.h)(0x519102EE)
 I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_wwdg.h)(0x519102EE)
 I (.\lib\stm32f10x_stdperiph_driver\inc\misc.h)(0x519102EE)
 I (C:\Keil\ARM\ARMCC\bin\..\include\inttypes.h)(0x4EB14304)
-I (.\user\inc\LCD.h)(0x519DE70E)
+I (.\user\inc\LCD.h)(0x519E23ED)
 I (.\user\inc\humidity.h)(0x519C8E5D)
 I (C:\Keil\ARM\ARMCC\bin\..\include\string.h)(0x4EB14306)
 F (.\user\src\webi2c.c)(0x519E0994)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I.\lib\cmsis\cm3\coresupport -I.\lib\cmsis\cm3\devicesupport\st\stm32f10x -I.\lib\stm32f10x_stdperiph_driver\inc -I.\user\inc -I C:\Keil\ARM\RV31\INC -I C:\3DAQ\Firmware\lib\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F10x -DUSE_STDPERIPH_DRIVER -o "webi2c.o" --omf_browse "webi2c.crf" --depend "webi2c.d")
@@ -291,13 +292,44 @@ I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_tim.h)(0x519102EE)
 I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_wwdg.h)(0x519102EE)
 I (.\lib\stm32f10x_stdperiph_driver\inc\misc.h)(0x519102EE)
 I (.\user\inc\webi2c.h)(0x519DFC04)
+F (.\user\src\timer.c)(0x519E2364)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I.\lib\cmsis\cm3\coresupport -I.\lib\cmsis\cm3\devicesupport\st\stm32f10x -I.\lib\stm32f10x_stdperiph_driver\inc -I.\user\inc -I C:\Keil\ARM\RV31\INC -I C:\3DAQ\Firmware\lib\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F10x -DUSE_STDPERIPH_DRIVER -o "timer.o" --omf_browse "timer.crf" --depend "timer.d")
+I (.\user\inc\timer.h)(0x519E235A)
+I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_rcc.h)(0x519102EE)
+I (.\lib\cmsis\cm3\devicesupport\st\stm32f10x\stm32f10x.h)(0x519102EE)
+I (.\lib\cmsis\cm3\coresupport\core_cm3.h)(0x519102EE)
+I (C:\Keil\ARM\ARMCC\bin\..\include\stdint.h)(0x4EB14304)
+I (.\lib\cmsis\cm3\devicesupport\st\stm32f10x\system_stm32f10x.h)(0x5196555B)
+I (.\user\inc\stm32f10x_conf.h)(0x519102EE)
+I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_adc.h)(0x519102EE)
+I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_bkp.h)(0x519102EE)
+I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_can.h)(0x519102EE)
+I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_cec.h)(0x519102EE)
+I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_crc.h)(0x519102EE)
+I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_dac.h)(0x519102EE)
+I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_dbgmcu.h)(0x519102EE)
+I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_dma.h)(0x519102EE)
+I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_exti.h)(0x519102EE)
+I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_flash.h)(0x519102EE)
+I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_fsmc.h)(0x519102EE)
+I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_gpio.h)(0x519102EE)
+I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_i2c.h)(0x519102EE)
+I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_iwdg.h)(0x519102EE)
+I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_pwr.h)(0x519102EE)
+I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_rtc.h)(0x519102EE)
+I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_sdio.h)(0x519102EE)
+I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_spi.h)(0x519102EE)
+I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_tim.h)(0x519102EE)
+I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_usart.h)(0x519102EE)
+I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_wwdg.h)(0x519102EE)
+I (.\lib\stm32f10x_stdperiph_driver\inc\misc.h)(0x519102EE)
 F (.\user\inc\ADC.h)(0x519102EE)()
 F (.\user\inc\LEDs.h)(0x519B4A42)()
 F (.\user\inc\UART.h)(0x519102EE)()
 F (.\user\inc\humidity.h)(0x519C8E5D)()
 F (.\user\inc\SoftI2CMaster.h)(0x519DE7A6)()
-F (.\user\inc\LCD.h)(0x519DE70E)()
+F (.\user\inc\LCD.h)(0x519E23ED)()
 F (.\user\inc\webi2c.h)(0x519DFC04)()
+F (.\user\inc\timer.h)(0x519E235A)()
 F (.\lib\STM32F10x_StdPeriph_Driver\src\misc.c)(0x519102EE)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I.\lib\cmsis\cm3\coresupport -I.\lib\cmsis\cm3\devicesupport\st\stm32f10x -I.\lib\stm32f10x_stdperiph_driver\inc -I.\user\inc -I C:\Keil\ARM\RV31\INC -I C:\3DAQ\Firmware\lib\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F10x -DUSE_STDPERIPH_DRIVER -o "misc.o" --omf_browse "misc.crf" --depend "misc.d")
 I (.\lib\stm32f10x_stdperiph_driver\inc\misc.h)(0x519102EE)
 I (.\lib\cmsis\cm3\devicesupport\st\stm32f10x\stm32f10x.h)(0x519102EE)
