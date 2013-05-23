@@ -32,7 +32,7 @@ I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_tim.h)(0x5194819B)
 I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_usart.h)(0x5194819B)
 I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_wwdg.h)(0x5194819B)
 I (.\lib\stm32f10x_stdperiph_driver\inc\misc.h)(0x5194819B)
-F (.\user\src\ADC.c)(0x519B998A)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I.\lib\cmsis\cm3\coresupport -I.\lib\cmsis\cm3\devicesupport\st\stm32f10x -I.\lib\stm32f10x_stdperiph_driver\inc -I.\user\inc -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F10x -DUSE_STDPERIPH_DRIVER -o "adc.o" --omf_browse "adc.crf" --depend "adc.d")
+F (.\user\src\ADC.c)(0x519E902B)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I.\lib\cmsis\cm3\coresupport -I.\lib\cmsis\cm3\devicesupport\st\stm32f10x -I.\lib\stm32f10x_stdperiph_driver\inc -I.\user\inc -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F10x -DUSE_STDPERIPH_DRIVER -o "adc.o" --omf_browse "adc.crf" --depend "adc.d")
 I (.\lib\cmsis\cm3\devicesupport\st\stm32f10x\stm32F10x.h)(0x5194819B)
 I (.\lib\cmsis\cm3\coresupport\core_cm3.h)(0x5194819B)
 I (C:\Keil\ARM\ARMCC\bin\..\include\stdint.h)(0x516EE456)
@@ -61,7 +61,7 @@ I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_tim.h)(0x5194819B)
 I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_usart.h)(0x5194819B)
 I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_wwdg.h)(0x5194819B)
 I (.\lib\stm32f10x_stdperiph_driver\inc\misc.h)(0x5194819B)
-I (.\user\inc\ADC.h)(0x5194819B)
+I (.\user\inc\ADC.h)(0x519E8EA7)
 I (.\user\inc\UART.h)(0x5194819B)
 I (.\user\inc\LEDs.h)(0x519B998A)
 F (.\user\src\LEDs.c)(0x519B998A)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I.\lib\cmsis\cm3\coresupport -I.\lib\cmsis\cm3\devicesupport\st\stm32f10x -I.\lib\stm32f10x_stdperiph_driver\inc -I.\user\inc -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F10x -DUSE_STDPERIPH_DRIVER -o "leds.o" --omf_browse "leds.crf" --depend "leds.d")
@@ -94,7 +94,7 @@ I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_usart.h)(0x5194819B)
 I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_wwdg.h)(0x5194819B)
 I (.\lib\stm32f10x_stdperiph_driver\inc\misc.h)(0x5194819B)
 I (.\user\inc\LEDs.h)(0x519B998A)
-F (.\user\src\main.c)(0x519E7F06)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I.\lib\cmsis\cm3\coresupport -I.\lib\cmsis\cm3\devicesupport\st\stm32f10x -I.\lib\stm32f10x_stdperiph_driver\inc -I.\user\inc -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F10x -DUSE_STDPERIPH_DRIVER -o "main.o" --omf_browse "main.crf" --depend "main.d")
+F (.\user\src\main.c)(0x519E8E04)(-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I.\lib\cmsis\cm3\coresupport -I.\lib\cmsis\cm3\devicesupport\st\stm32f10x -I.\lib\stm32f10x_stdperiph_driver\inc -I.\user\inc -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\ST\STM32F10x -DUSE_STDPERIPH_DRIVER -o "main.o" --omf_browse "main.crf" --depend "main.d")
 I (.\lib\cmsis\cm3\devicesupport\st\stm32f10x\stm32F10x.h)(0x5194819B)
 I (.\lib\cmsis\cm3\coresupport\core_cm3.h)(0x5194819B)
 I (C:\Keil\ARM\ARMCC\bin\..\include\stdint.h)(0x516EE456)
@@ -125,7 +125,7 @@ I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_wwdg.h)(0x5194819B)
 I (.\lib\stm32f10x_stdperiph_driver\inc\misc.h)(0x5194819B)
 I (.\user\inc\LEDs.h)(0x519B998A)
 I (.\user\inc\UART.h)(0x5194819B)
-I (.\user\inc\ADC.h)(0x5194819B)
+I (.\user\inc\ADC.h)(0x519E8EA7)
 I (.\user\inc\LCD.h)(0x519E2BCA)
 I (C:\Keil\ARM\ARMCC\bin\..\include\inttypes.h)(0x516EE456)
 I (.\user\inc\humidity.h)(0x519E7EF7)
@@ -290,7 +290,7 @@ I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_tim.h)(0x5194819B)
 I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_usart.h)(0x5194819B)
 I (.\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_wwdg.h)(0x5194819B)
 I (.\lib\stm32f10x_stdperiph_driver\inc\misc.h)(0x5194819B)
-F (.\user\inc\ADC.h)(0x5194819B)()
+F (.\user\inc\ADC.h)(0x519E8EA7)()
 F (.\user\inc\LEDs.h)(0x519B998A)()
 F (.\user\inc\UART.h)(0x5194819B)()
 F (.\user\inc\humidity.h)(0x519E7EF7)()

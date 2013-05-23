@@ -8,85 +8,34 @@ Project File Date:  05/23/2013
 
 <h2>Output:</h2>
 Build target 'SB3'
+compiling ADC.c...
+.\user\inc\ADC.h(4): warning:  #1-D: last line of file ends without a newline
+user\src\ADC.c(22): warning:  #940-D: missing return statement at end of non-void function "getTemperature"
 compiling main.c...
-compiling webi2c.c...
-user\src\webi2c.c(136): warning:  #550-D: variable "XYZ" was set but never used
+.\user\inc\ADC.h(4): warning:  #1-D: last line of file ends without a newline
 linking...
-Program Size: Code=6388 RO-data=336 RW-data=172 ZI-data=1636  
+Program Size: Code=9024 RO-data=336 RW-data=992 ZI-data=1632  
+"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
+Build target 'SB3'
+compiling ADC.c...
+user\src\ADC.c(22): warning:  #940-D: missing return statement at end of non-void function "getTemperature"
+compiling main.c...
+linking...
+Program Size: Code=9024 RO-data=336 RW-data=992 ZI-data=1632  
 "SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
 Build target 'SB3'
-compiling LCD.c...
-user\src\LCD.c(32): error:  #98: an array may not have elements of this type
-Target not created
-Build target 'SB3'
-compiling LCD.c...
-linking...
-Program Size: Code=6452 RO-data=336 RW-data=776 ZI-data=1632  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
-Build target 'SB3'
-compiling main.c...
-compiling humidity.c...
-user\src\humidity.c(27): warning:  #940-D: missing return statement at end of non-void function "readcapacitance"
-user\src\humidity.c(25): warning:  #550-D: variable "scaledreading" was set but never used
-user\src\humidity.c(42): error:  #247: function "readcapacitance" has already been defined
-compiling LCD.c...
-Target not created
-Build target 'SB3'
-compiling main.c...
-compiling humidity.c...
-user\src\humidity.c(23): error:  #147-D: declaration is incompatible with "int readcapacitance(void)" (declared at line 6 of ".\user\inc\humidity.h")
-user\src\humidity.c(26): error:  #165: too few arguments in function call
-user\src\humidity.c(28): warning:  #940-D: missing return statement at end of non-void function "readcapacitance"
-user\src\humidity.c(25): warning:  #550-D: variable "scaledreading" was set but never used
-user\src\humidity.c(43): error:  #247: function "readcapacitance" has already been defined
-Target not created
-Build target 'SB3'
-compiling humidity.c...
-user\src\humidity.c(28): warning:  #940-D: missing return statement at end of non-void function "readhumidity"
-user\src\humidity.c(25): warning:  #550-D: variable "scaledreading" was set but never used
-linking...
-Program Size: Code=7100 RO-data=336 RW-data=172 ZI-data=1636  
-"SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
-Build target 'SB3'
-compiling humidity.c...
-user\src\humidity.c(8): error:  #146: too many initializer values
-user\src\humidity.c(9): error:  #146: too many initializer values
-user\src\humidity.c(10): error:  #146: too many initializer values
-user\src\humidity.c(11): error:  #146: too many initializer values
-user\src\humidity.c(12): error:  #146: too many initializer values
-user\src\humidity.c(12): error:  #67: expected a "}"
-user\src\humidity.c(13): error:  #146: too many initializer values
-user\src\humidity.c(14): error:  #146: too many initializer values
-user\src\humidity.c(15): error:  #146: too many initializer values
-user\src\humidity.c(16): error:  #146: too many initializer values
-user\src\humidity.c(17): error:  #146: too many initializer values
-user\src\humidity.c(18): error:  #146: too many initializer values
-user\src\humidity.c(19): error:  #146: too many initializer values
-user\src\humidity.c(20): error:  #146: too many initializer values
-user\src\humidity.c(21): error:  #146: too many initializer values
-user\src\humidity.c(22): error:  #146: too many initializer values
-user\src\humidity.c(23): error:  #146: too many initializer values
-user\src\humidity.c(37): error:  #127: expected a statement
-user\src\humidity.c(41): warning:  #940-D: missing return statement at end of non-void function "readhumidity"
-Target not created
-Build target 'SB3'
-compiling humidity.c...
-user\src\humidity.c(12): error:  #67: expected a "}"
-user\src\humidity.c(37): error:  #127: expected a statement
-user\src\humidity.c(41): warning:  #940-D: missing return statement at end of non-void function "readhumidity"
-Target not created
-Build target 'SB3'
-compiling humidity.c...
-user\src\humidity.c(37): error:  #127: expected a statement
-user\src\humidity.c(41): warning:  #940-D: missing return statement at end of non-void function "readhumidity"
-Target not created
-Build target 'SB3'
-compiling humidity.c...
+compiling ADC.c...
+user\src\ADC.c(22): warning:  #117-D: non-void function "getTemperature" should return a value
 linking...
 Program Size: Code=9024 RO-data=336 RW-data=992 ZI-data=1632  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Build target 'SB3'
+compiling ADC.c...
+linking...
+Program Size: Code=9032 RO-data=336 RW-data=992 ZI-data=1632  
 "SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
 Build target 'SB3'
-compiling humidity.c...
+compiling ADC.c...
 linking...
-Program Size: Code=9024 RO-data=336 RW-data=992 ZI-data=1632  
+Program Size: Code=9032 RO-data=336 RW-data=992 ZI-data=1632  
 "SB3_firmware.axf" - 0 Error(s), 0 Warning(s).

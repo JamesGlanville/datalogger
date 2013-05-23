@@ -112,7 +112,7 @@ I2C_EE_BufferRead(buffer, 0, 100);
 		setLEDS();
 		
 	setCursor(0,1);
-	writenumber( ADC_perform_single_conversion());
+	writenumber( getTemperature());
 	setCursor(0,0);
 	writenumber(readhumidity(24)); //Needs real temperature
 		delay_ms(50);

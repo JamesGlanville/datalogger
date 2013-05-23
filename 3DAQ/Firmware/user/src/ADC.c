@@ -5,6 +5,9 @@
 #include "LEDs.h"
 
 #define ADC1_DR_Address    ((uint32_t)0x4001244C)
+#define THERM_SCALING	1
+#define THERM_OFFSET	0
+
 
 extern __IO uint32_t ADC_DualConvertedValueTab[16];
 extern volatile uint8_t new_data;
@@ -15,6 +18,11 @@ void ADC_RCC_Config(void);
 void ADC_GPIO_Config(void);
 
 //------------------------------------------------------------------------
+
+uint16_t getTemperature(void)
+{
+	return (ADC_perform_single_conversion()*THERM_SCALING)+THERM_OFFSET;
+}
 
 //Initialise ADC for independent sampling on demand
 void ADC_init(void)
