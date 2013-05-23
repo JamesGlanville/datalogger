@@ -17,9 +17,6 @@ typedef unsigned char BYTE;
 static int com_port_no = 0;
 static bool com_port_open = false;
 
-BYTE rx_buff[RX_BUFF_LEN];
-BYTE tx_buff[2];
-
 void RS232_Init(int port_no);
 void RS232_Close(void);
 BYTE* Read_Data_Block(void);

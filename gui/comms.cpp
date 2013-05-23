@@ -8,8 +8,10 @@ Date: Mon 20 May 2013 17:21
 #include "rs232.h"
 #include "comms.h"
 
-// RS232 functions
+BYTE rx_buff[RX_BUFF_LEN];
+BYTE tx_buff[2];
 
+// RS232 functions
 void RS232_Init(int port_no)
 {
   // Open COM port given by port_no parameters: COM port,
