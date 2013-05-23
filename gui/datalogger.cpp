@@ -15,6 +15,8 @@ BEGIN_EVENT_TABLE(MyFrame, wxFrame)
   EVT_MENU(ID_EraseData, MyFrame::OnEraseData)
   EVT_MENU(wxID_EXIT, MyFrame::OnExit)
   EVT_MENU(wxID_ABOUT, MyFrame::OnAbout)
+  EVT_SPINCTRL(PORT_SELECT, MyFrame::OnPortSelect)
+  EVT_BUTTON(PORT_CONNECT, MyFrame::OnPortConnect)
 END_EVENT_TABLE()
 
 
@@ -52,6 +54,27 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
   menuBar->Append(menuHelp, wxT("&Help"));
   
   SetMenuBar(menuBar);
+
+  wxBoxSizer *topsizer = new wxBoxSizer(wxVERTICAL);
+
+  wxBoxSizer *ctrlsizer = new wxBoxSizer(wxHORIZONTAL);
+
+  wxBoxSizer *connectsizer = new wxBoxSizer(wxVERTICAL);
+  connectsizer->Add(new wxStaticText(this, wxID_ANY, wxT("Data Port:")),
+		    0,
+		    wxALL | wxALIGN_CENTER_VERTICAL,
+		    5);
+  spin_port = new wxSpinCtrl(this, PORT_SELECT, wxString(wxT("0")));
+  connectsizer->Add(spin_port, 0, wxALL | wxALIGN_CENTER_VERTICAL, 5);
+  connectsizer->Add(new wxButton(this, PORT_CONNECT, wxT("Connect")),
+		 0,
+		 wxALL | wxALIGN_CENTER_VERTICAL,
+		 5);
+  ctrlsizer->Add(connectsizer, 0, wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
+  
+  topsizer->Add(ctrlsizer, 1, wxALL | wxALIGN_CENTER_VERTICAL, 5);
+
+  SetSizer(topsizer);
   
   CreateStatusBar();
   SetStatusText(wxT("Welcome to Parcel Tracker!"));
@@ -92,3 +115,13 @@ void MyFrame::OnEraseData(wxCommandEvent& event)
   wxLogMessage(wxT("Erasing Data from module."));
 }
 
+void MyFrame::OnPortSelect(wxSpinEvent& event)
+{
+  wxString text;
+  text.Printf(wxT("New spinctrl value %d"), event.GetPosition());
+}
+
+void MyFrame::OnPortConnect(wxCommandEvent& event)
+{
+  wxLogMessage(wxT("Attempting to connect to module"));
+}
