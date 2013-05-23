@@ -5,8 +5,12 @@ Author: Andy Holt
 Date: Mon 20 May 2013 17:15
 */
 
+#include <wx/wx.h>
+
 #ifndef comms_h
 #define coms_h
+
+typedef unsigned char BYTE;
 
 #define RX_BUFF_LEN 64
 
@@ -18,7 +22,7 @@ BYTE tx_buff[2];
 
 void RS232_Init(int port_no);
 void RS232_Close(void);
-unsigned char* Read_Data_Block(void);
+BYTE* Read_Data_Block(void);
 void send_command(int n);
 
 int read_sensor_data(int *value);
