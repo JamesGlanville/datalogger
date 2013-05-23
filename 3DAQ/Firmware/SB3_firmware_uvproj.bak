@@ -427,16 +427,6 @@
               <FilePath>.\user\src\UART.c</FilePath>
             </File>
             <File>
-              <FileName>HD44780.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\user\src\HD44780.c</FilePath>
-            </File>
-            <File>
-              <FileName>HD44780.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\user\src\HD44780.h</FilePath>
-            </File>
-            <File>
               <FileName>humidity.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\user\src\humidity.c</FilePath>
@@ -445,6 +435,16 @@
               <FileName>LCD.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\user\src\LCD.c</FilePath>
+            </File>
+            <File>
+              <FileName>SoftI2CMaster.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\user\src\SoftI2CMaster.c</FilePath>
+            </File>
+            <File>
+              <FileName>webi2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\user\src\webi2c.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -470,6 +470,21 @@
               <FileName>humidity.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\user\inc\humidity.h</FilePath>
+            </File>
+            <File>
+              <FileName>SoftI2CMaster.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\user\inc\SoftI2CMaster.h</FilePath>
+            </File>
+            <File>
+              <FileName>LCD.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\user\inc\LCD.h</FilePath>
+            </File>
+            <File>
+              <FileName>webi2c.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\user\inc\webi2c.h</FilePath>
             </File>
           </Files>
         </Group>

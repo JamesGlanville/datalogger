@@ -29,6 +29,24 @@ uint8_t _displaymode;
 uint8_t _initialized;
 uint8_t _numlines,_currline;
 
+void writenumber(int number) //5 DIGITS MAX
+{
+	if (number/10000){
+		write('0'+(number/10000));
+		number = number % 10000;}
+	if (number/1000){
+		write('0'+(number/1000));
+		number = number % 1000;}
+	if (number/100){
+		write('0'+(number/100));
+		number = number % 100;}
+	if (number/10){
+		write('0'+(number/10));
+		number = number % 10;}
+		
+		write('0'+(number));
+}
+
 void delayMicroseconds(int delay) //This does not delay for microseconds at all, it is a hacky fudge. I should fix this.
 {
 	int i;

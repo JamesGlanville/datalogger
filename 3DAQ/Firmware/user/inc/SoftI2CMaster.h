@@ -14,9 +14,9 @@
 #include "humidity.h"
 
 
-#define I2CPORT GPIOC
+#define I2CPORT GPIOB
 #define SDA GPIO_Pin_7
-#define SCL GPIO_Pin_7
+#define SCL GPIO_Pin_6
 #define _SOFTI2CMASTER_VERSION 12  // software version of this library
 
 
