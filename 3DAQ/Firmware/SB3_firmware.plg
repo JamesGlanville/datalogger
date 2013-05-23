@@ -3,11 +3,16 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
+<<<<<<< HEAD
 C:\Users\datalogger\Documents\GitHub\datalogger\3DAQ\Firmware\SB3_firmware.uvproj
+=======
+C:\Users\james_000\Github\datalogger\3DAQ\Firmware\SB3_firmware.uvproj
+>>>>>>> c17d3388665c3f900e8fc0554862ad1efa8e2e39
 Project File Date:  05/22/2013
 
 <h2>Output:</h2>
 Build target 'SB3'
+<<<<<<< HEAD
 compiling main.c...
 user\src\main.c(431): warning:  #177-D: variable "i" was declared but never referenced
 user\src\main.c(429): warning:  #128-D: loop is not reachable
@@ -88,3 +93,311 @@ linking...
 Program Size: Code=4284 RO-data=336 RW-data=60 ZI-data=1636  
 "SB3_firmware.axf" - 0 Error(s), 7 Warning(s).
 Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+=======
+compiling main.c...
+.\user\inc\SoftI2CMaster.h(13): error:  #5: cannot open source input file "LCD.h": No such file or directory
+compiling UART.c...
+compiling humidity.c...
+user\src\humidity.c(80): warning:  #111-D: statement is unreachable
+user\src\humidity.c(26): warning:  #177-D: variable "k" was declared but never referenced
+compiling LCD.c...
+compiling SoftI2CMaster.cpp...
+.\user\inc\SoftI2CMaster.h(13): error:  #5: cannot open source input file "LCD.h": No such file or directory
+compiling misc.c...
+compiling stm32f10x_adc.c...
+compiling stm32f10x_dma.c...
+compiling stm32f10x_gpio.c...
+compiling stm32f10x_rcc.c...
+compiling stm32f10x_tim.c...
+compiling stm32f10x_usart.c...
+compiling stm32f10x_bkp.c...
+compiling stm32f10x_can.c...
+compiling stm32f10x_cec.c...
+compiling stm32f10x_crc.c...
+compiling stm32f10x_dac.c...
+compiling stm32f10x_dbgmcu.c...
+compiling stm32f10x_exti.c...
+compiling stm32f10x_flash.c...
+compiling stm32f10x_fsmc.c...
+compiling stm32f10x_i2c.c...
+compiling stm32f10x_iwdg.c...
+compiling stm32f10x_pwr.c...
+compiling stm32f10x_rtc.c...
+compiling stm32f10x_sdio.c...
+compiling stm32f10x_spi.c...
+compiling stm32f10x_wwdg.c...
+Target not created
+Build target 'SB3'
+compiling main.c...
+.\user\inc\SoftI2CMaster.h(13): error:  #5: cannot open source input file "LCD.h": No such file or directory
+compiling SoftI2CMaster.cpp...
+.\user\inc\SoftI2CMaster.h(13): error:  #5: cannot open source input file "LCD.h": No such file or directory
+Target not created
+Build target 'SB3'
+compiling main.c...
+.\user\inc\SoftI2CMaster.h(13): error:  #5: cannot open source input file "LCD.h": No such file or directory
+compiling SoftI2CMaster.cpp...
+.\user\inc\SoftI2CMaster.h(13): error:  #5: cannot open source input file "LCD.h": No such file or directory
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(430): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(428): warning:  #128-D: loop is not reachable
+user\src\main.c(250): warning:  #177-D: variable "j" was declared but never referenced
+user\src\main.c(251): warning:  #177-D: variable "acctemp" was declared but never referenced
+user\src\main.c(252): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(254): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(255): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
+compiling UART.c...
+compiling humidity.c...
+user\src\humidity.c(80): warning:  #111-D: statement is unreachable
+user\src\humidity.c(26): warning:  #177-D: variable "k" was declared but never referenced
+compiling LCD.c...
+compiling SoftI2CMaster.cpp...
+compiling misc.c...
+compiling stm32f10x_adc.c...
+compiling stm32f10x_dma.c...
+compiling stm32f10x_gpio.c...
+compiling stm32f10x_rcc.c...
+compiling stm32f10x_tim.c...
+compiling stm32f10x_usart.c...
+compiling stm32f10x_bkp.c...
+compiling stm32f10x_can.c...
+compiling stm32f10x_cec.c...
+compiling stm32f10x_crc.c...
+compiling stm32f10x_dac.c...
+compiling stm32f10x_dbgmcu.c...
+compiling stm32f10x_exti.c...
+compiling stm32f10x_flash.c...
+compiling stm32f10x_fsmc.c...
+compiling stm32f10x_i2c.c...
+compiling stm32f10x_iwdg.c...
+compiling stm32f10x_pwr.c...
+compiling stm32f10x_rtc.c...
+compiling stm32f10x_sdio.c...
+compiling stm32f10x_spi.c...
+compiling stm32f10x_wwdg.c...
+linking...
+SB3_firmware.axf: Error: L6200E: Symbol _sdaPin multiply defined (by softi2cmaster.o and main.o).
+SB3_firmware.axf: Error: L6200E: Symbol _sclPin multiply defined (by softi2cmaster.o and main.o).
+SB3_firmware.axf: Error: L6200E: Symbol _sdaBitMask multiply defined (by softi2cmaster.o and main.o).
+SB3_firmware.axf: Error: L6200E: Symbol _sclBitMask multiply defined (by softi2cmaster.o and main.o).
+SB3_firmware.axf: Error: L6200E: Symbol _sdaPortReg multiply defined (by softi2cmaster.o and main.o).
+SB3_firmware.axf: Error: L6200E: Symbol _sclPortReg multiply defined (by softi2cmaster.o and main.o).
+SB3_firmware.axf: Error: L6200E: Symbol _sdaDirReg multiply defined (by softi2cmaster.o and main.o).
+SB3_firmware.axf: Error: L6200E: Symbol _sclDirReg multiply defined (by softi2cmaster.o and main.o).
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(430): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(428): warning:  #128-D: loop is not reachable
+user\src\main.c(250): warning:  #177-D: variable "j" was declared but never referenced
+user\src\main.c(251): warning:  #177-D: variable "acctemp" was declared but never referenced
+user\src\main.c(252): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(254): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(255): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
+compiling SoftI2CMaster.cpp...
+linking...
+SB3_firmware.axf: Error: L6200E: Symbol _sclPin multiply defined (by softi2cmaster.o and main.o).
+SB3_firmware.axf: Error: L6200E: Symbol _sdaBitMask multiply defined (by softi2cmaster.o and main.o).
+SB3_firmware.axf: Error: L6200E: Symbol _sclBitMask multiply defined (by softi2cmaster.o and main.o).
+SB3_firmware.axf: Error: L6200E: Symbol _sdaPortReg multiply defined (by softi2cmaster.o and main.o).
+SB3_firmware.axf: Error: L6200E: Symbol _sclPortReg multiply defined (by softi2cmaster.o and main.o).
+SB3_firmware.axf: Error: L6200E: Symbol _sdaDirReg multiply defined (by softi2cmaster.o and main.o).
+SB3_firmware.axf: Error: L6200E: Symbol _sclDirReg multiply defined (by softi2cmaster.o and main.o).
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(430): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(428): warning:  #128-D: loop is not reachable
+user\src\main.c(250): warning:  #177-D: variable "j" was declared but never referenced
+user\src\main.c(251): warning:  #177-D: variable "acctemp" was declared but never referenced
+user\src\main.c(252): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(254): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(255): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
+compiling SoftI2CMaster.cpp...
+linking...
+SB3_firmware.axf: Error: L6218E: Undefined symbol i2c_init (referred from main.o).
+Target not created
+Build target 'SB3'
+linking...
+SB3_firmware.axf: Error: L6218E: Undefined symbol i2c_init (referred from main.o).
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(430): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(428): warning:  #128-D: loop is not reachable
+user\src\main.c(250): warning:  #177-D: variable "j" was declared but never referenced
+user\src\main.c(251): warning:  #177-D: variable "acctemp" was declared but never referenced
+user\src\main.c(252): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(254): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(255): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
+linking...
+Program Size: Code=4216 RO-data=336 RW-data=60 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 7 Warning(s).
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(430): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(428): warning:  #128-D: loop is not reachable
+user\src\main.c(250): warning:  #177-D: variable "j" was declared but never referenced
+user\src\main.c(251): warning:  #177-D: variable "acctemp" was declared but never referenced
+user\src\main.c(252): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(254): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(255): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
+linking...
+SB3_firmware.axf: Error: L6218E: Undefined symbol i2c_init (referred from main.o).
+Target not created
+Build target 'SB3'
+compiling SoftI2CMaster.c...
+user\src\SoftI2CMaster.c(63): error:  #268: declaration may not appear after executable statement in block
+user\src\SoftI2CMaster.c(71): error:  #268: declaration may not appear after executable statement in block
+user\src\SoftI2CMaster.c(229): error:  #254: type name is not allowed
+user\src\SoftI2CMaster.c(229): error:  #65: expected a ";"
+user\src\SoftI2CMaster.c(229): error:  #20: identifier "i" is undefined
+user\src\SoftI2CMaster.c(243): error:  #254: type name is not allowed
+user\src\SoftI2CMaster.c(243): error:  #65: expected a ";"
+user\src\SoftI2CMaster.c(243): error:  #20: identifier "i" is undefined
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(430): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(428): warning:  #128-D: loop is not reachable
+user\src\main.c(250): warning:  #177-D: variable "j" was declared but never referenced
+user\src\main.c(251): warning:  #177-D: variable "acctemp" was declared but never referenced
+user\src\main.c(252): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(254): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(255): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
+compiling SoftI2CMaster.c...
+user\src\SoftI2CMaster.c(63): error:  #268: declaration may not appear after executable statement in block
+user\src\SoftI2CMaster.c(71): error:  #268: declaration may not appear after executable statement in block
+user\src\SoftI2CMaster.c(229): error:  #254: type name is not allowed
+user\src\SoftI2CMaster.c(229): error:  #65: expected a ";"
+user\src\SoftI2CMaster.c(229): error:  #20: identifier "i" is undefined
+user\src\SoftI2CMaster.c(243): error:  #254: type name is not allowed
+user\src\SoftI2CMaster.c(243): error:  #65: expected a ";"
+user\src\SoftI2CMaster.c(243): error:  #20: identifier "i" is undefined
+Target not created
+Build target 'SB3'
+compiling SoftI2CMaster.c...
+user\src\SoftI2CMaster.c(71): error:  #268: declaration may not appear after executable statement in block
+user\src\SoftI2CMaster.c(229): error:  #254: type name is not allowed
+user\src\SoftI2CMaster.c(229): error:  #65: expected a ";"
+user\src\SoftI2CMaster.c(229): error:  #20: identifier "i" is undefined
+user\src\SoftI2CMaster.c(243): error:  #254: type name is not allowed
+user\src\SoftI2CMaster.c(243): error:  #65: expected a ";"
+user\src\SoftI2CMaster.c(243): error:  #20: identifier "i" is undefined
+Target not created
+Build target 'SB3'
+compiling SoftI2CMaster.c...
+user\src\SoftI2CMaster.c(228): error:  #254: type name is not allowed
+user\src\SoftI2CMaster.c(228): error:  #65: expected a ";"
+user\src\SoftI2CMaster.c(228): error:  #20: identifier "i" is undefined
+user\src\SoftI2CMaster.c(242): error:  #254: type name is not allowed
+user\src\SoftI2CMaster.c(242): error:  #65: expected a ";"
+user\src\SoftI2CMaster.c(242): error:  #20: identifier "i" is undefined
+Target not created
+Build target 'SB3'
+compiling SoftI2CMaster.c...
+user\src\SoftI2CMaster.c(243): error:  #254: type name is not allowed
+user\src\SoftI2CMaster.c(243): error:  #65: expected a ";"
+user\src\SoftI2CMaster.c(243): error:  #20: identifier "i" is undefined
+Target not created
+Build target 'SB3'
+compiling SoftI2CMaster.c...
+linking...
+SB3_firmware.axf: Error: L6200E: Symbol delayMicroseconds multiply defined (by softi2cmaster.o and lcd.o).
+SB3_firmware.axf: Error: L6200E: Symbol GPIO_Init_Mode multiply defined (by softi2cmaster.o and humidity.o).
+Target not created
+Build target 'SB3'
+compiling SoftI2CMaster.c...
+linking...
+Program Size: Code=4268 RO-data=336 RW-data=60 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(433): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(431): warning:  #128-D: loop is not reachable
+user\src\main.c(250): warning:  #177-D: variable "j" was declared but never referenced
+user\src\main.c(251): warning:  #177-D: variable "acctemp" was declared but never referenced
+user\src\main.c(252): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(254): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(255): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
+linking...
+Program Size: Code=4604 RO-data=336 RW-data=60 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 7 Warning(s).
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(433): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(431): warning:  #128-D: loop is not reachable
+user\src\main.c(250): warning:  #177-D: variable "j" was declared but never referenced
+user\src\main.c(251): warning:  #177-D: variable "acctemp" was declared but never referenced
+user\src\main.c(252): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(254): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(255): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
+linking...
+Program Size: Code=4604 RO-data=336 RW-data=60 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 7 Warning(s).
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(323): error:  #140: too many arguments in function call
+user\src\main.c(324): error:  #140: too many arguments in function call
+user\src\main.c(325): warning:  #223-D: function "available" declared implicitly
+user\src\main.c(448): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(446): warning:  #128-D: loop is not reachable
+user\src\main.c(250): warning:  #177-D: variable "j" was declared but never referenced
+user\src\main.c(251): warning:  #177-D: variable "acctemp" was declared but never referenced
+user\src\main.c(252): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(254): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(255): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(323): error:  #140: too many arguments in function call
+user\src\main.c(324): error:  #140: too many arguments in function call
+user\src\main.c(325): warning:  #223-D: function "available" declared implicitly
+user\src\main.c(448): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(446): warning:  #128-D: loop is not reachable
+user\src\main.c(250): warning:  #177-D: variable "j" was declared but never referenced
+user\src\main.c(251): warning:  #177-D: variable "acctemp" was declared but never referenced
+user\src\main.c(252): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(254): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(255): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(324): error:  #140: too many arguments in function call
+user\src\main.c(325): warning:  #223-D: function "available" declared implicitly
+user\src\main.c(448): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(446): warning:  #128-D: loop is not reachable
+user\src\main.c(250): warning:  #177-D: variable "j" was declared but never referenced
+user\src\main.c(251): warning:  #177-D: variable "acctemp" was declared but never referenced
+user\src\main.c(252): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(254): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(255): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(325): warning:  #223-D: function "available" declared implicitly
+user\src\main.c(448): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(446): warning:  #128-D: loop is not reachable
+user\src\main.c(250): warning:  #177-D: variable "j" was declared but never referenced
+user\src\main.c(251): warning:  #177-D: variable "acctemp" was declared but never referenced
+user\src\main.c(252): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(254): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(255): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
+linking...
+SB3_firmware.axf: Error: L6218E: Undefined symbol available (referred from main.o).
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(450): warning:  #177-D: variable "i" was declared but never referenced
+user\src\main.c(448): warning:  #128-D: loop is not reachable
+user\src\main.c(250): warning:  #177-D: variable "j" was declared but never referenced
+user\src\main.c(251): warning:  #177-D: variable "acctemp" was declared but never referenced
+user\src\main.c(252): warning:  #550-D: variable "yumbyte" was set but never used
+user\src\main.c(254): warning:  #177-D: variable "received_data" was declared but never referenced
+user\src\main.c(255): warning:  #177-D: variable "REG_ADDRESS" was declared but never referenced
+linking...
+Program Size: Code=4824 RO-data=336 RW-data=60 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 7 Warning(s).
+>>>>>>> c17d3388665c3f900e8fc0554862ad1efa8e2e39

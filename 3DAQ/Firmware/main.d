@@ -31,6 +31,7 @@ main.o: .\lib\stm32f10x_stdperiph_driver\inc\misc.h
 main.o: .\user\inc\LEDs.h
 main.o: .\user\inc\UART.h
 main.o: .\user\inc\ADC.h
-main.o: user\src\LCD.h
+main.o: .\user\inc\LCD.h
 main.o: C:\Keil\ARM\ARMCC\bin\..\include\inttypes.h
 main.o: .\user\inc\humidity.h
+main.o: .\user\inc\SoftI2CMaster.h

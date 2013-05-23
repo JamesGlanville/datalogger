@@ -30,5 +30,5 @@ humidity.o: .\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_tim.h
 humidity.o: .\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_usart.h
 humidity.o: .\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_wwdg.h
 humidity.o: .\lib\stm32f10x_stdperiph_driver\inc\misc.h
-humidity.o: user\src\LCD.h
+humidity.o: .\user\inc\LCD.h
 humidity.o: C:\Keil\ARM\ARMCC\bin\..\include\inttypes.h

@@ -32,4 +32,4 @@ lcd.o: .\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_usart.h
 lcd.o: .\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_wwdg.h
 lcd.o: .\lib\stm32f10x_stdperiph_driver\inc\misc.h
 lcd.o: .\user\inc\LEDs.h
-lcd.o: user\src\LCD.h
+lcd.o: .\user\inc\LCD.h

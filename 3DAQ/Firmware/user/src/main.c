@@ -7,6 +7,7 @@
 #include "stm32f10x_rcc.h"
 #include "LCD.h"
 #include "humidity.h"
+#include "SoftI2CMaster.h"
 
 #define EEPROM_ADDR 0xA1   
 #define ACCEL_ADDR 0x4C   
@@ -253,6 +254,8 @@ int main(void)
 	uint8_t received_data[2];
 	unsigned char REG_ADDRESS[3];
 	int lcdadc;
+	int arse;
+
 
 	init_GPIO_pins();
 	
@@ -290,7 +293,7 @@ int main(void)
 	display();
 	noCursor();
 	noBlink();
-	GPIO_SetBits(GPIOC, GPIO_Pin_2);
+	//GPIO_SetBits(GPIOC, GPIO_Pin_2);
 
 	write('H');
 	write('E');
@@ -307,6 +310,26 @@ delayMicroseconds(200000);
 	//Initialise ADC
 	ADC_init();
 		LEDbyte=1;
+
+	i2c_init();
+	beginTransmission(0x50);
+	sendi2c(0);
+	sendi2c(0);
+	sendi2c(123);
+	endTransmission();
+	delayMicroseconds(10000);
+	
+	beginTransmission(0x50);
+	sendi2c(0);
+	sendi2c(0);
+	endTransmission();
+	requestFrom(0x50);
+	//if (available())
+	delayMicroseconds(10000);	
+		arse=receive();
+	
+	arse=arse;
+
 
 	while(1){
 		if(LEDbyte==512){LEDbyte=1;}
