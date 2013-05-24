@@ -68,7 +68,7 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
   wxBoxSizer *connectsizer = new wxBoxSizer(wxVERTICAL);
   connectsizer->Add(new wxStaticText(this, wxID_ANY, wxT("Data Port")),
 		    0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
-  spin_port = new wxSpinCtrl(this, PORT_SELECT, wxString(wxT("0")));
+  spin_port = new wxSpinCtrl(this, PORT_SELECT, wxString(wxT("1")));
   connectsizer->Add(spin_port, 0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
   connectsizer->Add(new wxButton(this, PORT_CONNECT, wxT("Connect")),
 		 0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
@@ -127,7 +127,7 @@ void MyFrame::OnAbout(wxCommandEvent& event)
 
 void MyFrame::OnPortSelect(wxSpinEvent& event)
 {
-  com_port_no = event.GetPosition();
+  com_port_no = event.GetPosition()-1;
 }
 
 void MyFrame::OnPortConnect(wxCommandEvent& event)

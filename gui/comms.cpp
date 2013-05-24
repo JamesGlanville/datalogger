@@ -22,7 +22,7 @@ void RS232_Init(int port_no)
 	int comportopen = 0;
   comportopen = RS232_OpenComport(port_no, 115200);
 
-  if (comportopen = 1)
+  if (comportopen == 1)
   {
 	wxLogMessage(wxT("Comport opening has failed, returned 1"));
   }

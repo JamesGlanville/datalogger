@@ -1,22 +1,65 @@
-﻿Build started 20/05/2013 19:44:38.
+﻿Build started 24/05/2013 18:37:51.
      1>Project "C:\Users\james_000\Github\datalogger\gui\datalogger.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\wxWidgets-2.8.12\lib\vc_lib\msw" /I"C:\wxWidgets-2.8.12\include" /I. /I"C:\wxWidgets-2.8.12\samples" /Zi /nologo /W4 /WX- /O2 /Oy- /D WIN32 /D __WXMSW__ /D NDEBUG /D _WINDOWS /D NOPCH /D _VC80_UPGRADE=0x0600 /GF /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo".\vc_msw\datalogger\\" /Fd"vc_msw\datalogger.pdb" /Gd /TP /analyze- /errorReport:prompt  /EHsc   /EHsc datalogger.cpp
-         datalogger.cpp
-     1>datalogger.cpp(63): warning C4100: 'event' : unreferenced formal parameter
-     1>datalogger.cpp(68): warning C4100: 'event' : unreferenced formal parameter
-     1>datalogger.cpp(74): warning C4100: 'event' : unreferenced formal parameter
-     1>datalogger.cpp(79): warning C4100: 'event' : unreferenced formal parameter
-     1>datalogger.cpp(84): warning C4100: 'event' : unreferenced formal parameter
-     1>datalogger.cpp(89): warning C4100: 'event' : unreferenced formal parameter
-       ResourceCompile:
-         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\rc.exe /D __WXMSW__ /D NDEBUG /D _WINDOWS /D NOPCH /D _VC80_UPGRADE=0x0600 /l"0x0409" /I"\wxWidgets-2.8.12\samples" /I"C:\wxWidgets-2.8.12\lib\vc_lib\msw" /I"C:\wxWidgets-2.8.12\include" /I. /I"C:\wxWidgets-2.8.12\samples" /nologo /fo".\vc_msw\datalogger\sample.res" sample.rc 
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\wxWidgets-2.8.12\lib\vc_lib\msw" /I"C:\wxWidgets-2.8.12\include" /I. /I"C:\wxWidgets-2.8.12\samples" /Zi /nologo /W4 /WX- /O2 /Oy- /D WIN32 /D __WXMSW__ /D NDEBUG /D _WINDOWS /D NOPCH /D _VC80_UPGRADE=0x0600 /GF /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo".\vc_msw\datalogger\\" /Fd"vc_msw\datalogger.pdb" /Gd /TC /analyze- /errorReport:prompt  /EHsc rs232.c
+         rs232.c
+     1>rs232.c(369): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>rs232.c(371): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>rs232.c(373): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>rs232.c(375): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>rs232.c(377): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>rs232.c(379): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>rs232.c(381): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>rs232.c(383): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>rs232.c(385): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>rs232.c(387): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>rs232.c(389): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>rs232.c(391): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>rs232.c(393): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>rs232.c(395): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>rs232.c(397): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\wxWidgets-2.8.12\lib\vc_lib\msw" /I"C:\wxWidgets-2.8.12\include" /I. /I"C:\wxWidgets-2.8.12\samples" /Zi /nologo /W4 /WX- /O2 /Oy- /D WIN32 /D __WXMSW__ /D NDEBUG /D _WINDOWS /D NOPCH /D _VC80_UPGRADE=0x0600 /GF /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo".\vc_msw\datalogger\\" /Fd"vc_msw\datalogger.pdb" /Gd /TP /analyze- /errorReport:prompt  /EHsc rs232.cpp
+         rs232.cpp
+     1>rs232.cpp(369): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+     1>rs232.cpp(371): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+     1>rs232.cpp(373): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+     1>rs232.cpp(375): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+     1>rs232.cpp(377): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+     1>rs232.cpp(379): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+     1>rs232.cpp(381): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+     1>rs232.cpp(383): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+     1>rs232.cpp(385): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+     1>rs232.cpp(387): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+     1>rs232.cpp(389): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+     1>rs232.cpp(391): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+     1>rs232.cpp(393): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+     1>rs232.cpp(395): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
+     1>rs232.cpp(397): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\string.h(110) : see declaration of 'strcpy'
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"vc_msw\datalogger.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\wxWidgets-2.8.12\lib\vc_lib" wxmsw28_core.lib wxbase28.lib wxtiff.lib wxjpeg.lib wxpng.lib wxzlib.lib wxregex.lib wxexpat.lib winmm.lib comctl32.lib rpcrt4.lib wsock32.lib odbc32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\vc_msw\datalogger.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\vc_msw\datalogger.lib" /MACHINE:X86 /SAFESEH .\vc_msw\datalogger\sample.res
          .\vc_msw\datalogger\datalogger.obj
-         datalogger.vcxproj -> C:\Users\james_000\Github\datalogger\gui\.\vc_msw\datalogger.exe
-     1>Done Building Project "C:\Users\james_000\Github\datalogger\gui\datalogger.vcxproj" (Build target(s)).
+         .\vc_msw\datalogger\rs232.obj
+         .\vc_msw\datalogger\rs232.obj
+     1>.\vc_msw\datalogger\rs232.obj : warning LNK4042: object specified more than once; extras ignored
+     1>datalogger.obj : error LNK2019: unresolved external symbol "void __cdecl RS232_Init(int)" (?RS232_Init@@YAXH@Z) referenced in function "public: void __thiscall MyFrame::OnPortConnect(class wxCommandEvent &)" (?OnPortConnect@MyFrame@@QAEXAAVwxCommandEvent@@@Z)
+     1>vc_msw\datalogger.exe : fatal error LNK1120: 1 unresolved externals
+     1>Done Building Project "C:\Users\james_000\Github\datalogger\gui\datalogger.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:02.21
+Time Elapsed 00:00:00.92
