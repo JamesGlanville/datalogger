@@ -145,7 +145,7 @@ void MyFrame::OnPortConnect(wxCommandEvent& event)
   
   RS232_Init(com_port_no);
 
-  if (!com_port_open)
+  if (com_port_open)
     {
       wxLogMessage(wxT("Error: com port was unable to open"));
     }

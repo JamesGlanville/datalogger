@@ -19,14 +19,19 @@ void RS232_Init(int port_no)
   // input queue size, output queue size
   //  OpenComConfig(port_no, "", 115200, 0, 8, 1, 1024, 16);
   
-  int comportopen = RS232_OpenComport(port_no, 115200);
+	int comportopen = 0;
+  comportopen = RS232_OpenComport(port_no, 115200);
 
-  if (comportopen != 1)
-    {
+  if (comportopen = 1)
+  {
+	wxLogMessage(wxT("Comport opening has failed, returned 1"));
+  }
+  else
+  {
       // remember COM port number and state
       com_port_no = port_no;
       com_port_open = true;
-    }
+  }
 }
 
 // Close the open COM port
