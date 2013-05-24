@@ -1,7 +1,8 @@
 #include "humidity.h"
 #include "LCD.h"
 
-#define SCALINGFACTOR 0.03 //I just made this number up.
+#define SCALINGFACTOR 15 //I just made this number up.
+#define OFFSET -42000;
 
 float lookup[17][12]={
 //  LESS     5,   10,   15,   20,   25,   30,   35,   40,   45,   50,  MORE,
@@ -31,7 +32,7 @@ int readhumidity(int temperature)
 	float propright;
 	int leftrh;
 	int rightrh;
-	scaledreading = SCALINGFACTOR * readcapacitance();
+	scaledreading = SCALINGFACTOR * readcapacitance() +OFFSET;
 	
 	if (temperature <  5){temperature=5; }
 	if (temperature > 50){temperature=50;}

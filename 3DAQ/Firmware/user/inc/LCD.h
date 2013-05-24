@@ -68,5 +68,5 @@ void command(uint8_t value);
 void setCursor(uint8_t col, uint8_t row);
 int write(uint8_t value);
 void send(uint8_t value, uint8_t mode);
-
+//int defineCharacter(int ascii, int *data);
 #endif

@@ -11,6 +11,8 @@
 #include "webi2c.h"
 #include "timer.h"
 
+enum {waiting,logging,uploading,erasing,streaming} currentstate;
+
 //Hardware:
 
 //LED3 is connected to PC9 (active high)
@@ -54,6 +56,7 @@ volatile uint8_t new_data;
 
 void check_and_process_received_command(void);
 
+
 //------------------------------------------------------------------------------
 
 //Main function (execution starts here after startup file)
@@ -61,6 +64,7 @@ int main(void)
 {
 	int i;
 	uint8_t buffer[100];
+	int temperature;
 
 	init_GPIO_pins();
 	
@@ -71,15 +75,17 @@ int main(void)
 		LED_on();
 	}
 	
-//GPIO_Init_Mode(GPIOA,GPIO_Pin_0,GPIO_Mode_IN_FLOATING); //BUTTON
-
+GPIO_Init_Mode(GPIOA,GPIO_Pin_0,GPIO_Mode_IN_FLOATING); //BUTTON
+ while(!GPIO_ReadInputDataBit(GPIOA,GPIO_Pin_0));
+ 
+// }
 	delay_init();
 	LED_off();
-		
+	currentstate=waiting;
 	LCDINIT();
 	home();
 	clear();
-	display();
+	display(); //Surely some of these can be commented out.
 	noCursor();
 	noBlink();
 
@@ -112,7 +118,12 @@ I2C_EE_BufferRead(buffer, 0, 100);
 		setLEDS();
 		
 	setCursor(0,1);
-	writenumber( getTemperature());
+	temperature=getTemperature();
+	writenumber( temperature/100);
+	write('.');
+	writenumber((temperature/10)%10);
+		write(0xDF);
+	write('C');
 	setCursor(0,0);
 	writenumber(readhumidity(24)); //Needs real temperature
 		delay_ms(50);
@@ -120,7 +131,25 @@ I2C_EE_BufferRead(buffer, 0, 100);
 		check_and_process_received_command();
 		
 	}
-	
+	while(1)
+	{
+		switch (currentstate){
+			
+		case waiting:
+			if (GPIO_ReadInputDataBit(GPIOA,GPIO_Pin_0)) //Polling is probably ok here, since the loop will be very very fast.
+			{
+				currentstate=logging;
+				I2C_EE_StartLog();
+			}
+			break;
+
+		case logging:
+			break;
+//			logging,uploading,erasing,streaming
+		}
+		
+		
+	}
 }
 
 //------------------------------------------------------------------------------

@@ -28,6 +28,7 @@ uint8_t _displaycontrol;
 uint8_t _displaymode;
 uint8_t _initialized;
 uint8_t _numlines,_currline;
+//int custom_0[] = { 0x15, 0x1a, 0x15, 0x1a, 0x15, 0x10, 0x10, 0x10}; // checked flag
 
 void writenumber(int number) //5 DIGITS MAX
 {
@@ -46,6 +47,16 @@ void writenumber(int number) //5 DIGITS MAX
 		
 		write('0'+(number));
 }
+/*
+int defineCharacter(int ascii, int *data) {
+    int baseAddress = (ascii * 8) + 64;  
+    // baseAddress = 64 | (ascii << 3);
+    lcd.command(baseAddress);
+    for (int i = 0; i < 8; i++)
+        lcd.write(data[i]);
+    lcd.command(128);
+    return ascii;
+}*/
 
 void delayMicroseconds(int delay) //This does not delay for microseconds at all, it is a hacky fudge. I should fix this.
 {
@@ -74,8 +85,8 @@ void begin(uint8_t cols, uint8_t lines, uint8_t dotsize) {
   // before sending commands. Arduino can turn on way befer 4.5V so we'll wait 50
   delayMicroseconds(50000); 
   // Now we pull both RS and R/W low to begin commands
+	GPIO_ResetBits (GPIOC,GPIO_Pin_6);
 	GPIO_ResetBits (GPIOA,GPIO_Pin_1);
-	GPIO_ResetBits (GPIOA,GPIO_Pin_0);
 
     // this is according to the hitachi HD44780 datasheet
     // page 45 figure 23
@@ -215,20 +226,20 @@ int write(uint8_t value) {
 // write either command or data, with automatic 4/8-bit selection
 void send(uint8_t value, uint8_t mode) {
 	if (mode==1) {
-		GPIO_SetBits (GPIOA,GPIO_Pin_1);}
+		GPIO_SetBits (GPIOC,GPIO_Pin_6);}
 	else {
-		GPIO_ResetBits (GPIOA,GPIO_Pin_1);}
+		GPIO_ResetBits (GPIOC,GPIO_Pin_6);}
   
     write4bits(value>>4);
     write4bits(value);
 }
 
 void pulseEnable(void) {
-	GPIO_ResetBits (GPIOA,GPIO_Pin_0);
+	GPIO_ResetBits (GPIOA,GPIO_Pin_1);
 	delayMicroseconds(10);    
-	GPIO_SetBits (GPIOA,GPIO_Pin_0);
+	GPIO_SetBits (GPIOA,GPIO_Pin_1);
 	delayMicroseconds(10);    // enable pulse must be >450ns
-	GPIO_ResetBits (GPIOA,GPIO_Pin_0);
+	GPIO_ResetBits (GPIOA,GPIO_Pin_1);
 	delayMicroseconds(100);   // commands need > 37us to settle
 }
 

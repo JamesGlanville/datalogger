@@ -3,39 +3,492 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
-C:\Users\james_000\Github\datalogger\3DAQ\Firmware\SB3_firmware.uvproj
-Project File Date:  05/23/2013
+C:\Users\datalogger\Documents\GitHub\datalogger\3DAQ\Firmware\SB3_firmware.uvproj
+Project File Date:  05/24/2013
 
 <h2>Output:</h2>
 Build target 'SB3'
+assembling startup_stm32f10x_md_vl.s...
+compiling core_cm3.c...
+compiling system_stm32f10x.c...
 compiling ADC.c...
-.\user\inc\ADC.h(4): warning:  #1-D: last line of file ends without a newline
-user\src\ADC.c(22): warning:  #940-D: missing return statement at end of non-void function "getTemperature"
+compiling LEDs.c...
 compiling main.c...
-.\user\inc\ADC.h(4): warning:  #1-D: last line of file ends without a newline
-linking...
-Program Size: Code=9024 RO-data=336 RW-data=992 ZI-data=1632  
-"SB3_firmware.axf" - 0 Error(s), 3 Warning(s).
+user\src\main.c(131): error:  #18: expected a ")"
+user\src\main.c(140): warning:  #12-D: parsing restarts here after previous syntax error
+user\src\main.c(140): error:  #127: expected a statement
+user\src\main.c(125): warning:  #128-D: loop is not reachable
+compiling UART.c...
+compiling humidity.c...
+compiling LCD.c...
+compiling webi2c.c...
+user\src\webi2c.c(136): warning:  #550-D: variable "XYZ" was set but never used
+compiling timer.c...
+compiling misc.c...
+compiling stm32f10x_adc.c...
+compiling stm32f10x_dma.c...
+compiling stm32f10x_gpio.c...
+compiling stm32f10x_rcc.c...
+compiling stm32f10x_tim.c...
+compiling stm32f10x_usart.c...
+compiling stm32f10x_bkp.c...
+compiling stm32f10x_can.c...
+compiling stm32f10x_cec.c...
+compiling stm32f10x_crc.c...
+compiling stm32f10x_dac.c...
+compiling stm32f10x_dbgmcu.c...
+compiling stm32f10x_exti.c...
+compiling stm32f10x_flash.c...
+compiling stm32f10x_fsmc.c...
+compiling stm32f10x_i2c.c...
+compiling stm32f10x_iwdg.c...
+compiling stm32f10x_pwr.c...
+compiling stm32f10x_rtc.c...
+compiling stm32f10x_sdio.c...
+compiling stm32f10x_spi.c...
+compiling stm32f10x_wwdg.c...
+Target not created
 Build target 'SB3'
-compiling ADC.c...
-user\src\ADC.c(22): warning:  #940-D: missing return statement at end of non-void function "getTemperature"
 compiling main.c...
+user\src\main.c(131): error:  #18: expected a ")"
+user\src\main.c(140): warning:  #12-D: parsing restarts here after previous syntax error
+user\src\main.c(140): error:  #127: expected a statement
+user\src\main.c(125): warning:  #128-D: loop is not reachable
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(139): warning:  #174-D: expression has no effect
+user\src\main.c(139): warning:  #174-D: expression has no effect
+user\src\main.c(139): warning:  #174-D: expression has no effect
+user\src\main.c(139): warning:  #174-D: expression has no effect
+user\src\main.c(140): error:  #65: expected a ";"
+user\src\main.c(125): warning:  #128-D: loop is not reachable
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(140): warning:  #127-D: expected a statement
+user\src\main.c(125): warning:  #128-D: loop is not reachable
 linking...
-Program Size: Code=9024 RO-data=336 RW-data=992 ZI-data=1632  
+Program Size: Code=9008 RO-data=336 RW-data=996 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 2 Warning(s).
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(125): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=9008 RO-data=336 RW-data=996 ZI-data=1636  
 "SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
 Build target 'SB3'
-compiling ADC.c...
-user\src\ADC.c(22): warning:  #117-D: non-void function "getTemperature" should return a value
+compiling main.c...
+user\src\main.c(131): error:  #18: expected a ")"
+user\src\main.c(140): warning:  #12-D: parsing restarts here after previous syntax error
+user\src\main.c(140): error:  #127: expected a statement
+user\src\main.c(125): warning:  #128-D: loop is not reachable
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(125): warning:  #128-D: loop is not reachable
 linking...
-Program Size: Code=9024 RO-data=336 RW-data=992 ZI-data=1632  
+Program Size: Code=9008 RO-data=336 RW-data=996 ZI-data=1636  
 "SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
 Build target 'SB3'
-compiling ADC.c...
 linking...
-Program Size: Code=9032 RO-data=336 RW-data=992 ZI-data=1632  
+Program Size: Code=9008 RO-data=336 RW-data=996 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling LCD.c...
+linking...
+Program Size: Code=9020 RO-data=336 RW-data=996 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling LEDs.c...
+linking...
+Program Size: Code=9020 RO-data=336 RW-data=996 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling LCD.c...
+linking...
+Program Size: Code=9016 RO-data=336 RW-data=996 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(125): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=9044 RO-data=336 RW-data=996 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(131): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=9068 RO-data=336 RW-data=996 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling LEDs.c...
+compiling main.c...
+user\src\main.c(131): warning:  #128-D: loop is not reachable
+compiling LCD.c...
+linking...
+Program Size: Code=9040 RO-data=336 RW-data=996 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(65): warning:  #177-D: variable "buffer" was declared but never referenced
+user\src\main.c(84): warning:  #1295-D: Deprecated declaration delay_init - give arg types
+user\src\main.c(84): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(84): error:  #147: declaration is incompatible with "void delay_init(void)" (declared at line 8 of ".\user\inc\timer.h")
+user\src\main.c(85): warning:  #1295-D: Deprecated declaration LED_off - give arg types
+user\src\main.c(85): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(85): error:  #147: declaration is incompatible with "void LED_off(void)" (declared at line 6 of ".\user\inc\LEDs.h")
+user\src\main.c(86): error:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(86): error:  #147: declaration is incompatible with "enum <unnamed> currentstate" (declared at line 14)
+user\src\main.c(87): warning:  #1295-D: Deprecated declaration LCDINIT - give arg types
+user\src\main.c(87): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(87): error:  #147: declaration is incompatible with "void LCDINIT(void)" (declared at line 48 of ".\user\inc\LCD.h")
+user\src\main.c(88): warning:  #1295-D: Deprecated declaration home - give arg types
+user\src\main.c(88): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(88): error:  #147: declaration is incompatible with "void home(void)" (declared at line 54 of ".\user\inc\LCD.h")
+user\src\main.c(89): warning:  #1295-D: Deprecated declaration clear - give arg types
+user\src\main.c(89): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(89): error:  #147: declaration is incompatible with "void clear(void)" (declared at line 53 of ".\user\inc\LCD.h")
+user\src\main.c(90): warning:  #1295-D: Deprecated declaration display - give arg types
+user\src\main.c(90): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(90): error:  #147: declaration is incompatible with "void display(void)" (declared at line 56 of ".\user\inc\LCD.h")
+user\src\main.c(91): warning:  #1295-D: Deprecated declaration noCursor - give arg types
+user\src\main.c(91): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(91): error:  #147: declaration is incompatible with "void noCursor(void)" (declared at line 59 of ".\user\inc\LCD.h")
+user\src\main.c(92): warning:  #1295-D: Deprecated declaration noBlink - give arg types
+user\src\main.c(92): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(92): error:  #147: declaration is incompatible with "void noBlink(void)" (declared at line 57 of ".\user\inc\LCD.h")
+user\src\main.c(94): error:  #79: expected a type specifier
+user\src\main.c(94): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(95): error:  #79: expected a type specifier
+user\src\main.c(95): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(96): error:  #79: expected a type specifier
+user\src\main.c(96): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(97): error:  #79: expected a type specifier
+user\src\main.c(97): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(98): error:  #79: expected a type specifier
+user\src\main.c(98): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(100): error:  #79: expected a type specifier
+user\src\main.c(100): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(100): error:  #147: declaration is incompatible with "void delay_ms(uint16_t)" (declared at line 9 of ".\user\inc\timer.h")
+user\src\main.c(101): warning:  #1295-D: Deprecated declaration clear - give arg types
+user\src\main.c(101): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(104): warning:  #1295-D: Deprecated declaration UART_init - give arg types
+user\src\main.c(104): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(104): error:  #147: declaration is incompatible with "void UART_init(void)" (declared at line 2 of ".\user\inc\UART.h")
+user\src\main.c(106): warning:  #1295-D: Deprecated declaration humidity_init - give arg types
+user\src\main.c(106): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(106): error:  #147: declaration is incompatible with "void humidity_init(void)" (declared at line 8 of ".\user\inc\humidity.h")
+user\src\main.c(108): warning:  #1295-D: Deprecated declaration ADC_init - give arg types
+user\src\main.c(108): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(108): error:  #147: declaration is incompatible with "void ADC_init(void)" (declared at line 2 of ".\user\inc\ADC.h")
+user\src\main.c(109): error:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(109): error:  #147: declaration is incompatible with "volatile unsigned int LEDbyte" (declared at line 44)
+user\src\main.c(110): warning:  #1295-D: Deprecated declaration I2C_EEPROM - give arg types
+user\src\main.c(110): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(110): error:  #147: declaration is incompatible with "void I2C_EEPROM(void)" (declared at line 17 of ".\user\inc\webi2c.h")
+user\src\main.c(112): warning:  #1295-D: Deprecated declaration I2C_ACCEL_INIT - give arg types
+user\src\main.c(112): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(112): error:  #147: declaration is incompatible with "void I2C_ACCEL_INIT(void)" (declared at line 18 of ".\user\inc\webi2c.h")
+user\src\main.c(115): error:  #40: expected an identifier
+user\src\main.c(115): error:  #40: expected an identifier
+user\src\main.c(115): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(115): error:  #92: identifier-list parameters may only be used in a function definition
+user\src\main.c(115): error:  #147: declaration is incompatible with "void I2C_EE_BufferRead(uint8_t *, uint16_t, uint16_t)" (declared at line 14 of ".\user\inc\webi2c.h")
+user\src\main.c(117): error:  #169: expected a declaration
+user\src\main.c(180): warning:  #12-D: parsing restarts here after previous syntax error
+user\src\main.c(181): error:  #169: expected a declaration
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(65): warning:  #177-D: variable "buffer" was declared but never referenced
+user\src\main.c(84): warning:  #1295-D: Deprecated declaration delay_init - give arg types
+user\src\main.c(84): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(84): error:  #147: declaration is incompatible with "void delay_init(void)" (declared at line 8 of ".\user\inc\timer.h")
+user\src\main.c(85): warning:  #1295-D: Deprecated declaration LED_off - give arg types
+user\src\main.c(85): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(85): error:  #147: declaration is incompatible with "void LED_off(void)" (declared at line 6 of ".\user\inc\LEDs.h")
+user\src\main.c(86): error:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(86): error:  #147: declaration is incompatible with "enum <unnamed> currentstate" (declared at line 14)
+user\src\main.c(87): warning:  #1295-D: Deprecated declaration LCDINIT - give arg types
+user\src\main.c(87): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(87): error:  #147: declaration is incompatible with "void LCDINIT(void)" (declared at line 48 of ".\user\inc\LCD.h")
+user\src\main.c(88): warning:  #1295-D: Deprecated declaration home - give arg types
+user\src\main.c(88): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(88): error:  #147: declaration is incompatible with "void home(void)" (declared at line 54 of ".\user\inc\LCD.h")
+user\src\main.c(89): warning:  #1295-D: Deprecated declaration clear - give arg types
+user\src\main.c(89): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(89): error:  #147: declaration is incompatible with "void clear(void)" (declared at line 53 of ".\user\inc\LCD.h")
+user\src\main.c(90): warning:  #1295-D: Deprecated declaration display - give arg types
+user\src\main.c(90): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(90): error:  #147: declaration is incompatible with "void display(void)" (declared at line 56 of ".\user\inc\LCD.h")
+user\src\main.c(91): warning:  #1295-D: Deprecated declaration noCursor - give arg types
+user\src\main.c(91): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(91): error:  #147: declaration is incompatible with "void noCursor(void)" (declared at line 59 of ".\user\inc\LCD.h")
+user\src\main.c(92): warning:  #1295-D: Deprecated declaration noBlink - give arg types
+user\src\main.c(92): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(92): error:  #147: declaration is incompatible with "void noBlink(void)" (declared at line 57 of ".\user\inc\LCD.h")
+user\src\main.c(94): error:  #79: expected a type specifier
+user\src\main.c(94): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(95): error:  #79: expected a type specifier
+user\src\main.c(95): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(96): error:  #79: expected a type specifier
+user\src\main.c(96): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(97): error:  #79: expected a type specifier
+user\src\main.c(97): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(98): error:  #79: expected a type specifier
+user\src\main.c(98): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(100): error:  #79: expected a type specifier
+user\src\main.c(100): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(100): error:  #147: declaration is incompatible with "void delay_ms(uint16_t)" (declared at line 9 of ".\user\inc\timer.h")
+user\src\main.c(101): warning:  #1295-D: Deprecated declaration clear - give arg types
+user\src\main.c(101): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(104): warning:  #1295-D: Deprecated declaration UART_init - give arg types
+user\src\main.c(104): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(104): error:  #147: declaration is incompatible with "void UART_init(void)" (declared at line 2 of ".\user\inc\UART.h")
+user\src\main.c(106): warning:  #1295-D: Deprecated declaration humidity_init - give arg types
+user\src\main.c(106): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(106): error:  #147: declaration is incompatible with "void humidity_init(void)" (declared at line 8 of ".\user\inc\humidity.h")
+user\src\main.c(108): warning:  #1295-D: Deprecated declaration ADC_init - give arg types
+user\src\main.c(108): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(108): error:  #147: declaration is incompatible with "void ADC_init(void)" (declared at line 2 of ".\user\inc\ADC.h")
+user\src\main.c(109): error:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(109): error:  #147: declaration is incompatible with "volatile unsigned int LEDbyte" (declared at line 44)
+user\src\main.c(110): warning:  #1295-D: Deprecated declaration I2C_EEPROM - give arg types
+user\src\main.c(110): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(110): error:  #147: declaration is incompatible with "void I2C_EEPROM(void)" (declared at line 17 of ".\user\inc\webi2c.h")
+user\src\main.c(112): warning:  #1295-D: Deprecated declaration I2C_ACCEL_INIT - give arg types
+user\src\main.c(112): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(112): error:  #147: declaration is incompatible with "void I2C_ACCEL_INIT(void)" (declared at line 18 of ".\user\inc\webi2c.h")
+user\src\main.c(115): error:  #40: expected an identifier
+user\src\main.c(115): error:  #40: expected an identifier
+user\src\main.c(115): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(115): error:  #92: identifier-list parameters may only be used in a function definition
+user\src\main.c(115): error:  #147: declaration is incompatible with "void I2C_EE_BufferRead(uint8_t *, uint16_t, uint16_t)" (declared at line 14 of ".\user\inc\webi2c.h")
+user\src\main.c(117): error:  #169: expected a declaration
+user\src\main.c(180): warning:  #12-D: parsing restarts here after previous syntax error
+user\src\main.c(181): error:  #169: expected a declaration
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(65): warning:  #177-D: variable "buffer" was declared but never referenced
+user\src\main.c(84): warning:  #1295-D: Deprecated declaration delay_init - give arg types
+user\src\main.c(84): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(84): error:  #147: declaration is incompatible with "void delay_init(void)" (declared at line 8 of ".\user\inc\timer.h")
+user\src\main.c(85): warning:  #1295-D: Deprecated declaration LED_off - give arg types
+user\src\main.c(85): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(85): error:  #147: declaration is incompatible with "void LED_off(void)" (declared at line 6 of ".\user\inc\LEDs.h")
+user\src\main.c(86): error:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(86): error:  #147: declaration is incompatible with "enum <unnamed> currentstate" (declared at line 14)
+user\src\main.c(87): warning:  #1295-D: Deprecated declaration LCDINIT - give arg types
+user\src\main.c(87): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(87): error:  #147: declaration is incompatible with "void LCDINIT(void)" (declared at line 48 of ".\user\inc\LCD.h")
+user\src\main.c(88): warning:  #1295-D: Deprecated declaration home - give arg types
+user\src\main.c(88): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(88): error:  #147: declaration is incompatible with "void home(void)" (declared at line 54 of ".\user\inc\LCD.h")
+user\src\main.c(89): warning:  #1295-D: Deprecated declaration clear - give arg types
+user\src\main.c(89): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(89): error:  #147: declaration is incompatible with "void clear(void)" (declared at line 53 of ".\user\inc\LCD.h")
+user\src\main.c(90): warning:  #1295-D: Deprecated declaration display - give arg types
+user\src\main.c(90): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(90): error:  #147: declaration is incompatible with "void display(void)" (declared at line 56 of ".\user\inc\LCD.h")
+user\src\main.c(91): warning:  #1295-D: Deprecated declaration noCursor - give arg types
+user\src\main.c(91): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(91): error:  #147: declaration is incompatible with "void noCursor(void)" (declared at line 59 of ".\user\inc\LCD.h")
+user\src\main.c(92): warning:  #1295-D: Deprecated declaration noBlink - give arg types
+user\src\main.c(92): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(92): error:  #147: declaration is incompatible with "void noBlink(void)" (declared at line 57 of ".\user\inc\LCD.h")
+user\src\main.c(94): error:  #79: expected a type specifier
+user\src\main.c(94): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(95): error:  #79: expected a type specifier
+user\src\main.c(95): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(96): error:  #79: expected a type specifier
+user\src\main.c(96): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(97): error:  #79: expected a type specifier
+user\src\main.c(97): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(98): error:  #79: expected a type specifier
+user\src\main.c(98): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(100): error:  #79: expected a type specifier
+user\src\main.c(100): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(100): error:  #147: declaration is incompatible with "void delay_ms(uint16_t)" (declared at line 9 of ".\user\inc\timer.h")
+user\src\main.c(101): warning:  #1295-D: Deprecated declaration clear - give arg types
+user\src\main.c(101): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(104): warning:  #1295-D: Deprecated declaration UART_init - give arg types
+user\src\main.c(104): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(104): error:  #147: declaration is incompatible with "void UART_init(void)" (declared at line 2 of ".\user\inc\UART.h")
+user\src\main.c(106): warning:  #1295-D: Deprecated declaration humidity_init - give arg types
+user\src\main.c(106): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(106): error:  #147: declaration is incompatible with "void humidity_init(void)" (declared at line 8 of ".\user\inc\humidity.h")
+user\src\main.c(108): warning:  #1295-D: Deprecated declaration ADC_init - give arg types
+user\src\main.c(108): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(108): error:  #147: declaration is incompatible with "void ADC_init(void)" (declared at line 2 of ".\user\inc\ADC.h")
+user\src\main.c(109): error:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(109): error:  #147: declaration is incompatible with "volatile unsigned int LEDbyte" (declared at line 44)
+user\src\main.c(110): warning:  #1295-D: Deprecated declaration I2C_EEPROM - give arg types
+user\src\main.c(110): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(110): error:  #147: declaration is incompatible with "void I2C_EEPROM(void)" (declared at line 17 of ".\user\inc\webi2c.h")
+user\src\main.c(112): warning:  #1295-D: Deprecated declaration I2C_ACCEL_INIT - give arg types
+user\src\main.c(112): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(112): error:  #147: declaration is incompatible with "void I2C_ACCEL_INIT(void)" (declared at line 18 of ".\user\inc\webi2c.h")
+user\src\main.c(115): error:  #40: expected an identifier
+user\src\main.c(115): error:  #40: expected an identifier
+user\src\main.c(115): warning:  #77-D: this declaration has no storage class or type specifier
+user\src\main.c(115): error:  #92: identifier-list parameters may only be used in a function definition
+user\src\main.c(115): error:  #147: declaration is incompatible with "void I2C_EE_BufferRead(uint8_t *, uint16_t, uint16_t)" (declared at line 14 of ".\user\inc\webi2c.h")
+user\src\main.c(117): error:  #169: expected a declaration
+user\src\main.c(180): warning:  #12-D: parsing restarts here after previous syntax error
+user\src\main.c(181): error:  #169: expected a declaration
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(131): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=9012 RO-data=336 RW-data=996 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(131): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=9012 RO-data=336 RW-data=996 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling LEDs.c...
+linking...
+Program Size: Code=9012 RO-data=336 RW-data=996 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling humidity.c...
+linking...
+Program Size: Code=9012 RO-data=336 RW-data=996 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling humidity.c...
+linking...
+Program Size: Code=9012 RO-data=336 RW-data=996 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling humidity.c...
+linking...
+Program Size: Code=9012 RO-data=336 RW-data=996 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling humidity.c...
+linking...
+Program Size: Code=9012 RO-data=336 RW-data=996 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling humidity.c...
+linking...
+Program Size: Code=9012 RO-data=336 RW-data=996 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling humidity.c...
+linking...
+Program Size: Code=8324 RO-data=336 RW-data=996 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling humidity.c...
+linking...
+Program Size: Code=8328 RO-data=336 RW-data=996 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling humidity.c...
+linking...
+Program Size: Code=8336 RO-data=336 RW-data=996 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling humidity.c...
+linking...
+Program Size: Code=8332 RO-data=336 RW-data=996 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling humidity.c...
+linking...
+Program Size: Code=8332 RO-data=336 RW-data=996 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(131): warning:  #128-D: loop is not reachable
+compiling humidity.c...
+compiling LCD.c...
+user\src\LCD.c(54): error:  #20: identifier "lcd" is undefined
+user\src\LCD.c(55): error:  #29: expected an expression
+user\src\LCD.c(55): error:  #20: identifier "i" is undefined
+Target not created
+Build target 'SB3'
+compiling LCD.c...
+linking...
+Program Size: Code=8332 RO-data=336 RW-data=996 ZI-data=1636  
 "SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
 Build target 'SB3'
-compiling ADC.c...
+compiling main.c...
+user\src\main.c(126): error:  #18: expected a ")"
+user\src\main.c(132): warning:  #128-D: loop is not reachable
+compiling humidity.c...
+compiling LCD.c...
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(132): warning:  #128-D: loop is not reachable
 linking...
-Program Size: Code=9032 RO-data=336 RW-data=992 ZI-data=1632  
-"SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
+Program Size: Code=8336 RO-data=336 RW-data=996 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(133): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=8344 RO-data=336 RW-data=996 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(133): warning:  #128-D: loop is not reachable
+user\src\main.c(159): error:  #268: declaration may not appear after executable statement in block
+user\src\main.c(159): error:  #67: expected a "}"
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(134): warning:  #128-D: loop is not reachable
+user\src\main.c(160): error:  #268: declaration may not appear after executable statement in block
+user\src\main.c(160): error:  #67: expected a "}"
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(134): warning:  #128-D: loop is not reachable
+user\src\main.c(160): error:  #268: declaration may not appear after executable statement in block
+user\src\main.c(160): error:  #67: expected a "}"
+Target not created
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(134): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=8408 RO-data=336 RW-data=996 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
+Build target 'SB3'
+compiling main.c...
+user\src\main.c(134): warning:  #128-D: loop is not reachable
+linking...
+Program Size: Code=8408 RO-data=336 RW-data=996 ZI-data=1636  
+"SB3_firmware.axf" - 0 Error(s), 1 Warning(s).
+Load "C:\\Users\\datalogger\\Documents\\GitHub\\datalogger\\3DAQ\\Firmware\\SB3_firmware.AXF" 
