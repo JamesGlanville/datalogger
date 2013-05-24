@@ -119,6 +119,8 @@ int RS232_OpenComport(int comport_number, int baudrate)
                    break;
   }
 
+  printf("got to here!");
+
   Cport[comport_number] = open(comports[comport_number], O_RDWR | O_NOCTTY | O_NDELAY);
   if(Cport[comport_number]==-1)
   {
