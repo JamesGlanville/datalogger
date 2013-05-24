@@ -124,13 +124,18 @@ int RS232_OpenComport(int comport_number, int baudrate)
   Cport[comport_number] = open(comports[comport_number], O_RDWR | O_NOCTTY | O_NDELAY);
   if(Cport[comport_number]==-1)
   {
+	  	  while(1);
+
     perror("unable to open comport ");
+	
     return(1);
   }
 
   error = tcgetattr(Cport[comport_number], old_port_settings + comport_number);
   if(error==-1)
   {
+	  	  while(1);
+
     close(Cport[comport_number]);
     perror("unable to read portsettings ");
     return(1);
@@ -146,6 +151,8 @@ int RS232_OpenComport(int comport_number, int baudrate)
   error = tcsetattr(Cport[comport_number], TCSANOW, &new_port_settings);
   if(error==-1)
   {
+	  	  while(1);
+
     close(Cport[comport_number]);
     perror("unable to adjust portsettings ");
     return(1);
@@ -153,6 +160,8 @@ int RS232_OpenComport(int comport_number, int baudrate)
 
   if(ioctl(Cport[comport_number], TIOCMGET, &status) == -1)
   {
+	  	  while(1);
+
     perror("unable to get portstatus");
     return(1);
   }
@@ -161,7 +170,8 @@ int RS232_OpenComport(int comport_number, int baudrate)
   status |= TIOCM_RTS;    /* turn on RTS */
 
   if(ioctl(Cport[comport_number], TIOCMSET, &status) == -1)
-  {
+  {	  while(1);
+
     perror("unable to set portstatus");
     return(1);
   }
@@ -344,6 +354,10 @@ char baudr[64];
 
 int RS232_OpenComport(int comport_number, int baudrate)
 {
+  DCB port_settings;
+  COMMTIMEOUTS Cptimeouts;
+
+
   if((comport_number>15)||(comport_number<0))
   {
     printf("illegal comport number\n");
@@ -401,7 +415,6 @@ int RS232_OpenComport(int comport_number, int baudrate)
     return(1);
   }
 
-  DCB port_settings;
   memset(&port_settings, 0, sizeof(port_settings));  /* clear the new struct  */
   port_settings.DCBlength = sizeof(port_settings);
 
@@ -418,8 +431,6 @@ int RS232_OpenComport(int comport_number, int baudrate)
     CloseHandle(Cport[comport_number]);
     return(1);
   }
-
-  COMMTIMEOUTS Cptimeouts;
 
   Cptimeouts.ReadIntervalTimeout         = MAXDWORD;
   Cptimeouts.ReadTotalTimeoutMultiplier  = 0;

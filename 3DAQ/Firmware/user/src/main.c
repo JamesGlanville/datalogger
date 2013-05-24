@@ -11,7 +11,13 @@
 #include "webi2c.h"
 #include "timer.h"
 
-enum {waiting,logging,uploading,erasing,streaming} currentstate;
+#define WAITING		1
+#define LOGGING		2
+#define UPLOADING	3
+#define ERASING		4
+#define STREAMING	5
+
+volatile int currentstate;
 
 //Hardware:
 
@@ -50,6 +56,8 @@ volatile int value_received;
 //ADC variables
 volatile uint8_t new_data;
 
+uint8_t LogBuffer[ENTRYBYTES];
+
 //------------------------------------------------------------------------------
 
 //Function prototypes for functions in main.c file
@@ -75,13 +83,13 @@ int main(void)
 		LED_on();
 	}
 	
-GPIO_Init_Mode(GPIOA,GPIO_Pin_0,GPIO_Mode_IN_FLOATING); //BUTTON
- while(!GPIO_ReadInputDataBit(GPIOA,GPIO_Pin_0));
+	GPIO_Init_Mode(GPIOA,GPIO_Pin_0,GPIO_Mode_IN_FLOATING); //User button.
  
 // }
 	delay_init();
+	logging_timer_init();
 	LED_off();
-	currentstate=waiting;
+	currentstate=WAITING;
 	LCDINIT();
 	home();
 	clear();
@@ -89,14 +97,13 @@ GPIO_Init_Mode(GPIOA,GPIO_Pin_0,GPIO_Mode_IN_FLOATING); //BUTTON
 	noCursor();
 	noBlink();
 
-	write('H');
-	write('E');
-	write('L');
-	write('L');
-	write('O');
-	
-	delay_ms(2000);
-	clear();
+	write('S');
+	write('T');
+	write('A');
+	write('N');
+	write('D');
+	write('B');
+	write('Y');
 
 //Initialise UART for serial comms with PC
 	UART_init();
@@ -108,11 +115,12 @@ GPIO_Init_Mode(GPIOA,GPIO_Pin_0,GPIO_Mode_IN_FLOATING); //BUTTON
 	I2C_EEPROM();
 	
 I2C_ACCEL_INIT();
+	//I2C_EE_Upload();
 
 //	I2C_EE_BufferWrite(Test_Buffer, EEPROM_WriteAddress1, 100);
-I2C_EE_BufferRead(buffer, 0, 100);
+//I2C_EE_BufferRead(buffer, 0, 100);
 
-	while(1){
+	/*while(1){
 		if(LEDbyte==512){LEDbyte=1;}
 		else {LEDbyte=LEDbyte<<1;}
 		setLEDS();
@@ -122,30 +130,89 @@ I2C_EE_BufferRead(buffer, 0, 100);
 	writenumber( temperature/100);
 	write('.');
 	writenumber((temperature/10)%10);
+		write(' ');
+
 		write(0xDF);
 	write('C');
 	setCursor(0,0);
 	writenumber(readhumidity(24)); //Needs real temperature
+	write(' ');
+	write('%');
+	write('R');
+	write('H');
 		delay_ms(50);
 		
 		check_and_process_received_command();
 		
-	}
+	}*/
+	//currentstate=UPLOADING;
 	while(1)
 	{
 		switch (currentstate){
 			
-		case waiting:
+		case WAITING:
 			if (GPIO_ReadInputDataBit(GPIOA,GPIO_Pin_0)) //Polling is probably ok here, since the loop will be very very fast.
 			{
-				currentstate=logging;
+				currentstate=LOGGING;
+				clear();
+				write('S');
+				write('t');
+				write('a');
+				write('r');
+				write('t');
+				write('i');
+				write('n');
+				write('g');
+				delay_ms(2000);
+				clear();
 				I2C_EE_StartLog();
+				TIM4->CNT=0;
 			}
 			break;
 
-		case logging:
+		case LOGGING:
+			if (GPIO_ReadInputDataBit(GPIOA,GPIO_Pin_0)){currentstate=WAITING;I2C_EE_FinishLog();break;} //Polling is probably ok here, since the loop will be very very fast.
+			LEDbyte|= 1<<8;
+			setLEDS();
+			if (TIM_GetFlagStatus(TIM3, TIM_FLAG_Update) != RESET)
+			{
+				TIM_ClearFlag(TIM3, TIM_IT_Update);
+				LogBuffer[0]=getTemperature();
+				LogBuffer[1]=readhumidity(LogBuffer[0]);
+				I2C_EE_Log(LogBuffer);
+				setCursor(0,1);
+				writenumber( LogBuffer[0]/100);
+				write('.');
+				writenumber((LogBuffer[0]/10)%10);
+				write(' ');
+				write(0xDF);
+				write('C');
+				write(' ');
+				setCursor(0,0);
+				writenumber(LogBuffer[1]); //Needs real temperature
+				write(' ');
+				write('%');
+				write('R');
+				write('H');
+				write(' ');
+				LEDbyte&= ~(1<<8);
+				setLEDS();
+
+			}
 			break;
-//			logging,uploading,erasing,streaming
+		
+		case UPLOADING:
+			currentstate=WAITING;
+			I2C_EE_Upload();
+			break;
+		
+		case ERASING:
+			currentstate=WAITING;
+			I2C_EE_Erase();
+			break;
+		
+		case STREAMING:
+			break;
 		}
 		
 		

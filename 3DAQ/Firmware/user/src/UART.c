@@ -7,9 +7,16 @@
 
 #include "LEDs.h"
 
+#define WAITING		1
+#define LOGGING		2
+#define UPLOADING	3
+#define ERASING		4
+#define STREAMING	5
+
 extern volatile int command_flag;
 extern volatile int value;
 extern volatile int value_received;
+extern volatile int currentstate;
 
 //Prvate functions
 void GPIO_Config(void);
@@ -130,7 +137,18 @@ void USART1_IRQHandler(void)
 		//Clear interrupt flag
 		USART_ClearITPendingBit(USART1, USART_IT_RXNE);
 		
-		//Check that this is a new command and not a component of a pervious command
+		//Check that this is a new command and not a component of a previous command
+	/*	if (currentstate == WAITING)
+		{
+			if (USART_ReceiveData(USART1)=='U')
+			{
+				currentstate = UPLOADING;
+			}
+		}*/
+			/* u is upload, e for erase, l start STREAMING, s stop STREAMING   */
+			/*R 123 for 123 seconds    */
+			
+		
 		if (command_flag == 0)
 		{
 			//This is a new command
