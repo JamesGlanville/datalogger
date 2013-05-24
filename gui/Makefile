@@ -2,9 +2,9 @@ OPENGL_LIBS = -lglut -lGL -lGLU
 
 CXX = $(shell wx-config --cxx)
 
-SRC = datalogger.cpp comms.cpp
+SRC = datalogger.cpp comms.cpp rs232.cpp
 
-OBJECTS = datalogger.o comms.o
+OBJECTS = datalogger.o comms.o rs232.o
 
 # implementation
 
@@ -26,6 +26,6 @@ depend:
 
 # DO NOT DELETE
 
-datalogger.o: datalogger.h comms.h
-comms.o: comms.h
-
+datalogger.o: datalogger.h comms.h rs232.h
+comms.o: comms.h rs232.h
+rs232.o: rs232.h
