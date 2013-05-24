@@ -72,7 +72,7 @@ int main(void)
 {
 	int i;
 	uint8_t buffer[100];
-	int temperature;
+	uint16_t temperature;
 
 	init_GPIO_pins();
 	
@@ -85,7 +85,6 @@ int main(void)
 	
 	GPIO_Init_Mode(GPIOA,GPIO_Pin_0,GPIO_Mode_IN_FLOATING); //User button.
  
-// }
 	delay_init();
 	logging_timer_init();
 	LED_off();
@@ -177,19 +176,21 @@ I2C_ACCEL_INIT();
 			if (TIM_GetFlagStatus(TIM3, TIM_FLAG_Update) != RESET)
 			{
 				TIM_ClearFlag(TIM3, TIM_IT_Update);
-				LogBuffer[0]=getTemperature();
-				LogBuffer[1]=readhumidity(LogBuffer[0]);
+				temperature = getTemperature();
+				LogBuffer[0]=(temperature>>8)&0xFF;
+				LogBuffer[1]=temperature&0xFF;
+				LogBuffer[2]=readhumidity(LogBuffer[0]);
 				I2C_EE_Log(LogBuffer);
 				setCursor(0,1);
-				writenumber( LogBuffer[0]/100);
+				writenumber(temperature/100);
 				write('.');
-				writenumber((LogBuffer[0]/10)%10);
+				writenumber(temperature%100);
 				write(' ');
 				write(0xDF);
 				write('C');
 				write(' ');
 				setCursor(0,0);
-				writenumber(LogBuffer[1]); //Needs real temperature
+				writenumber(25); //Needs real temperature
 				write(' ');
 				write('%');
 				write('R');
@@ -197,7 +198,6 @@ I2C_ACCEL_INIT();
 				write(' ');
 				LEDbyte&= ~(1<<8);
 				setLEDS();
-
 			}
 			break;
 		
@@ -212,7 +212,32 @@ I2C_ACCEL_INIT();
 			break;
 		
 		case STREAMING:
-			break;
+			if (TIM_GetFlagStatus(TIM3, TIM_FLAG_Update) != RESET)
+			{
+				TIM_ClearFlag(TIM3, TIM_IT_Update);
+				temperature = getTemperature();
+				UART_send_byte((temperature>>8)&0xFF);
+				UART_send_byte(temperature&0xFF);
+				UART_send_byte(readhumidity(LogBuffer[0]));
+				setCursor(0,1);
+				writenumber(temperature/100);
+				write('.');
+				writenumber(temperature%100);
+				write(' ');
+				write(0xDF);
+				write('C');
+				write(' ');
+				setCursor(0,0);
+				writenumber(25); //Needs real temperature
+				write(' ');
+				write('%');
+				write('R');
+				write('H');
+				write(' ');
+				LEDbyte&= ~(1<<8);
+				setLEDS();
+			}
+		break;
 		}
 		
 		

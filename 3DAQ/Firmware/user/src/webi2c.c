@@ -66,7 +66,8 @@ uint8_t Test_Buffer[] = "This is written EEPROM data :)";
 uint8_t Rx1_Buffer[150];
 volatile TestStatus TransferStatus1 = FAILED;
 extern volatile unsigned int LEDbyte;
-unsigned int LEDripple[] = {0x001,0x004,0x010,0x040,0x100,0x100,0x040,0x010,0x004,0x001};
+unsigned int LEDGripple[] = {0x001,0x004,0x010,0x040,0x100,0x100,0x040,0x010,0x004,0x001};
+unsigned int LEDRripple[] = {0x002,0x008,0x020,0x080,0x200,0x200,0x080,0x020,0x008,0x002};
 
 void I2C_EE_Upload(void)
 {
@@ -97,7 +98,7 @@ void I2C_EE_Upload(void)
 		write('%');
 		write(' ');
 		write(' ');}
-		LEDbyte = LEDripple[(i/80)%10];
+		LEDbyte = LEDGripple[(i/80)%10];
 		setLEDS();
 		I2C_EE_BufferRead(&byte, i, 1);
 		UART_send_byte(byte);
@@ -165,11 +166,48 @@ void I2C_EE_Log(uint8_t* LogData)
 
 void I2C_EE_Erase(void)
 {
+	int percentage;
+	unsigned int LEDbackup;
 	int i;
+	
+	clear();
+	write('E');
+	write('R');
+	write('A');
+	write('S');
+	write('I');
+	write('N');
+	write('G');
+	
 	for (i=CONFIGLENGTH;i<EEPROM_BYTES;i++)
 	{
-		I2C_EE_ByteWrite(ZERO, i);
+		I2C_EE_ByteWrite(ZERO, i);	
+		
+		if((i%100)==0){
+		setCursor(0,1);
+		percentage = (100*i)/(EEPROM_BYTES-CONFIGLENGTH);
+		writenumber(percentage);
+		write('%');
+		write(' ');
+		write(' ');}
+		LEDbyte = LEDRripple[(i/80)%10];
+		setLEDS();
 	}
+		clear();
+	write('C');
+	write('O');
+	write('M');
+	write('P');
+	write('L');
+	write('E');
+	write('T');
+	write('E');
+	delay_ms(2000);
+	clear();
+
+	LEDbyte=LEDbackup;
+	setLEDS();
+
 }
 void I2C_EE_LoadConfig(void)
 {
