@@ -56,6 +56,7 @@ volatile uint8_t new_data;
 
 void check_and_process_received_command(void);
 
+
 //------------------------------------------------------------------------------
 
 //Main function (execution starts here after startup file)
@@ -63,6 +64,7 @@ int main(void)
 {
 	int i;
 	uint8_t buffer[100];
+	int temperature;
 
 	init_GPIO_pins();
 	
@@ -73,8 +75,10 @@ int main(void)
 		LED_on();
 	}
 	
-//GPIO_Init_Mode(GPIOA,GPIO_Pin_0,GPIO_Mode_IN_FLOATING); //BUTTON
-
+GPIO_Init_Mode(GPIOA,GPIO_Pin_0,GPIO_Mode_IN_FLOATING); //BUTTON
+ while(!GPIO_ReadInputDataBit(GPIOA,GPIO_Pin_0));
+ 
+// }
 	delay_init();
 	LED_off();
 	currentstate=waiting;
@@ -114,7 +118,12 @@ I2C_EE_BufferRead(buffer, 0, 100);
 		setLEDS();
 		
 	setCursor(0,1);
-	writenumber( getTemperature());
+	temperature=getTemperature();
+	writenumber( temperature/100);
+	write('.');
+	writenumber((temperature/10)%10);
+		write(0xDF);
+	write('C');
 	setCursor(0,0);
 	writenumber(readhumidity(24)); //Needs real temperature
 		delay_ms(50);
@@ -127,7 +136,7 @@ I2C_EE_BufferRead(buffer, 0, 100);
 		switch (currentstate){
 			
 		case waiting:
-			if (GPIO_ReadInputDataBit(GPIOA,GPIO_Pin_0) //Polling is probably ok here, since the loop will be very very fast.
+			if (GPIO_ReadInputDataBit(GPIOA,GPIO_Pin_0)) //Polling is probably ok here, since the loop will be very very fast.
 			{
 				currentstate=logging;
 				I2C_EE_StartLog();
@@ -135,8 +144,8 @@ I2C_EE_BufferRead(buffer, 0, 100);
 			break;
 
 		case logging:
-			
-			logging,uploading,erasing,streaming
+			break;
+//			logging,uploading,erasing,streaming
 		}
 		
 		

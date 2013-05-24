@@ -43,7 +43,7 @@ void init_GPIO_pins()
 	GPIO_InitStructureB.GPIO_Speed = GPIO_Speed_10MHz;
 	GPIO_Init(GPIOB, &GPIO_InitStructureB);
 
-	GPIO_InitStructureC.GPIO_Pin = GPIO_Pin_4|GPIO_Pin_5|GPIO_Pin_2|GPIO_Pin_9|GPIO_Pin_3|GPIO_Pin_13|GPIO_Pin_1; //DB4|DB7|LEDx?|BOARDLED
+	GPIO_InitStructureC.GPIO_Pin = GPIO_Pin_4|GPIO_Pin_5|GPIO_Pin_2|GPIO_Pin_6|GPIO_Pin_9|GPIO_Pin_3|GPIO_Pin_13|GPIO_Pin_1; //DB4|DB7|LEDx?|BOARDLED
 	GPIO_InitStructureC.GPIO_Mode = GPIO_Mode_Out_PP;	//Choose mode (output, push-pull)
 	GPIO_InitStructureC.GPIO_Speed = GPIO_Speed_10MHz;	//Choose max speed (slow is fine here)
 	GPIO_Init(GPIOC, &GPIO_InitStructureC);	//Call the GPIO init function from the std periph lib to initialise GPIOC with these parameters

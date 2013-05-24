@@ -2,4 +2,4 @@
 -I C:\Keil\ARM\RV31\INC 
 -I C:\3DAQ\Firmware\lib\CMSIS\Include 
 -I C:\Keil\ARM\Inc\ST\STM32F10x 
--DUSE_STDPERIPH_DRIVER -o "main.o" --omf_browse "main.crf" --depend "main.d" "user\src\main.c"
+-DUSE_STDPERIPH_DRIVER -o "leds.o" --omf_browse "leds.crf" --depend "leds.d" "user\src\LEDs.c"
