@@ -5,6 +5,8 @@
 #include "webi2c.h"
 #include "UART.h"
 #include "LEDs.h"
+#include "LCD.h"
+#include "timer.h"
 
 /***************************************************************************//**
  * Global variables, private define, macro and typedef
@@ -43,7 +45,6 @@ USART_InitTypeDef USART_InitStructure;
 #define EEPROM_BYTES	0x7D00 //32000
 #define CONFIGLENGTH	0x0010 //16
 #define ZERO					0x00
-#define ENTRYBYTES		0x08
 
 /* Private macro -------------------------------------------------------------*/
 #define countof(a) (sizeof(a) / sizeof(*(a)))
@@ -54,7 +55,7 @@ uint8_t Config[CONFIGLENGTH];
 /*
 Config data:
 first two bits are log length, msb first
-
+third byte is sample period in seconds
 
 */
 
@@ -67,21 +68,52 @@ volatile TestStatus TransferStatus1 = FAILED;
 extern volatile unsigned int LEDbyte;
 unsigned int LEDripple[] = {0x001,0x004,0x010,0x040,0x100,0x100,0x040,0x010,0x004,0x001};
 
-void I2C_EE_SendData(void)
+void I2C_EE_Upload(void)
 {
+	int percentage;
 	uint8_t byte;
 	unsigned int LEDbackup;
 	int i;
 	
 	LEDbackup=LEDbyte;
+	clear();
+	write('S');
+	write('e');
+	write('n');
+	write('d');
+	write('i');
+	write('n');
+	write('g');
 	
 	for (i=CONFIGLENGTH;i<EEPROM_BYTES;i++)
 	{
-		LEDbyte = (i%100)/10;
+		if((i%100)==0){
+		setCursor(0,1);
+		percentage = (100*i)/(EEPROM_BYTES-CONFIGLENGTH);
+			writenumber(percentage);
+//		write('0'+(i/(EEPROM_BYTES-CONFIGLENGTH)*100)/100);
+//		write('0'+((i/(EEPROM_BYTES-CONFIGLENGTH)*100)/10)%10);
+//		write('0'+(i/(EEPROM_BYTES-CONFIGLENGTH)*100)%10);
+		write('%');
+		write(' ');
+		write(' ');}
+		LEDbyte = LEDripple[(i/80)%10];
 		setLEDS();
 		I2C_EE_BufferRead(&byte, i, 1);
 		UART_send_byte(byte);
 	}
+		clear();
+	write('C');
+	write('O');
+	write('M');
+	write('P');
+	write('L');
+	write('E');
+	write('T');
+	write('E');
+	delay_ms(2000);
+	clear();
+
 	LEDbyte=LEDbackup;
 	setLEDS();
 }
@@ -99,6 +131,25 @@ void I2C_EE_FinishLog(void)
 	Config[0] = loglength>>8;
 	Config[1] = loglength % 0x100;
 	I2C_EE_WriteConfig();
+	clear();
+	write('S');
+	write('t');
+	write('o');
+	write('p');
+	write('p');
+	write('i');
+	write('n');
+	write('g');
+	delay_ms(2000);
+	clear();
+	write('S');
+	write('T');
+	write('A');
+	write('N');
+	write('D');
+	write('B');
+	write('Y');
+	
 }
 
 void I2C_EE_Log(uint8_t* LogData)

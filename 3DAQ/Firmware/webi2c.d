@@ -32,3 +32,6 @@ webi2c.o: .\lib\stm32f10x_stdperiph_driver\inc\misc.h
 webi2c.o: .\user\inc\webi2c.h
 webi2c.o: .\user\inc\UART.h
 webi2c.o: .\user\inc\LEDs.h
+webi2c.o: .\user\inc\LCD.h
+webi2c.o: C:\Keil\ARM\ARMCC\bin\..\include\inttypes.h
+webi2c.o: .\user\inc\timer.h
