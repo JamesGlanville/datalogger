@@ -29,4 +29,5 @@ uart.o: .\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_usart.h
 uart.o: .\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_wwdg.h
 uart.o: .\lib\stm32f10x_stdperiph_driver\inc\misc.h
 uart.o: .\user\inc\UART.h
+uart.o: .\user\inc\webi2c.h
 uart.o: .\user\inc\LEDs.h

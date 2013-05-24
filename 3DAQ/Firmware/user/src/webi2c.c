@@ -43,14 +43,13 @@ USART_InitTypeDef USART_InitStructure;
 #define   SR          0x08
 
 #define EEPROM_BYTES	0x7D00 //32000
-#define CONFIGLENGTH	0x0010 //16
 #define ZERO					0x00
 
 /* Private macro -------------------------------------------------------------*/
 #define countof(a) (sizeof(a) / sizeof(*(a)))
 
 int currentByte;
-uint8_t Config[CONFIGLENGTH];
+volatile uint8_t Config[CONFIGLENGTH];
 
 /*
 Config data:
@@ -211,12 +210,13 @@ void I2C_EE_Erase(void)
 }
 void I2C_EE_LoadConfig(void)
 {
-I2C_EE_BufferRead(Config, 0, CONFIGLENGTH);
+	I2C_EE_BufferRead((uint8_t *)Config, 0, CONFIGLENGTH);
 }
 
 void I2C_EE_WriteConfig(void)
 {
-I2C_EE_BufferWrite(Config, 0, CONFIGLENGTH);
+	I2C_EE_BufferWrite((uint8_t *)Config, 0, CONFIGLENGTH);
+	logging_timer_init();
 }
 
 void I2C_ACCEL_READ(void)

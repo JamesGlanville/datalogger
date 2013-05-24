@@ -1,6 +1,7 @@
 
 #include "stm32F10x.h"
 #include "UART.h"
+#include "webi2c.h"
 
 #include "stm32f10x_gpio.h"
 #include "stm32f10x_usart.h"
@@ -17,6 +18,10 @@ extern volatile int command_flag;
 extern volatile int value;
 extern volatile int value_received;
 extern volatile int currentstate;
+
+extern volatile uint8_t Config[CONFIGLENGTH];
+
+volatile int waitingforrate=0;
 
 //Prvate functions
 void GPIO_Config(void);
@@ -131,25 +136,54 @@ void NVIC_Config(void)
 //Interrupt handler for USART1 interrupt
 void USART1_IRQHandler(void)
 {
+	int received_data;
 	//Test source of interrupt
 	if (USART_GetITStatus(USART1, USART_IT_RXNE) == 1)	//RNXE - Receive buffer not empty (ie we have an RX byte)
 	{
 		//Clear interrupt flag
 		USART_ClearITPendingBit(USART1, USART_IT_RXNE);
 		
+		received_data=USART_ReceiveData(USART1);
 		//Check that this is a new command and not a component of a previous command
-	/*	if (currentstate == WAITING)
+		
+		if (waitingforrate)
 		{
-			if (USART_ReceiveData(USART1)=='U')
+			Config[2]=received_data;
+			I2C_EE_WriteConfig();
+		}
+		else{
+		
+		if (currentstate == WAITING)
+		{
+			if (received_data=='U')
 			{
 				currentstate = UPLOADING;
 			}
-		}*/
+			if (received_data=='E')
+			{
+				currentstate = ERASING;
+			}
+			if (received_data=='L')
+			{
+				currentstate = STREAMING;
+			}
+			if (received_data=='R')
+			{
+				waitingforrate=1;
+			}
+		}
+		else if (currentstate == STREAMING)
+		{
+			if (received_data=='S')
+			{
+				currentstate=WAITING;
+			}
+		}
 			/* u is upload, e for erase, l start STREAMING, s stop STREAMING   */
 			/*R 123 for 123 seconds    */
 			
 		
-		if (command_flag == 0)
+/*		if (command_flag == 0)
 		{
 			//This is a new command
 			
@@ -167,9 +201,10 @@ void USART1_IRQHandler(void)
 			//Get value
 			value = USART_ReceiveData(USART1);
 			value_received = 1;
-		}
+		}*/
 
 	}
+}
 	
 }
 

@@ -17,7 +17,7 @@
 #define ERASING		4
 #define STREAMING	5
 
-volatile int currentstate;
+volatile int currentstate=WAITING;
 
 //Hardware:
 
@@ -47,7 +47,7 @@ volatile int currentstate;
 //Global variables
 
 //Command from UART
-volatile unsigned int LEDbyte;
+volatile unsigned int LEDbyte=1;
 
 volatile int command_flag;
 volatile int value;
@@ -64,14 +64,12 @@ uint8_t LogBuffer[ENTRYBYTES];
 
 void check_and_process_received_command(void);
 
-
 //------------------------------------------------------------------------------
 
 //Main function (execution starts here after startup file)
 int main(void)
 {
 	int i;
-	uint8_t buffer[100];
 	uint16_t temperature;
 
 	init_GPIO_pins();
@@ -84,11 +82,8 @@ int main(void)
 	}
 	
 	GPIO_Init_Mode(GPIOA,GPIO_Pin_0,GPIO_Mode_IN_FLOATING); //User button.
- 
 	delay_init();
-	logging_timer_init();
 	LED_off();
-	currentstate=WAITING;
 	LCDINIT();
 	home();
 	clear();
@@ -104,18 +99,14 @@ int main(void)
 	write('B');
 	write('Y');
 
-//Initialise UART for serial comms with PC
 	UART_init();
-	
 	humidity_init();
-	//Initialise ADC
 	ADC_init();
-		LEDbyte=1;
 	I2C_EEPROM();
+	I2C_ACCEL_INIT();
+	I2C_EE_LoadConfig();
+	logging_timer_init();
 	
-I2C_ACCEL_INIT();
-	//I2C_EE_Upload();
-
 //	I2C_EE_BufferWrite(Test_Buffer, EEPROM_WriteAddress1, 100);
 //I2C_EE_BufferRead(buffer, 0, 100);
 
@@ -145,6 +136,7 @@ I2C_ACCEL_INIT();
 		
 	}*/
 	//currentstate=UPLOADING;
+
 	while(1)
 	{
 		switch (currentstate){

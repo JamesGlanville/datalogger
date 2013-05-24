@@ -30,3 +30,4 @@ timer.o: .\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_tim.h
 timer.o: .\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_usart.h
 timer.o: .\lib\stm32f10x_stdperiph_driver\inc\stm32f10x_wwdg.h
 timer.o: .\lib\stm32f10x_stdperiph_driver\inc\misc.h
+timer.o: .\user\inc\webi2c.h

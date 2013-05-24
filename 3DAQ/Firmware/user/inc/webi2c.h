@@ -1,5 +1,6 @@
 typedef enum {FAILED = 0, PASSED = !FAILED} TestStatus;
 #define ENTRYBYTES		0x08
+#define CONFIGLENGTH	0x0010 //16
 
 void I2C_EE_Erase(void);
 void I2C_EE_WriteConfig(void);
