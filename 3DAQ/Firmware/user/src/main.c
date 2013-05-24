@@ -70,6 +70,7 @@ void check_and_process_received_command(void);
 int main(void)
 {
 	int i;
+	int e;
 	uint16_t temperature;
 
 	init_GPIO_pins();
@@ -82,6 +83,7 @@ int main(void)
 	}
 	
 	GPIO_Init_Mode(GPIOA,GPIO_Pin_0,GPIO_Mode_IN_FLOATING); //User button.
+//	GPIO_Init_Mode(GPIOA,GPIO_Pin_0,GPIO_Mode_IN_FLOATING); //Accelerometer interrupt.
 	delay_init();
 	LED_off();
 	LCDINIT();
@@ -172,6 +174,7 @@ int main(void)
 				LogBuffer[0]=(temperature>>8)&0xFF;
 				LogBuffer[1]=temperature&0xFF;
 				LogBuffer[2]=readhumidity(LogBuffer[0]);
+				I2C_ACCEL_READ();
 				I2C_EE_Log(LogBuffer);
 				setCursor(0,1);
 				writenumber(temperature/100);
@@ -208,9 +211,15 @@ int main(void)
 			{
 				TIM_ClearFlag(TIM3, TIM_IT_Update);
 				temperature = getTemperature();
-				UART_send_byte((temperature>>8)&0xFF);
-				UART_send_byte(temperature&0xFF);
-				UART_send_byte(readhumidity(LogBuffer[0]));
+				LogBuffer[0]=(temperature>>8)&0xFF;
+				LogBuffer[1]=temperature&0xFF;
+				LogBuffer[2]=readhumidity(LogBuffer[0]);
+				I2C_ACCEL_READ();
+//				I2C_EE_Log(LogBuffer);
+				for (e=0;i<ENTRYBYTES;i++)
+				{
+					UART_send_byte(LogBuffer[e]);
+				}
 				setCursor(0,1);
 				writenumber(temperature/100);
 				write('.');

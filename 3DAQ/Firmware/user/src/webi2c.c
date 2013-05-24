@@ -50,6 +50,8 @@ USART_InitTypeDef USART_InitStructure;
 
 int currentByte;
 volatile uint8_t Config[CONFIGLENGTH];
+extern volatile uint8_t LogBuffer[ENTRYBYTES];
+
 
 /*
 Config data:
@@ -222,9 +224,11 @@ void I2C_EE_WriteConfig(void)
 void I2C_ACCEL_READ(void)
 {
 	int NumByteToRead=3;
-  unsigned char XYZ[3];
+  uint8_t XYZ[3];
 
-    while(I2C_GetFlagStatus(I2C_EE, I2C_FLAG_BUSY));
+	//	GPIO_ReadInputDataBit(GPIOx,GPIO_Pin_x);
+
+	while(I2C_GetFlagStatus(I2C_EE, I2C_FLAG_BUSY));
 
     I2C_GenerateSTART(I2C_EE, ENABLE);
 
@@ -273,6 +277,10 @@ void I2C_ACCEL_READ(void)
 
     /* Enable Acknowledgement to be ready for another reception */
     I2C_AcknowledgeConfig(I2C_EE, ENABLE);
+		
+		LogBuffer[3]=XYZ[0];
+		LogBuffer[4]=XYZ[1];
+		LogBuffer[5]=XYZ[2];
 }
 
 void I2C_ACCEL_INIT(void)
@@ -294,6 +302,7 @@ void I2C_ACCEL_INIT(void)
     I2C_SendData(I2C_EE, INTSU);
     while(!I2C_CheckEvent(I2C_EE, I2C_EVENT_MASTER_BYTE_TRANSMITTED));
     I2C_SendData(I2C_EE, 0x10);
+//    I2C_SendData(I2C_EE, 0xE0);
     while(!I2C_CheckEvent(I2C_EE, I2C_EVENT_MASTER_BYTE_TRANSMITTED));
     I2C_GenerateSTOP(I2C_EE, ENABLE);
 	

@@ -3,7 +3,7 @@
 <title>Static Call Graph - [C:\Users\james_000\Github\datalogger\3DAQ\Firmware\SB3_firmware.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image C:\Users\james_000\Github\datalogger\3DAQ\Firmware\SB3_firmware.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 69]: Last Updated: Fri May 24 21:11:36 2013
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 69]: Last Updated: Fri May 24 22:13:39 2013
 <BR><P>
 <H3>Maximum Stack Usage =        120 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -604,7 +604,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[63]"></a>I2C_ACCEL_READ</STRONG> (Thumb, 202 bytes, Stack size 16 bytes, webi2c.o(i.I2C_ACCEL_READ))
+<P><STRONG><a name="[63]"></a>I2C_ACCEL_READ</STRONG> (Thumb, 222 bytes, Stack size 16 bytes, webi2c.o(i.I2C_ACCEL_READ))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = I2C_ACCEL_READ &rArr; I2C_CheckEvent
 </UL>
 <BR>[Calls]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_SendData
@@ -617,6 +617,7 @@ Global Symbols
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_AcknowledgeConfig
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_ACCEL_INIT
+<LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[65]"></a>I2C_AcknowledgeConfig</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_i2c.o(i.I2C_AcknowledgeConfig))
@@ -1192,7 +1193,7 @@ Global Symbols
 <LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[41]"></a>main</STRONG> (Thumb, 670 bytes, Stack size 0 bytes, main.o(i.main))
+<P><STRONG><a name="[41]"></a>main</STRONG> (Thumb, 686 bytes, Stack size 0 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = main &rArr; I2C_EE_Upload &rArr; setCursor &rArr; command &rArr; send &rArr; write4bits &rArr; pulseEnable &rArr; delayMicroseconds &rArr; LED_on
 </UL>
 <BR>[Calls]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writenumber
@@ -1220,6 +1221,7 @@ Global Symbols
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_EE_FinishLog
 <LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_EE_Erase
 <LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_EEPROM
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_ACCEL_READ
 <LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_ACCEL_INIT
 <LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ReadInputDataBit
 <LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init_Mode
