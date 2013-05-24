@@ -11,6 +11,8 @@
 #include "webi2c.h"
 #include "timer.h"
 
+enum {waiting,logging,uploading,erasing,streaming} currentstate;
+
 //Hardware:
 
 //LED3 is connected to PC9 (active high)
@@ -75,11 +77,11 @@ int main(void)
 
 	delay_init();
 	LED_off();
-		
+	currentstate=waiting;
 	LCDINIT();
 	home();
 	clear();
-	display();
+	display(); //Surely some of these can be commented out.
 	noCursor();
 	noBlink();
 
@@ -120,7 +122,25 @@ I2C_EE_BufferRead(buffer, 0, 100);
 		check_and_process_received_command();
 		
 	}
-	
+	while(1)
+	{
+		switch (currentstate){
+			
+		case waiting:
+			if (GPIO_ReadInputDataBit(GPIOA,GPIO_Pin_0) //Polling is probably ok here, since the loop will be very very fast.
+			{
+				currentstate=logging;
+				I2C_EE_StartLog();
+			}
+			break;
+
+		case logging:
+			
+			logging,uploading,erasing,streaming
+		}
+		
+		
+	}
 }
 
 //------------------------------------------------------------------------------
