@@ -61,7 +61,32 @@
 \section{Standalone Mode}
 
 \begin{itemize}
+  \item All collected data will be stored in the EEPROM, which
+    contains 32,000 bytes.
+  \item The first 16 bytes will contain configuration data.
+  \item The first 2 of these will contain the length of the recorded
+    data in bytes.
+  \item The third will contain the sampling period, in seconds.
+  \item The rest of the EEPROM will contain 10 byte packets, as in the
+    streaming mode.
+\end{itemize}
 
+\section{PC to MCU Communication}
+
+Commands will be sent by the PC software to the MCU for control of
+logging in streaming mode and uploading and erasing data from the
+EEPROM from standalone mode operation.
+\begin{itemize}
+\item All commands will be 10 bytes.
+  \item When in streaming mode, \texttt{L} will be sent to begin
+    logging and S will be sent to stop logging.
+  \item When dealing with data from standalone operation, \texttt{U}
+    will be sent to begin the upload process and \texttt{E} will be
+    sent to erase the EEPROM memory (except the 16 configuration
+    bytes)
+  \item The sample rate may be set by sending \texttt{R} followed by
+    the length of the desired sample period in seconds. For example,
+    \texttt{R 128} will give a sample period of 128 seconds.
 \end{itemize}
 
 \end{document}
