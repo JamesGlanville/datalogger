@@ -122,6 +122,7 @@ void I2C_EE_Upload(void)
 
 void I2C_EE_StartLog(void)
 {
+	logging_timer_init();
 	currentByte=CONFIGLENGTH;
 }
 

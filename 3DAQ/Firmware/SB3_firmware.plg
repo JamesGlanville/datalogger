@@ -8,6 +8,7 @@ Project File Date:  05/24/2013
 
 <h2>Output:</h2>
 Build target 'SB3'
+compiling webi2c.c...
 linking...
-Program Size: Code=10448 RO-data=336 RW-data=1048 ZI-data=1816  
+Program Size: Code=10456 RO-data=336 RW-data=1048 ZI-data=1816  
 "SB3_firmware.axf" - 0 Error(s), 0 Warning(s).
