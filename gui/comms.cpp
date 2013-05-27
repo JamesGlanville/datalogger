@@ -7,6 +7,7 @@ Date: Mon 20 May 2013 17:21
 
 #include "rs232.h"
 #include "comms.h"
+#define eeprom_size 32000
 
 int com_port_no = 0;
 bool com_port_open = false;
@@ -45,7 +46,7 @@ struct packet {
   BYTE accel_6;
 };
 
-std::vector <packet*> data;
+std::vector <packet> data;
 
 // RS232 functions
 void RS232_Init(int port_no)
@@ -195,11 +196,13 @@ int read_sensor_data(int *value)
 
 void read_eeprom_data(void)
 {
-  int eeprom_size = 32000;
   int i;
   int n = 0;
   BYTE data_a[eeprom_size];
   BYTE tmpdata[eeprom_size];
+  config_data cfgdata;
+  packet tmppacket;
+
 
   if(!com_port_open)
     {
@@ -219,29 +222,34 @@ void read_eeprom_data(void)
     }
 
   // put data from data array into more structured vector
-  config_data[datalen_u] = data_a[0];
-  config_data[datalen_l] = data_a[1];
-  config_data[samp_period] = data_a[2];
-  config_data[config_3] = data_a[3];
-  config_data[config_4] = data_a[4];
-  config_data[config_5] = data_a[5];
-  config_data[config_6] = data_a[6];
-  config_data[config_7] = data_a[7];
-  config_data[config_8] = data_a[8];
-  config_data[config_9] = data_a[9];
-  config_data[config_10] = data_a[10];
-  config_data[config_11] = data_a[11];
-  config_data[config_12] = data_a[12];
-  config_data[config_13] = data_a[13];
-  config_data[config_14] = data_a[14];
-  config_data[config_15] = data_a[15];
+  cfgdata.datalen_u = data_a[0];
+  cfgdata.datalen_l = data_a[1];
+  cfgdata.samp_period = data_a[2];
+  cfgdata.config_3 = data_a[3];
+  cfgdata.config_4 = data_a[4];
+  cfgdata.config_5 = data_a[5];
+  cfgdata.config_6 = data_a[6];
+  cfgdata.config_7 = data_a[7];
+  cfgdata.config_8 = data_a[8];
+  cfgdata.config_9 = data_a[9];
+  cfgdata.config_10 = data_a[10];
+  cfgdata.config_11 = data_a[11];
+  cfgdata.config_12 = data_a[12];
+  cfgdata.config_13 = data_a[13];
+  cfgdata.config_14 = data_a[14];
+  cfgdata.config_15 = data_a[15];
 
-  int datalen = config_data[datalen_u] * 256 + config_data[datalen_l];
+  int datalen = cfgdata.datalen_u * 256 + cfgdata.datalen_l;
 
   int l = 0;
 
   for (int k = 16; k < datalen; k += 10)
     {
+		tmppacket.temp_l = 54;
+
+
+		data.push_back(tmppacket);
+
       data.push_back();
       data[l].temp_u  = data_a[k + 0];
       data[l].temp_l  = data_a[k + 1];

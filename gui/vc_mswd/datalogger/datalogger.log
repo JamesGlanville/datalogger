@@ -1,25 +1,18 @@
-﻿Build started 24/05/2013 20:01:03.
-     1>Project "C:\Users\james_000\Github\datalogger\gui\datalogger.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\wxWidgets-2.8.12\lib\vc_lib\mswd" /I"C:\wxWidgets-2.8.12\include" /I. /I"C:\wxWidgets-2.8.12\samples" /Zi /nologo /W4 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D __WXMSW__ /D __WXDEBUG__ /D _WINDOWS /D NOPCH /D _VC80_UPGRADE=0x0600 /Gm- /EHsc /MDd /GS /Gy- /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo".\vc_mswd\datalogger\\" /Fd"vc_mswd\datalogger.pdb" /Gd /TP /analyze- /errorReport:prompt  /EHsc   /EHsc datalogger.cpp
-         datalogger.cpp
-     1>datalogger.cpp(115): warning C4100: 'event' : unreferenced formal parameter
-     1>datalogger.cpp(120): warning C4100: 'event' : unreferenced formal parameter
-     1>datalogger.cpp(133): warning C4100: 'event' : unreferenced formal parameter
-     1>datalogger.cpp(156): warning C4100: 'event' : unreferenced formal parameter
-     1>datalogger.cpp(161): warning C4100: 'event' : unreferenced formal parameter
-     1>datalogger.cpp(166): warning C4100: 'event' : unreferenced formal parameter
-     1>datalogger.cpp(171): warning C4100: 'event' : unreferenced formal parameter
-     1>datalogger.cpp(176): warning C4100: 'event' : unreferenced formal parameter
-     1>datalogger.cpp(181): warning C4100: 'event' : unreferenced formal parameter
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"vc_mswd\datalogger.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\wxWidgets-2.8.12\lib\vc_lib" wxmsw28d_core.lib wxbase28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib winmm.lib comctl32.lib rpcrt4.lib wsock32.lib odbc32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:".\vc_mswd\datalogger.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\vc_mswd\datalogger.lib" /MACHINE:X86 /SAFESEH .\vc_mswd\datalogger\sample.res
-         .\vc_mswd\datalogger\comms.obj
-         .\vc_mswd\datalogger\datalogger.obj
-         .\vc_mswd\datalogger\rs232.obj
-         datalogger.vcxproj -> C:\Users\james_000\Github\datalogger\gui\.\vc_mswd\datalogger.exe
-     1>Done Building Project "C:\Users\james_000\Github\datalogger\gui\datalogger.vcxproj" (Build target(s)).
+﻿Build started 27/05/2013 14:01:53.
+     1>Project "C:\Users\datalogger\Documents\GitHub\dgui\gui\datalogger.vcxproj" on node 2 (Build target(s)).
+     1>InitializeBuildStatus:
+         Touching ".\vc_mswd\datalogger\datalogger.unsuccessfulbuild".
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\wxWidgets-2.8.12\lib\vc_lib\mswd" /I"C:\wxWidgets-2.8.12\include" /I. /I"C:\wxWidgets-2.8.12\samples" /Zi /nologo /W4 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D __WXMSW__ /D __WXDEBUG__ /D _WINDOWS /D NOPCH /D _VC80_UPGRADE=0x0600 /Gm- /EHsc /MDd /GS /Gy- /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo".\vc_mswd\datalogger\\" /Fd"vc_mswd\datalogger.pdb" /Gd /TP /analyze- /errorReport:prompt  /EHsc comms.cpp
+         comms.cpp
+     1>comms.cpp(132): warning C4189: 'pass' : local variable is initialized but not referenced
+     1>comms.cpp(246): error C2661: 'std::vector<_Ty>::push_back' : no overloaded function takes 0 arguments
+                 with
+                 [
+                     _Ty=packet
+                 ]
+     1>Done Building Project "C:\Users\datalogger\Documents\GitHub\dgui\gui\datalogger.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:02.06
+Time Elapsed 00:00:03.14
