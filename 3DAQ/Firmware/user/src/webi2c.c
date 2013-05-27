@@ -52,6 +52,8 @@ int currentByte;
 volatile uint8_t Config[CONFIGLENGTH];
 extern volatile uint8_t LogBuffer[ENTRYBYTES];
 
+uint8_t blank[] = {0,0,0};
+
 
 /*
 Config data:
@@ -105,16 +107,10 @@ void I2C_EE_Upload(void)
 		UART_send_byte(byte);
 	}
 		clear();
-	write('C');
-	write('O');
-	write('M');
-	write('P');
-	write('L');
-	write('E');
-	write('T');
-	write('E');
+
 	delay_ms(2000);
 	clear();
+	standby();
 
 	LEDbyte=LEDbackup;
 	setLEDS();
@@ -145,13 +141,7 @@ void I2C_EE_FinishLog(void)
 	write('g');
 	delay_ms(2000);
 	clear();
-	write('S');
-	write('T');
-	write('A');
-	write('N');
-	write('D');
-	write('B');
-	write('Y');
+	standby();
 	
 }
 
@@ -160,7 +150,7 @@ void I2C_EE_Log(uint8_t* LogData)
 	if (currentByte >=EEPROM_BYTES) {I2C_EE_FinishLog();}
 	else
 	{
-	I2C_EE_BufferWrite(LogData, currentByte, CONFIGLENGTH);
+	I2C_EE_BufferWrite(LogData, currentByte, ENTRYBYTES);
 	
 	currentByte+=ENTRYBYTES;
 	}
@@ -183,7 +173,9 @@ void I2C_EE_Erase(void)
 	
 	for (i=CONFIGLENGTH;i<EEPROM_BYTES;i++)
 	{
-		I2C_EE_ByteWrite(ZERO, i);	
+I2C_EE_BufferWrite(blank, i,  1);
+
+//		I2C_EE_ByteWrite(blank, i);	
 		
 		if((i%100)==0){
 		setCursor(0,1);
@@ -196,16 +188,10 @@ void I2C_EE_Erase(void)
 		setLEDS();
 	}
 		clear();
-	write('C');
-	write('O');
-	write('M');
-	write('P');
-	write('L');
-	write('E');
-	write('T');
-	write('E');
+	complete();
 	delay_ms(2000);
 	clear();
+	standby();
 
 	LEDbyte=LEDbackup;
 	setLEDS();

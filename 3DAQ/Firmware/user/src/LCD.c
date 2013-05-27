@@ -30,6 +30,30 @@ uint8_t _initialized;
 uint8_t _numlines,_currline;
 //int custom_0[] = { 0x15, 0x1a, 0x15, 0x1a, 0x15, 0x10, 0x10, 0x10}; // checked flag
 
+void complete(void)
+{
+	write('C');
+	write('O');
+	write('M');
+	write('P');
+	write('L');
+	write('E');
+	write('T');
+	write('E');
+}
+
+void standby(void)
+{
+	write('S');
+	write('T');
+	write('A');
+	write('N');
+	write('D');
+	write('B');
+	write('Y');
+	
+}
+
 void writenumber(int number) //5 DIGITS MAX
 {
 	if (number/10000){
