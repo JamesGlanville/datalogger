@@ -92,7 +92,7 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
 			0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
   spin_sample = new wxSpinCtrl(this, SAMPLE_SELECT, wxString(wxT("60")));
   samplerate_sizer->Add(spin_sample, 0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
-  samplerate_sizer->Add(new wxButton(this, SAMPLE_SEND, wxT("Connect")),
+  samplerate_sizer->Add(new wxButton(this, SAMPLE_SEND, wxT("Set Rate")),
 			0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
   ctrlsizer->Add(samplerate_sizer, 1, wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
 
