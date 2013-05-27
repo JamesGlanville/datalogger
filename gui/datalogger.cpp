@@ -11,6 +11,9 @@ Date: Mon 20 May 2013 15:30
 extern int com_port_no;
 extern bool com_port_open;
 
+extern BYTE rx_buff[RX_BUFF_LEN];
+extern BYTE tx_buff[10];
+
  BEGIN_EVENT_TABLE(MyFrame, wxFrame)
   EVT_MENU(wxID_EXIT, MyFrame::OnExit)
   EVT_MENU(wxID_ABOUT, MyFrame::OnAbout)
@@ -178,7 +181,10 @@ void MyFrame::OnPortDisconnect(wxCommandEvent& event)
 void MyFrame::OnLogStart(wxCommandEvent& event)
 {
   // set first char in array to L for beginning logging
-  tx_buff[] = {};
+   for (int i = 0; i < 10; i++)
+	{
+	  tx_buff[i] = '\0';
+    }
   tx_buff[0] = 'L';
 
   // send via serial port
@@ -189,7 +195,10 @@ void MyFrame::OnLogStart(wxCommandEvent& event)
 void MyFrame::OnLogStop(wxCommandEvent& event)
 {
   // set first char in array to S to stop logging
-  tx_buff[] = {};
+  for (int i = 0; i < 10; i++)
+	{
+		tx_buff[i] = '\0';
+    }
   tx_buff[0] = 'S';
 
   // send via serial port
@@ -200,7 +209,10 @@ void MyFrame::OnLogStop(wxCommandEvent& event)
 void MyFrame::OnDataGet(wxCommandEvent& event)
 {
   // set first char in array to U to upload data
-  tx_buff[] = {};
+  for (int i = 0; i < 10; i++)
+	{
+	  tx_buff[i] = '\0';
+    }
   tx_buff[0] = 'U';
 
   // send via serial port
@@ -211,7 +223,10 @@ void MyFrame::OnDataGet(wxCommandEvent& event)
 void MyFrame::OnDataErase(wxCommandEvent& event)
 {
   // set first char in array to E to erase eeprom data
-  tx_buff[] = {};
+  for (int i = 0; i < 10; i++)
+	{
+	  tx_buff[i] = '\0';
+    }
   tx_buff[0] = 'E';
 
   // send via serial port
