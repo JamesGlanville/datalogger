@@ -14,6 +14,8 @@ extern bool com_port_open;
 extern BYTE rx_buff[RX_BUFF_LEN];
 extern BYTE tx_buff[10];
 
+int sample_period = 10;
+
  BEGIN_EVENT_TABLE(MyFrame, wxFrame)
   EVT_MENU(wxID_EXIT, MyFrame::OnExit)
   EVT_MENU(wxID_ABOUT, MyFrame::OnAbout)
@@ -22,8 +24,10 @@ extern BYTE tx_buff[10];
   EVT_MENU(DATA_GET, MyFrame::OnDataGet)
   EVT_MENU(DATA_ERASE, MyFrame::OnDataErase)
   EVT_SPINCTRL(PORT_SELECT, MyFrame::OnPortSelect)
+  EVT_SPINCTRL(SAMPLE_SELECT, MyFrame::OnSampleSelect)
   EVT_BUTTON(PORT_CONNECT, MyFrame::OnPortConnect)
   EVT_BUTTON(PORT_DISCONNECT, MyFrame::OnPortDisconnect)
+  EVT_BUTTON(SAMPLE_SEND, MyFrame::OnSampleSend)
   EVT_BUTTON(LOG_START, MyFrame::OnLogStart)
   EVT_BUTTON(LOG_STOP, MyFrame::OnLogStop)
   EVT_BUTTON(DATA_GET, MyFrame::OnDataGet)
@@ -72,16 +76,25 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
 
   wxBoxSizer *ctrlsizer = new wxBoxSizer(wxHORIZONTAL);
 
-  wxBoxSizer *connectsizer = new wxBoxSizer(wxVERTICAL);
-  connectsizer->Add(new wxStaticText(this, wxID_ANY, wxT("Data Port")),
+  wxBoxSizer *connect_sizer = new wxBoxSizer(wxVERTICAL);
+  connect_sizer->Add(new wxStaticText(this, wxID_ANY, wxT("Data Port")),
 		    0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
   spin_port = new wxSpinCtrl(this, PORT_SELECT, wxString(wxT("1")));
-  connectsizer->Add(spin_port, 0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
-  connectsizer->Add(new wxButton(this, PORT_CONNECT, wxT("Connect")),
-		 0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
-  connectsizer->Add(new wxButton(this, PORT_DISCONNECT, wxT("Disconnect")),
+  connect_sizer->Add(spin_port, 0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  connect_sizer->Add(new wxButton(this, PORT_CONNECT, wxT("Connect")),
 		    0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
-  ctrlsizer->Add(connectsizer, 1, wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
+  connect_sizer->Add(new wxButton(this, PORT_DISCONNECT, wxT("Disconnect")),
+		    0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  ctrlsizer->Add(connect_sizer, 1, wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
+
+  wxBoxSizer *samplerate_sizer = new wxBoxSizer(wxVERTICAL);
+  samplerate_sizer->Add(new wxStaticText(this, wxID_ANY, wxT("Sample Period")),
+			0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  spin_sample = new wxSpinCtrl(this, SAMPLE_SELECT, wxString(wxT("60")));
+  samplerate_sizer->Add(spin_sample, 0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  samplerate_sizer->Add(new wxButton(this, SAMPLE_SEND, wxT("Connect")),
+			0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  ctrlsizer->Add(samplerate_sizer, 1, wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
 
   wxBoxSizer *datalink_sizer = new wxBoxSizer(wxVERTICAL);
   datalink_sizer->Add(new wxStaticText(this, wxID_ANY, wxT("Linked Mode")),
@@ -176,6 +189,22 @@ void MyFrame::OnPortDisconnect(wxCommandEvent& event)
       wxLogMessage(wxT("Error, com port has not closed properly"));
     }
   return;
+}
+
+void MyFrame::OnSampleSelect(wxSpinEvent& event)
+{
+  sample_period = event.GetPosition()-1;
+}
+
+void MyFrame::OnSampleSend(wxCommandEvent& event)
+{
+  // set first char in array to R and second to value of sample_period
+  for (int i = 0; i < 10; i++)
+    {
+      tx_buff[i] = '\0';
+    }
+  tx_buff[0] = 'R';
+  tx_buff[1] = sample_period;
 }
 
 void MyFrame::OnLogStart(wxCommandEvent& event)

@@ -15,8 +15,10 @@ Date: Mon 20 May 2013 16:52
 enum
   {
     PORT_SELECT = wxID_HIGHEST + 1,
+    SAMPLE_SELECT,
     PORT_CONNECT,
     PORT_DISCONNECT,
+    SAMPLE_SEND,
     LOG_START,
     LOG_STOP,
     DATA_GET,
@@ -40,6 +42,7 @@ class MyFrame: public wxFrame
 public:
   MyFrame (const wxString& title, const wxPoint& pos, const wxSize& size);
   wxSpinCtrl *spin_port;
+  wxSpinCtrl *spin_sample;
 
   //private:
   void OnExit(wxCommandEvent& event);
@@ -47,6 +50,8 @@ public:
   void OnPortSelect(wxSpinEvent& event);
   void OnPortConnect(wxCommandEvent& event);
   void OnPortDisconnect(wxCommandEvent& event);
+  void OnSampleSelect(wxSpinEvent& event);
+  void OnSampleSend(wxCommandEvent& event);
   void OnLogStart(wxCommandEvent& event);
   void OnLogStop(wxCommandEvent& event);
   void OnDataGet(wxCommandEvent& event);
