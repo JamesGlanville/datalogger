@@ -96,7 +96,7 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
 		    0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
   connect_sizer->Add(new wxButton(this, PORT_DISCONNECT, wxT("Disconnect")),
 		    0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
-  ctrlsizer->Add(connect_sizer, 1, wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
+  ctrlsizer->Add(connect_sizer, 1, wxEXPAND | wxALL, 5);
 
   wxBoxSizer *samplerate_sizer = new wxBoxSizer(wxVERTICAL);
   samplerate_sizer->Add(new wxStaticText(this, wxID_ANY, wxT("Sample Period")),
@@ -105,7 +105,7 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
   samplerate_sizer->Add(spin_sample, 0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
   samplerate_sizer->Add(new wxButton(this, SAMPLE_SEND, wxT("Set Rate")),
 			0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
-  ctrlsizer->Add(samplerate_sizer, 1, wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
+  ctrlsizer->Add(samplerate_sizer, 1, wxEXPAND | wxALL, 5);
 
   wxBoxSizer *datalink_sizer = new wxBoxSizer(wxVERTICAL);
   datalink_sizer->Add(new wxStaticText(this, wxID_ANY, wxT("Linked Mode")),
@@ -114,7 +114,7 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
 		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
   datalink_sizer->Add(new wxButton(this, LOG_STOP, wxT("Stop Logging")),
 		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
-  ctrlsizer->Add(datalink_sizer, 1, wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
+  ctrlsizer->Add(datalink_sizer, 1, wxEXPAND | wxALL, 5);
 
   wxBoxSizer *upload_sizer = new wxBoxSizer(wxVERTICAL);
   upload_sizer->Add(new wxStaticText(this, wxID_ANY, wxT("Standalone Mode")),
@@ -123,7 +123,7 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
 		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
   upload_sizer->Add(new wxButton(this, DATA_ERASE, wxT("Erase Data")),
 		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
-  ctrlsizer->Add(upload_sizer, 1, wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
+  ctrlsizer->Add(upload_sizer, 1, wxEXPAND | wxALL, 5);
   
   wxBoxSizer *analysis_sizer = new wxBoxSizer(wxVERTICAL);
   analysis_sizer->Add(new wxStaticText(this, wxID_ANY, wxT("Analyse")),
@@ -132,7 +132,7 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
 		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
   analysis_sizer->Add(new wxButton(this, GRAPH_DATA, wxT("View All")),
 		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
-  ctrlsizer->Add(analysis_sizer, 1, wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
+  ctrlsizer->Add(analysis_sizer, 1, wxEXPAND | wxALL, 5);
 
   topsizer->Add(ctrlsizer, 1, wxALL | wxEXPAND, 5);
 
@@ -245,6 +245,7 @@ void MyFrame::OnLogStart(wxCommandEvent& event)
   
   send_command(10);
 
+  Connect( wxID_ANY, wxEVT_IDLE, wxIdleEventHandler(MyApp::onIdle) );  
   wxGetApp().read_loop_on = true;
 }
 
@@ -260,7 +261,8 @@ void MyFrame::OnLogStop(wxCommandEvent& event)
   // send via serial port
   
   send_command(10);
-
+  
+  Disconnect( wxEVT_IDLE, wxIdleEventHandler(MyApp::onIdle) );
   wxGetApp().read_loop_on = false;
 }
 
