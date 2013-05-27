@@ -83,7 +83,7 @@ int main(void)
 	}
 	
 	GPIO_Init_Mode(GPIOA,GPIO_Pin_0,GPIO_Mode_IN_FLOATING); //User button.
-//	GPIO_Init_Mode(GPIOA,GPIO_Pin_0,GPIO_Mode_IN_FLOATING); //Accelerometer interrupt.
+	GPIO_Init_Mode(GPIOC,GPIO_Pin_11,GPIO_Mode_IN_FLOATING); //Accelerometer interrupt.
 	delay_init();
 	LED_off();
 	LCDINIT();
@@ -93,13 +93,7 @@ int main(void)
 	noCursor();
 	noBlink();
 
-	write('S');
-	write('T');
-	write('A');
-	write('N');
-	write('D');
-	write('B');
-	write('Y');
+	standby();
 
 	UART_init();
 	humidity_init();
@@ -245,6 +239,8 @@ int main(void)
 	}
 }
 
+
+/*
 //------------------------------------------------------------------------------
 
 //Other functions
@@ -314,4 +310,4 @@ void check_and_process_received_command(void)
 		
 		}
 	}
-}
+}*/

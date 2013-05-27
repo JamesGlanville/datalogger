@@ -148,6 +148,7 @@ void USART1_IRQHandler(void)
 		
 		if (waitingforrate)
 		{
+			waitingforrate=0;
 			Config[2]=received_data;
 			I2C_EE_WriteConfig();
 		}
