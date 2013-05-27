@@ -8,6 +8,9 @@ Date: Mon 20 May 2013 15:30
 #include "datalogger.h"
 #include "comms.h"
 
+extern int com_port_no;
+extern bool com_port_open;
+
  BEGIN_EVENT_TABLE(MyFrame, wxFrame)
   EVT_MENU(wxID_EXIT, MyFrame::OnExit)
   EVT_MENU(wxID_ABOUT, MyFrame::OnAbout)
@@ -145,7 +148,7 @@ void MyFrame::OnPortConnect(wxCommandEvent& event)
   
   RS232_Init(com_port_no);
 
-  if (com_port_open)
+  if (!com_port_open)
     {
       wxLogMessage(wxT("Error: com port was unable to open"));
     }
