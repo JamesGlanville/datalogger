@@ -207,6 +207,7 @@ void read_eeprom_data(void)
   if(!com_port_open)
     {
       wxLogMessage(wxT("Error: no com port open"));
+      return;
     }
 
   while (i < eeprom_size)
@@ -241,27 +242,19 @@ void read_eeprom_data(void)
 
   int datalen = cfgdata.datalen_u * 256 + cfgdata.datalen_l;
 
-  int l = 0;
-
   for (int k = 16; k < datalen; k += 10)
     {
-		tmppacket.temp_l = 54;
-
-
-		data.push_back(tmppacket);
-
-      data.push_back();
-      data[l].temp_u  = data_a[k + 0];
-      data[l].temp_l  = data_a[k + 1];
-      data[l].humid   = data_a[k + 2];
-      data[l].accel_0 = data_a[k + 3];
-      data[l].accel_1 = data_a[k + 4];
-      data[l].accel_2 = data_a[k + 5];
-      data[l].accel_3 = data_a[k + 6];
-      data[l].accel_4 = data_a[k + 7];
-      data[l].accel_5 = data_a[k + 8];
-      data[l].accel_6 = data_a[k + 9];
-      l++;
+      tmppacket.temp_u  = data_a[k + 0];
+      tmppacket.temp_l  = data_a[k + 1];
+      tmppacket.humid   = data_a[k + 2];
+      tmppacket.accel_0 = data_a[k + 3];
+      tmppacket.accel_1 = data_a[k + 4];
+      tmppacket.accel_2 = data_a[k + 5];
+      tmppacket.accel_3 = data_a[k + 6];
+      tmppacket.accel_4 = data_a[k + 7];
+      tmppacket.accel_5 = data_a[k + 8];
+      tmppacket.accel_6 = data_a[k + 9];
+      data.push_back(tmppacket);
     }
 
   return;
