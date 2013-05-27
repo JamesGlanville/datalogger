@@ -16,6 +16,7 @@ enum
   {
     PORT_SELECT = wxID_HIGHEST + 1,
     PORT_CONNECT,
+    PORT_DISCONNECT,
     LOG_START,
     LOG_STOP,
     DATA_GET,
@@ -45,12 +46,13 @@ public:
   void OnAbout(wxCommandEvent& event);
   void OnPortSelect(wxSpinEvent& event);
   void OnPortConnect(wxCommandEvent& event);
+  void OnPortDisconnect(wxCommandEvent& event);
   void OnLogStart(wxCommandEvent& event);
   void OnLogStop(wxCommandEvent& event);
   void OnDataGet(wxCommandEvent& event);
   void OnDataErase(wxCommandEvent& event);
-  void  OnFind_Events(wxCommandEvent& event);
-  void  OnGraph_Data(wxCommandEvent& event);
+  void OnFind_Events(wxCommandEvent& event);
+  void OnGraph_Data(wxCommandEvent& event);
   DECLARE_EVENT_TABLE();
 
 };
