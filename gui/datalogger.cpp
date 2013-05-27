@@ -41,6 +41,7 @@ IMPLEMENT_APP(MyApp)
 
 bool MyApp::OnInit()
 {
+	read_loop_on=false;
   MyFrame *frame = new MyFrame ( wxT("Parcel Tracker"), wxPoint(50, 50),
 				 wxSize(450, 340));
   frame->Show(true);

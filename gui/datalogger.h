@@ -32,7 +32,7 @@ enum
 class MyApp: public wxApp
 {
 public:
-  bool read_loop_on = false;
+  bool read_loop_on;
   virtual bool OnInit();
   void onIdle(wxIdleEvent& evt);
 };
