@@ -20,6 +20,7 @@ extern bool com_port_open;
   EVT_MENU(DATA_ERASE, MyFrame::OnDataErase)
   EVT_SPINCTRL(PORT_SELECT, MyFrame::OnPortSelect)
   EVT_BUTTON(PORT_CONNECT, MyFrame::OnPortConnect)
+  EVT_BUTTON(PORT_DISCONNECT, MyFrame::OnPortDisconnect)
   EVT_BUTTON(LOG_START, MyFrame::OnLogStart)
   EVT_BUTTON(LOG_STOP, MyFrame::OnLogStop)
   EVT_BUTTON(DATA_GET, MyFrame::OnDataGet)
@@ -75,6 +76,8 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
   connectsizer->Add(spin_port, 0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
   connectsizer->Add(new wxButton(this, PORT_CONNECT, wxT("Connect")),
 		 0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  connectsizer->Add(new wxButton(this, PORT_DISCONNECT, wxT("Disconnect")),
+		    0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
   ctrlsizer->Add(connectsizer, 1, wxALIGN_CENTER_HORIZONTAL | wxALL, 5);
 
   wxBoxSizer *datalink_sizer = new wxBoxSizer(wxVERTICAL);
@@ -135,11 +138,6 @@ void MyFrame::OnPortSelect(wxSpinEvent& event)
 
 void MyFrame::OnPortConnect(wxCommandEvent& event)
 {
-  /*
-  wxString message = wxT("Attempting to connect to module thorugh comm port");
-  message = message << com_port_no;
-  wxLogMessage(message);
-  */
   if (com_port_open)
     {
       wxLogMessage(wxT("Already connected!"));
@@ -156,24 +154,69 @@ void MyFrame::OnPortConnect(wxCommandEvent& event)
   return;
 }
 
+void MyFrame::OnPortDisconnect(wxCommandEvent& event)
+{
+  if (!com_port_open)
+    {
+      wxLogMessage(wxT("No com port to close!"));
+      return;
+    }
+
+  RS232_Close();
+
+  if (!com_port_open)
+    {
+      wxLogMessage(wxT("Com port closed."));
+    }
+  else
+    {
+      wxLogMessage(wxT("Error, com port has not closed properly"));
+    }
+  return;
+}
+
 void MyFrame::OnLogStart(wxCommandEvent& event)
 {
-  wxLogMessage(wxT("Logging!"));
+  // set first char in array to L for beginning logging
+  tx_buff[] = {};
+  tx_buff[0] = 'L';
+
+  // send via serial port
+  
+  send_command(10);
 }
 
 void MyFrame::OnLogStop(wxCommandEvent& event)
 {
-  wxLogMessage(wxT("Finished logging!"));
+  // set first char in array to S to stop logging
+  tx_buff[] = {};
+  tx_buff[0] = 'S';
+
+  // send via serial port
+  
+  send_command(10);
 }
 
 void MyFrame::OnDataGet(wxCommandEvent& event)
 {
-  wxLogMessage(wxT("Uploading data from standalone mode."));
+  // set first char in array to U to upload data
+  tx_buff[] = {};
+  tx_buff[0] = 'U';
+
+  // send via serial port
+  
+  send_command(10);
 }
 
 void MyFrame::OnDataErase(wxCommandEvent& event)
 {
-  wxLogMessage(wxT("Erasing board memory"));
+  // set first char in array to E to erase eeprom data
+  tx_buff[] = {};
+  tx_buff[0] = 'E';
+
+  // send via serial port
+  
+  send_command(10);
 }
 
 void  MyFrame::OnFind_Events(wxCommandEvent& event)

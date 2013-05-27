@@ -10,7 +10,7 @@ Date: Mon 20 May 2013 17:21
 int com_port_no = 0;
 bool com_port_open = false;
 BYTE rx_buff[RX_BUFF_LEN];
-BYTE tx_buff[2];
+BYTE tx_buff[10];
 
 // RS232 functions
 void RS232_Init(int port_no)
@@ -31,7 +31,7 @@ void RS232_Init(int port_no)
   {
       // remember COM port number and state
       wxLogMessage(wxT("Successful comport opening"));
-	  com_port_no = port_no;
+      com_port_no = port_no;
       com_port_open = true;
   }
 }
@@ -43,6 +43,8 @@ void RS232_Close(void)
     {
       RS232_CloseComport(com_port_no);
     }
+  
+  com_port_open = false;
 }
 
 // Read in a block of data from the COM port's input buffer
