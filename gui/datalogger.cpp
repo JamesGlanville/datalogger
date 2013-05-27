@@ -14,7 +14,7 @@ extern bool com_port_open;
 extern BYTE rx_buff[RX_BUFF_LEN];
 extern BYTE tx_buff[10];
 
-int sample_period = 10;
+int sample_period = 60;
 
  BEGIN_EVENT_TABLE(MyFrame, wxFrame)
   EVT_MENU(wxID_EXIT, MyFrame::OnExit)
@@ -247,6 +247,8 @@ void MyFrame::OnDataGet(wxCommandEvent& event)
   // send via serial port
   
   send_command(10);
+
+  
 }
 
 void MyFrame::OnDataErase(wxCommandEvent& event)
