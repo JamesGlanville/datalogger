@@ -47,6 +47,17 @@ bool MyApp::OnInit()
   return true;
 }
 
+
+// idea from http://wiki.wxwidgets.org/Making_a_render_loop
+void MyApp::onIdle(wxIdleEvent& evt)
+{
+  if(read_loop_on)
+    {
+      get_Readings();
+      evt.RequestMore();
+    }
+}
+
 MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
 		 wxSize& size)
   : wxFrame(NULL, wxID_ANY, title, pos, size)
@@ -198,6 +209,12 @@ void MyFrame::OnSampleSelect(wxSpinEvent& event)
 
 void MyFrame::OnSampleSend(wxCommandEvent& event)
 {
+  if (!com_port_open)
+    {
+      wxLogMessage(wxT("Error: no com port open!"));
+      return;
+    }
+
   // set first char in array to R and second to value of sample_period
   for (int i = 0; i < 10; i++)
     {
@@ -211,6 +228,12 @@ void MyFrame::OnSampleSend(wxCommandEvent& event)
 
 void MyFrame::OnLogStart(wxCommandEvent& event)
 {
+  if (!com_port_open)
+    {
+      wxLogMessage(wxT("Error: no com port open!"));
+      return;
+    }
+
   // set first char in array to L for beginning logging
    for (int i = 0; i < 10; i++)
 	{
@@ -221,6 +244,8 @@ void MyFrame::OnLogStart(wxCommandEvent& event)
   // send via serial port
   
   send_command(10);
+
+  wxGetApp().read_loop_on = true;
 }
 
 void MyFrame::OnLogStop(wxCommandEvent& event)
@@ -235,14 +260,22 @@ void MyFrame::OnLogStop(wxCommandEvent& event)
   // send via serial port
   
   send_command(10);
+
+  wxGetApp().read_loop_on = false;
 }
 
 void MyFrame::OnDataGet(wxCommandEvent& event)
 {
+  if (!com_port_open)
+    {
+      wxLogMessage(wxT("Error: no com port open!"));
+      return;
+    }
+
   // set first char in array to U to upload data
   for (int i = 0; i < 10; i++)
-	{
-	  tx_buff[i] = '\0';
+    {
+      tx_buff[i] = '\0';
     }
   tx_buff[0] = 'U';
 
@@ -255,6 +288,12 @@ void MyFrame::OnDataGet(wxCommandEvent& event)
 
 void MyFrame::OnDataErase(wxCommandEvent& event)
 {
+  if (!com_port_open)
+    {
+      wxLogMessage(wxT("Error: no com port open!"));
+      return;
+    }
+
   // set first char in array to E to erase eeprom data
   for (int i = 0; i < 10; i++)
 	{

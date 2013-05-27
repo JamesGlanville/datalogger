@@ -47,6 +47,7 @@ struct packet {
 };
 
 std::vector <packet> data;
+std::vector <BYTE> read_buff;
 
 // RS232 functions
 void RS232_Init(int port_no)
@@ -262,3 +263,44 @@ void read_eeprom_data(void)
 }
 
 
+void get_Readings(void)
+{
+  int n = 0;
+  int i = 0;
+  packet tmppacket;
+  BYTE tmpdata[eeprom_size];
+  
+  data.clear();
+
+  n = RS232_PollComport(com_port_no, tmpdata, eeprom_size - 1);
+
+  for (i=0; i<n; i++)
+    {
+      read_buff.push_back(tmpdata[i]);
+    }
+
+  while (read_buff.size() >= 10)
+    {
+      tmppacket.temp_u  = read_buff.front();
+      read_buff.erase(read_buff.begin());
+      tmppacket.temp_l  = read_buff.front();
+      read_buff.erase(read_buff.begin());
+      tmppacket.humid   = read_buff.front();
+      read_buff.erase(read_buff.begin());
+      tmppacket.accel_0 = read_buff.front();
+      read_buff.erase(read_buff.begin());
+      tmppacket.accel_1 = read_buff.front();
+      read_buff.erase(read_buff.begin());
+      tmppacket.accel_2 = read_buff.front();
+      read_buff.erase(read_buff.begin());
+      tmppacket.accel_3 = read_buff.front();
+      read_buff.erase(read_buff.begin());
+      tmppacket.accel_4 = read_buff.front();
+      read_buff.erase(read_buff.begin());
+      tmppacket.accel_5 = read_buff.front();
+      read_buff.erase(read_buff.begin());
+      tmppacket.accel_6 = read_buff.front();
+      read_buff.erase(read_buff.begin());
+      data.push_back(tmppacket);
+    }
+}

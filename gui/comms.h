@@ -24,5 +24,6 @@ void send_command(int n);
 
 int read_sensor_data(int *value);
 void read_eeprom_data(void);
+void get_Readings(void);
 
 #endif	// datalogger_h
