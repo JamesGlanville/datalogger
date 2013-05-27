@@ -205,6 +205,8 @@ void MyFrame::OnSampleSend(wxCommandEvent& event)
     }
   tx_buff[0] = 'R';
   tx_buff[1] = sample_period;
+
+  send_command(10);
 }
 
 void MyFrame::OnLogStart(wxCommandEvent& event)
