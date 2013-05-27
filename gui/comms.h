@@ -9,6 +9,7 @@ Date: Mon 20 May 2013 17:15
 #ifndef comms_h
 #define comms_h
 #include <wx/wx.h>
+#include <vector>
 
 typedef unsigned char BYTE;
 
@@ -22,5 +23,6 @@ BYTE* Read_Data_Block(void);
 void send_command(int n);
 
 int read_sensor_data(int *value);
+void read_eeprom_data(void);
 
 #endif	// datalogger_h

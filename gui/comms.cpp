@@ -7,10 +7,45 @@ Date: Mon 20 May 2013 17:21
 
 #include "rs232.h"
 #include "comms.h"
+
 int com_port_no = 0;
 bool com_port_open = false;
 BYTE rx_buff[RX_BUFF_LEN];
 BYTE tx_buff[10];
+
+struct config_data {
+  BYTE datalen_u;
+  BYTE datalen_l;
+  BYTE samp_period;
+  BYTE config_3;
+  BYTE config_4;
+  BYTE config_5;
+  BYTE config_6;
+  BYTE config_7;
+  BYTE config_8;
+  BYTE config_9;
+  BYTE config_10;
+  BYTE config_11;
+  BYTE config_12;
+  BYTE config_13;
+  BYTE config_14;
+  BYTE config_15;
+};
+
+struct packet {
+  BYTE temp_u;
+  BYTE temp_l;
+  BYTE humid;
+  BYTE accel_0;
+  BYTE accel_1;
+  BYTE accel_2;
+  BYTE accel_3;
+  BYTE accel_4;
+  BYTE accel_5;
+  BYTE accel_6;
+};
+
+std::vector <packet*> data;
 
 // RS232 functions
 void RS232_Init(int port_no)
@@ -87,8 +122,6 @@ BYTE* Read_Data_Block(void)
   return rx_buff;
 }
 
-
-
 // send n byte command
 void send_command(int n)
 {
@@ -158,3 +191,73 @@ int read_sensor_data(int *value)
 
   return 0;
 }
+
+
+void read_eeprom_data(void)
+{
+  int eeprom_size = 32000;
+  int i;
+  int n = 0;
+  BYTE data_a[eeprom_size];
+  BYTE tmpdata[eeprom_size];
+
+  if(!com_port_open)
+    {
+      wxLogMessage(wxT("Error: no com port open"));
+    }
+
+  while (i < eeprom_size)
+    {
+      // put the n bytes availiable into tmpdata
+      n = RS232_PollComport(com_port_no, tmpdata, eeprom_size - 1);
+      for (int j = i; j < i+n; j++)
+	{
+	  // load tmpdata contents into next n elements of data
+	  data_a[j] = tmpdata[j-i];
+	}
+      i += n;
+    }
+
+  // put data from data array into more structured vector
+  config_data[datalen_u] = data_a[0];
+  config_data[datalen_l] = data_a[1];
+  config_data[samp_period] = data_a[2];
+  config_data[config_3] = data_a[3];
+  config_data[config_4] = data_a[4];
+  config_data[config_5] = data_a[5];
+  config_data[config_6] = data_a[6];
+  config_data[config_7] = data_a[7];
+  config_data[config_8] = data_a[8];
+  config_data[config_9] = data_a[9];
+  config_data[config_10] = data_a[10];
+  config_data[config_11] = data_a[11];
+  config_data[config_12] = data_a[12];
+  config_data[config_13] = data_a[13];
+  config_data[config_14] = data_a[14];
+  config_data[config_15] = data_a[15];
+
+  int datalen = config_data[datalen_u] * 256 + config_data[datalen_l];
+
+  int l = 0;
+
+  for (int k = 16; k < datalen; k += 10)
+    {
+      data.push_back();
+      data[l].temp_u  = data_a[k + 0];
+      data[l].temp_l  = data_a[k + 1];
+      data[l].humid   = data_a[k + 2];
+      data[l].accel_0 = data_a[k + 3];
+      data[l].accel_1 = data_a[k + 4];
+      data[l].accel_2 = data_a[k + 5];
+      data[l].accel_3 = data_a[k + 6];
+      data[l].accel_4 = data_a[k + 7];
+      data[l].accel_5 = data_a[k + 8];
+      data[l].accel_6 = data_a[k + 9];
+      l++;
+    }
+
+  return;
+  
+}
+
+
