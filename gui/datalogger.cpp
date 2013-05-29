@@ -317,7 +317,6 @@ void MyFrame::OnDataErase(wxCommandEvent& event)
 
 void MyFrame::OnCSVWrite(wxCommandEvent& event)
 {
-	wxString currentdocpath;
   wxFileDialog *writetocsv = new wxFileDialog(this,
 					     wxT("Choose file to save in"),
 					     wxEmptyString,
@@ -352,5 +351,5 @@ void  MyFrame::OnFind_Events(wxCommandEvent& event)
 
 void  MyFrame::OnGraph_Data(wxCommandEvent& event)
 {
-    wxLogMessage(wxT("Graphing all data"));
+  
 }
