@@ -11,6 +11,8 @@ Date: Mon 20 May 2013 16:52
 #include <wx/wx.h>
 #include <wx/spinctrl.h>
 #include <wx/textctrl.h>
+#include <iostream>
+#include <fstream>
 
 enum
   {
