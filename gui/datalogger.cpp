@@ -64,7 +64,7 @@ void MyApp::onIdle(wxIdleEvent& evt)
 
 MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
 		 wxSize& size)
-  : wxFrame(NULL, wxID_ANY, title, pos, size)
+  : wxFrame(NULL, wxID_ANY, title, pos, wxSize(700,400), wxDEFAULT_FRAME_STYLE | wxFULL_REPAINT_ON_RESIZE)
 {
   wxMenu *menuFile = new wxMenu;
   menuFile->Append(wxID_EXIT);
@@ -317,6 +317,7 @@ void MyFrame::OnDataErase(wxCommandEvent& event)
 
 void MyFrame::OnCSVWrite(wxCommandEvent& event)
 {
+	wxString currentdocpath;
   wxFileDialog *writetocsv = new wxFileDialog(this,
 					     wxT("Choose file to save in"),
 					     wxEmptyString,
@@ -327,7 +328,7 @@ void MyFrame::OnCSVWrite(wxCommandEvent& event)
 
   if (writetocsv->ShowModal() == wxID_OK) // if the user click "Open" instead of "Cancel"
     {
-      wxString currentdocpath = writetocsv->GetPath();
+      currentdocpath = writetocsv->GetPath();
     }
 
   writetocsv->Destroy();
@@ -336,7 +337,7 @@ void MyFrame::OnCSVWrite(wxCommandEvent& event)
   csvfile.open(currentdocpath.fn_str());
   csvfile << "Temperature,Humidity,Accx,Accy,Accz\n";
   int datalen = cfgdata.datalen_u * 256 + cfgdata.datalen_l;
-  for (int k = 16; k < datalen*10; k += 10)
+  for (int k = 0; k < data.size(); k += 1)
     {
       csvfile<<data[k].temp_u*256+data[k].temp_l << "," << (int)data[k].humid << "," << (int)data[k].accel_0 <<","<< (int)data[k].accel_1 <<","<< (int)data[k].accel_2 <<"\n";
     }
