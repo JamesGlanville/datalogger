@@ -339,7 +339,7 @@ void MyFrame::OnCSVWrite(wxCommandEvent& event)
   int datalen = cfgdata.datalen_u * 256 + cfgdata.datalen_l;
   for (int k = 0; k < data.size(); k += 1)
     {
-      csvfile<<data[k].temp_u*256+data[k].temp_l << "," << (int)data[k].humid << "," << (int)data[k].accel_0 <<","<< (int)data[k].accel_1 <<","<< (int)data[k].accel_2 <<"\n";
+      csvfile<<float(data[k].temp_u*256+data[k].temp_l)/100 << "," << (int)data[k].humid << "," << (int)data[k].accel_0 <<","<< (int)data[k].accel_1 <<","<< (int)data[k].accel_2 <<"\n";
     }
   csvfile.close();
 
