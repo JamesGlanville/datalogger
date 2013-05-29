@@ -317,6 +317,7 @@ void MyFrame::OnDataErase(wxCommandEvent& event)
 
 void MyFrame::OnCSVWrite(wxCommandEvent& event)
 {
+	int maccelx,maccely,maccelz;
   wxFileDialog *writetocsv = new wxFileDialog(this,
 					     wxT("Choose file to save in"),
 					     wxEmptyString,
@@ -334,11 +335,20 @@ void MyFrame::OnCSVWrite(wxCommandEvent& event)
 
   std::ofstream csvfile;
   csvfile.open(currentdocpath.fn_str());
-  csvfile << "Temperature,Humidity,Accx,Accy,Accz\n";
+  csvfile << "Temperature/C,Humidity/%RH,Accx/mg,Accy/mg,Accz/mg,Shaken?\n";
   int datalen = cfgdata.datalen_u * 256 + cfgdata.datalen_l;
   for (int k = 0; k < data.size(); k += 1)
     {
-      csvfile<<data[k].temp_u*256+data[k].temp_l << "," << (int)data[k].humid << "," << (int)data[k].accel_0 <<","<< (int)data[k].accel_1 <<","<< (int)data[k].accel_2 <<"\n";
+		maccelx = data[k].accel_0 & 0x0F;
+		if (data[k].accel_0 & 0x10) {maccelx=-maccelx;}
+		maccelx = (maccelx*1000)/21.33;
+		maccely = data[k].accel_1 & 0x0F;
+		if (data[k].accel_1 & 0x10) {maccely=-maccely;}
+		maccely = (maccely*1000)/21.33;
+		maccelz = data[k].accel_1 & 0x0F;
+		if (data[k].accel_2 & 0x10) {maccelz=-maccelz;}
+		maccelz = (maccelz*1000)/21.33;
+		csvfile<<float(data[k].temp_u*256+data[k].temp_l)/100 << "," << (int)data[k].humid << "," << maccelx <<","<< maccely <<","<< maccelz <<"," << (int)data[k].accel_3 <<"\n";
     }
   csvfile.close();
 
