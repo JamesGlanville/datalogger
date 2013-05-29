@@ -314,7 +314,23 @@ void MyFrame::OnDataErase(wxCommandEvent& event)
 
 void MyFrame::OnCSVWrite(wxCommandEvent& event)
 {
-  
+  wxFileDialog *writetocsv = new wxFileDialog(this,
+					     wxT("Choose file to save in"),
+					     wxEmptyString,
+					     wxEmptyString,
+					     _("CSV files (*.csv)|*.csv"),
+					     wxFD_SAVE,
+					     wxDefaultPosition);
+
+  if (writetocsv->ShowModal() == wxID_OK) // if the user click "Open" instead of "Cancel"
+    {
+      wxString currentdocpath = writetocsv->GetPath();
+    }
+
+  writetocsv->Destroy();
+
+
+
 }
 
 void  MyFrame::OnFind_Events(wxCommandEvent& event)
