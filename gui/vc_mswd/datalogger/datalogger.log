@@ -1,4 +1,4 @@
-﻿Build started 29/05/2013 16:45:39.
+﻿Build started 29/05/2013 19:35:29.
      1>Project "C:\Users\james_000\Github\datalogger\gui\datalogger.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\wxWidgets-2.8.12\lib\vc_lib\mswd" /I"C:\wxWidgets-2.8.12\include" /I. /I"C:\wxWidgets-2.8.12\samples" /Zi /nologo /W4 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D __WXMSW__ /D __WXDEBUG__ /D _WINDOWS /D NOPCH /D _VC80_UPGRADE=0x0600 /Gm- /EHsc /MDd /GS /Gy- /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo".\vc_mswd\datalogger\\" /Fd"vc_mswd\datalogger.pdb" /Gd /TP /analyze- /errorReport:prompt  /EHsc   /EHsc datalogger.cpp
@@ -28,4 +28,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.24
+Time Elapsed 00:00:02.23
