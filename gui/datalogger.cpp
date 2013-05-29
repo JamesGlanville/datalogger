@@ -10,6 +10,8 @@ Date: Mon 20 May 2013 15:30
 
 extern int com_port_no;
 extern bool com_port_open;
+extern config_data cfgdata;
+extern std::vector <packet> data;
 
 extern BYTE rx_buff[RX_BUFF_LEN];
 extern BYTE tx_buff[10];
@@ -287,7 +289,8 @@ void MyFrame::OnDataGet(wxCommandEvent& event)
 
   // send via serial port
   
-  send_command(10);
+  send_command(1);
+  read_eeprom_data();
 
   
 }
@@ -329,7 +332,15 @@ void MyFrame::OnCSVWrite(wxCommandEvent& event)
 
   writetocsv->Destroy();
 
-
+  std::ofstream csvfile;
+  csvfile.open(currentdocpath.fn_str());
+  csvfile << "Temperature,Humidity,Accx,Accy,Accz\n";
+  int datalen = cfgdata.datalen_u * 256 + cfgdata.datalen_l;
+  for (int k = 16; k < datalen*10; k += 10)
+    {
+      csvfile<<data[k].temp_u*256+data[k].temp_l << "," << (int)data[k].humid << "," << (int)data[k].accel_0 <<","<< (int)data[k].accel_1 <<","<< (int)data[k].accel_2 <<"\n";
+    }
+  csvfile.close();
 
 }
 

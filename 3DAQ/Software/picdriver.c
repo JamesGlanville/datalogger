@@ -12,7 +12,8 @@
 #define READ_VERSION    0
 #define MSG    8
 
-//This file contains low level functions to send and receive data over the RS232 serial link
+//This file contains low level functions to send and receive data over
+//   the RS232 serial link
 //You will need to modify some of these functions for your application
 
 //Define transmit and receive buffer
@@ -28,7 +29,8 @@ static int com_port_open = 0;
 void RS232_Init(int port_no)
 {
 	//Open COM port given by port_no using parameters:
-	// COM port, device name, baud rate, parity, data bits, stop bits, input queue size, outptu queue size
+	// COM port, device name, baud rate, parity, data bits, stop
+	// bits, input queue size, outptu queue size
 	OpenComConfig (port_no, "", 115200, 0, 8, 1, 1024, 16); 
 	
 	//remember COM port number and state

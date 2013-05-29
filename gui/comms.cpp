@@ -7,6 +7,9 @@ Date: Mon 20 May 2013 17:21
 
 #include "rs232.h"
 #include "comms.h"
+
+using namespace std;
+
 #define eeprom_size 32000
 
 int com_port_no = 0;
@@ -14,40 +17,10 @@ bool com_port_open = false;
 BYTE rx_buff[RX_BUFF_LEN];
 BYTE tx_buff[10];
 
-struct config_data {
-  BYTE datalen_u;
-  BYTE datalen_l;
-  BYTE samp_period;
-  BYTE config_3;
-  BYTE config_4;
-  BYTE config_5;
-  BYTE config_6;
-  BYTE config_7;
-  BYTE config_8;
-  BYTE config_9;
-  BYTE config_10;
-  BYTE config_11;
-  BYTE config_12;
-  BYTE config_13;
-  BYTE config_14;
-  BYTE config_15;
-};
-
-struct packet {
-  BYTE temp_u;
-  BYTE temp_l;
-  BYTE humid;
-  BYTE accel_0;
-  BYTE accel_1;
-  BYTE accel_2;
-  BYTE accel_3;
-  BYTE accel_4;
-  BYTE accel_5;
-  BYTE accel_6;
-};
-
 std::vector <packet> data;
 std::vector <BYTE> read_buff;
+config_data cfgdata;
+
 
 // RS232 functions
 void RS232_Init(int port_no)
@@ -197,13 +170,11 @@ int read_sensor_data(int *value)
 
 void read_eeprom_data(void)
 {
-  int i;
+  int i=0;
   int n = 0;
   BYTE data_a[eeprom_size];
   BYTE tmpdata[eeprom_size];
-  config_data cfgdata;
   packet tmppacket;
-
 
   if(!com_port_open)
     {
@@ -243,7 +214,7 @@ void read_eeprom_data(void)
 
   int datalen = cfgdata.datalen_u * 256 + cfgdata.datalen_l;
 
-  for (int k = 16; k < datalen; k += 10)
+  for (int k = 16; k < datalen*10; k += 10)
     {
       tmppacket.temp_u  = data_a[k + 0];
       tmppacket.temp_l  = data_a[k + 1];
@@ -255,11 +226,12 @@ void read_eeprom_data(void)
       tmppacket.accel_4 = data_a[k + 7];
       tmppacket.accel_5 = data_a[k + 8];
       tmppacket.accel_6 = data_a[k + 9];
-      data.push_back(tmppacket);
-    }
+
+	  data.push_back(tmppacket);
+
+  }
 
   return;
-  
 }
 
 
