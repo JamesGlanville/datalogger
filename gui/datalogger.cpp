@@ -32,6 +32,7 @@ int sample_period = 60;
   EVT_BUTTON(LOG_STOP, MyFrame::OnLogStop)
   EVT_BUTTON(DATA_GET, MyFrame::OnDataGet)
   EVT_BUTTON(DATA_ERASE, MyFrame::OnDataErase)
+  EVT_BUTTON(SAVE_CSV, MyFrame::OnCSVWrite)
   EVT_BUTTON(FIND_EVENTS, MyFrame::OnFind_Events)
   EVT_BUTTON(GRAPH_DATA, MyFrame::OnGraph_Data)
 END_EVENT_TABLE()
@@ -128,6 +129,8 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
   
   wxBoxSizer *analysis_sizer = new wxBoxSizer(wxVERTICAL);
   analysis_sizer->Add(new wxStaticText(this, wxID_ANY, wxT("Analyse")),
+		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  analysis_sizer->Add(new wxButton(this, SAVE_CSV, wxT("Write to CSV")),
 		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
   analysis_sizer->Add(new wxButton(this, FIND_EVENTS, wxT("Find Events")),
 		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
@@ -307,6 +310,11 @@ void MyFrame::OnDataErase(wxCommandEvent& event)
   // send via serial port
   
   send_command(10);
+}
+
+void MyFrame::OnCSVWrite(wxCommandEvent& event)
+{
+  
 }
 
 void  MyFrame::OnFind_Events(wxCommandEvent& event)
