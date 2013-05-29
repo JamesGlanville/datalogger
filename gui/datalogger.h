@@ -48,6 +48,7 @@ public:
   MyFrame (const wxString& title, const wxPoint& pos, const wxSize& size);
   wxSpinCtrl *spin_port;
   wxSpinCtrl *spin_sample;
+  wxString currentdocpath;
 
   //private:
   void OnExit(wxCommandEvent& event);
