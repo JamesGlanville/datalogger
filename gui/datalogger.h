@@ -23,6 +23,7 @@ enum
     LOG_STOP,
     DATA_GET,
     DATA_ERASE,
+    SAVE_CSV,
     FIND_EVENTS,
     GRAPH_DATA,
   };
@@ -58,6 +59,7 @@ public:
   void OnLogStop(wxCommandEvent& event);
   void OnDataGet(wxCommandEvent& event);
   void OnDataErase(wxCommandEvent& event);
+  void OnCSVWrite(wxCommandEvent& event);
   void OnFind_Events(wxCommandEvent& event);
   void OnGraph_Data(wxCommandEvent& event);
   DECLARE_EVENT_TABLE();
