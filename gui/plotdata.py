@@ -8,7 +8,8 @@ from pylab import *
 from matplotlib import *
 import sys
 
-data = csv2rec(sys.argv[1], delimiter=',')
+#data = csv2rec(sys.argv[1], delimiter=',')
+data = csv2rec("5.csv", delimiter=',')
 
 pyplot.figure("Temperature")
 plot(numpy.arange(len(data))+1, data[('temperature')])

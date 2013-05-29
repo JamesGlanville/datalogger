@@ -351,5 +351,7 @@ void  MyFrame::OnFind_Events(wxCommandEvent& event)
 
 void  MyFrame::OnGraph_Data(wxCommandEvent& event)
 {
-  
+  wxString command = wxT("./plotdata.py &");
+  //  command.Append(currentdocpath);
+  wxShell(command);
 }
