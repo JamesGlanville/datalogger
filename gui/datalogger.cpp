@@ -284,7 +284,8 @@ void MyFrame::OnDataGet(wxCommandEvent& event)
 
   // send via serial port
   
-  send_command(10);
+  send_command(1);
+  read_eeprom_data();
 
   
 }

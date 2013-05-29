@@ -7,6 +7,10 @@ Date: Mon 20 May 2013 17:21
 
 #include "rs232.h"
 #include "comms.h"
+#include <iostream>
+#include <fstream>
+using namespace std;
+
 #define eeprom_size 32000
 
 int com_port_no = 0;
@@ -204,6 +208,9 @@ void read_eeprom_data(void)
   config_data cfgdata;
   packet tmppacket;
 
+  ofstream csvfile;
+  csvfile.open("csvfile.csv");
+  csvfile << "Temperature,Humidity,Accx,Accy,Accz\n";
 
   if(!com_port_open)
     {
@@ -243,7 +250,7 @@ void read_eeprom_data(void)
 
   int datalen = cfgdata.datalen_u * 256 + cfgdata.datalen_l;
 
-  for (int k = 16; k < datalen; k += 10)
+  for (int k = 16; k < datalen*10; k += 10)
     {
       tmppacket.temp_u  = data_a[k + 0];
       tmppacket.temp_l  = data_a[k + 1];
@@ -255,11 +262,14 @@ void read_eeprom_data(void)
       tmppacket.accel_4 = data_a[k + 7];
       tmppacket.accel_5 = data_a[k + 8];
       tmppacket.accel_6 = data_a[k + 9];
-      data.push_back(tmppacket);
-    }
+	  csvfile<<tmppacket.temp_u*256+tmppacket.temp_l << "," << (int)tmppacket.humid << "," << (int)tmppacket.accel_0 <<","<< (int)tmppacket.accel_1 <<","<< (int)tmppacket.accel_2 <<"\n";
 
+	  data.push_back(tmppacket);
+
+  }
+
+  csvfile.close();
   return;
-  
 }
 
 
