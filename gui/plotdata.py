@@ -1,6 +1,7 @@
 #!/usr/bin/python
 """
 Plot data from datalogger.
+Takes name of csv file to plot as argument.
 """
 from numpy import *
 from pylab import *
