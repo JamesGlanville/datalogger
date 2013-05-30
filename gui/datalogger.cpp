@@ -42,7 +42,7 @@ int sample_period = 60;
   EVT_BUTTON(DATA_GET, MyFrame::OnDataGet)
   EVT_BUTTON(DATA_ERASE, MyFrame::OnDataErase)
   EVT_BUTTON(SAVE_CSV, MyFrame::OnCSVWrite)
-  EVT_BUTTON(FIND_EVENTS, MyFrame::OnFind_Events)
+//  EVT_BUTTON(FIND_EVENTS, MyFrame::OnFind_Events)
   EVT_BUTTON(GRAPH_DATA, MyFrame::OnGraph_Data)
 END_EVENT_TABLE()
 
@@ -159,8 +159,8 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
 		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
   analysis_sizer->Add(new wxButton(this, SAVE_CSV, wxT("Write to CSV")),
 		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
-  analysis_sizer->Add(new wxButton(this, FIND_EVENTS, wxT("Find Events")),
-		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+//  analysis_sizer->Add(new wxButton(this, FIND_EVENTS, wxT("Find Events")),
+//		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
   analysis_sizer->Add(new wxButton(this, GRAPH_DATA, wxT("View All")),
 		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
   analysis_sizer->Add(new wxStaticText(this,ACCZ_LABEL,wxT("AccelZ /mg")),0,wxALL|wxALIGN_CENTER_HORIZONTAL, 5);
@@ -238,7 +238,7 @@ void MyFrame::OnPortDisconnect(wxCommandEvent& event)
 
 void MyFrame::OnSampleSelect(wxSpinEvent& event)
 {
-  sample_period = event.GetPosition()-1;
+  sample_period = event.GetPosition();
 }
 
 void MyFrame::OnSampleSend(wxCommandEvent& event)
@@ -257,7 +257,7 @@ void MyFrame::OnSampleSend(wxCommandEvent& event)
   tx_buff[0] = 'R';
   tx_buff[1] = sample_period;
 
-  send_command(10);
+  send_command(2);
 }
 
 void MyFrame::OnLogStart(wxCommandEvent& event)
@@ -384,10 +384,10 @@ void MyFrame::OnCSVWrite(wxCommandEvent& event)
 
 }
 
-void  MyFrame::OnFind_Events(wxCommandEvent& event)
+/*void  MyFrame::OnFind_Events(wxCommandEvent& event)
 {
   wxLogMessage(wxT("Finding interest points"));
-}
+}*/
 
 void  MyFrame::OnGraph_Data(wxCommandEvent& event)
 {
