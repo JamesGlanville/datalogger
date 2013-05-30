@@ -13,6 +13,13 @@ extern bool com_port_open;
 extern config_data cfgdata;
 extern std::vector <packet> data;
 
+wxStaticText	*temperature_label;
+wxStaticText	*temperature;
+wxStaticText	*humidity;
+wxStaticText	*accelerationx;
+wxStaticText	*accelerationy;
+wxStaticText	*accelerationz;
+
 extern BYTE rx_buff[RX_BUFF_LEN];
 extern BYTE tx_buff[10];
 
@@ -92,6 +99,14 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
   wxBoxSizer *ctrlsizer = new wxBoxSizer(wxHORIZONTAL);
 
   wxBoxSizer *connect_sizer = new wxBoxSizer(wxVERTICAL);
+
+  temperature_label = new wxStaticText(this,TEMP_LABEL,wxT("Temperature/C"));
+  temperature = new wxStaticText(this,TEMP,wxT("?"));
+  humidity = new wxStaticText(this,TEMP,wxT("?"));
+  accelerationx = new wxStaticText(this,TEMP,wxT("?"));
+  accelerationy = new wxStaticText(this,TEMP,wxT("?"));
+  accelerationz = new wxStaticText(this,TEMP,wxT("?"));
+
   connect_sizer->Add(new wxStaticText(this, wxID_ANY, wxT("Data Port")),
 		    0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
   spin_port = new wxSpinCtrl(this, PORT_SELECT, wxString(wxT("1")));
@@ -100,6 +115,8 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
 		    0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
   connect_sizer->Add(new wxButton(this, PORT_DISCONNECT, wxT("Disconnect")),
 		    0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  connect_sizer->Add(temperature_label,0,wxALL|wxALIGN_CENTER_HORIZONTAL, 5);
+  connect_sizer->Add(temperature,0,wxALL|wxALIGN_CENTER_HORIZONTAL, 5);
   ctrlsizer->Add(connect_sizer, 1, wxEXPAND | wxALL, 5);
 
   wxBoxSizer *samplerate_sizer = new wxBoxSizer(wxVERTICAL);
@@ -109,6 +126,8 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
   samplerate_sizer->Add(spin_sample, 0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
   samplerate_sizer->Add(new wxButton(this, SAMPLE_SEND, wxT("Set Rate")),
 			0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  samplerate_sizer->Add(new wxStaticText(this,HUMID_LABEL,wxT("Humidity/%RH")),0,wxALL|wxALIGN_CENTER_HORIZONTAL, 5);
+  samplerate_sizer->Add(humidity,0,wxALL|wxALIGN_CENTER_HORIZONTAL, 5);
   ctrlsizer->Add(samplerate_sizer, 1, wxEXPAND | wxALL, 5);
 
   wxBoxSizer *datalink_sizer = new wxBoxSizer(wxVERTICAL);
@@ -118,6 +137,9 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
 		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
   datalink_sizer->Add(new wxButton(this, LOG_STOP, wxT("Stop Logging")),
 		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  datalink_sizer->Add(new wxStaticText(this,ACCX_LABEL,wxT("AccelX /mg")),0,wxALL|wxALIGN_CENTER_HORIZONTAL, 5);
+  datalink_sizer->Add(accelerationx,0,wxALL|wxALIGN_CENTER_HORIZONTAL, 5);
+
   ctrlsizer->Add(datalink_sizer, 1, wxEXPAND | wxALL, 5);
 
   wxBoxSizer *upload_sizer = new wxBoxSizer(wxVERTICAL);
@@ -127,6 +149,9 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
 		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
   upload_sizer->Add(new wxButton(this, DATA_ERASE, wxT("Erase Data")),
 		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  upload_sizer->Add(new wxStaticText(this,ACCY_LABEL,wxT("AccelY /mg")),0,wxALL|wxALIGN_CENTER_HORIZONTAL, 5);
+    upload_sizer->Add(accelerationy,0,wxALL|wxALIGN_CENTER_HORIZONTAL, 5);
+
   ctrlsizer->Add(upload_sizer, 1, wxEXPAND | wxALL, 5);
   
   wxBoxSizer *analysis_sizer = new wxBoxSizer(wxVERTICAL);
@@ -138,6 +163,9 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
 		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
   analysis_sizer->Add(new wxButton(this, GRAPH_DATA, wxT("View All")),
 		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  analysis_sizer->Add(new wxStaticText(this,ACCZ_LABEL,wxT("AccelZ /mg")),0,wxALL|wxALIGN_CENTER_HORIZONTAL, 5);
+  analysis_sizer->Add(accelerationz,0,wxALL|wxALIGN_CENTER_HORIZONTAL, 5);
+
   ctrlsizer->Add(analysis_sizer, 1, wxEXPAND | wxALL, 5);
 
   topsizer->Add(ctrlsizer, 1, wxALL | wxEXPAND, 5);
@@ -246,6 +274,7 @@ void MyFrame::OnLogStart(wxCommandEvent& event)
 	  tx_buff[i] = '\0';
     }
   tx_buff[0] = 'L';
+    data.clear();
 
   // send via serial port
   
@@ -286,6 +315,7 @@ void MyFrame::OnDataGet(wxCommandEvent& event)
       tx_buff[i] = '\0';
     }
   tx_buff[0] = 'U';
+    data.clear();
 
   // send via serial port
   
