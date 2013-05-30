@@ -393,5 +393,11 @@ void  MyFrame::OnGraph_Data(wxCommandEvent& event)
 {
   wxString command = wxT("./plotdata.py &");
   //  command.Append(currentdocpath);
+
+  // this is better as it returns control to the gui before the plots
+  // are closed.
+  // wxExecute(command, wxEXEC_ASYNC);
+
+  // but this one works...
   wxShell(command);
 }
