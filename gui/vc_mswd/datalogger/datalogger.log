@@ -1,31 +1,38 @@
-﻿Build started 29/05/2013 19:35:29.
-     1>Project "C:\Users\james_000\Github\datalogger\gui\datalogger.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\wxWidgets-2.8.12\lib\vc_lib\mswd" /I"C:\wxWidgets-2.8.12\include" /I. /I"C:\wxWidgets-2.8.12\samples" /Zi /nologo /W4 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D __WXMSW__ /D __WXDEBUG__ /D _WINDOWS /D NOPCH /D _VC80_UPGRADE=0x0600 /Gm- /EHsc /MDd /GS /Gy- /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo".\vc_mswd\datalogger\\" /Fd"vc_mswd\datalogger.pdb" /Gd /TP /analyze- /errorReport:prompt  /EHsc   /EHsc datalogger.cpp
+﻿Build started 30/05/2013 12:15:27.
+     1>Project "C:\Users\datalogger\Documents\GitHub\dgui\gui\datalogger.vcxproj" on node 2 (Build target(s)).
+     1>InitializeBuildStatus:
+         Creating ".\vc_mswd\datalogger\datalogger.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         All outputs are up-to-date.
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\wxWidgets-2.8.12\lib\vc_lib\mswd" /I"C:\wxWidgets-2.8.12\include" /I. /I"C:\wxWidgets-2.8.12\samples" /Zi /nologo /W4 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D __WXMSW__ /D __WXDEBUG__ /D _WINDOWS /D NOPCH /D _VC80_UPGRADE=0x0600 /Gm- /EHsc /MDd /GS /Gy- /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo".\vc_mswd\datalogger\\" /Fd"vc_mswd\datalogger.pdb" /Gd /TP /analyze- /errorReport:prompt  /EHsc   /EHsc datalogger.cpp
          datalogger.cpp
-     1>datalogger.cpp(66): warning C4100: 'size' : unreferenced formal parameter
-     1>datalogger.cpp(154): warning C4100: 'event' : unreferenced formal parameter
-     1>datalogger.cpp(159): warning C4100: 'event' : unreferenced formal parameter
-     1>datalogger.cpp(172): warning C4100: 'event' : unreferenced formal parameter
-     1>datalogger.cpp(190): warning C4100: 'event' : unreferenced formal parameter
-     1>datalogger.cpp(216): warning C4100: 'event' : unreferenced formal parameter
-     1>datalogger.cpp(235): warning C4100: 'event' : unreferenced formal parameter
-     1>datalogger.cpp(258): warning C4100: 'event' : unreferenced formal parameter
-     1>datalogger.cpp(275): warning C4100: 'event' : unreferenced formal parameter
-     1>datalogger.cpp(298): warning C4100: 'event' : unreferenced formal parameter
-     1>datalogger.cpp(340): warning C4018: '<' : signed/unsigned mismatch
-     1>datalogger.cpp(318): warning C4100: 'event' : unreferenced formal parameter
-     1>datalogger.cpp(339): warning C4189: 'datalen' : local variable is initialized but not referenced
-     1>datalogger.cpp(357): warning C4100: 'event' : unreferenced formal parameter
-     1>datalogger.cpp(362): warning C4100: 'event' : unreferenced formal parameter
+     1>datalogger.cpp(73): warning C4100: 'size' : unreferenced formal parameter
+     1>datalogger.cpp(182): warning C4100: 'event' : unreferenced formal parameter
+     1>datalogger.cpp(187): warning C4100: 'event' : unreferenced formal parameter
+     1>datalogger.cpp(200): warning C4100: 'event' : unreferenced formal parameter
+     1>datalogger.cpp(218): warning C4100: 'event' : unreferenced formal parameter
+     1>datalogger.cpp(244): warning C4100: 'event' : unreferenced formal parameter
+     1>datalogger.cpp(263): warning C4100: 'event' : unreferenced formal parameter
+     1>datalogger.cpp(287): warning C4100: 'event' : unreferenced formal parameter
+     1>datalogger.cpp(304): warning C4100: 'event' : unreferenced formal parameter
+     1>datalogger.cpp(328): warning C4100: 'event' : unreferenced formal parameter
+     1>datalogger.cpp(370): warning C4018: '<' : signed/unsigned mismatch
+     1>datalogger.cpp(348): warning C4100: 'event' : unreferenced formal parameter
+     1>datalogger.cpp(369): warning C4189: 'datalen' : local variable is initialized but not referenced
+     1>datalogger.cpp(392): warning C4100: 'event' : unreferenced formal parameter
+       ResourceCompile:
+         All outputs are up-to-date.
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"vc_mswd\datalogger.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\wxWidgets-2.8.12\lib\vc_lib" wxmsw28d_core.lib wxbase28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib winmm.lib comctl32.lib rpcrt4.lib wsock32.lib odbc32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:".\vc_mswd\datalogger.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\vc_mswd\datalogger.lib" /MACHINE:X86 /SAFESEH .\vc_mswd\datalogger\sample.res
+         C:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"vc_mswd\datalogger.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\wxWidgets-2.8.12\lib\vc_lib" wxmsw28d_core.lib wxbase28d.lib wxtiffd.lib wxjpegd.lib wxpngd.lib wxzlibd.lib wxregexd.lib wxexpatd.lib winmm.lib comctl32.lib rpcrt4.lib wsock32.lib odbc32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:".\vc_mswd\datalogger.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\vc_mswd\datalogger.lib" /MACHINE:X86 /SAFESEH .\vc_mswd\datalogger\sample.res
          .\vc_mswd\datalogger\comms.obj
          .\vc_mswd\datalogger\datalogger.obj
          .\vc_mswd\datalogger\rs232.obj
-         datalogger.vcxproj -> C:\Users\james_000\Github\datalogger\gui\.\vc_mswd\datalogger.exe
-     1>Done Building Project "C:\Users\james_000\Github\datalogger\gui\datalogger.vcxproj" (Build target(s)).
+         datalogger.vcxproj -> C:\Users\datalogger\Documents\GitHub\dgui\gui\.\vc_mswd\datalogger.exe
+       FinalizeBuildStatus:
+         Deleting file ".\vc_mswd\datalogger\datalogger.unsuccessfulbuild".
+         Touching ".\vc_mswd\datalogger\datalogger.lastbuildstate".
+     1>Done Building Project "C:\Users\datalogger\Documents\GitHub\dgui\gui\datalogger.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:02.23
+Time Elapsed 00:00:03.98

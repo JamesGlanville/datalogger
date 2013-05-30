@@ -12,6 +12,12 @@ using namespace std;
 
 #define eeprom_size 32000
 
+extern wxStaticText	*temperature;
+extern wxStaticText	*humidity;
+extern wxStaticText	*accelerationx;
+extern wxStaticText	*accelerationy;
+extern wxStaticText	*accelerationz;
+
 int com_port_no = 0;
 bool com_port_open = false;
 BYTE rx_buff[RX_BUFF_LEN];
@@ -239,10 +245,10 @@ void get_Readings(void)
 {
   int n = 0;
   int i = 0;
+  int maccelx,maccely,maccelz;
   packet tmppacket;
   BYTE tmpdata[eeprom_size];
-  
-  data.clear();
+  int datalen = 0;
 
   n = RS232_PollComport(com_port_no, tmpdata, eeprom_size - 1);
 
@@ -253,6 +259,10 @@ void get_Readings(void)
 
   while (read_buff.size() >= 10)
     {
+		datalen++;
+	  cfgdata.datalen_u=(datalen>>8)&0xFF;
+	 cfgdata.datalen_l=datalen&0xFF;
+
       tmppacket.temp_u  = read_buff.front();
       read_buff.erase(read_buff.begin());
       tmppacket.temp_l  = read_buff.front();
@@ -274,5 +284,21 @@ void get_Readings(void)
       tmppacket.accel_6 = read_buff.front();
       read_buff.erase(read_buff.begin());
       data.push_back(tmppacket);
+	  		maccelx = tmppacket.accel_0 & 0x0F;
+		if (tmppacket.accel_0 & 0x10) {maccelx=-maccelx;}
+		maccelx = (maccelx*1000)/21.33;
+		maccely = tmppacket.accel_1 & 0x0F;
+		if (tmppacket.accel_1 & 0x10) {maccely=-maccely;}
+		maccely = (maccely*1000)/21.33;
+		maccelz = tmppacket.accel_1 & 0x0F;
+		if (tmppacket.accel_2 & 0x10) {maccelz=-maccelz;}
+		maccelz = (maccelz*1000)/21.33;
+
+  temperature->SetLabel(wxString::Format(wxT("%i.%i"),(tmppacket.temp_u*256+tmppacket.temp_l)/100,(tmppacket.temp_u*256+tmppacket.temp_l)%100));
+  humidity->SetLabel(wxString::Format(wxT("%i"),tmppacket.humid));
+  accelerationx->SetLabel(wxString::Format(wxT("%i"),maccelx));
+  accelerationy->SetLabel(wxString::Format(wxT("%i"),maccely));
+  accelerationz->SetLabel(wxString::Format(wxT("%i"),maccelz));
     }
+
 }
