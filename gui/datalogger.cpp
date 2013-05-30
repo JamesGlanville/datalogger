@@ -365,7 +365,7 @@ void MyFrame::OnCSVWrite(wxCommandEvent& event)
 
   std::ofstream csvfile;
   csvfile.open(currentdocpath.fn_str());
-  csvfile << "Temperature/C,Humidity/%RH,Accx/mg,Accy/mg,Accz/mg,Shaken?\n";
+  csvfile << "Time/s,Temperature/C,Humidity/%RH,Accx/mg,Accy/mg,Accz/mg,Shaken?\n";
   int datalen = cfgdata.datalen_u * 256 + cfgdata.datalen_l;
   for (int k = 0; k < data.size(); k += 1)
     {
@@ -378,7 +378,7 @@ void MyFrame::OnCSVWrite(wxCommandEvent& event)
 		maccelz = data[k].accel_1 & 0x0F;
 		if (data[k].accel_2 & 0x10) {maccelz=-maccelz;}
 		maccelz = (maccelz*1000)/21.33;
-		csvfile<<float(data[k].temp_u*256+data[k].temp_l)/100 << "," << (int)data[k].humid << "," << maccelx <<","<< maccely <<","<< maccelz <<"," << (int)data[k].accel_3 <<"\n";
+		csvfile<< k*sample_period<<","     <<float(data[k].temp_u*256+data[k].temp_l)/100 << "," << (int)data[k].humid << "," << maccelx <<","<< maccely <<","<< maccelz <<"," << (int)data[k].accel_3 <<"\n";
     }
   csvfile.close();
 

@@ -1,4 +1,4 @@
-﻿Build started 30/05/2013 12:09:30.
+﻿Build started 30/05/2013 12:15:27.
      1>Project "C:\Users\datalogger\Documents\GitHub\dgui\gui\datalogger.vcxproj" on node 2 (Build target(s)).
      1>InitializeBuildStatus:
          Creating ".\vc_mswd\datalogger\datalogger.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -35,4 +35,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.51
+Time Elapsed 00:00:03.98
