@@ -13,3 +13,9 @@
 
 + for container tracking, not parcel based
   http://www.scantec.de/en/knowledge-base/hi-q-news/2010/wireless-sensor-networks-fuer-die-logistik.html
+
++ Cambridge consultants development
+  http://www.cambridgeconsultants.com/news/pr/release/116/en
+  
++ Nasa payload tracker (spinoff)
+  http://spinoff.nasa.gov/spinoff2000/t1.htm
