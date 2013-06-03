@@ -100,12 +100,7 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
 
   wxBoxSizer *connect_sizer = new wxBoxSizer(wxVERTICAL);
 
-  temperature_label = new wxStaticText(this,TEMP_LABEL,wxT("Temperature/C"));
-  temperature = new wxStaticText(this,TEMP,wxT("?"));
-  humidity = new wxStaticText(this,TEMP,wxT("?"));
-  accelerationx = new wxStaticText(this,TEMP,wxT("?"));
-  accelerationy = new wxStaticText(this,TEMP,wxT("?"));
-  accelerationz = new wxStaticText(this,TEMP,wxT("?"));
+
 
   connect_sizer->Add(new wxStaticText(this, wxID_ANY, wxT("Data Port")),
 		    0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
@@ -115,8 +110,6 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
 		    0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
   connect_sizer->Add(new wxButton(this, PORT_DISCONNECT, wxT("Disconnect")),
 		    0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
-  connect_sizer->Add(temperature_label,0,wxALL|wxALIGN_CENTER_HORIZONTAL, 5);
-  connect_sizer->Add(temperature,0,wxALL|wxALIGN_CENTER_HORIZONTAL, 5);
   ctrlsizer->Add(connect_sizer, 1, wxEXPAND | wxALL, 5);
 
   wxBoxSizer *samplerate_sizer = new wxBoxSizer(wxVERTICAL);
@@ -126,8 +119,6 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
   samplerate_sizer->Add(spin_sample, 0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
   samplerate_sizer->Add(new wxButton(this, SAMPLE_SEND, wxT("Set Rate")),
 			0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
-  samplerate_sizer->Add(new wxStaticText(this,HUMID_LABEL,wxT("Humidity/%RH")),0,wxALL|wxALIGN_CENTER_HORIZONTAL, 5);
-  samplerate_sizer->Add(humidity,0,wxALL|wxALIGN_CENTER_HORIZONTAL, 5);
   ctrlsizer->Add(samplerate_sizer, 1, wxEXPAND | wxALL, 5);
 
   wxBoxSizer *datalink_sizer = new wxBoxSizer(wxVERTICAL);
@@ -137,9 +128,6 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
 		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
   datalink_sizer->Add(new wxButton(this, LOG_STOP, wxT("Stop Logging")),
 		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
-  datalink_sizer->Add(new wxStaticText(this,ACCX_LABEL,wxT("AccelX /mg")),0,wxALL|wxALIGN_CENTER_HORIZONTAL, 5);
-  datalink_sizer->Add(accelerationx,0,wxALL|wxALIGN_CENTER_HORIZONTAL, 5);
-
   ctrlsizer->Add(datalink_sizer, 1, wxEXPAND | wxALL, 5);
 
   wxBoxSizer *upload_sizer = new wxBoxSizer(wxVERTICAL);
@@ -149,9 +137,6 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
 		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
   upload_sizer->Add(new wxButton(this, DATA_ERASE, wxT("Erase Data")),
 		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
-  upload_sizer->Add(new wxStaticText(this,ACCY_LABEL,wxT("AccelY /mg")),0,wxALL|wxALIGN_CENTER_HORIZONTAL, 5);
-    upload_sizer->Add(accelerationy,0,wxALL|wxALIGN_CENTER_HORIZONTAL, 5);
-
   ctrlsizer->Add(upload_sizer, 1, wxEXPAND | wxALL, 5);
   
   wxBoxSizer *analysis_sizer = new wxBoxSizer(wxVERTICAL);
@@ -163,12 +148,49 @@ MyFrame::MyFrame(const wxString& title, const wxPoint& pos, const
 //		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
   analysis_sizer->Add(new wxButton(this, GRAPH_DATA, wxT("View All")),
 		      0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
-  analysis_sizer->Add(new wxStaticText(this,ACCZ_LABEL,wxT("AccelZ /mg")),0,wxALL|wxALIGN_CENTER_HORIZONTAL, 5);
-  analysis_sizer->Add(accelerationz,0,wxALL|wxALIGN_CENTER_HORIZONTAL, 5);
-
   ctrlsizer->Add(analysis_sizer, 1, wxEXPAND | wxALL, 5);
 
   topsizer->Add(ctrlsizer, 1, wxALL | wxEXPAND, 5);
+
+
+  wxBoxSizer *outputsizer = new wxBoxSizer(wxHORIZONTAL);
+
+  wxBoxSizer *tempsizer = new wxBoxSizer(wxVERTICAL);
+  tempsizer->Add(new wxStaticText(this,TEMP_LABEL,wxT("Temperature/C")),
+		 0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  temperature = new wxStaticText(this,TEMP,wxT("?"));
+  tempsizer->Add(temperature, 0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  outputsizer->Add(tempsizer, 1, wxALL | wxEXPAND, 5);
+
+  wxBoxSizer *humsizer = new wxBoxSizer(wxVERTICAL);
+  humsizer->Add(new wxStaticText(this,HUMID_LABEL,wxT("Humidity/%RH")),
+			0,wxALL|wxALIGN_CENTER_HORIZONTAL, 5);
+  humidity = new wxStaticText(this,HUMID,wxT("?"));
+  humsizer->Add(humidity, 0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  outputsizer->Add(humsizer, 1, wxALL | wxEXPAND, 5);
+
+  wxBoxSizer *xaccelsizer = new wxBoxSizer(wxVERTICAL);
+  xaccelsizer->Add(new wxStaticText(this,ACCX_LABEL,wxT("AccelX /mg")),
+		      0,wxALL|wxALIGN_CENTER_HORIZONTAL, 5);
+  accelerationx = new wxStaticText(this,ACCX,wxT("?"));
+  xaccelsizer->Add(accelerationx, 0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  outputsizer->Add(xaccelsizer, 1, wxALL | wxEXPAND, 5);
+
+  wxBoxSizer *yaccelsizer = new wxBoxSizer(wxVERTICAL);
+  yaccelsizer->Add(new wxStaticText(this,ACCY_LABEL,wxT("AccelY /mg")),
+		    0,wxALL|wxALIGN_CENTER_HORIZONTAL, 5);
+  accelerationy = new wxStaticText(this,ACCY,wxT("?"));
+  yaccelsizer->Add(accelerationy, 0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  outputsizer->Add(yaccelsizer, 1, wxALL | wxEXPAND, 5);
+
+  wxBoxSizer *zaccelsizer = new wxBoxSizer(wxVERTICAL);
+  zaccelsizer->Add(new wxStaticText(this,ACCZ_LABEL,wxT("AccelZ /mg")),
+		   0,wxALL|wxALIGN_CENTER_HORIZONTAL, 5);
+  accelerationz = new wxStaticText(this,ACCZ,wxT("?"));  
+  zaccelsizer->Add(accelerationz, 0, wxALL | wxALIGN_CENTER_HORIZONTAL, 5);
+  outputsizer->Add(zaccelsizer, 1, wxALL | wxEXPAND, 5);
+
+  topsizer->Add(outputsizer, 1, wxALL | wxEXPAND, 5);
 
   SetSizeHints(400,400);
   SetSizer(topsizer);
@@ -348,7 +370,7 @@ void MyFrame::OnDataErase(wxCommandEvent& event)
 void MyFrame::OnCSVWrite(wxCommandEvent& event)
 {
 	int maccelx,maccely,maccelz;
-  wxFileDialog *writetocsv = new wxFileDialog(this,
+	wxFileDialog *writetocsv = new wxFileDialog(this,
 					     wxT("Choose file to save in"),
 					     wxEmptyString,
 					     wxEmptyString,
