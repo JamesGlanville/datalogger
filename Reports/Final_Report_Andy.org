@@ -1,0 +1,15 @@
+* Parcel tracker:
+
+http://www.sciencedaily.com/releases/2011/06/110608123143.htm
+FedEx tracker (Sensor-based-logistics):
+http://www.senseaware.com/
+who benefits from this type of tracking
+http://www.senseaware.com/who-benefits/
+worldwide release Nov 2012 - limited in available couriers.
+http://news.van.fedex.com/SenseAware
+
+military application:
+http://www.almc.army.mil/alog/issues/JulAug08/enhancelog_w_sensortech.html
+
+for container tracking, not parcel based
+http://www.scantec.de/en/knowledge-base/hi-q-news/2010/wireless-sensor-networks-fuer-die-logistik.html
