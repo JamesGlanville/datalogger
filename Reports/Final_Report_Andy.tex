@@ -44,13 +44,23 @@
 % generate title
 \maketitle
 
+\vspace{\stretch{1}}
+
 \begin{center}
-  \includegraphics[width=0.3\textwidth]{damaged_parcel.jpg}
+  \includegraphics[width=0.5\textwidth]{damaged_parcel.jpg}
 \end{center}
+
+\vspace{\stretch{2}}
 
 \noindent summary: motive, method, key results, conclusions \todo{add summary/abstract}
 
+\newpage
+
 \tableofcontents
+\listoffigures
+\listoftables
+
+\newpage
 
 \section{Introduction}
 \label{sec:introduction}
@@ -78,7 +88,7 @@ and domestic packages too. In the past six months, two large companies
 have announced products to achieve this, but it is clearly an emerging
 market and a good product launched now could have a great chance of
 success. One of these, ``SenseAware''\cite{SA_PR} by FedEx
-Corporation, is already released and availiable however this is only
+Corporation, is already released and available however this is only
 available on a select number of carriers and services and is a
 business level product, not suited for everyday or relatively low
 value package monitoring. An alternative is the ``DropTag'' system
@@ -126,14 +136,15 @@ monitoring, debugging and status display, so an LCD screen was used
 along with five LEDs.
 
 The platform choices were specified in the project requirements, so
-the project was to be developed for the STM32F100 ARM Cortex MCU and a
-PC running the Windows operating system. The key design areas would
-therefore be hardware, firmware and software. The budget was generous
-for the development board so cost was not really an issue, however to
-achieve a commercial product, the cost and size would need to be
-reduced. This could be achieved by miniaturising, as surface mount
-components tend to be cheaper; and use of a cheaper MCU (which wouldn't
-need the development features of the STM).
+the project was to be developed for the STM32F100 ARM Cortex
+microcontroller and a PC running the Windows operating system. The key
+design areas would therefore be hardware, firmware and software. The
+budget was generous for the development board so cost was not really
+an issue, however to achieve a commercial product, the cost and size
+would need to be reduced. This could be achieved by miniaturising, as
+surface mount components tend to be cheaper; and use of a cheaper
+microcontroller (which wouldn't need the development features of the
+STM).
 
 The project block diagram is shown in figure \ref{fig:sysblkdgrm}.
 \begin{figure}[htb]
@@ -148,16 +159,16 @@ The project block diagram is shown in figure \ref{fig:sysblkdgrm}.
 \label{sec:project-management}
 
 The project was divided between the two team members. It was decided
-that James would write the firmware for the MCU, Andrew would write
-the software for the computer and the hardware design was to be
-shared. The general development plan was to start by making a basic
-but working system and gradually adding features and complexity upon
-the existing system. This ensured that we would have a fully
-operational product, if not with every desired feature, by the end of the
-project, and would also allow the simpler parts to be used in testing
-more complex parts.
+that James would write the firmware for the microcontroller, Andrew
+would write the software for the computer and the hardware design was
+to be shared. The general development plan was to start by making a
+basic but working system and gradually adding features and complexity
+upon the existing system. This ensured that we would have a fully
+operational product, if not with every desired feature, by the end of
+the project, and would also allow the simpler parts to be used in
+testing more complex parts.
 
-Initally basic hardware circuits were designed and built. The firmware
+Initially basic hardware circuits were designed and built. The firmware
 and software were then developed. The hardware circuits were highly
 useful in testing the firmware, but in writing the firmware, flaws in
 the circuit designs became apparent, such as the initial plan to use a
@@ -196,7 +207,7 @@ selected, based on price and good electrical characteristics based on
 the application requirements.
 
 An analogue signal processing circuit was required to process the
-output from the thermistor to a signal usable by the MCU
+output from the thermistor to a signal usable by the microcontroller
 analogue-to-digital converter (ADC). This required a signal in the
 range of $0-3.3\,\mathrm{V}$.
 
@@ -242,10 +253,16 @@ operation, and the extremes of the working temperature range are both
 unlikely to experienced and reaching the limits of the linear response
 from the thermistor. For the package tracking application, it is not
 critical to know how far beyond these limits the temperature has
-reached, so a simple saturating output is sufficient.
+reached, so a simple saturating output is sufficient. This allows the
+ADC to operate with maximum precision.
 
 The circuit diagram for the temperature monitoring circuit is shown in
 appendix \ref{sec:source-code-circuit}, figure \ref{fig:tempcct}.
+
+A filter could easily have been implemented in the op-amp to avoid
+noise, since the signal is of very low frequency. However, the output
+was found to be very stable without filtering, so filtering was
+avoided for the sake of simplicity.
 
 \subsection{Software}
 \label{sec:software}
@@ -268,7 +285,7 @@ this were:
 \end{enumerate}
 
 There are three main components to the software development. The
-backend functionality required serial port communications and
+back end functionality required serial port communications and
 communications protocols with the microcontroller. The front end required a simple
 user interface to display the logged data and control the
 microcontroller functions.
@@ -343,7 +360,7 @@ converts the user commands into the required bytes to send to the
 microcontroller, and organises the returned data into a
 \texttt{vector} data structure.
 
-This level provides functions to be called by the datalogger
+This level provides functions to be called by the data logger
 application:
 \begin{description}
   \item[\texttt{RS232\_Init()}] Opens the required comport to
@@ -362,25 +379,164 @@ application:
 
 The top level of the PC system is the user interface, which allows the
 user to interact with the system in an intuitive and non-technical
-way. The user interface is shown in figure
+way. The user interface\footnote{Since this screenshot was taken,
+  additional features have been added to allow setting of a threshold
+  temperature and humidity. If these limits are crossed, a warning is
+  displayed.} is shown in figure \ref{fig:guiss}.\footnote{It may be
+  noted that James' report shows a user interface which looks quite
+  different, this is due to running it on Windows 8, whereas I used
+  Ubuntu. This shows the cross-platform capabilities of the software.}
 
-
+\begin{figure}[!htb]
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{GUI_Screenshot.png}
+  \end{center}
+  \caption{Screenshot of user interface running under Ubuntu Linux.}
+  \label{fig:guiss}
+\end{figure}
 
 The user can click buttons and select values from a drop down menu to
 operate the data logger. The output from the monitoring is displayed
-directly on the screen during the 
+directly on the screen during operation in the linked mode. After
+uploading the data from standalone mode operation, or once a logging
+session has been completed in linked mode, the data may be exported to
+a CSV file.
+
+Additionally, the user may set the sample rate of the data
+logger from the gui. This is stored on board the data logger, so may
+be used to set the standalone operation rate as well as linked
+mode.
+
+Development was started on a feature to plot the data that had been
+logged (accessed with the ``View All'' button). This utilised a python
+plotting script, called by the user interface. This system worked on
+Linux based systems, but was not modified to run under Windows. This
+would be a useful feature, however it was not implemented to allow
+development of more critical features. As an interim replacement, the
+user may open a saved CSV file in their favourite application and plot
+it (very easy in Microsoft Excel, Matlab and other data analysis
+packages).
 
 \subsection{Communications}
+
+It was required to define a communications protocol. This would ensure
+both the microcontroller and the PC knew what each byte and bit of a
+transmitted data packet meant. It was decided to avoid start-bits,
+stop-bits and check sums in the initial implementation, though room
+was left for these to be added later if necessary. In general, these
+weren't required as the PC could operate at sufficiently higher speed
+that it faced no problems in reading the data.
+
+In linked mode operation, with the microcontroller plugged in to the
+computer, the microcontroller was to send one packet of data for each
+sampling period. Each packet was to contain 10 bytes, with the first 2
+bytes containing temperature data, in upper and lower bytes, then a
+byte of humidity data. The remaining 7 bytes were reserved for
+accelerometer data, as we were initially unsure exactly what
+information we could send from the accelerometer. These bytes could
+also be used for check sums to ensure the data was received
+correctly. Figure \ref{fig:datapacket} shows the layout of a data
+packet.
+
+\begin{figure}[!htb]
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{Packet_diagram.pdf}
+  \end{center}
+  \caption{Data packet layout, showing positions of bytes and their contents.}
+  \label{fig:datapacket}
+\end{figure}
+
+When in standalone mode, the data logger would store all recorded data
+in the EEPROM. The first 16 bytes of EEPROM data were to be reserved
+for configuration information: the first two would store the length of
+the recorded data from the last log, while the third byte would store
+the current sample rate. The rest of the EEPROM (32,000 bytes) would
+be divided into 10 byte segments, each to contain one data packet, as
+specified for the standalone mode.
+
+For sending commands from the PC to the microcontroller, it was
+decided that all commands sent should be 10 bytes long. Each would
+contain an ASCII character defining the desired command, as shown in
+table \ref{tab:commands}.
+
+\begin{table}[!htb]
+  \begin{center}
+    \begin{tabular}{c p{0.5\textwidth}}
+      \textbf{Character} & \textbf{Command} \\
+      \hline
+      L & Begin logging in linked mode.\\
+      S & Stop logging (linked mode).\\
+      U & Upload data from EEPROM (standalone mode data).\\
+      E & Erase EEPROM contents (except 16 bytes of configuration
+      data).\\ 
+      R [num] & Set sample period, in seconds (defined in num).
+    \end{tabular}
+  \end{center}
+  \caption{Commands sent from PC to data logger.}
+  \label{tab:commands}
+\end{table}
+
+The communications protocols defined worked well for the application
+and did not need changed after definition. The accelerometer data was
+loaded with the maximum acceleration in each dimension during the
+sample period.
 
 \section{Problems Encountered and Technical Solutions}
 \label{sec:probl-enco-techn}
 
-require rs232 library since couldn't use LabWindows one.
+In this section, some of the problems encountered during the problem
+will be discussed, along with the solutions we used to overcome these
+problems. I will focus on the problems in the areas I was focusing on
+but also give a mention to other problems in James's parts, see
+James's report for a fuller discussion of these.
 
-display of data: csv output \& plotting in python/excel.
+\subsection{RS232 Library}
+
+The decision to use C++ and wxWidgets instead of the LabWindows
+environment initially cased a problem of being unable to communicate
+with the RS232 port, since this was a feature built in to the
+LabWindows software.
+
+Given the short time allowed for the project, it was not a viable
+option to write an RS232 library from scratch (interesting and
+challenging though this would doubtless have been!). A free and
+open-source library was found online\cite{rs232_lib} to provide this
+functionality and was found to work well.
+
+Once this was found, it was relatively straightforward to write the
+communications layer functions. These were initially based on the
+similar functions in the supplied code, but became more heavily
+modified as features were added specific to the data logger, such as
+reading a packet, reading from EEPROM and writing according to the
+protocol we defined.
+
+\subsection{Display of Data}
+
+Displaying the data in the gui in a sensible and easily interpretable
+way turned out to be a significant problem. The original idea had been
+to create graphs on the gui using OpenGL as a graphics
+package. However, once the basic user interface had been created and
+the communication system implemented, there was insufficient time left
+to do this in time for the demonstration. There was already in place a
+function for outputting the stored data to a comma separated value
+(csv) file\footnote{A common and widely used data storage format.}, so
+it was decided to utilise this in an outside program to do the
+plotting.
+
+Some Python scripts were written to achieve this, which worked well
+under Linux. There were issues in running the same scripts on Windows,
+and since time was short, it was decided to focus efforts in other
+areas, such as the temperature and humidity boundaries on the gui
+display. The current recommended way to view the plotted data is to
+open the csv file in Excel and plot it from there.
+
+\subsection{Linked mode streaming}
+
+
 
 running logging in background while allowing gui functionality.
 
+\subsection{Problems with Sensors and Circuits}
 accelerometer, humidity sensor.
 
 \section{Test Procedures}
