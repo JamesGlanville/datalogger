@@ -19,7 +19,23 @@
 \usepackage{tabularx}                  % Table changing package
 
 \usepackage{algpseudocode}             % For producing algorithms/flowcharts
+
+\usepackage{color}
+\definecolor{grey}{rgb}{0.5,0.5,0.5}
+
 \usepackage{listings}                  % For including source code in document
+\lstset{
+  basicstyle = \footnotesize\ttfamily,
+  commentstyle = \color{grey},
+  keepspaces = true,
+  keywordstyle = \color{blue},
+  language = C++,
+  numbers = left,
+  numbersep=5pt,
+  numberstyle=\tiny\color{grey},
+  stepnumber=5,
+  tabsize=2,
+}
 
 \usepackage{url}
 
@@ -39,8 +55,6 @@
 
 \begin{document}
 
-\listoftodos
-
 % generate title
 \maketitle
 
@@ -52,11 +66,21 @@
 
 \vspace{\stretch{2}}
 
-\noindent summary: motive, method, key results, conclusions \todo{add summary/abstract}
+\begin{abstract}
+An opportunity was noticed to develop a product for tracking
+the environmental conditions of a package in transit. A prototype
+system has been produced, requiring hardware, firmware and software
+development. The prototype has been found to show good potential, but
+requires some refining before it could become a commercially viable
+product. The project has been enjoyable and it has been rewarding to
+apply some of the knowledge gained in lecture courses to real product
+development.
+\end{abstract}
 
 \newpage
 
 \tableofcontents
+\vspace{\stretch{1}}
 \listoffigures
 \listoftables
 
@@ -87,9 +111,9 @@ tracking on shipping containers, the same problem applies to smaller
 and domestic packages too. In the past six months, two large companies
 have announced products to achieve this, but it is clearly an emerging
 market and a good product launched now could have a great chance of
-success. One of these, ``SenseAware''\cite{SA_PR} by FedEx
-Corporation, is already released and available however this is only
-available on a select number of carriers and services and is a
+success. One of these recent products, ``SenseAware''\cite{SA_PR} by
+FedEx Corporation, is already released and available however this is
+only available on a select number of carriers and services and is a
 business level product, not suited for everyday or relatively low
 value package monitoring. An alternative is the ``DropTag'' system
 recently announced by Cambridge Consultants \cite{DT_PR}, however this
@@ -142,11 +166,12 @@ design areas would therefore be hardware, firmware and software. The
 budget was generous for the development board so cost was not really
 an issue, however to achieve a commercial product, the cost and size
 would need to be reduced. This could be achieved by miniaturising, as
-surface mount components tend to be cheaper; and use of a cheaper
+surface mount components tend to be cheaper; use of a cheaper
 microcontroller (which wouldn't need the development features of the
-STM).
+STM); and economies of scale in a full production product.
 
-The project block diagram is shown in figure \ref{fig:sysblkdgrm}.
+The block diagram for the system is shown in figure
+\ref{fig:sysblkdgrm}.
 \begin{figure}[htb]
   \begin{center}
     \includegraphics[width=1.0\textwidth]{System_diagram.png}
@@ -183,15 +208,22 @@ A brief overview of the design has been given in section
 the parts of the system which I designed. The other parts are detailed
 in James' report.
 
-\todo{add photo of completed board}
+A photo of the completed hardware is shown in figure \ref{fig:boardphoto}.
+\begin{figure}[!htb]
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{completedboard_annotated.png}
+  \end{center}
+  \caption{Completed data logger board.}
+  \label{fig:boardphoto}
+\end{figure}
 
 \subsection{Hardware}
 \label{sec:hardware}
 
 In order to measure temperature, it was decided to use a
-thermistor. Thermistors have advantages over other temperature
+thermistor. Thermistors have some advantages over other temperature
 measurement devices such as thermocouples, resonant crystal
-thermometers and diode junction voltage measurement such as \cite{HH}: 
+thermometers and diode junction voltage measurement such as \cite{HH}:
 \begin{enumerate}
   \item The dependant quantity is very easy to measure.
   \item Large change in measured quantity (thousands of ohms, compared
@@ -202,9 +234,9 @@ thermometers and diode junction voltage measurement such as \cite{HH}:
   \item Circuit can easily be designed to give very linear output,
     making the digital conversion to temperature straightforward.
 \end{enumerate}
-With these considerations, an ND06P00103K NTC $10\,\mathrm{k\Omega}$ thermistor from AVX was
-selected, based on price and good electrical characteristics based on
-the application requirements.
+With these considerations, an ND06P00103K NTC $10\,\mathrm{k\Omega}$
+thermistor from AVX was selected, based on price and good electrical
+characteristics for the application requirements. 
 
 An analogue signal processing circuit was required to process the
 output from the thermistor to a signal usable by the microcontroller
@@ -216,7 +248,7 @@ $10\,\mathrm{k\Omega}$ resistor. This was selected to linearize the
 temperature curve. This combination gives a response linear to within
 $1\,\mathrm{\%}$ from $0\ \mathrm{to}\ 40\,\mathrm{\degrees C}$ and
 $3\,\mathrm{\%}$ between $-10\ \mathrm{and}\ 50\,\mathrm{\degrees
-  C}$. This voltage divider operates from a 3.3V rail, ensuring that
+  C}$\cite{HH}. This voltage divider operates from a 3.3V rail, ensuring that
 the input to the next stage will always lie within its supply
 rails. At this supply level, the maximum power dissipation through the
 thermistor was calculated as $3.3\,\mathrm{mW}$ at
@@ -224,11 +256,11 @@ $50\,\mathrm{\degrees C}$. This is well below the maximum dissipation
 for the thermistor of $0.71\,\mathrm{mW}$, so will not have a
 noticeable affect on the temperature measurement.
 
-The output from the voltage divider is input to an op-amp
-non-inverting amplifier circuit. The voltage divider has relatively
-high output resistance, so use of a non-inverting op-amp configuration
-ensures a very large input resistance ($\sim 10^{13}\,
-\mathrm{\Omega}$), avoiding loading on the measurement circuit.
+The output from the voltage divider drives an op-amp non-inverting
+amplifier circuit. The voltage divider has relatively high output
+resistance, so use of a non-inverting op-amp configuration ensures a
+very large input resistance ($\sim 10^{13}\, \mathrm{\Omega}$),
+avoiding loading on the measurement circuit.
 
 The non-inverting amplifier is slightly non-standard due to a non-zero
 reference voltage on the inverting terminal. This is selected to give
@@ -288,7 +320,8 @@ There are three main components to the software development. The
 back end functionality required serial port communications and
 communications protocols with the microcontroller. The front end required a simple
 user interface to display the logged data and control the
-microcontroller functions.
+microcontroller functions. See appendix \ref{sec:source-code-circuit}
+for a full code listing.
 
 The actual data transmission is handled by the serial port
 library.
@@ -384,7 +417,7 @@ way. The user interface\footnote{Since this screenshot was taken,
   temperature and humidity. If these limits are crossed, a warning is
   displayed.} is shown in figure \ref{fig:guiss}.\footnote{It may be
   noted that James' report shows a user interface which looks quite
-  different, this is due to running it on Windows 8, whereas I used
+  different. This is due to running it on Windows 8, whereas I used
   Ubuntu. This shows the cross-platform capabilities of the software.}
 
 \begin{figure}[!htb]
@@ -425,7 +458,8 @@ transmitted data packet meant. It was decided to avoid start-bits,
 stop-bits and check sums in the initial implementation, though room
 was left for these to be added later if necessary. In general, these
 weren't required as the PC could operate at sufficiently higher speed
-that it faced no problems in reading the data.
+compared to the data logger that it faced no problems in reading the
+data.
 
 In linked mode operation, with the microcontroller plugged in to the
 computer, the microcontroller was to send one packet of data for each
@@ -532,24 +566,175 @@ open the csv file in Excel and plot it from there.
 
 \subsection{Linked mode streaming}
 
+WxWidgets provides an event based graphical user interface. This
+operates by running an ``event loop'', and if something in this loop
+triggers, then the program runs the relevant ``callback function'',
+before returning to the loop. This procedure is ideal for the standard
+usage case where the user does one thing and waits for it to happen or
+complete the required function before requesting the next thing.
 
+However, the linked mode data logging requires two things to happen at
+once. The user will first click the ``Start Logging'' button, which
+will start the program in a loop of reading data from the serial port,
+storing it, and updating the display. However, at the same time as
+this is going on, the program also needs to be checking the user
+interface to see if anything else is being requested, particularly the
+``Stop Logging'' command. This causes a major difficulty as it
+requires running two different loops at the same time.
 
-running logging in background while allowing gui functionality.
+One approach may be to run a couple of iterations of one loop, and
+then a few of the other. However, this method is not adequate as if
+the program happens to be in the data collection loop when the button
+is pressed, the button press will simply be missed.
+
+After some searching, it was found that wxWidgets provides a function
+called \texttt{onIdle} which runs a function only when the program has
+some idle time. This means that the program may run the data
+collection loop only when nothing else is happening, but as soon as
+another event is triggered, for example the stop button being pressed,
+the loop is interrupted and the program can deal with the new request.
+
+The start and stop buttons can therefore simply set a flag (a
+\texttt{bool} type called \texttt{read\_loop\_on}), and then any idle
+time for which the loop is high will call the function to read the
+serial port.
+
+This method was inspired by and borrows heavily from an example on the
+wxWidgets wiki\cite{rendloop}. There were initial concerns about
+whether the idle time would be enough to read the data successfully
+without dropping bytes, but it was found to be sufficient.
 
 \subsection{Problems with Sensors and Circuits}
-accelerometer, humidity sensor.
 
-\section{Test Procedures}
+The changes to the hardware circuitry were mainly carried out by
+James, so I shall give only a brief description.
+
+It was discovered that the initial idea for measuring the capacitance
+of the humidity sensor was not suitable as the charging and
+discharging was too fast to be accurately monitored by the
+microcontroller directly. Therefore the variable capacitance of the
+humidity sensor was used in a simple oscillator and after dividing the
+frequency by 100, this was slow enough for the microcontroller to
+detect the frequency with relative ease. This method proved to work
+well, though there were some issued with the final readings (see
+section \ref{sec:test-procedures}).
+
+Additionally, it was found that the accelerometer we used was not
+ideally suited to this application. The accelerometer contained an
+on board microcontroller to process the raw data, however this only
+gave selected output types, as desired in, say, a smartphone or
+hand-held gaming controller. It gave access to neither the raw data
+from which we could obtain more useful results, nor enough processing
+to give the sort of output we required. It was suitable for detecting
+a shake or, to an extent, an impact, but could not give detailed
+enough data to detect the acceleration profile of, for example, being
+dropped for a short time and landing hard, or falling off a shelf in a
+van and other critical scenarios.
+
+\section{Calibration and Test Procedures}
 \label{sec:test-procedures}
+
+In order to achieve accuracy in the data readings, it was necessary to
+calibrate the sensors.
+
+Calibration of the thermistor was relatively straightforward, using an
+ice/water mixture at $0\,\mathrm{\degrees C}$ and water heated to
+$50\,\mathrm{\degrees C}$, measured using an infared
+thermometer. Figure \ref{fig:tempcct} shows the calibration process.
+\begin{figure}[!htb]
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{themistor_calib.jpg}
+  \end{center}
+  \caption{Temperature calibration using ice/water mixture.}
+  \label{fig:calibice}
+\end{figure}
+
+The humidity calibration was more complex. Two reference points were
+used, a freezer (which has $0\,\mathrm{\% RH}$) and the air above a
+saturated salt solution ($75.3\,\mathrm{\% RH}$ at $25\,
+  \mathrm{\degrees C}$).
+
+It was found in the final testing that the humidity readings were not
+accurate. Several possible contributing factors may be identified:
+\begin{itemize}
+\item The oscillator and frequency division circuitry may not have
+  been working properly at the low temperatures of the freezer.
+  \item The air above the saturated salt solution was not completely
+    sealed from the surroundings, meaning the reading was not
+    completely accurate.
+  \item The reading from the humidity detection circuit was not
+    linear, and may not have matched the supplied lookup table very closely.
+  \item The humidity sensor was heavily handled during testing of the
+    rest of the system, which almost certainly left residue salts and
+    other contaminants to disturb the capacitance.
+\end{itemize}
+
+It is not possible to say which of these is/are the main
+contributor(s) to the inaccurate readings, but given further testing,
+these factors could be found and fixed.
 
 \section{Conclusions and Next Steps}
 \label{sec:concl-next-steps}
+
+This project has established that there is an opportunity for a
+commercial product in the package environment tracking field. A
+prototype data logger was developed for this application, and does
+show good potential. The current prototype would need some improvement
+and some major changes to become a commercial product, and the
+software would require some additional functionality and improvement,
+but it seems clear that this is possible and would not an unreasonable
+amount of extra work.
+
+The suggested next steps for the improvement of the package
+environment tracking system would be:
+\begin{enumerate}
+  \item Develop a system for graphical output of the logged data
+    without the need of an external application.
+  \item Find the problems facing the humidity readings and fix these
+    faults.
+  \item Find a more suitable accelerometer (that still matched the
+    price requirements) to allow better analysis of the movement of
+    the parcel.
+  \item Develop a system for notification of the sender/receiver of
+    the package during shipping, providing real time tracking of the
+    environmental conditions.
+  \item Add GPS functionality to also track the package location
+    during transit.
+  \item Miniaturise the data logging system and greatly reduce both
+    the physical size and the cost (likely to scale together) to make
+    it commercially viable.
+\end{enumerate}
+
+From a project perspective, it has been enjoyable to apply some of
+what has been learned in the electronics and software courses. It has
+also been enjoyable to work on a product and to see a real result at
+the end of the project.
+
+One thing this project has reinforced is that the modern world relies
+on digital electronics, with only a small amount of simple analogue
+interfacing. Because of this change, it seems silly that the Cambridge
+Engineering course maintains such a focus on analogue electronic
+design. For students with a future in any field of engineering it
+would seem that the knowledge and skills to create a simple
+microcontroller based data logger would be far more useful than
+developing a purely analogue FM radio. To this same end, an
+understanding of the I$^{\mathrm{2}}$C and other digital interfacing
+protocols would be a better education in the world of useful
+electronics than a detailed understanding of transistor or op amp
+design.
+
+Nevertheless, this project has been a positive experience and greatly
+enjoyable. It has given insight into the design of real world
+electronic and software systems as well as the importance of product
+development alongside technical development.
 
 \FloatBarrier
 \appendix
 
 \section{Source Code and Circuit Diagrams}
 \label{sec:source-code-circuit}
+
+\subsection{Thermistor Signal Conditioning Circuit}
 
 \begin{figure}[h]
   \begin{center}
@@ -559,13 +744,37 @@ accelerometer, humidity sensor.
   \label{fig:tempcct}
 \end{figure}
 
-\FloatBarrier
+\subsection{datalogger.h}
 
-\section{Marketing Datasheet}
-\label{sec:marketing-datasheet}
+\lstinputlisting{datalogger.h}
+
+\subsection{datalogger.cpp}
+
+\lstinputlisting{datalogger.cpp}
+
+\subsection{comms.h}
+
+\lstinputlisting{comms.h}
+
+\subsection{comms.cpp}
+
+\lstinputlisting{comms.cpp}
+
+\subsection[rs232.h]{rs232.h (not written by me!)}
+
+\lstinputlisting{rs232.h}
+
+\subsection[rs232.cpp]{rs232.cpp (not written by me!)}
+
+\lstinputlisting{rs232.cpp}
+
+\FloatBarrier
 
 \section{First Interim Report}
 \label{sec:first-interim-report}
+
+\section{Marketing Datasheet}
+\label{sec:marketing-datasheet}
 
 \bibliographystyle{plain}
 \bibliography{Final_Report_Andy}
